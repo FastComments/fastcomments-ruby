@@ -1,0 +1,17 @@
+# Gem files
+*.gem
+.bundle/
+vendor/bundle
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+
+# RSpec
+.rspec_status

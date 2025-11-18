@@ -1,0 +1,176 @@
+require 'rspec'
+require 'json'
+require 'time'
+require_relative '../lib/fastcomments'
+
+# Check for environment variables
+def get_api_key
+  ENV['FASTCOMMENTS_API_KEY'] || raise('FASTCOMMENTS_API_KEY environment variable is required')
+end
+
+def get_tenant_id
+  ENV['FASTCOMMENTS_TENANT_ID'] || raise('FASTCOMMENTS_TENANT_ID environment variable is required')
+end
+
+API_KEY = get_api_key
+TENANT_ID = get_tenant_id
+
+# Add client lib to load path and load generated client
+$LOAD_PATH.unshift File.expand_path('../client/lib', __dir__)
+require 'fastcomments-client'
+
+RSpec.describe 'FastComments SSO Integration Tests' do
+  let(:api_client) do
+    config = FastCommentsClient::Configuration.new
+    FastCommentsClient::ApiClient.new(config)
+  end
+
+  let(:public_api) do
+    FastCommentsClient::PublicAPI.new(api_client)
+  end
+
+  let(:default_api) do
+    config = FastCommentsClient::Configuration.new
+    config.api_key['ApiKeyAuth'] = API_KEY
+    client = FastCommentsClient::ApiClient.new(config)
+    FastCommentsClient::DefaultAPI.new(client)
+  end
+
+  let(:mock_secure_user) do
+    timestamp = (Time.now.to_f * 1000).to_i
+    FastComments::SSO::SecureSSOUserData.new(
+      user_id: "test-user-#{timestamp}",
+      email: "test-#{timestamp}@example.com",
+      username: "testuser#{timestamp}",
+      avatar: 'https://example.com/avatar.jpg'
+    )
+  end
+
+  let(:mock_simple_user) do
+    timestamp = (Time.now.to_f * 1000).to_i
+    FastComments::SSO::SimpleSSOUserData.new(
+      user_id: "simple-user-#{timestamp}",
+      email: "simple-#{timestamp}@example.com",
+      avatar: 'https://example.com/simple-avatar.jpg'
+    )
+  end
+
+  describe 'Secure SSO API Integration' do
+    it 'gets comments with secure SSO' do
+        sso = FastComments::SSO::FastCommentsSSO.new_secure(API_KEY, mock_secure_user)
+        sso_token = sso.create_token
+
+        response = public_api.get_comments_public(
+          tenant_id: TENANT_ID,
+          url_id: 'sdk-test-page-secure',
+          sso: sso_token
+        )
+
+        expect(response).not_to be_nil
+      end
+
+    it 'creates comment with secure SSO' do
+        sso = FastComments::SSO::FastCommentsSSO.new_secure(API_KEY, mock_secure_user)
+        sso_token = sso.create_token
+        timestamp = (Time.now.to_f * 1000).to_i
+
+        comment_data = {
+          comment: 'Test comment with secure SSO from Ruby SDK',
+          date: timestamp,
+          commenterName: mock_secure_user.username,
+          url: 'https://example.com/test-page',
+          urlId: 'sdk-test-page-secure-comment'
+        }
+
+        response = public_api.create_comment_public(
+          tenant_id: TENANT_ID,
+          url_id: 'sdk-test-page-secure-comment',
+          broadcast_id: "test-#{timestamp}",
+          comment_data: comment_data,
+          sso: sso_token
+        )
+
+        expect(response).not_to be_nil
+      end
+
+    it 'gets comments with DefaultApi' do
+        response = default_api.get_comments(
+          tenant_id: TENANT_ID,
+          url_id: 'sdk-test-page-secure-admin',
+          context_user_id: mock_secure_user.user_id
+        )
+
+        expect(response).not_to be_nil
+    end
+  end
+
+  describe 'Simple SSO API Integration' do
+    it 'gets comments with simple SSO' do
+        sso = FastComments::SSO::FastCommentsSSO.new_simple(mock_simple_user)
+        sso_token = sso.create_token
+
+        response = public_api.get_comments_public(
+          tenant_id: TENANT_ID,
+          url_id: 'sdk-test-page-simple',
+          sso: sso_token
+        )
+
+        expect(response).not_to be_nil
+      end
+
+    it 'creates comment with simple SSO' do
+        sso = FastComments::SSO::FastCommentsSSO.new_simple(mock_simple_user)
+        sso_token = sso.create_token
+        timestamp = (Time.now.to_f * 1000).to_i
+
+        comment_data = {
+          comment: 'Test comment with simple SSO from Ruby SDK',
+          date: timestamp,
+          commenterName: mock_simple_user.user_id,
+          url: 'https://example.com/test-page',
+          urlId: 'sdk-test-page-simple-comment'
+        }
+
+        response = public_api.create_comment_public(
+          tenant_id: TENANT_ID,
+          url_id: 'sdk-test-page-simple-comment',
+          broadcast_id: "test-#{timestamp}",
+          comment_data: comment_data,
+          sso: sso_token
+        )
+
+        expect(response).not_to be_nil
+    end
+  end
+
+  describe 'Error Handling' do
+    it 'handles invalid tenant ID' do
+        sso = FastComments::SSO::FastCommentsSSO.new_secure(API_KEY, mock_secure_user)
+        sso_token = sso.create_token
+
+        expect {
+          public_api.get_comments_public(
+            tenant_id: 'invalid-tenant-123',
+            url_id: 'sdk-test-page-secure',
+            sso: sso_token
+          )
+        }.to raise_error(FastCommentsClient::ApiError) do |error|
+          expect(error.code).to be >= 400
+        end
+      end
+
+    it 'handles malformed SSO token' do
+        malformed_sso = '{"invalid": "token"}'
+
+        expect {
+          public_api.get_comments_public(
+            tenant_id: TENANT_ID,
+            url_id: 'sdk-test-page-secure',
+            sso: malformed_sso
+          )
+        }.to raise_error(FastCommentsClient::ApiError) do |error|
+          expect(error.code).to be >= 400
+        end
+    end
+  end
+end
