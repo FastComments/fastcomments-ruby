@@ -1,12 +1,16 @@
 PATH
   remote: .
   specs:
-    fastcomments-ruby (0.0.1)
+    fastcomments (0.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.6.2)
+    ethon (0.15.0)
+      ffi (>= 1.15.0)
+    ffi (1.17.2-x86_64-linux-gnu)
     rake (13.3.1)
     rspec (3.13.2)
       rspec-core (~> 3.13.0)
@@ -21,12 +25,14 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.6)
+    typhoeus (1.5.0)
+      ethon (>= 0.9.0, < 0.16.0)
 
 PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
-  fastcomments-ruby!
+  fastcomments!
   rake (~> 13.0)
   rspec (~> 3.12)
 

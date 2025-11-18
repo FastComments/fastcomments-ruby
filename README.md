@@ -1,4 +1,4 @@
-# fastcomments-ruby
+# fastcomments
 The FastComments Ruby SDK. You can use this to build secure and scalable backend applications that interact with FastComments, or build reactive client applications.
 
 ## Installation
@@ -6,7 +6,7 @@ The FastComments Ruby SDK. You can use this to build secure and scalable backend
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fastcomments-ruby'
+gem 'fastcomments'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ bundle install
 Or install it yourself as:
 
 ```bash
-gem install fastcomments-ruby
+gem install fastcomments
 ```
 
 ### Library Contents

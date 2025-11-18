@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-echo "Building fastcomments-ruby gem..."
-gem build fastcomments-ruby.gemspec
+echo "Building fastcomments gem..."
+gem build fastcomments.gemspec
 
 # Get the version from the gemspec
 VERSION=$(ruby -r ./lib/fastcomments.rb -e "puts FastComments::VERSION")
-GEM_FILE="fastcomments-ruby-${VERSION}.gem"
+GEM_FILE="fastcomments-${VERSION}.gem"
 
 if [ ! -f "$GEM_FILE" ]; then
   echo "Error: Gem file $GEM_FILE not found!"
@@ -16,5 +16,5 @@ fi
 echo "Publishing $GEM_FILE to RubyGems..."
 gem push "$GEM_FILE"
 
-echo "Successfully published fastcomments-ruby v${VERSION}!"
-echo "Users can now install it with: gem install fastcomments-ruby"
+echo "Successfully published fastcomments v${VERSION}!"
+echo "Users can now install it with: gem install fastcomments"
