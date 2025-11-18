@@ -29,12 +29,12 @@ This library contains the generated API client and the SSO utilities to make wor
 
 ### Public vs Secured APIs
 
-For the API client, there are two classes, `DefaultAPI` and `PublicAPI`. The `DefaultAPI` contains methods that require your API key, and `PublicAPI` contains api calls
+For the API client, there are two classes, `DefaultApi` and `PublicApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
 that can be made directly from a browser/mobile device/etc without authentication.
 
 ## Quick Start
 
-### Using Authenticated APIs (DefaultAPI)
+### Using Authenticated APIs (DefaultApi)
 
 **Important:** You must set your API key on the ApiClient before making authenticated requests. If you don't, requests will fail with a 401 error.
 
@@ -46,10 +46,10 @@ config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
 # REQUIRED: Set your API key (get this from your FastComments dashboard)
-config.api_key['ApiKeyAuth'] = 'YOUR_API_KEY_HERE'
+config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
 # Create the API instance with the configured client
-api = FastCommentsClient::DefaultAPI.new(api_client)
+api = FastCommentsClient::DefaultApi.new(api_client)
 
 # Now you can make authenticated API calls
 begin
@@ -71,14 +71,14 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Using Public APIs (PublicAPI)
+### Using Public APIs (PublicApi)
 
 Public endpoints don't require authentication:
 
 ```ruby
 require 'fastcomments-client'
 
-public_api = FastCommentsClient::PublicAPI.new
+public_api = FastCommentsClient::PublicApi.new
 
 begin
   response = public_api.get_comments_public(
@@ -93,8 +93,8 @@ end
 
 ### Common Issues
 
-1. **401 "missing-api-key" error**: Make sure you set `config.api_key['ApiKeyAuth'] = 'YOUR_KEY'` before creating the DefaultAPI instance.
-2. **Wrong API class**: Use `DefaultAPI` for server-side authenticated requests, `PublicAPI` for client-side/public requests.
+1. **401 "missing-api-key" error**: Make sure you set `config.api_key['x-api-key'] = 'YOUR_KEY'` before creating the DefaultApi instance.
+2. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests.
 3. **Null API key**: The SDK will silently skip authentication if the API key is null, leading to 401 errors.
 
 ## Notes
@@ -131,7 +131,7 @@ puts "SSO Token: #{token}"
 # Use the SSO token to make an authenticated API call
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
-public_api = FastCommentsClient::PublicAPI.new(api_client)
+public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
   tenant_id: 'your-tenant-id',
@@ -165,7 +165,7 @@ puts "Secure SSO Token: #{token}"
 # Use the SSO token to make an authenticated API call
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
-public_api = FastCommentsClient::PublicAPI.new(api_client)
+public_api = FastCommentsClient::PublicApi.new(api_client)
 
 response = public_api.get_comments_public(
   tenant_id: 'your-tenant-id',
