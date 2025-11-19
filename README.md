@@ -193,6 +193,8 @@ bundle exec rspec
 
 ## Development
 
+Currently to bump version update config.json, fastcomments.gemspec, lib/fastcomments.rb
+
 To update the generated client from the OpenAPI spec:
 
 ```bash
