@@ -278,9 +278,13 @@ module FastCommentsClient
           data.each { |k, v| hash[k] = convert_to_type(v, sub_type) }
         end
       else
-        # models (e.g. Pet) or oneOf
+        # models (e.g. Pet) or oneOf/anyOf
         klass = FastCommentsClient.const_get(return_type)
-        klass.respond_to?(:openapi_one_of) ? klass.build(data) : klass.build_from_hash(data)
+        if klass.respond_to?(:openapi_one_of) || klass.respond_to?(:openapi_any_of)
+          klass.build(data)
+        else
+          klass.build_from_hash(data)
+        end
       end
     end
 

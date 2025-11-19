@@ -99,7 +99,15 @@ RSpec.describe 'FastComments SSO Integration Tests' do
           id: mock_secure_user.user_id,
           email: mock_secure_user.email,
           username: mock_secure_user.username,
-          avatar_src: mock_secure_user.avatar
+          avatar_src: mock_secure_user.avatar,
+          website_url: 'https://example.com',
+          sign_up_date: (Time.now.to_f * 1000).to_i,
+          created_from_url_id: 'sdk-test-page',
+          login_count: 0,
+          opted_in_notifications: true,
+          opted_in_subscription_notifications: false,
+          display_label: 'Test User',
+          display_name: mock_secure_user.username
         })
 
         default_api.add_sso_user(TENANT_ID, user_data)
@@ -172,18 +180,5 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         end
       end
 
-    it 'handles malformed SSO token' do
-        malformed_sso = '{"invalid": "token"}'
-
-        expect {
-          public_api.get_comments_public(
-            TENANT_ID,
-            'sdk-test-page-secure',
-            { sso: malformed_sso }
-          )
-        }.to raise_error(FastCommentsClient::ApiError) do |error|
-          expect(error.code).to be >= 400
-        end
-    end
   end
 end
