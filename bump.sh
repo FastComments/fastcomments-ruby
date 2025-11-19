@@ -16,6 +16,10 @@ echo "Bumping version to $NEW_VERSION..."
 jq ".gemVersion = \"$NEW_VERSION\"" config.json > config.json.tmp && mv config.json.tmp config.json
 echo "✓ Updated config.json gemVersion to $NEW_VERSION"
 
+# Update fastcomments.gemspec
+sed -i "s/spec\.version[[:space:]]*=.*/spec.version       = \"$NEW_VERSION\"/" fastcomments.gemspec
+echo "✓ Updated fastcomments.gemspec version to $NEW_VERSION"
+
 # Update lib/fastcomments.rb
 sed -i "s/VERSION = '[^']*'/VERSION = '$NEW_VERSION'/" lib/fastcomments.rb
 echo "✓ Updated lib/fastcomments.rb VERSION to $NEW_VERSION"
