@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **reason** | **String** |  | [optional] |
 | **code** | **String** |  | [optional] |
+| **comments_updated** | **Integer** |  | [optional] |
 | **page** | [**APIPage**](APIPage.md) |  | [optional] |
 | **status** | **String** |  |  |
 
@@ -17,6 +18,7 @@ require 'fastcomments-client'
 instance = FastCommentsClient::PatchPageAPIResponse.new(
   reason: null,
   code: null,
+  comments_updated: null,
   page: null,
   status: null
 )

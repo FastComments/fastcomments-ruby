@@ -56,6 +56,7 @@
 | **no_styles** | **Boolean** |  | [optional] |
 | **page_size** | **Integer** |  | [optional] |
 | **readonly** | **Boolean** |  | [optional] |
+| **no_new_root_comments** | **Boolean** |  | [optional] |
 | **require_sso** | **Boolean** |  | [optional] |
 | **enable_resize_handle** | **Boolean** |  | [optional] |
 | **restricted_link_domains** | **Array&lt;String&gt;** |  | [optional] |
@@ -135,6 +136,7 @@ instance = FastCommentsClient::CustomConfigParameters.new(
   no_styles: null,
   page_size: null,
   readonly: null,
+  no_new_root_comments: null,
   require_sso: null,
   enable_resize_handle: null,
   restricted_link_domains: null,

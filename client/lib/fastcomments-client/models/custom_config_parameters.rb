@@ -119,6 +119,8 @@ module FastCommentsClient
 
     attr_accessor :readonly
 
+    attr_accessor :no_new_root_comments
+
     attr_accessor :require_sso
 
     attr_accessor :enable_resize_handle
@@ -237,6 +239,7 @@ module FastCommentsClient
         :'no_styles' => :'noStyles',
         :'page_size' => :'pageSize',
         :'readonly' => :'readonly',
+        :'no_new_root_comments' => :'noNewRootComments',
         :'require_sso' => :'requireSSO',
         :'enable_resize_handle' => :'enableResizeHandle',
         :'restricted_link_domains' => :'restrictedLinkDomains',
@@ -325,6 +328,7 @@ module FastCommentsClient
         :'no_styles' => :'Boolean',
         :'page_size' => :'Integer',
         :'readonly' => :'Boolean',
+        :'no_new_root_comments' => :'Boolean',
         :'require_sso' => :'Boolean',
         :'enable_resize_handle' => :'Boolean',
         :'restricted_link_domains' => :'Array<String>',
@@ -596,6 +600,10 @@ module FastCommentsClient
         self.readonly = attributes[:'readonly']
       end
 
+      if attributes.key?(:'no_new_root_comments')
+        self.no_new_root_comments = attributes[:'no_new_root_comments']
+      end
+
       if attributes.key?(:'require_sso')
         self.require_sso = attributes[:'require_sso']
       end
@@ -755,6 +763,7 @@ module FastCommentsClient
           no_styles == o.no_styles &&
           page_size == o.page_size &&
           readonly == o.readonly &&
+          no_new_root_comments == o.no_new_root_comments &&
           require_sso == o.require_sso &&
           enable_resize_handle == o.enable_resize_handle &&
           restricted_link_domains == o.restricted_link_domains &&
@@ -786,7 +795,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [absolute_and_relative_dates, absolute_dates, allow_anon, allow_anon_flag, allow_anon_votes, allowed_languages, collapse_replies, comment_count_format, comment_html_rendering_mode, comment_thread_delete_mode, commenter_name_format, count_above_toggle, custom_css, default_avatar_src, default_sort_direction, default_username, disable_auto_admin_migration, disable_auto_hash_tag_creation, disable_blocking, disable_commenter_comment_delete, disable_commenter_comment_edit, disable_email_inputs, disable_live_commenting, disable_notification_bell, disable_profiles, disable_success_message, disable_toolbar, disable_unverified_label, disable_voting, enable_commenter_links, enable_search, enable_spoilers, enable_third_party_cookie_bypass, enable_view_counts, enable_vote_list, enable_wysiwyg, gif_rating, has_dark_background, header_html, hide_avatars, hide_comments_under_count_text_format, image_content_profanity_level, input_after_comments, limit_comments_by_groups, locale, max_comment_character_length, max_comment_created_count_pupm, no_custom_config, no_image_uploads, no_styles, page_size, readonly, require_sso, enable_resize_handle, restricted_link_domains, show_badges_in_top_bar, show_comment_save_success, show_live_right_away, show_question, spam_rules, sso_sec_lvl, translations, use_show_comments_toggle, use_single_line_comment_input, vote_style, widget_question_id, widget_question_results_style, widget_question_style, widget_question_when_to_save, widget_questions_required, widget_sub_question_visibility, wrap].hash
+      [absolute_and_relative_dates, absolute_dates, allow_anon, allow_anon_flag, allow_anon_votes, allowed_languages, collapse_replies, comment_count_format, comment_html_rendering_mode, comment_thread_delete_mode, commenter_name_format, count_above_toggle, custom_css, default_avatar_src, default_sort_direction, default_username, disable_auto_admin_migration, disable_auto_hash_tag_creation, disable_blocking, disable_commenter_comment_delete, disable_commenter_comment_edit, disable_email_inputs, disable_live_commenting, disable_notification_bell, disable_profiles, disable_success_message, disable_toolbar, disable_unverified_label, disable_voting, enable_commenter_links, enable_search, enable_spoilers, enable_third_party_cookie_bypass, enable_view_counts, enable_vote_list, enable_wysiwyg, gif_rating, has_dark_background, header_html, hide_avatars, hide_comments_under_count_text_format, image_content_profanity_level, input_after_comments, limit_comments_by_groups, locale, max_comment_character_length, max_comment_created_count_pupm, no_custom_config, no_image_uploads, no_styles, page_size, readonly, no_new_root_comments, require_sso, enable_resize_handle, restricted_link_domains, show_badges_in_top_bar, show_comment_save_success, show_live_right_away, show_question, spam_rules, sso_sec_lvl, translations, use_show_comments_toggle, use_single_line_comment_input, vote_style, widget_question_id, widget_question_results_style, widget_question_style, widget_question_when_to_save, widget_questions_required, widget_sub_question_visibility, wrap].hash
     end
 
     # Builds the object from hash

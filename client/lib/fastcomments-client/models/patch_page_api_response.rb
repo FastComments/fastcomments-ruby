@@ -19,6 +19,8 @@ module FastCommentsClient
 
     attr_accessor :code
 
+    attr_accessor :comments_updated
+
     attr_accessor :page
 
     attr_accessor :status
@@ -28,6 +30,7 @@ module FastCommentsClient
       {
         :'reason' => :'reason',
         :'code' => :'code',
+        :'comments_updated' => :'commentsUpdated',
         :'page' => :'page',
         :'status' => :'status'
       }
@@ -48,6 +51,7 @@ module FastCommentsClient
       {
         :'reason' => :'String',
         :'code' => :'String',
+        :'comments_updated' => :'Integer',
         :'page' => :'APIPage',
         :'status' => :'String'
       }
@@ -81,6 +85,10 @@ module FastCommentsClient
 
       if attributes.key?(:'code')
         self.code = attributes[:'code']
+      end
+
+      if attributes.key?(:'comments_updated')
+        self.comments_updated = attributes[:'comments_updated']
       end
 
       if attributes.key?(:'page')
@@ -131,6 +139,7 @@ module FastCommentsClient
       self.class == o.class &&
           reason == o.reason &&
           code == o.code &&
+          comments_updated == o.comments_updated &&
           page == o.page &&
           status == o.status
     end
@@ -144,7 +153,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [reason, code, page, status].hash
+      [reason, code, comments_updated, page, status].hash
     end
 
     # Builds the object from hash

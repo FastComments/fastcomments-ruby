@@ -19,6 +19,8 @@ module FastCommentsClient
 
     attr_accessor :user_badge
 
+    attr_accessor :notes
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -45,7 +47,8 @@ module FastCommentsClient
     def self.attribute_map
       {
         :'status' => :'status',
-        :'user_badge' => :'userBadge'
+        :'user_badge' => :'userBadge',
+        :'notes' => :'notes'
       }
     end
 
@@ -63,7 +66,8 @@ module FastCommentsClient
     def self.openapi_types
       {
         :'status' => :'APIStatus',
-        :'user_badge' => :'UserBadge'
+        :'user_badge' => :'UserBadge',
+        :'notes' => :'Array<String>'
       }
     end
 
@@ -99,6 +103,12 @@ module FastCommentsClient
         self.user_badge = attributes[:'user_badge']
       else
         self.user_badge = nil
+      end
+
+      if attributes.key?(:'notes')
+        if (value = attributes[:'notes']).is_a?(Array)
+          self.notes = value
+        end
       end
     end
 
@@ -153,7 +163,8 @@ module FastCommentsClient
       return true if self.equal?(o)
       self.class == o.class &&
           status == o.status &&
-          user_badge == o.user_badge
+          user_badge == o.user_badge &&
+          notes == o.notes
     end
 
     # @see the `==` method
@@ -165,7 +176,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [status, user_badge].hash
+      [status, user_badge, notes].hash
     end
 
     # Builds the object from hash

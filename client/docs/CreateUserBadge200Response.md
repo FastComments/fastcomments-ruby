@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
 | **user_badge** | [**UserBadge**](UserBadge.md) |  |  |
+| **notes** | **Array&lt;String&gt;** |  | [optional] |
 | **reason** | **String** |  |  |
 | **code** | **String** |  |  |
 | **secondary_code** | **String** |  | [optional] |
@@ -22,6 +23,7 @@ require 'fastcomments-client'
 instance = FastCommentsClient::CreateUserBadge200Response.new(
   status: null,
   user_badge: null,
+  notes: null,
   reason: null,
   code: null,
   secondary_code: null,
