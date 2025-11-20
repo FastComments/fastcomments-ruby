@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **status** | [**VoteResponseStatus**](VoteResponseStatus.md) |  |  |
+| **status** | **String** |  |  |
 | **vote_id** | **String** |  | [optional] |
 | **is_verified** | **Boolean** |  | [optional] |
 | **user** | [**VoteResponseUser**](VoteResponseUser.md) |  | [optional] |
