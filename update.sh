@@ -13,7 +13,7 @@ else
 fi
 
 # Generate the Ruby client using openapi-generator
-npx @openapitools/openapi-generator-cli generate \
+java -jar ../openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
     -i "$SPEC_FILE" \
     -g ruby \
     -o ./client \
