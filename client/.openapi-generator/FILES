@@ -228,7 +228,6 @@ docs/VoteBodyParams.md
 docs/VoteComment200Response.md
 docs/VoteDeleteResponse.md
 docs/VoteResponse.md
-docs/VoteResponseStatus.md
 docs/VoteResponseUser.md
 docs/VoteStyle.md
 fastcomments-client.gemspec
@@ -238,6 +237,7 @@ lib/fastcomments-client/api/default_api.rb
 lib/fastcomments-client/api/public_api.rb
 lib/fastcomments-client/api_client.rb
 lib/fastcomments-client/api_error.rb
+lib/fastcomments-client/api_model_base.rb
 lib/fastcomments-client/configuration.rb
 lib/fastcomments-client/models/add_domain_config200_response.rb
 lib/fastcomments-client/models/add_domain_config200_response_any_of.rb
@@ -458,7 +458,6 @@ lib/fastcomments-client/models/vote_body_params.rb
 lib/fastcomments-client/models/vote_comment200_response.rb
 lib/fastcomments-client/models/vote_delete_response.rb
 lib/fastcomments-client/models/vote_response.rb
-lib/fastcomments-client/models/vote_response_status.rb
 lib/fastcomments-client/models/vote_response_user.rb
 lib/fastcomments-client/models/vote_style.rb
 lib/fastcomments-client/version.rb
@@ -683,7 +682,6 @@ spec/models/vote_body_params_spec.rb
 spec/models/vote_comment200_response_spec.rb
 spec/models/vote_delete_response_spec.rb
 spec/models/vote_response_spec.rb
-spec/models/vote_response_status_spec.rb
 spec/models/vote_response_user_spec.rb
 spec/models/vote_style_spec.rb
 spec/spec_helper.rb

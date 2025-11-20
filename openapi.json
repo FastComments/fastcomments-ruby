@@ -2201,6 +2201,9 @@
 					},
 					"editKey": {
 						"type": "string"
+					},
+					"approved": {
+						"type": "boolean"
 					}
 				},
 				"required": [

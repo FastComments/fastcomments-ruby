@@ -32,6 +32,7 @@
 | **feedback_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **requires_verification** | **Boolean** |  | [optional] |
 | **edit_key** | **String** |  | [optional] |
+| **approved** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -66,7 +67,8 @@ instance = FastCommentsClient::PublicCommentBase.new(
   anon_user_id: null,
   feedback_ids: null,
   requires_verification: null,
-  edit_key: null
+  edit_key: null,
+  approved: null
 )
 ```
 

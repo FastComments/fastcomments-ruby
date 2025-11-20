@@ -32,6 +32,7 @@
 | **feedback_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **requires_verification** | **Boolean** |  | [optional] |
 | **edit_key** | **String** |  | [optional] |
+| **approved** | **Boolean** |  | [optional] |
 | **is_unread** | **Boolean** |  | [optional] |
 | **my_vote_id** | **String** |  | [optional] |
 | **is_voted_down** | **Boolean** |  | [optional] |
@@ -77,6 +78,7 @@ instance = FastCommentsClient::PublicComment.new(
   feedback_ids: null,
   requires_verification: null,
   edit_key: null,
+  approved: null,
   is_unread: null,
   my_vote_id: null,
   is_voted_down: null,
