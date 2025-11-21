@@ -3,6 +3,7 @@ require_relative 'fastcomments/sso/secure_sso_payload'
 require_relative 'fastcomments/sso/secure_sso_user_data'
 require_relative 'fastcomments/sso/simple_sso_user_data'
 require_relative 'fastcomments/sso/fastcomments_sso'
+require 'fastcomments-client'
 
 module FastComments
   VERSION = '0.3.0'

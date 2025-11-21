@@ -39,7 +39,7 @@ that can be made directly from a browser/mobile device/etc without authenticatio
 **Important:** You must set your API key on the ApiClient before making authenticated requests. If you don't, requests will fail with a 401 error.
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 # Create and configure the API client
 config = FastCommentsClient::Configuration.new
@@ -76,7 +76,7 @@ end
 Public endpoints don't require authentication:
 
 ```ruby
-require 'fastcomments-client'
+require 'fastcomments'
 
 public_api = FastCommentsClient::PublicApi.new
 
@@ -114,7 +114,6 @@ For SSO examples, see below.
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Create Simple SSO token
 user = FastComments::SSO::SimpleSSOUserData.new(
@@ -146,7 +145,6 @@ puts "Status: #{response}"
 
 ```ruby
 require 'fastcomments'
-require 'fastcomments-client'
 
 # Create Secure SSO token
 user = FastComments::SSO::SecureSSOUserData.new(
