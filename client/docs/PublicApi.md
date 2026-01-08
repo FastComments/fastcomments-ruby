@@ -1801,7 +1801,7 @@ No authorization required
 
 ## search_users
 
-> <SearchUsers200Response> search_users(tenant_id, url_id, username_starts_with, opts)
+> <SearchUsers200Response> search_users(tenant_id, url_id, opts)
 
 
 
@@ -1814,15 +1814,15 @@ require 'fastcomments-client'
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 url_id = 'url_id_example' # String | 
-username_starts_with = 'username_starts_with_example' # String | 
 opts = {
+  username_starts_with: 'username_starts_with_example', # String | 
   mention_group_ids: ['inner_example'], # Array<String> | 
   sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.search_users(tenant_id, url_id, username_starts_with, opts)
+  result = api_instance.search_users(tenant_id, url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users: #{e}"
@@ -1833,12 +1833,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchUsers200Response>, Integer, Hash)> search_users_with_http_info(tenant_id, url_id, username_starts_with, opts)
+> <Array(<SearchUsers200Response>, Integer, Hash)> search_users_with_http_info(tenant_id, url_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.search_users_with_http_info(tenant_id, url_id, username_starts_with, opts)
+  data, status_code, headers = api_instance.search_users_with_http_info(tenant_id, url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SearchUsers200Response>
@@ -1853,7 +1853,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **url_id** | **String** |  |  |
-| **username_starts_with** | **String** |  |  |
+| **username_starts_with** | **String** |  | [optional] |
 | **mention_group_ids** | [**Array&lt;String&gt;**](String.md) |  | [optional] |
 | **sso** | **String** |  | [optional] |
 

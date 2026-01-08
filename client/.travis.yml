@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build fastcomments-client.gemspec
-  - gem install ./fastcomments-client-0.2.0.gem
+  - gem install ./fastcomments-client-0.3.0.gem

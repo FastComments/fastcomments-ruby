@@ -1936,24 +1936,24 @@ module FastCommentsClient
 
     # @param tenant_id [String] 
     # @param url_id [String] 
-    # @param username_starts_with [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :username_starts_with 
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
     # @return [SearchUsers200Response]
-    def search_users(tenant_id, url_id, username_starts_with, opts = {})
-      data, _status_code, _headers = search_users_with_http_info(tenant_id, url_id, username_starts_with, opts)
+    def search_users(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = search_users_with_http_info(tenant_id, url_id, opts)
       data
     end
 
     # @param tenant_id [String] 
     # @param url_id [String] 
-    # @param username_starts_with [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :username_starts_with 
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
     # @return [Array<(SearchUsers200Response, Integer, Hash)>] SearchUsers200Response data, response status code and response headers
-    def search_users_with_http_info(tenant_id, url_id, username_starts_with, opts = {})
+    def search_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.search_users ...'
       end
@@ -1965,17 +1965,13 @@ module FastCommentsClient
       if @api_client.config.client_side_validation && url_id.nil?
         fail ArgumentError, "Missing the required parameter 'url_id' when calling PublicApi.search_users"
       end
-      # verify the required parameter 'username_starts_with' is set
-      if @api_client.config.client_side_validation && username_starts_with.nil?
-        fail ArgumentError, "Missing the required parameter 'username_starts_with' when calling PublicApi.search_users"
-      end
       # resource path
       local_var_path = '/user-search/{tenantId}'.sub('{' + 'tenantId' + '}', CGI.escape(tenant_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'urlId'] = url_id
-      query_params[:'usernameStartsWith'] = username_starts_with
+      query_params[:'usernameStartsWith'] = opts[:'username_starts_with'] if !opts[:'username_starts_with'].nil?
       query_params[:'mentionGroupIds'] = @api_client.build_collection_param(opts[:'mention_group_ids'], :multi) if !opts[:'mention_group_ids'].nil?
       query_params[:'sso'] = opts[:'sso'] if !opts[:'sso'].nil?
 
