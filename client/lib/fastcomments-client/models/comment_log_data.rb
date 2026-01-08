@@ -101,6 +101,12 @@ module FastCommentsClient
 
     attr_accessor :referenced_comment_id
 
+    attr_accessor :invalid_locale
+
+    attr_accessor :detected_locale
+
+    attr_accessor :detected_language
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -168,7 +174,10 @@ module FastCommentsClient
         :'flag_count_before' => :'flagCountBefore',
         :'trust_factor_before' => :'trustFactorBefore',
         :'trust_factor_after' => :'trustFactorAfter',
-        :'referenced_comment_id' => :'referencedCommentId'
+        :'referenced_comment_id' => :'referencedCommentId',
+        :'invalid_locale' => :'invalidLocale',
+        :'detected_locale' => :'detectedLocale',
+        :'detected_language' => :'detectedLanguage'
       }
     end
 
@@ -227,7 +236,10 @@ module FastCommentsClient
         :'flag_count_before' => :'Float',
         :'trust_factor_before' => :'Float',
         :'trust_factor_after' => :'Float',
-        :'referenced_comment_id' => :'String'
+        :'referenced_comment_id' => :'String',
+        :'invalid_locale' => :'String',
+        :'detected_locale' => :'String',
+        :'detected_language' => :'String'
       }
     end
 
@@ -434,6 +446,18 @@ module FastCommentsClient
       if attributes.key?(:'referenced_comment_id')
         self.referenced_comment_id = attributes[:'referenced_comment_id']
       end
+
+      if attributes.key?(:'invalid_locale')
+        self.invalid_locale = attributes[:'invalid_locale']
+      end
+
+      if attributes.key?(:'detected_locale')
+        self.detected_locale = attributes[:'detected_locale']
+      end
+
+      if attributes.key?(:'detected_language')
+        self.detected_language = attributes[:'detected_language']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -510,7 +534,10 @@ module FastCommentsClient
           flag_count_before == o.flag_count_before &&
           trust_factor_before == o.trust_factor_before &&
           trust_factor_after == o.trust_factor_after &&
-          referenced_comment_id == o.referenced_comment_id
+          referenced_comment_id == o.referenced_comment_id &&
+          invalid_locale == o.invalid_locale &&
+          detected_locale == o.detected_locale &&
+          detected_language == o.detected_language
     end
 
     # @see the `==` method
@@ -522,7 +549,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [clear_content, is_deleted_user, phrase, bad_word, word, locale, tenant_badge_id, badge_id, was_logged_in, found_user, verified, engine, engine_response, engine_tokens, trust_factor, rule, user_id, subscribers, notification_count, votes_before, votes_up_before, votes_down_before, votes_after, votes_up_after, votes_down_after, repeat_action, reason, other_data, spam_before, spam_after, permanent_flag, approved_before, approved_after, reviewed_before, reviewed_after, text_before, text_after, expire_before, expire_after, flag_count_before, trust_factor_before, trust_factor_after, referenced_comment_id].hash
+      [clear_content, is_deleted_user, phrase, bad_word, word, locale, tenant_badge_id, badge_id, was_logged_in, found_user, verified, engine, engine_response, engine_tokens, trust_factor, rule, user_id, subscribers, notification_count, votes_before, votes_up_before, votes_down_before, votes_after, votes_up_after, votes_down_after, repeat_action, reason, other_data, spam_before, spam_after, permanent_flag, approved_before, approved_after, reviewed_before, reviewed_after, text_before, text_after, expire_before, expire_after, flag_count_before, trust_factor_before, trust_factor_after, referenced_comment_id, invalid_locale, detected_locale, detected_language].hash
     end
 
     # Builds the object from hash

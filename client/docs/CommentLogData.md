@@ -47,6 +47,9 @@
 | **trust_factor_before** | **Float** |  | [optional] |
 | **trust_factor_after** | **Float** |  | [optional] |
 | **referenced_comment_id** | **String** |  | [optional] |
+| **invalid_locale** | **String** |  | [optional] |
+| **detected_locale** | **String** |  | [optional] |
+| **detected_language** | **String** |  | [optional] |
 
 ## Example
 
@@ -96,7 +99,10 @@ instance = FastCommentsClient::CommentLogData.new(
   flag_count_before: null,
   trust_factor_before: null,
   trust_factor_after: null,
-  referenced_comment_id: null
+  referenced_comment_id: null,
+  invalid_locale: null,
+  detected_locale: null,
+  detected_language: null
 )
 ```
 

@@ -389,8 +389,8 @@ describe 'PublicApi' do
   # unit tests for search_users
   # @param tenant_id 
   # @param url_id 
-  # @param username_starts_with 
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :username_starts_with 
   # @option opts [Array<String>] :mention_group_ids 
   # @option opts [String] :sso 
   # @return [SearchUsers200Response]

@@ -90,6 +90,132 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [CreateHashTagBody] :create_hash_tag_body 
+    # @return [AddHashTag200Response]
+    def add_hash_tag(opts = {})
+      data, _status_code, _headers = add_hash_tag_with_http_info(opts)
+      data
+    end
+
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [CreateHashTagBody] :create_hash_tag_body 
+    # @return [Array<(AddHashTag200Response, Integer, Hash)>] AddHashTag200Response data, response status code and response headers
+    def add_hash_tag_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.add_hash_tag ...'
+      end
+      # resource path
+      local_var_path = '/api/v1/hash-tags'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'create_hash_tag_body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AddHashTag200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.add_hash_tag",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#add_hash_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [BulkCreateHashTagsBody] :bulk_create_hash_tags_body 
+    # @return [AddHashTagsBulk200Response]
+    def add_hash_tags_bulk(opts = {})
+      data, _status_code, _headers = add_hash_tags_bulk_with_http_info(opts)
+      data
+    end
+
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [BulkCreateHashTagsBody] :bulk_create_hash_tags_body 
+    # @return [Array<(AddHashTagsBulk200Response, Integer, Hash)>] AddHashTagsBulk200Response data, response status code and response headers
+    def add_hash_tags_bulk_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.add_hash_tags_bulk ...'
+      end
+      # resource path
+      local_var_path = '/api/v1/hash-tags/bulk'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bulk_create_hash_tags_body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'AddHashTagsBulk200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.add_hash_tags_bulk",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#add_hash_tags_bulk\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # @param tenant_id [String] 
     # @param create_api_page_data [CreateAPIPageData] 
     # @param [Hash] opts the optional parameters
@@ -631,6 +757,77 @@ module FastCommentsClient
     end
 
     # @param tenant_id [String] 
+    # @param create_email_template_body [CreateEmailTemplateBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateEmailTemplate200Response]
+    def create_email_template(tenant_id, create_email_template_body, opts = {})
+      data, _status_code, _headers = create_email_template_with_http_info(tenant_id, create_email_template_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_email_template_body [CreateEmailTemplateBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateEmailTemplate200Response, Integer, Hash)>] CreateEmailTemplate200Response data, response status code and response headers
+    def create_email_template_with_http_info(tenant_id, create_email_template_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_email_template ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_email_template"
+      end
+      # verify the required parameter 'create_email_template_body' is set
+      if @api_client.config.client_side_validation && create_email_template_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_email_template_body' when calling DefaultApi.create_email_template"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_email_template_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateEmailTemplate200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_email_template",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_email_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
     # @param create_feed_post_params [CreateFeedPostParams] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
@@ -714,6 +911,219 @@ module FastCommentsClient
     end
 
     # @param tenant_id [String] 
+    # @param create_moderator_body [CreateModeratorBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateModerator200Response]
+    def create_moderator(tenant_id, create_moderator_body, opts = {})
+      data, _status_code, _headers = create_moderator_with_http_info(tenant_id, create_moderator_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_moderator_body [CreateModeratorBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateModerator200Response, Integer, Hash)>] CreateModerator200Response data, response status code and response headers
+    def create_moderator_with_http_info(tenant_id, create_moderator_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_moderator ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_moderator"
+      end
+      # verify the required parameter 'create_moderator_body' is set
+      if @api_client.config.client_side_validation && create_moderator_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_moderator_body' when calling DefaultApi.create_moderator"
+      end
+      # resource path
+      local_var_path = '/api/v1/moderators'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_moderator_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateModerator200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_moderator",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_moderator\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param create_question_config_body [CreateQuestionConfigBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateQuestionConfig200Response]
+    def create_question_config(tenant_id, create_question_config_body, opts = {})
+      data, _status_code, _headers = create_question_config_with_http_info(tenant_id, create_question_config_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_question_config_body [CreateQuestionConfigBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateQuestionConfig200Response, Integer, Hash)>] CreateQuestionConfig200Response data, response status code and response headers
+    def create_question_config_with_http_info(tenant_id, create_question_config_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_question_config ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_question_config"
+      end
+      # verify the required parameter 'create_question_config_body' is set
+      if @api_client.config.client_side_validation && create_question_config_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_question_config_body' when calling DefaultApi.create_question_config"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-configs'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_question_config_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateQuestionConfig200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_question_config",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_question_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param create_question_result_body [CreateQuestionResultBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateQuestionResult200Response]
+    def create_question_result(tenant_id, create_question_result_body, opts = {})
+      data, _status_code, _headers = create_question_result_with_http_info(tenant_id, create_question_result_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_question_result_body [CreateQuestionResultBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateQuestionResult200Response, Integer, Hash)>] CreateQuestionResult200Response data, response status code and response headers
+    def create_question_result_with_http_info(tenant_id, create_question_result_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_question_result ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_question_result"
+      end
+      # verify the required parameter 'create_question_result_body' is set
+      if @api_client.config.client_side_validation && create_question_result_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_question_result_body' when calling DefaultApi.create_question_result"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-results'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_question_result_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateQuestionResult200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_question_result",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_question_result\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
     # @param create_api_user_subscription_data [CreateAPIUserSubscriptionData] 
     # @param [Hash] opts the optional parameters
     # @return [CreateSubscriptionAPIResponse]
@@ -785,6 +1195,219 @@ module FastCommentsClient
     end
 
     # @param tenant_id [String] 
+    # @param create_tenant_body [CreateTenantBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateTenant200Response]
+    def create_tenant(tenant_id, create_tenant_body, opts = {})
+      data, _status_code, _headers = create_tenant_with_http_info(tenant_id, create_tenant_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_tenant_body [CreateTenantBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateTenant200Response, Integer, Hash)>] CreateTenant200Response data, response status code and response headers
+    def create_tenant_with_http_info(tenant_id, create_tenant_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_tenant ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_tenant"
+      end
+      # verify the required parameter 'create_tenant_body' is set
+      if @api_client.config.client_side_validation && create_tenant_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_tenant_body' when calling DefaultApi.create_tenant"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenants'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_tenant_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateTenant200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_tenant",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_tenant\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param create_tenant_package_body [CreateTenantPackageBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateTenantPackage200Response]
+    def create_tenant_package(tenant_id, create_tenant_package_body, opts = {})
+      data, _status_code, _headers = create_tenant_package_with_http_info(tenant_id, create_tenant_package_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_tenant_package_body [CreateTenantPackageBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateTenantPackage200Response, Integer, Hash)>] CreateTenantPackage200Response data, response status code and response headers
+    def create_tenant_package_with_http_info(tenant_id, create_tenant_package_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_tenant_package ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_tenant_package"
+      end
+      # verify the required parameter 'create_tenant_package_body' is set
+      if @api_client.config.client_side_validation && create_tenant_package_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_tenant_package_body' when calling DefaultApi.create_tenant_package"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-packages'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_tenant_package_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateTenantPackage200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_tenant_package",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_tenant_package\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param create_tenant_user_body [CreateTenantUserBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateTenantUser200Response]
+    def create_tenant_user(tenant_id, create_tenant_user_body, opts = {})
+      data, _status_code, _headers = create_tenant_user_with_http_info(tenant_id, create_tenant_user_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param create_tenant_user_body [CreateTenantUserBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateTenantUser200Response, Integer, Hash)>] CreateTenantUser200Response data, response status code and response headers
+    def create_tenant_user_with_http_info(tenant_id, create_tenant_user_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_tenant_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_tenant_user"
+      end
+      # verify the required parameter 'create_tenant_user_body' is set
+      if @api_client.config.client_side_validation && create_tenant_user_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_tenant_user_body' when calling DefaultApi.create_tenant_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_tenant_user_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateTenantUser200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_tenant_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_tenant_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
     # @param create_user_badge_params [CreateUserBadgeParams] 
     # @param [Hash] opts the optional parameters
     # @return [CreateUserBadge200Response]
@@ -851,6 +1474,91 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_user_badge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param direction [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :anon_user_id 
+    # @return [CreateVote200Response]
+    def create_vote(tenant_id, comment_id, direction, opts = {})
+      data, _status_code, _headers = create_vote_with_http_info(tenant_id, comment_id, direction, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param direction [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :anon_user_id 
+    # @return [Array<(CreateVote200Response, Integer, Hash)>] CreateVote200Response data, response status code and response headers
+    def create_vote_with_http_info(tenant_id, comment_id, direction, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_vote ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_vote"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling DefaultApi.create_vote"
+      end
+      # verify the required parameter 'direction' is set
+      if @api_client.config.client_side_validation && direction.nil?
+        fail ArgumentError, "Missing the required parameter 'direction' when calling DefaultApi.create_vote"
+      end
+      # verify enum value
+      allowable_values = ["up", "down"]
+      if @api_client.config.client_side_validation && !allowable_values.include?(direction)
+        fail ArgumentError, "invalid value for \"direction\", must be one of #{allowable_values}"
+      end
+      # resource path
+      local_var_path = '/api/v1/votes'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'commentId'] = comment_id
+      query_params[:'direction'] = direction
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'anonUserId'] = opts[:'anon_user_id'] if !opts[:'anon_user_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateVote200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_vote",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_vote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -996,6 +1704,348 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_email_template(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_email_template_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_email_template_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_email_template ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_email_template"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_email_template"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_email_template",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_email_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param error_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_email_template_render_error(tenant_id, id, error_id, opts = {})
+      data, _status_code, _headers = delete_email_template_render_error_with_http_info(tenant_id, id, error_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param error_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_email_template_render_error_with_http_info(tenant_id, id, error_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_email_template_render_error ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_email_template_render_error"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_email_template_render_error"
+      end
+      # verify the required parameter 'error_id' is set
+      if @api_client.config.client_side_validation && error_id.nil?
+        fail ArgumentError, "Missing the required parameter 'error_id' when calling DefaultApi.delete_email_template_render_error"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/{id}/render-errors/{errorId}'.sub('{' + 'id' + '}', CGI.escape(id.to_s)).sub('{' + 'errorId' + '}', CGI.escape(error_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_email_template_render_error",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_email_template_render_error\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tag [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [DeleteHashTagRequest] :delete_hash_tag_request 
+    # @return [FlagCommentPublic200Response]
+    def delete_hash_tag(tag, opts = {})
+      data, _status_code, _headers = delete_hash_tag_with_http_info(tag, opts)
+      data
+    end
+
+    # @param tag [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [DeleteHashTagRequest] :delete_hash_tag_request 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_hash_tag_with_http_info(tag, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_hash_tag ...'
+      end
+      # verify the required parameter 'tag' is set
+      if @api_client.config.client_side_validation && tag.nil?
+        fail ArgumentError, "Missing the required parameter 'tag' when calling DefaultApi.delete_hash_tag"
+      end
+      # resource path
+      local_var_path = '/api/v1/hash-tags/{tag}'.sub('{' + 'tag' + '}', CGI.escape(tag.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'delete_hash_tag_request'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_hash_tag",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_hash_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :send_email 
+    # @return [FlagCommentPublic200Response]
+    def delete_moderator(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_moderator_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :send_email 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_moderator_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_moderator ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_moderator"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_moderator"
+      end
+      # resource path
+      local_var_path = '/api/v1/moderators/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'sendEmail'] = opts[:'send_email'] if !opts[:'send_email'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_moderator",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_moderator\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_notification_count(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_notification_count_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_notification_count_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_notification_count ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_notification_count"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_notification_count"
+      end
+      # resource path
+      local_var_path = '/api/v1/notification-count/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_notification_count",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_notification_count\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [DeletePageAPIResponse]
     def delete_page(tenant_id, id, opts = {})
       data, _status_code, _headers = delete_page_with_http_info(tenant_id, id, opts)
@@ -1055,6 +2105,204 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#delete_page\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_pending_webhook_event(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_pending_webhook_event_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_pending_webhook_event_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_pending_webhook_event ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_pending_webhook_event"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_pending_webhook_event"
+      end
+      # resource path
+      local_var_path = '/api/v1/pending-webhook-events/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_pending_webhook_event",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_pending_webhook_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_question_config(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_question_config_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_question_config_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_question_config ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_question_config"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_question_config"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-configs/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_question_config",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_question_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_question_result(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_question_result_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_question_result_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_question_result ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_question_result"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_question_result"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-results/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_question_result",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_question_result\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1203,6 +2451,213 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :sure 
+    # @return [FlagCommentPublic200Response]
+    def delete_tenant(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_tenant_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :sure 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_tenant_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_tenant ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_tenant"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_tenant"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenants/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'sure'] = opts[:'sure'] if !opts[:'sure'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_tenant",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_tenant\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def delete_tenant_package(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_tenant_package_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_tenant_package_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_tenant_package ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_tenant_package"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_tenant_package"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-packages/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_tenant_package",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_tenant_package\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :delete_comments 
+    # @option opts [String] :comment_delete_mode 
+    # @return [FlagCommentPublic200Response]
+    def delete_tenant_user(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_tenant_user_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :delete_comments 
+    # @option opts [String] :comment_delete_mode 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def delete_tenant_user_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_tenant_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_tenant_user"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_tenant_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'deleteComments'] = opts[:'delete_comments'] if !opts[:'delete_comments'].nil?
+      query_params[:'commentDeleteMode'] = opts[:'comment_delete_mode'] if !opts[:'comment_delete_mode'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_tenant_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_tenant_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [UpdateUserBadge200Response]
     def delete_user_badge(tenant_id, id, opts = {})
       data, _status_code, _headers = delete_user_badge_with_http_info(tenant_id, id, opts)
@@ -1262,6 +2717,75 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#delete_user_badge\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :edit_key 
+    # @return [DeleteVote200Response]
+    def delete_vote(tenant_id, id, opts = {})
+      data, _status_code, _headers = delete_vote_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :edit_key 
+    # @return [Array<(DeleteVote200Response, Integer, Hash)>] DeleteVote200Response data, response status code and response headers
+    def delete_vote_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_vote ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_vote"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.delete_vote"
+      end
+      # resource path
+      local_var_path = '/api/v1/votes/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'editKey'] = opts[:'edit_key'] if !opts[:'edit_key'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DeleteVote200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_vote",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_vote\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1409,6 +2933,72 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_audit_logs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetCachedNotificationCount200Response]
+    def get_cached_notification_count(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_cached_notification_count_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetCachedNotificationCount200Response, Integer, Hash)>] GetCachedNotificationCount200Response data, response status code and response headers
+    def get_cached_notification_count_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_cached_notification_count ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_cached_notification_count"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_cached_notification_count"
+      end
+      # resource path
+      local_var_path = '/api/v1/notification-count/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetCachedNotificationCount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_cached_notification_count",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_cached_notification_count\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1707,6 +3297,264 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetEmailTemplate200Response]
+    def get_email_template(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_email_template_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetEmailTemplate200Response, Integer, Hash)>] GetEmailTemplate200Response data, response status code and response headers
+    def get_email_template_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_email_template ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_email_template"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_email_template"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetEmailTemplate200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_email_template",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_email_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetEmailTemplateDefinitions200Response]
+    def get_email_template_definitions(tenant_id, opts = {})
+      data, _status_code, _headers = get_email_template_definitions_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetEmailTemplateDefinitions200Response, Integer, Hash)>] GetEmailTemplateDefinitions200Response data, response status code and response headers
+    def get_email_template_definitions_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_email_template_definitions ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_email_template_definitions"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/definitions'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetEmailTemplateDefinitions200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_email_template_definitions",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_email_template_definitions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [GetEmailTemplateRenderErrors200Response]
+    def get_email_template_render_errors(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_email_template_render_errors_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [Array<(GetEmailTemplateRenderErrors200Response, Integer, Hash)>] GetEmailTemplateRenderErrors200Response data, response status code and response headers
+    def get_email_template_render_errors_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_email_template_render_errors ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_email_template_render_errors"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_email_template_render_errors"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/{id}/render-errors'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetEmailTemplateRenderErrors200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_email_template_render_errors",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_email_template_render_errors\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [GetEmailTemplates200Response]
+    def get_email_templates(tenant_id, opts = {})
+      data, _status_code, _headers = get_email_templates_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [Array<(GetEmailTemplates200Response, Integer, Hash)>] GetEmailTemplates200Response data, response status code and response headers
+    def get_email_templates_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_email_templates ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_email_templates"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetEmailTemplates200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_email_templates",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_email_templates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     #  req tenantId afterId
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
@@ -1774,6 +3622,351 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_feed_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :page 
+    # @return [GetHashTags200Response]
+    def get_hash_tags(tenant_id, opts = {})
+      data, _status_code, _headers = get_hash_tags_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :page 
+    # @return [Array<(GetHashTags200Response, Integer, Hash)>] GetHashTags200Response data, response status code and response headers
+    def get_hash_tags_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_hash_tags ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_hash_tags"
+      end
+      # resource path
+      local_var_path = '/api/v1/hash-tags'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetHashTags200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_hash_tags",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_hash_tags\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetModerator200Response]
+    def get_moderator(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_moderator_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetModerator200Response, Integer, Hash)>] GetModerator200Response data, response status code and response headers
+    def get_moderator_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_moderator ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_moderator"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_moderator"
+      end
+      # resource path
+      local_var_path = '/api/v1/moderators/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetModerator200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_moderator",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_moderator\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [GetModerators200Response]
+    def get_moderators(tenant_id, opts = {})
+      data, _status_code, _headers = get_moderators_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [Array<(GetModerators200Response, Integer, Hash)>] GetModerators200Response data, response status code and response headers
+    def get_moderators_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_moderators ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_moderators"
+      end
+      # resource path
+      local_var_path = '/api/v1/moderators'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetModerators200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_moderators",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_moderators\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :url_id 
+    # @option opts [String] :from_comment_id 
+    # @option opts [Boolean] :viewed 
+    # @option opts [String] :type 
+    # @return [GetNotificationCount200Response]
+    def get_notification_count(tenant_id, opts = {})
+      data, _status_code, _headers = get_notification_count_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :url_id 
+    # @option opts [String] :from_comment_id 
+    # @option opts [Boolean] :viewed 
+    # @option opts [String] :type 
+    # @return [Array<(GetNotificationCount200Response, Integer, Hash)>] GetNotificationCount200Response data, response status code and response headers
+    def get_notification_count_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_notification_count ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_notification_count"
+      end
+      # resource path
+      local_var_path = '/api/v1/notifications/count'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'urlId'] = opts[:'url_id'] if !opts[:'url_id'].nil?
+      query_params[:'fromCommentId'] = opts[:'from_comment_id'] if !opts[:'from_comment_id'].nil?
+      query_params[:'viewed'] = opts[:'viewed'] if !opts[:'viewed'].nil?
+      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetNotificationCount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_notification_count",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_notification_count\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :url_id 
+    # @option opts [String] :from_comment_id 
+    # @option opts [Boolean] :viewed 
+    # @option opts [String] :type 
+    # @option opts [Float] :skip 
+    # @return [GetNotifications200Response]
+    def get_notifications(tenant_id, opts = {})
+      data, _status_code, _headers = get_notifications_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :url_id 
+    # @option opts [String] :from_comment_id 
+    # @option opts [Boolean] :viewed 
+    # @option opts [String] :type 
+    # @option opts [Float] :skip 
+    # @return [Array<(GetNotifications200Response, Integer, Hash)>] GetNotifications200Response data, response status code and response headers
+    def get_notifications_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_notifications ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_notifications"
+      end
+      # resource path
+      local_var_path = '/api/v1/notifications'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'urlId'] = opts[:'url_id'] if !opts[:'url_id'].nil?
+      query_params[:'fromCommentId'] = opts[:'from_comment_id'] if !opts[:'from_comment_id'].nil?
+      query_params[:'viewed'] = opts[:'viewed'] if !opts[:'viewed'].nil?
+      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetNotifications200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_notifications",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_notifications\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1901,6 +4094,438 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_pages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :comment_id 
+    # @option opts [String] :external_id 
+    # @option opts [String] :event_type 
+    # @option opts [String] :type 
+    # @option opts [String] :domain 
+    # @option opts [Float] :attempt_count_gt 
+    # @return [GetPendingWebhookEventCount200Response]
+    def get_pending_webhook_event_count(tenant_id, opts = {})
+      data, _status_code, _headers = get_pending_webhook_event_count_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :comment_id 
+    # @option opts [String] :external_id 
+    # @option opts [String] :event_type 
+    # @option opts [String] :type 
+    # @option opts [String] :domain 
+    # @option opts [Float] :attempt_count_gt 
+    # @return [Array<(GetPendingWebhookEventCount200Response, Integer, Hash)>] GetPendingWebhookEventCount200Response data, response status code and response headers
+    def get_pending_webhook_event_count_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_pending_webhook_event_count ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_pending_webhook_event_count"
+      end
+      # resource path
+      local_var_path = '/api/v1/pending-webhook-events/count'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'commentId'] = opts[:'comment_id'] if !opts[:'comment_id'].nil?
+      query_params[:'externalId'] = opts[:'external_id'] if !opts[:'external_id'].nil?
+      query_params[:'eventType'] = opts[:'event_type'] if !opts[:'event_type'].nil?
+      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
+      query_params[:'domain'] = opts[:'domain'] if !opts[:'domain'].nil?
+      query_params[:'attemptCountGT'] = opts[:'attempt_count_gt'] if !opts[:'attempt_count_gt'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetPendingWebhookEventCount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_pending_webhook_event_count",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_pending_webhook_event_count\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :comment_id 
+    # @option opts [String] :external_id 
+    # @option opts [String] :event_type 
+    # @option opts [String] :type 
+    # @option opts [String] :domain 
+    # @option opts [Float] :attempt_count_gt 
+    # @option opts [Float] :skip 
+    # @return [GetPendingWebhookEvents200Response]
+    def get_pending_webhook_events(tenant_id, opts = {})
+      data, _status_code, _headers = get_pending_webhook_events_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :comment_id 
+    # @option opts [String] :external_id 
+    # @option opts [String] :event_type 
+    # @option opts [String] :type 
+    # @option opts [String] :domain 
+    # @option opts [Float] :attempt_count_gt 
+    # @option opts [Float] :skip 
+    # @return [Array<(GetPendingWebhookEvents200Response, Integer, Hash)>] GetPendingWebhookEvents200Response data, response status code and response headers
+    def get_pending_webhook_events_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_pending_webhook_events ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_pending_webhook_events"
+      end
+      # resource path
+      local_var_path = '/api/v1/pending-webhook-events'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'commentId'] = opts[:'comment_id'] if !opts[:'comment_id'].nil?
+      query_params[:'externalId'] = opts[:'external_id'] if !opts[:'external_id'].nil?
+      query_params[:'eventType'] = opts[:'event_type'] if !opts[:'event_type'].nil?
+      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
+      query_params[:'domain'] = opts[:'domain'] if !opts[:'domain'].nil?
+      query_params[:'attemptCountGT'] = opts[:'attempt_count_gt'] if !opts[:'attempt_count_gt'].nil?
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetPendingWebhookEvents200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_pending_webhook_events",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_pending_webhook_events\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetQuestionConfig200Response]
+    def get_question_config(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_question_config_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetQuestionConfig200Response, Integer, Hash)>] GetQuestionConfig200Response data, response status code and response headers
+    def get_question_config_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_question_config ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_question_config"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_question_config"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-configs/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetQuestionConfig200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_question_config",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_question_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [GetQuestionConfigs200Response]
+    def get_question_configs(tenant_id, opts = {})
+      data, _status_code, _headers = get_question_configs_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [Array<(GetQuestionConfigs200Response, Integer, Hash)>] GetQuestionConfigs200Response data, response status code and response headers
+    def get_question_configs_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_question_configs ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_question_configs"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-configs'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetQuestionConfigs200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_question_configs",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_question_configs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetQuestionResult200Response]
+    def get_question_result(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_question_result_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetQuestionResult200Response, Integer, Hash)>] GetQuestionResult200Response data, response status code and response headers
+    def get_question_result_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_question_result ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_question_result"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_question_result"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-results/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetQuestionResult200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_question_result",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_question_result\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :url_id 
+    # @option opts [String] :user_id 
+    # @option opts [String] :start_date 
+    # @option opts [String] :question_id 
+    # @option opts [String] :question_ids 
+    # @option opts [Float] :skip 
+    # @return [GetQuestionResults200Response]
+    def get_question_results(tenant_id, opts = {})
+      data, _status_code, _headers = get_question_results_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :url_id 
+    # @option opts [String] :user_id 
+    # @option opts [String] :start_date 
+    # @option opts [String] :question_id 
+    # @option opts [String] :question_ids 
+    # @option opts [Float] :skip 
+    # @return [Array<(GetQuestionResults200Response, Integer, Hash)>] GetQuestionResults200Response data, response status code and response headers
+    def get_question_results_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_question_results ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_question_results"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-results'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'urlId'] = opts[:'url_id'] if !opts[:'url_id'].nil?
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'startDate'] = opts[:'start_date'] if !opts[:'start_date'].nil?
+      query_params[:'questionId'] = opts[:'question_id'] if !opts[:'question_id'].nil?
+      query_params[:'questionIds'] = opts[:'question_ids'] if !opts[:'question_ids'].nil?
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetQuestionResults200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_question_results",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_question_results\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2159,6 +4784,534 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_subscriptions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetTenant200Response]
+    def get_tenant(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_tenant_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTenant200Response, Integer, Hash)>] GetTenant200Response data, response status code and response headers
+    def get_tenant_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenant ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenant"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_tenant"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenants/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenant200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenant",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenant\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :year_number 
+    # @option opts [Float] :month_number 
+    # @option opts [Float] :day_number 
+    # @option opts [Float] :skip 
+    # @return [GetTenantDailyUsages200Response]
+    def get_tenant_daily_usages(tenant_id, opts = {})
+      data, _status_code, _headers = get_tenant_daily_usages_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :year_number 
+    # @option opts [Float] :month_number 
+    # @option opts [Float] :day_number 
+    # @option opts [Float] :skip 
+    # @return [Array<(GetTenantDailyUsages200Response, Integer, Hash)>] GetTenantDailyUsages200Response data, response status code and response headers
+    def get_tenant_daily_usages_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenant_daily_usages ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenant_daily_usages"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-daily-usage'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'yearNumber'] = opts[:'year_number'] if !opts[:'year_number'].nil?
+      query_params[:'monthNumber'] = opts[:'month_number'] if !opts[:'month_number'].nil?
+      query_params[:'dayNumber'] = opts[:'day_number'] if !opts[:'day_number'].nil?
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenantDailyUsages200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenant_daily_usages",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenant_daily_usages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetTenantPackage200Response]
+    def get_tenant_package(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_tenant_package_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTenantPackage200Response, Integer, Hash)>] GetTenantPackage200Response data, response status code and response headers
+    def get_tenant_package_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenant_package ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenant_package"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_tenant_package"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-packages/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenantPackage200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenant_package",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenant_package\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [GetTenantPackages200Response]
+    def get_tenant_packages(tenant_id, opts = {})
+      data, _status_code, _headers = get_tenant_packages_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [Array<(GetTenantPackages200Response, Integer, Hash)>] GetTenantPackages200Response data, response status code and response headers
+    def get_tenant_packages_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenant_packages ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenant_packages"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-packages'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenantPackages200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenant_packages",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenant_packages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetTenantUser200Response]
+    def get_tenant_user(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_tenant_user_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTenantUser200Response, Integer, Hash)>] GetTenantUser200Response data, response status code and response headers
+    def get_tenant_user_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenant_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenant_user"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_tenant_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenantUser200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenant_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenant_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [GetTenantUsers200Response]
+    def get_tenant_users(tenant_id, opts = {})
+      data, _status_code, _headers = get_tenant_users_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Float] :skip 
+    # @return [Array<(GetTenantUsers200Response, Integer, Hash)>] GetTenantUsers200Response data, response status code and response headers
+    def get_tenant_users_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenant_users ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenant_users"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenantUsers200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenant_users",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenant_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :meta 
+    # @option opts [Float] :skip 
+    # @return [GetTenants200Response]
+    def get_tenants(tenant_id, opts = {})
+      data, _status_code, _headers = get_tenants_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :meta 
+    # @option opts [Float] :skip 
+    # @return [Array<(GetTenants200Response, Integer, Hash)>] GetTenants200Response data, response status code and response headers
+    def get_tenants_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tenants ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tenants"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenants'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'meta'] = opts[:'meta'] if !opts[:'meta'].nil?
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTenants200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tenants",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tenants\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetUser200Response]
+    def get_user(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_user_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetUser200Response, Integer, Hash)>] GetUser200Response data, response status code and response headers
+    def get_user_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_user"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/users/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetUser200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2509,6 +5662,146 @@ module FastCommentsClient
     end
 
     # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [GetVotes200Response]
+    def get_votes(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_votes_with_http_info(tenant_id, url_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetVotes200Response, Integer, Hash)>] GetVotes200Response data, response status code and response headers
+    def get_votes_with_http_info(tenant_id, url_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_votes ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_votes"
+      end
+      # verify the required parameter 'url_id' is set
+      if @api_client.config.client_side_validation && url_id.nil?
+        fail ArgumentError, "Missing the required parameter 'url_id' when calling DefaultApi.get_votes"
+      end
+      # resource path
+      local_var_path = '/api/v1/votes'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'urlId'] = url_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetVotes200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_votes",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_votes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :anon_user_id 
+    # @return [GetVotesForUser200Response]
+    def get_votes_for_user(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_votes_for_user_with_http_info(tenant_id, url_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [String] :anon_user_id 
+    # @return [Array<(GetVotesForUser200Response, Integer, Hash)>] GetVotesForUser200Response data, response status code and response headers
+    def get_votes_for_user_with_http_info(tenant_id, url_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_votes_for_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_votes_for_user"
+      end
+      # verify the required parameter 'url_id' is set
+      if @api_client.config.client_side_validation && url_id.nil?
+        fail ArgumentError, "Missing the required parameter 'url_id' when calling DefaultApi.get_votes_for_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/votes/for-user'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'urlId'] = url_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'anonUserId'] = opts[:'anon_user_id'] if !opts[:'anon_user_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetVotesForUser200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_votes_for_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_votes_for_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
     # @param domain_to_update [String] 
     # @param patch_domain_config_params [PatchDomainConfigParams] 
     # @param [Hash] opts the optional parameters
@@ -2581,6 +5874,75 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#patch_domain_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tag [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [UpdateHashTagBody] :update_hash_tag_body 
+    # @return [PatchHashTag200Response]
+    def patch_hash_tag(tag, opts = {})
+      data, _status_code, _headers = patch_hash_tag_with_http_info(tag, opts)
+      data
+    end
+
+    # @param tag [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
+    # @option opts [UpdateHashTagBody] :update_hash_tag_body 
+    # @return [Array<(PatchHashTag200Response, Integer, Hash)>] PatchHashTag200Response data, response status code and response headers
+    def patch_hash_tag_with_http_info(tag, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.patch_hash_tag ...'
+      end
+      # verify the required parameter 'tag' is set
+      if @api_client.config.client_side_validation && tag.nil?
+        fail ArgumentError, "Missing the required parameter 'tag' when calling DefaultApi.patch_hash_tag"
+      end
+      # resource path
+      local_var_path = '/api/v1/hash-tags/{tag}'.sub('{' + 'tag' + '}', CGI.escape(tag.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'update_hash_tag_body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'PatchHashTag200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.patch_hash_tag",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#patch_hash_tag\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2900,6 +6262,237 @@ module FastCommentsClient
     end
 
     # @param tenant_id [String] 
+    # @param render_email_template_body [RenderEmailTemplateBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :locale 
+    # @return [RenderEmailTemplate200Response]
+    def render_email_template(tenant_id, render_email_template_body, opts = {})
+      data, _status_code, _headers = render_email_template_with_http_info(tenant_id, render_email_template_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param render_email_template_body [RenderEmailTemplateBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :locale 
+    # @return [Array<(RenderEmailTemplate200Response, Integer, Hash)>] RenderEmailTemplate200Response data, response status code and response headers
+    def render_email_template_with_http_info(tenant_id, render_email_template_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.render_email_template ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.render_email_template"
+      end
+      # verify the required parameter 'render_email_template_body' is set
+      if @api_client.config.client_side_validation && render_email_template_body.nil?
+        fail ArgumentError, "Missing the required parameter 'render_email_template_body' when calling DefaultApi.render_email_template"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/render'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'locale'] = opts[:'locale'] if !opts[:'locale'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(render_email_template_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'RenderEmailTemplate200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.render_email_template",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#render_email_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param replace_tenant_package_body [ReplaceTenantPackageBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def replace_tenant_package(tenant_id, id, replace_tenant_package_body, opts = {})
+      data, _status_code, _headers = replace_tenant_package_with_http_info(tenant_id, id, replace_tenant_package_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param replace_tenant_package_body [ReplaceTenantPackageBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def replace_tenant_package_with_http_info(tenant_id, id, replace_tenant_package_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.replace_tenant_package ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.replace_tenant_package"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.replace_tenant_package"
+      end
+      # verify the required parameter 'replace_tenant_package_body' is set
+      if @api_client.config.client_side_validation && replace_tenant_package_body.nil?
+        fail ArgumentError, "Missing the required parameter 'replace_tenant_package_body' when calling DefaultApi.replace_tenant_package"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-packages/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(replace_tenant_package_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.replace_tenant_package",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#replace_tenant_package\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param replace_tenant_user_body [ReplaceTenantUserBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :update_comments 
+    # @return [FlagCommentPublic200Response]
+    def replace_tenant_user(tenant_id, id, replace_tenant_user_body, opts = {})
+      data, _status_code, _headers = replace_tenant_user_with_http_info(tenant_id, id, replace_tenant_user_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param replace_tenant_user_body [ReplaceTenantUserBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :update_comments 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def replace_tenant_user_with_http_info(tenant_id, id, replace_tenant_user_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.replace_tenant_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.replace_tenant_user"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.replace_tenant_user"
+      end
+      # verify the required parameter 'replace_tenant_user_body' is set
+      if @api_client.config.client_side_validation && replace_tenant_user_body.nil?
+        fail ArgumentError, "Missing the required parameter 'replace_tenant_user_body' when calling DefaultApi.replace_tenant_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'updateComments'] = opts[:'update_comments'] if !opts[:'update_comments'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(replace_tenant_user_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.replace_tenant_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#replace_tenant_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
     # @param create_comment_params [CreateCommentParams] 
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :is_live 
@@ -3061,6 +6654,148 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#save_comments_bulk\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param from_name [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def send_invite(tenant_id, id, from_name, opts = {})
+      data, _status_code, _headers = send_invite_with_http_info(tenant_id, id, from_name, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param from_name [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def send_invite_with_http_info(tenant_id, id, from_name, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.send_invite ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.send_invite"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.send_invite"
+      end
+      # verify the required parameter 'from_name' is set
+      if @api_client.config.client_side_validation && from_name.nil?
+        fail ArgumentError, "Missing the required parameter 'from_name' when calling DefaultApi.send_invite"
+      end
+      # resource path
+      local_var_path = '/api/v1/moderators/{id}/send-invite'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'fromName'] = from_name
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.send_invite",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#send_invite\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :redirect_url 
+    # @return [FlagCommentPublic200Response]
+    def send_login_link(tenant_id, id, opts = {})
+      data, _status_code, _headers = send_login_link_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :redirect_url 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def send_login_link_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.send_login_link ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.send_login_link"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.send_login_link"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users/{id}/send-login-link'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'redirectURL'] = opts[:'redirect_url'] if !opts[:'redirect_url'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.send_login_link",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#send_login_link\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3308,6 +7043,83 @@ module FastCommentsClient
 
     # @param tenant_id [String] 
     # @param id [String] 
+    # @param update_email_template_body [UpdateEmailTemplateBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def update_email_template(tenant_id, id, update_email_template_body, opts = {})
+      data, _status_code, _headers = update_email_template_with_http_info(tenant_id, id, update_email_template_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_email_template_body [UpdateEmailTemplateBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_email_template_with_http_info(tenant_id, id, update_email_template_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_email_template ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_email_template"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_email_template"
+      end
+      # verify the required parameter 'update_email_template_body' is set
+      if @api_client.config.client_side_validation && update_email_template_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_email_template_body' when calling DefaultApi.update_email_template"
+      end
+      # resource path
+      local_var_path = '/api/v1/email-templates/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_email_template_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_email_template",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_email_template\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
     # @param feed_post [FeedPost] 
     # @param [Hash] opts the optional parameters
     # @return [FlagCommentPublic200Response]
@@ -3379,6 +7191,551 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#update_feed_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_moderator_body [UpdateModeratorBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def update_moderator(tenant_id, id, update_moderator_body, opts = {})
+      data, _status_code, _headers = update_moderator_with_http_info(tenant_id, id, update_moderator_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_moderator_body [UpdateModeratorBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_moderator_with_http_info(tenant_id, id, update_moderator_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_moderator ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_moderator"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_moderator"
+      end
+      # verify the required parameter 'update_moderator_body' is set
+      if @api_client.config.client_side_validation && update_moderator_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_moderator_body' when calling DefaultApi.update_moderator"
+      end
+      # resource path
+      local_var_path = '/api/v1/moderators/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_moderator_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_moderator",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_moderator\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_notification_body [UpdateNotificationBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @return [FlagCommentPublic200Response]
+    def update_notification(tenant_id, id, update_notification_body, opts = {})
+      data, _status_code, _headers = update_notification_with_http_info(tenant_id, id, update_notification_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_notification_body [UpdateNotificationBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_notification_with_http_info(tenant_id, id, update_notification_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_notification ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_notification"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_notification"
+      end
+      # verify the required parameter 'update_notification_body' is set
+      if @api_client.config.client_side_validation && update_notification_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_notification_body' when calling DefaultApi.update_notification"
+      end
+      # resource path
+      local_var_path = '/api/v1/notifications/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_notification_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_notification",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_notification\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_question_config_body [UpdateQuestionConfigBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def update_question_config(tenant_id, id, update_question_config_body, opts = {})
+      data, _status_code, _headers = update_question_config_with_http_info(tenant_id, id, update_question_config_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_question_config_body [UpdateQuestionConfigBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_question_config_with_http_info(tenant_id, id, update_question_config_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_question_config ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_question_config"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_question_config"
+      end
+      # verify the required parameter 'update_question_config_body' is set
+      if @api_client.config.client_side_validation && update_question_config_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_question_config_body' when calling DefaultApi.update_question_config"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-configs/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_question_config_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_question_config",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_question_config\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_question_result_body [UpdateQuestionResultBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def update_question_result(tenant_id, id, update_question_result_body, opts = {})
+      data, _status_code, _headers = update_question_result_with_http_info(tenant_id, id, update_question_result_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_question_result_body [UpdateQuestionResultBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_question_result_with_http_info(tenant_id, id, update_question_result_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_question_result ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_question_result"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_question_result"
+      end
+      # verify the required parameter 'update_question_result_body' is set
+      if @api_client.config.client_side_validation && update_question_result_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_question_result_body' when calling DefaultApi.update_question_result"
+      end
+      # resource path
+      local_var_path = '/api/v1/question-results/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_question_result_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_question_result",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_question_result\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_tenant_body [UpdateTenantBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def update_tenant(tenant_id, id, update_tenant_body, opts = {})
+      data, _status_code, _headers = update_tenant_with_http_info(tenant_id, id, update_tenant_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_tenant_body [UpdateTenantBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_tenant_with_http_info(tenant_id, id, update_tenant_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_tenant ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_tenant"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_tenant"
+      end
+      # verify the required parameter 'update_tenant_body' is set
+      if @api_client.config.client_side_validation && update_tenant_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_tenant_body' when calling DefaultApi.update_tenant"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenants/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_tenant_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_tenant",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_tenant\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_tenant_package_body [UpdateTenantPackageBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [FlagCommentPublic200Response]
+    def update_tenant_package(tenant_id, id, update_tenant_package_body, opts = {})
+      data, _status_code, _headers = update_tenant_package_with_http_info(tenant_id, id, update_tenant_package_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_tenant_package_body [UpdateTenantPackageBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_tenant_package_with_http_info(tenant_id, id, update_tenant_package_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_tenant_package ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_tenant_package"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_tenant_package"
+      end
+      # verify the required parameter 'update_tenant_package_body' is set
+      if @api_client.config.client_side_validation && update_tenant_package_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_tenant_package_body' when calling DefaultApi.update_tenant_package"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-packages/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_tenant_package_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_tenant_package",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_tenant_package\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_tenant_user_body [UpdateTenantUserBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :update_comments 
+    # @return [FlagCommentPublic200Response]
+    def update_tenant_user(tenant_id, id, update_tenant_user_body, opts = {})
+      data, _status_code, _headers = update_tenant_user_with_http_info(tenant_id, id, update_tenant_user_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_tenant_user_body [UpdateTenantUserBody] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :update_comments 
+    # @return [Array<(FlagCommentPublic200Response, Integer, Hash)>] FlagCommentPublic200Response data, response status code and response headers
+    def update_tenant_user_with_http_info(tenant_id, id, update_tenant_user_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_tenant_user ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_tenant_user"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_tenant_user"
+      end
+      # verify the required parameter 'update_tenant_user_body' is set
+      if @api_client.config.client_side_validation && update_tenant_user_body.nil?
+        fail ArgumentError, "Missing the required parameter 'update_tenant_user_body' when calling DefaultApi.update_tenant_user"
+      end
+      # resource path
+      local_var_path = '/api/v1/tenant-users/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'updateComments'] = opts[:'update_comments'] if !opts[:'update_comments'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_tenant_user_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'FlagCommentPublic200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_tenant_user",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_tenant_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
