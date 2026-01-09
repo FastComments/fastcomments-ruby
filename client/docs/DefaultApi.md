@@ -1599,7 +1599,7 @@ end
 
 ## create_vote
 
-> <CreateVote200Response> create_vote(tenant_id, comment_id, direction, opts)
+> <VoteComment200Response> create_vote(tenant_id, comment_id, direction, opts)
 
 
 
@@ -1638,7 +1638,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateVote200Response>, Integer, Hash)> create_vote_with_http_info(tenant_id, comment_id, direction, opts)
+> <Array(<VoteComment200Response>, Integer, Hash)> create_vote_with_http_info(tenant_id, comment_id, direction, opts)
 
 ```ruby
 begin
@@ -1646,7 +1646,7 @@ begin
   data, status_code, headers = api_instance.create_vote_with_http_info(tenant_id, comment_id, direction, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateVote200Response>
+  p data # => <VoteComment200Response>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_vote_with_http_info: #{e}"
 end
@@ -1664,7 +1664,7 @@ end
 
 ### Return type
 
-[**CreateVote200Response**](CreateVote200Response.md)
+[**VoteComment200Response**](VoteComment200Response.md)
 
 ### Authorization
 
@@ -2921,7 +2921,7 @@ end
 
 ## delete_vote
 
-> <DeleteVote200Response> delete_vote(tenant_id, id, opts)
+> <DeleteCommentVote200Response> delete_vote(tenant_id, id, opts)
 
 
 
@@ -2958,7 +2958,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DeleteVote200Response>, Integer, Hash)> delete_vote_with_http_info(tenant_id, id, opts)
+> <Array(<DeleteCommentVote200Response>, Integer, Hash)> delete_vote_with_http_info(tenant_id, id, opts)
 
 ```ruby
 begin
@@ -2966,7 +2966,7 @@ begin
   data, status_code, headers = api_instance.delete_vote_with_http_info(tenant_id, id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DeleteVote200Response>
+  p data # => <DeleteCommentVote200Response>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_vote_with_http_info: #{e}"
 end
@@ -2982,7 +2982,7 @@ end
 
 ### Return type
 
-[**DeleteVote200Response**](DeleteVote200Response.md)
+[**DeleteCommentVote200Response**](DeleteCommentVote200Response.md)
 
 ### Authorization
 

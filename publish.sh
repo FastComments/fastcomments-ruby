@@ -5,7 +5,7 @@ echo "Building fastcomments gem..."
 gem build fastcomments.gemspec
 
 # Get the version from the gemspec
-VERSION=$(ruby -r ./lib/fastcomments.rb -e "puts FastComments::VERSION")
+VERSION=$(ruby -I ./client/lib -r ./lib/fastcomments.rb -e "puts FastComments::VERSION")
 GEM_FILE="fastcomments-${VERSION}.gem"
 
 if [ ! -f "$GEM_FILE" ]; then
