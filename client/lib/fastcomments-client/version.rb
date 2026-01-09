@@ -11,5 +11,5 @@ Generator version: 7.19.0-SNAPSHOT
 =end
 
 module FastCommentsClient
-  VERSION = '1.0.0'
+  VERSION = '1.2.0'
 end
