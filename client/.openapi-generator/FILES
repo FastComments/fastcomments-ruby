@@ -110,8 +110,6 @@ docs/CreateTenantUserBody.md
 docs/CreateTenantUserResponse.md
 docs/CreateUserBadge200Response.md
 docs/CreateUserBadgeParams.md
-docs/CreateVote200Response.md
-docs/CreateVoteResponse.md
 docs/CustomConfigParameters.md
 docs/CustomEmailTemplate.md
 docs/DefaultApi.md
@@ -127,8 +125,6 @@ docs/DeleteHashTagRequest.md
 docs/DeletePageAPIResponse.md
 docs/DeleteSSOUserAPIResponse.md
 docs/DeleteSubscriptionAPIResponse.md
-docs/DeleteVote200Response.md
-docs/DeleteVoteResponse.md
 docs/DeletedCommentResultComment.md
 docs/DigestEmailFrequency.md
 docs/EmailTemplateDefinition.md
@@ -461,8 +457,6 @@ lib/fastcomments-client/models/create_tenant_user_body.rb
 lib/fastcomments-client/models/create_tenant_user_response.rb
 lib/fastcomments-client/models/create_user_badge200_response.rb
 lib/fastcomments-client/models/create_user_badge_params.rb
-lib/fastcomments-client/models/create_vote200_response.rb
-lib/fastcomments-client/models/create_vote_response.rb
 lib/fastcomments-client/models/custom_config_parameters.rb
 lib/fastcomments-client/models/custom_email_template.rb
 lib/fastcomments-client/models/delete_comment200_response.rb
@@ -477,8 +471,6 @@ lib/fastcomments-client/models/delete_hash_tag_request.rb
 lib/fastcomments-client/models/delete_page_api_response.rb
 lib/fastcomments-client/models/delete_sso_user_api_response.rb
 lib/fastcomments-client/models/delete_subscription_api_response.rb
-lib/fastcomments-client/models/delete_vote200_response.rb
-lib/fastcomments-client/models/delete_vote_response.rb
 lib/fastcomments-client/models/deleted_comment_result_comment.rb
 lib/fastcomments-client/models/digest_email_frequency.rb
 lib/fastcomments-client/models/email_template_definition.rb
@@ -804,8 +796,6 @@ spec/models/create_tenant_user_body_spec.rb
 spec/models/create_tenant_user_response_spec.rb
 spec/models/create_user_badge200_response_spec.rb
 spec/models/create_user_badge_params_spec.rb
-spec/models/create_vote200_response_spec.rb
-spec/models/create_vote_response_spec.rb
 spec/models/custom_config_parameters_spec.rb
 spec/models/custom_email_template_spec.rb
 spec/models/delete_comment200_response_spec.rb
@@ -820,8 +810,6 @@ spec/models/delete_hash_tag_request_spec.rb
 spec/models/delete_page_api_response_spec.rb
 spec/models/delete_sso_user_api_response_spec.rb
 spec/models/delete_subscription_api_response_spec.rb
-spec/models/delete_vote200_response_spec.rb
-spec/models/delete_vote_response_spec.rb
 spec/models/deleted_comment_result_comment_spec.rb
 spec/models/digest_email_frequency_spec.rb
 spec/models/email_template_definition_spec.rb
