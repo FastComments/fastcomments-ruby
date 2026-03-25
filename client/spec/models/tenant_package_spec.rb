@@ -141,6 +141,12 @@ describe FastCommentsClient::TenantPackage do
     end
   end
 
+  describe 'test attribute "max_custom_collection_size"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "has_white_labeling"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -184,6 +190,12 @@ describe FastCommentsClient::TenantPackage do
   end
 
   describe 'test attribute "enable_saml"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "enable_canvas_lti"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

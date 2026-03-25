@@ -28,6 +28,7 @@
 | **autoplay_delay_ms** | **Integer** |  | [optional] |
 | **feedback_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **question_values** | [**Hash&lt;String, RecordStringStringOrNumberValue&gt;**](RecordStringStringOrNumberValue.md) | Construct a type with a set of properties K of type T | [optional] |
+| **tos** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -58,7 +59,8 @@ instance = FastCommentsClient::CommentData.new(
   from_offline_restore: null,
   autoplay_delay_ms: null,
   feedback_ids: null,
-  question_values: null
+  question_values: null,
+  tos: null
 )
 ```
 

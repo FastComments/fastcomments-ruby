@@ -28,6 +28,8 @@
 | **disable_email_inputs** | **Boolean** |  | [optional] |
 | **disable_live_commenting** | **Boolean** |  | [optional] |
 | **disable_notification_bell** | **Boolean** |  | [optional] |
+| **disable_profile_comments** | **Boolean** |  | [optional] |
+| **disable_profile_direct_messages** | **Boolean** |  | [optional] |
 | **disable_profiles** | **Boolean** |  | [optional] |
 | **disable_success_message** | **Boolean** |  | [optional] |
 | **disable_toolbar** | **Boolean** |  | [optional] |
@@ -52,6 +54,7 @@
 | **max_comment_character_length** | **Integer** |  | [optional] |
 | **max_comment_created_count_pupm** | **Integer** |  | [optional] |
 | **no_custom_config** | **Boolean** |  | [optional] |
+| **mention_auto_complete_mode** | [**MentionAutoCompleteMode**](MentionAutoCompleteMode.md) |  | [optional] |
 | **no_image_uploads** | **Boolean** |  | [optional] |
 | **no_styles** | **Boolean** |  | [optional] |
 | **page_size** | **Integer** |  | [optional] |
@@ -72,11 +75,18 @@
 | **vote_style** | [**VoteStyle**](VoteStyle.md) |  | [optional] |
 | **widget_question_id** | **String** |  | [optional] |
 | **widget_question_results_style** | [**CommentQuestionResultsRenderingType**](CommentQuestionResultsRenderingType.md) |  | [optional] |
+| **widget_question_show_breakdown** | **Boolean** |  | [optional] |
 | **widget_question_style** | [**QuestionRenderingType**](QuestionRenderingType.md) |  | [optional] |
 | **widget_question_when_to_save** | [**QuestionWhenSave**](QuestionWhenSave.md) |  | [optional] |
 | **widget_questions_required** | [**CommentQuestionsRequired**](CommentQuestionsRequired.md) |  | [optional] |
 | **widget_sub_question_visibility** | [**QuestionSubQuestionVisibility**](QuestionSubQuestionVisibility.md) |  | [optional] |
 | **wrap** | **Boolean** |  | [optional] |
+| **ticket_base_url** | **String** |  | [optional] |
+| **ticket_kb_search_endpoint** | **String** |  | [optional] |
+| **ticket_file_uploads_enabled** | **Boolean** |  | [optional] |
+| **ticket_max_file_size** | **Integer** |  | [optional] |
+| **ticket_auto_assign_user_ids** | **Array&lt;String&gt;** |  | [optional] |
+| **tos** | [**TOSConfig**](TOSConfig.md) |  | [optional] |
 
 ## Example
 
@@ -108,6 +118,8 @@ instance = FastCommentsClient::CustomConfigParameters.new(
   disable_email_inputs: null,
   disable_live_commenting: null,
   disable_notification_bell: null,
+  disable_profile_comments: null,
+  disable_profile_direct_messages: null,
   disable_profiles: null,
   disable_success_message: null,
   disable_toolbar: null,
@@ -132,6 +144,7 @@ instance = FastCommentsClient::CustomConfigParameters.new(
   max_comment_character_length: null,
   max_comment_created_count_pupm: null,
   no_custom_config: null,
+  mention_auto_complete_mode: null,
   no_image_uploads: null,
   no_styles: null,
   page_size: null,
@@ -152,11 +165,18 @@ instance = FastCommentsClient::CustomConfigParameters.new(
   vote_style: null,
   widget_question_id: null,
   widget_question_results_style: null,
+  widget_question_show_breakdown: null,
   widget_question_style: null,
   widget_question_when_to_save: null,
   widget_questions_required: null,
   widget_sub_question_visibility: null,
-  wrap: null
+  wrap: null,
+  ticket_base_url: null,
+  ticket_kb_search_endpoint: null,
+  ticket_file_uploads_enabled: null,
+  ticket_max_file_size: null,
+  ticket_auto_assign_user_ids: null,
+  tos: null
 )
 ```
 

@@ -157,6 +157,8 @@ module FastCommentsClient
 
     attr_accessor :edit_key
 
+    attr_accessor :tos_accepted_at
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -230,7 +232,8 @@ module FastCommentsClient
         :'group_ids' => :'groupIds',
         :'view_count' => :'viewCount',
         :'requires_verification' => :'requiresVerification',
-        :'edit_key' => :'editKey'
+        :'edit_key' => :'editKey',
+        :'tos_accepted_at' => :'tosAcceptedAt'
       }
     end
 
@@ -317,7 +320,8 @@ module FastCommentsClient
         :'group_ids' => :'Array<String>',
         :'view_count' => :'Integer',
         :'requires_verification' => :'Boolean',
-        :'edit_key' => :'String'
+        :'edit_key' => :'String',
+        :'tos_accepted_at' => :'Time'
       }
     end
 
@@ -695,6 +699,10 @@ module FastCommentsClient
       if attributes.key?(:'edit_key')
         self.edit_key = attributes[:'edit_key']
       end
+
+      if attributes.key?(:'tos_accepted_at')
+        self.tos_accepted_at = attributes[:'tos_accepted_at']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -922,7 +930,8 @@ module FastCommentsClient
           group_ids == o.group_ids &&
           view_count == o.view_count &&
           requires_verification == o.requires_verification &&
-          edit_key == o.edit_key
+          edit_key == o.edit_key &&
+          tos_accepted_at == o.tos_accepted_at
     end
 
     # @see the `==` method
@@ -934,7 +943,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_id, tenant_id, url_id, url_id_raw, url, page_title, user_id, anon_user_id, commenter_email, commenter_name, commenter_link, comment, comment_html, parent_id, date, local_date_string, local_date_hours, votes, votes_up, votes_down, expire_at, verified, verified_date, verification_id, notification_sent_for_parent, notification_sent_for_parent_tenant, reviewed, imported, external_id, external_parent_id, avatar_src, is_spam, perm_not_spam, ai_determined_spam, has_images, page_number, page_number_of, page_number_nf, has_links, has_code, approved, locale, is_deleted, is_deleted_user, is_banned_user, is_by_admin, is_by_moderator, is_pinned, is_locked, flag_count, rating, display_label, from_product_id, meta, ip_hash, mentions, hash_tags, badges, domain, veteran_badge_processed, moderation_group_ids, did_process_badges, from_offline_restore, autoplay_job_id, autoplay_delay_ms, feedback_ids, logs, group_ids, view_count, requires_verification, edit_key].hash
+      [_id, tenant_id, url_id, url_id_raw, url, page_title, user_id, anon_user_id, commenter_email, commenter_name, commenter_link, comment, comment_html, parent_id, date, local_date_string, local_date_hours, votes, votes_up, votes_down, expire_at, verified, verified_date, verification_id, notification_sent_for_parent, notification_sent_for_parent_tenant, reviewed, imported, external_id, external_parent_id, avatar_src, is_spam, perm_not_spam, ai_determined_spam, has_images, page_number, page_number_of, page_number_nf, has_links, has_code, approved, locale, is_deleted, is_deleted_user, is_banned_user, is_by_admin, is_by_moderator, is_pinned, is_locked, flag_count, rating, display_label, from_product_id, meta, ip_hash, mentions, hash_tags, badges, domain, veteran_badge_processed, moderation_group_ids, did_process_badges, from_offline_restore, autoplay_job_id, autoplay_delay_ms, feedback_ids, logs, group_ids, view_count, requires_verification, edit_key, tos_accepted_at].hash
     end
 
     # Builds the object from hash

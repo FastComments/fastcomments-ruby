@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
+| **sections** | [**Array&lt;UserSearchSectionResult&gt;**](UserSearchSectionResult.md) |  |  |
 | **users** | [**Array&lt;UserSearchResult&gt;**](UserSearchResult.md) |  |  |
 | **reason** | **String** |  |  |
 | **code** | **String** |  |  |
@@ -21,6 +22,7 @@ require 'fastcomments-client'
 
 instance = FastCommentsClient::SearchUsers200Response.new(
   status: null,
+  sections: null,
   users: null,
   reason: null,
   code: null,

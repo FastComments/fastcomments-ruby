@@ -15,6 +15,7 @@
 | **max_sso_users** | **Float** |  |  |
 | **max_moderators** | **Float** |  |  |
 | **max_domains** | **Float** |  |  |
+| **max_custom_collection_size** | **Float** |  | [optional] |
 | **has_debranding** | **Boolean** |  |  |
 | **for_who_text** | **String** |  |  |
 | **feature_taglines** | **Array&lt;String&gt;** |  |  |
@@ -52,6 +53,7 @@ instance = FastCommentsClient::ReplaceTenantPackageBody.new(
   max_sso_users: null,
   max_moderators: null,
   max_domains: null,
+  max_custom_collection_size: null,
   has_debranding: null,
   for_who_text: null,
   feature_taglines: null,

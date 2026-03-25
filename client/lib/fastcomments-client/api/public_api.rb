@@ -1940,6 +1940,7 @@ module FastCommentsClient
     # @option opts [String] :username_starts_with 
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
+    # @option opts [String] :search_section 
     # @return [SearchUsers200Response]
     def search_users(tenant_id, url_id, opts = {})
       data, _status_code, _headers = search_users_with_http_info(tenant_id, url_id, opts)
@@ -1952,6 +1953,7 @@ module FastCommentsClient
     # @option opts [String] :username_starts_with 
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
+    # @option opts [String] :search_section 
     # @return [Array<(SearchUsers200Response, Integer, Hash)>] SearchUsers200Response data, response status code and response headers
     def search_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
@@ -1965,6 +1967,10 @@ module FastCommentsClient
       if @api_client.config.client_side_validation && url_id.nil?
         fail ArgumentError, "Missing the required parameter 'url_id' when calling PublicApi.search_users"
       end
+      allowable_values = ["fast", "site"]
+      if @api_client.config.client_side_validation && opts[:'search_section'] && !allowable_values.include?(opts[:'search_section'])
+        fail ArgumentError, "invalid value for \"search_section\", must be one of #{allowable_values}"
+      end
       # resource path
       local_var_path = '/user-search/{tenantId}'.sub('{' + 'tenantId' + '}', CGI.escape(tenant_id.to_s))
 
@@ -1974,6 +1980,7 @@ module FastCommentsClient
       query_params[:'usernameStartsWith'] = opts[:'username_starts_with'] if !opts[:'username_starts_with'].nil?
       query_params[:'mentionGroupIds'] = @api_client.build_collection_param(opts[:'mention_group_ids'], :multi) if !opts[:'mention_group_ids'].nil?
       query_params[:'sso'] = opts[:'sso'] if !opts[:'sso'].nil?
+      query_params[:'searchSection'] = opts[:'search_section'] if !opts[:'search_section'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

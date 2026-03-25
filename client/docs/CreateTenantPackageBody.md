@@ -20,6 +20,7 @@
 | **max_domains** | **Float** |  |  |
 | **max_white_labeled_tenants** | **Float** |  | [optional] |
 | **max_monthly_event_log_requests** | **Float** |  | [optional] |
+| **max_custom_collection_size** | **Float** |  | [optional] |
 | **has_white_labeling** | **Boolean** |  | [optional] |
 | **has_debranding** | **Boolean** |  |  |
 | **has_llm_spam_detection** | **Boolean** |  | [optional] |
@@ -75,6 +76,7 @@ instance = FastCommentsClient::CreateTenantPackageBody.new(
   max_domains: null,
   max_white_labeled_tenants: null,
   max_monthly_event_log_requests: null,
+  max_custom_collection_size: null,
   has_white_labeling: null,
   has_debranding: null,
   has_llm_spam_detection: null,

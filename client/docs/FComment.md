@@ -75,6 +75,7 @@
 | **view_count** | **Integer** |  | [optional] |
 | **requires_verification** | **Boolean** |  | [optional] |
 | **edit_key** | **String** |  | [optional] |
+| **tos_accepted_at** | **Time** |  | [optional] |
 
 ## Example
 
@@ -152,7 +153,8 @@ instance = FastCommentsClient::FComment.new(
   group_ids: null,
   view_count: null,
   requires_verification: null,
-  edit_key: null
+  edit_key: null,
+  tos_accepted_at: null
 )
 ```
 

@@ -393,6 +393,7 @@ describe 'PublicApi' do
   # @option opts [String] :username_starts_with 
   # @option opts [Array<String>] :mention_group_ids 
   # @option opts [String] :sso 
+  # @option opts [String] :search_section 
   # @return [SearchUsers200Response]
   describe 'search_users test' do
     it 'should work' do

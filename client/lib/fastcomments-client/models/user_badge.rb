@@ -51,6 +51,8 @@ module FastCommentsClient
 
     attr_accessor :order
 
+    attr_accessor :url_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -71,7 +73,8 @@ module FastCommentsClient
         :'veteran_user_threshold_millis' => :'veteranUserThresholdMillis',
         :'displayed_on_comments' => :'displayedOnComments',
         :'received_at' => :'receivedAt',
-        :'order' => :'order'
+        :'order' => :'order',
+        :'url_id' => :'urlId'
       }
     end
 
@@ -105,7 +108,8 @@ module FastCommentsClient
         :'veteran_user_threshold_millis' => :'Integer',
         :'displayed_on_comments' => :'Boolean',
         :'received_at' => :'Time',
-        :'order' => :'Integer'
+        :'order' => :'Integer',
+        :'url_id' => :'String'
       }
     end
 
@@ -117,6 +121,7 @@ module FastCommentsClient
         :'border_color',
         :'text_color',
         :'css_class',
+        :'url_id'
       ])
     end
 
@@ -230,6 +235,10 @@ module FastCommentsClient
 
       if attributes.key?(:'order')
         self.order = attributes[:'order']
+      end
+
+      if attributes.key?(:'url_id')
+        self.url_id = attributes[:'url_id']
       end
     end
 
@@ -450,7 +459,8 @@ module FastCommentsClient
           veteran_user_threshold_millis == o.veteran_user_threshold_millis &&
           displayed_on_comments == o.displayed_on_comments &&
           received_at == o.received_at &&
-          order == o.order
+          order == o.order &&
+          url_id == o.url_id
     end
 
     # @see the `==` method
@@ -462,7 +472,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_id, user_id, badge_id, from_tenant_id, created_at, type, threshold, description, display_label, display_src, background_color, border_color, text_color, css_class, veteran_user_threshold_millis, displayed_on_comments, received_at, order].hash
+      [_id, user_id, badge_id, from_tenant_id, created_at, type, threshold, description, display_label, display_src, background_color, border_color, text_color, css_class, veteran_user_threshold_millis, displayed_on_comments, received_at, order, url_id].hash
     end
 
     # Builds the object from hash

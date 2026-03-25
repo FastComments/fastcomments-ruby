@@ -63,6 +63,10 @@ module FastCommentsClient
 
     attr_accessor :disable_notification_bell
 
+    attr_accessor :disable_profile_comments
+
+    attr_accessor :disable_profile_direct_messages
+
     attr_accessor :disable_profiles
 
     attr_accessor :disable_success_message
@@ -111,6 +115,8 @@ module FastCommentsClient
 
     attr_accessor :no_custom_config
 
+    attr_accessor :mention_auto_complete_mode
+
     attr_accessor :no_image_uploads
 
     attr_accessor :no_styles
@@ -152,6 +158,8 @@ module FastCommentsClient
 
     attr_accessor :widget_question_results_style
 
+    attr_accessor :widget_question_show_breakdown
+
     attr_accessor :widget_question_style
 
     attr_accessor :widget_question_when_to_save
@@ -161,6 +169,18 @@ module FastCommentsClient
     attr_accessor :widget_sub_question_visibility
 
     attr_accessor :wrap
+
+    attr_accessor :ticket_base_url
+
+    attr_accessor :ticket_kb_search_endpoint
+
+    attr_accessor :ticket_file_uploads_enabled
+
+    attr_accessor :ticket_max_file_size
+
+    attr_accessor :ticket_auto_assign_user_ids
+
+    attr_accessor :tos
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -211,6 +231,8 @@ module FastCommentsClient
         :'disable_email_inputs' => :'disableEmailInputs',
         :'disable_live_commenting' => :'disableLiveCommenting',
         :'disable_notification_bell' => :'disableNotificationBell',
+        :'disable_profile_comments' => :'disableProfileComments',
+        :'disable_profile_direct_messages' => :'disableProfileDirectMessages',
         :'disable_profiles' => :'disableProfiles',
         :'disable_success_message' => :'disableSuccessMessage',
         :'disable_toolbar' => :'disableToolbar',
@@ -235,6 +257,7 @@ module FastCommentsClient
         :'max_comment_character_length' => :'maxCommentCharacterLength',
         :'max_comment_created_count_pupm' => :'maxCommentCreatedCountPUPM',
         :'no_custom_config' => :'noCustomConfig',
+        :'mention_auto_complete_mode' => :'mentionAutoCompleteMode',
         :'no_image_uploads' => :'noImageUploads',
         :'no_styles' => :'noStyles',
         :'page_size' => :'pageSize',
@@ -255,11 +278,18 @@ module FastCommentsClient
         :'vote_style' => :'voteStyle',
         :'widget_question_id' => :'widgetQuestionId',
         :'widget_question_results_style' => :'widgetQuestionResultsStyle',
+        :'widget_question_show_breakdown' => :'widgetQuestionShowBreakdown',
         :'widget_question_style' => :'widgetQuestionStyle',
         :'widget_question_when_to_save' => :'widgetQuestionWhenToSave',
         :'widget_questions_required' => :'widgetQuestionsRequired',
         :'widget_sub_question_visibility' => :'widgetSubQuestionVisibility',
-        :'wrap' => :'wrap'
+        :'wrap' => :'wrap',
+        :'ticket_base_url' => :'ticketBaseUrl',
+        :'ticket_kb_search_endpoint' => :'ticketKBSearchEndpoint',
+        :'ticket_file_uploads_enabled' => :'ticketFileUploadsEnabled',
+        :'ticket_max_file_size' => :'ticketMaxFileSize',
+        :'ticket_auto_assign_user_ids' => :'ticketAutoAssignUserIds',
+        :'tos' => :'tos'
       }
     end
 
@@ -300,6 +330,8 @@ module FastCommentsClient
         :'disable_email_inputs' => :'Boolean',
         :'disable_live_commenting' => :'Boolean',
         :'disable_notification_bell' => :'Boolean',
+        :'disable_profile_comments' => :'Boolean',
+        :'disable_profile_direct_messages' => :'Boolean',
         :'disable_profiles' => :'Boolean',
         :'disable_success_message' => :'Boolean',
         :'disable_toolbar' => :'Boolean',
@@ -324,6 +356,7 @@ module FastCommentsClient
         :'max_comment_character_length' => :'Integer',
         :'max_comment_created_count_pupm' => :'Integer',
         :'no_custom_config' => :'Boolean',
+        :'mention_auto_complete_mode' => :'MentionAutoCompleteMode',
         :'no_image_uploads' => :'Boolean',
         :'no_styles' => :'Boolean',
         :'page_size' => :'Integer',
@@ -344,11 +377,18 @@ module FastCommentsClient
         :'vote_style' => :'VoteStyle',
         :'widget_question_id' => :'String',
         :'widget_question_results_style' => :'CommentQuestionResultsRenderingType',
+        :'widget_question_show_breakdown' => :'Boolean',
         :'widget_question_style' => :'QuestionRenderingType',
         :'widget_question_when_to_save' => :'QuestionWhenSave',
         :'widget_questions_required' => :'CommentQuestionsRequired',
         :'widget_sub_question_visibility' => :'QuestionSubQuestionVisibility',
-        :'wrap' => :'Boolean'
+        :'wrap' => :'Boolean',
+        :'ticket_base_url' => :'String',
+        :'ticket_kb_search_endpoint' => :'String',
+        :'ticket_file_uploads_enabled' => :'Boolean',
+        :'ticket_max_file_size' => :'Integer',
+        :'ticket_auto_assign_user_ids' => :'Array<String>',
+        :'tos' => :'TOSConfig'
       }
     end
 
@@ -368,6 +408,7 @@ module FastCommentsClient
         :'locale',
         :'max_comment_character_length',
         :'max_comment_created_count_pupm',
+        :'mention_auto_complete_mode',
         :'page_size',
         :'restricted_link_domains',
         :'translations',
@@ -488,6 +529,14 @@ module FastCommentsClient
         self.disable_notification_bell = attributes[:'disable_notification_bell']
       end
 
+      if attributes.key?(:'disable_profile_comments')
+        self.disable_profile_comments = attributes[:'disable_profile_comments']
+      end
+
+      if attributes.key?(:'disable_profile_direct_messages')
+        self.disable_profile_direct_messages = attributes[:'disable_profile_direct_messages']
+      end
+
       if attributes.key?(:'disable_profiles')
         self.disable_profiles = attributes[:'disable_profiles']
       end
@@ -584,6 +633,10 @@ module FastCommentsClient
         self.no_custom_config = attributes[:'no_custom_config']
       end
 
+      if attributes.key?(:'mention_auto_complete_mode')
+        self.mention_auto_complete_mode = attributes[:'mention_auto_complete_mode']
+      end
+
       if attributes.key?(:'no_image_uploads')
         self.no_image_uploads = attributes[:'no_image_uploads']
       end
@@ -670,6 +723,10 @@ module FastCommentsClient
         self.widget_question_results_style = attributes[:'widget_question_results_style']
       end
 
+      if attributes.key?(:'widget_question_show_breakdown')
+        self.widget_question_show_breakdown = attributes[:'widget_question_show_breakdown']
+      end
+
       if attributes.key?(:'widget_question_style')
         self.widget_question_style = attributes[:'widget_question_style']
       end
@@ -688,6 +745,32 @@ module FastCommentsClient
 
       if attributes.key?(:'wrap')
         self.wrap = attributes[:'wrap']
+      end
+
+      if attributes.key?(:'ticket_base_url')
+        self.ticket_base_url = attributes[:'ticket_base_url']
+      end
+
+      if attributes.key?(:'ticket_kb_search_endpoint')
+        self.ticket_kb_search_endpoint = attributes[:'ticket_kb_search_endpoint']
+      end
+
+      if attributes.key?(:'ticket_file_uploads_enabled')
+        self.ticket_file_uploads_enabled = attributes[:'ticket_file_uploads_enabled']
+      end
+
+      if attributes.key?(:'ticket_max_file_size')
+        self.ticket_max_file_size = attributes[:'ticket_max_file_size']
+      end
+
+      if attributes.key?(:'ticket_auto_assign_user_ids')
+        if (value = attributes[:'ticket_auto_assign_user_ids']).is_a?(Array)
+          self.ticket_auto_assign_user_ids = value
+        end
+      end
+
+      if attributes.key?(:'tos')
+        self.tos = attributes[:'tos']
       end
     end
 
@@ -735,6 +818,8 @@ module FastCommentsClient
           disable_email_inputs == o.disable_email_inputs &&
           disable_live_commenting == o.disable_live_commenting &&
           disable_notification_bell == o.disable_notification_bell &&
+          disable_profile_comments == o.disable_profile_comments &&
+          disable_profile_direct_messages == o.disable_profile_direct_messages &&
           disable_profiles == o.disable_profiles &&
           disable_success_message == o.disable_success_message &&
           disable_toolbar == o.disable_toolbar &&
@@ -759,6 +844,7 @@ module FastCommentsClient
           max_comment_character_length == o.max_comment_character_length &&
           max_comment_created_count_pupm == o.max_comment_created_count_pupm &&
           no_custom_config == o.no_custom_config &&
+          mention_auto_complete_mode == o.mention_auto_complete_mode &&
           no_image_uploads == o.no_image_uploads &&
           no_styles == o.no_styles &&
           page_size == o.page_size &&
@@ -779,11 +865,18 @@ module FastCommentsClient
           vote_style == o.vote_style &&
           widget_question_id == o.widget_question_id &&
           widget_question_results_style == o.widget_question_results_style &&
+          widget_question_show_breakdown == o.widget_question_show_breakdown &&
           widget_question_style == o.widget_question_style &&
           widget_question_when_to_save == o.widget_question_when_to_save &&
           widget_questions_required == o.widget_questions_required &&
           widget_sub_question_visibility == o.widget_sub_question_visibility &&
-          wrap == o.wrap
+          wrap == o.wrap &&
+          ticket_base_url == o.ticket_base_url &&
+          ticket_kb_search_endpoint == o.ticket_kb_search_endpoint &&
+          ticket_file_uploads_enabled == o.ticket_file_uploads_enabled &&
+          ticket_max_file_size == o.ticket_max_file_size &&
+          ticket_auto_assign_user_ids == o.ticket_auto_assign_user_ids &&
+          tos == o.tos
     end
 
     # @see the `==` method
@@ -795,7 +888,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [absolute_and_relative_dates, absolute_dates, allow_anon, allow_anon_flag, allow_anon_votes, allowed_languages, collapse_replies, comment_count_format, comment_html_rendering_mode, comment_thread_delete_mode, commenter_name_format, count_above_toggle, custom_css, default_avatar_src, default_sort_direction, default_username, disable_auto_admin_migration, disable_auto_hash_tag_creation, disable_blocking, disable_commenter_comment_delete, disable_commenter_comment_edit, disable_email_inputs, disable_live_commenting, disable_notification_bell, disable_profiles, disable_success_message, disable_toolbar, disable_unverified_label, disable_voting, enable_commenter_links, enable_search, enable_spoilers, enable_third_party_cookie_bypass, enable_view_counts, enable_vote_list, enable_wysiwyg, gif_rating, has_dark_background, header_html, hide_avatars, hide_comments_under_count_text_format, image_content_profanity_level, input_after_comments, limit_comments_by_groups, locale, max_comment_character_length, max_comment_created_count_pupm, no_custom_config, no_image_uploads, no_styles, page_size, readonly, no_new_root_comments, require_sso, enable_resize_handle, restricted_link_domains, show_badges_in_top_bar, show_comment_save_success, show_live_right_away, show_question, spam_rules, sso_sec_lvl, translations, use_show_comments_toggle, use_single_line_comment_input, vote_style, widget_question_id, widget_question_results_style, widget_question_style, widget_question_when_to_save, widget_questions_required, widget_sub_question_visibility, wrap].hash
+      [absolute_and_relative_dates, absolute_dates, allow_anon, allow_anon_flag, allow_anon_votes, allowed_languages, collapse_replies, comment_count_format, comment_html_rendering_mode, comment_thread_delete_mode, commenter_name_format, count_above_toggle, custom_css, default_avatar_src, default_sort_direction, default_username, disable_auto_admin_migration, disable_auto_hash_tag_creation, disable_blocking, disable_commenter_comment_delete, disable_commenter_comment_edit, disable_email_inputs, disable_live_commenting, disable_notification_bell, disable_profile_comments, disable_profile_direct_messages, disable_profiles, disable_success_message, disable_toolbar, disable_unverified_label, disable_voting, enable_commenter_links, enable_search, enable_spoilers, enable_third_party_cookie_bypass, enable_view_counts, enable_vote_list, enable_wysiwyg, gif_rating, has_dark_background, header_html, hide_avatars, hide_comments_under_count_text_format, image_content_profanity_level, input_after_comments, limit_comments_by_groups, locale, max_comment_character_length, max_comment_created_count_pupm, no_custom_config, mention_auto_complete_mode, no_image_uploads, no_styles, page_size, readonly, no_new_root_comments, require_sso, enable_resize_handle, restricted_link_domains, show_badges_in_top_bar, show_comment_save_success, show_live_right_away, show_question, spam_rules, sso_sec_lvl, translations, use_show_comments_toggle, use_single_line_comment_input, vote_style, widget_question_id, widget_question_results_style, widget_question_show_breakdown, widget_question_style, widget_question_when_to_save, widget_questions_required, widget_sub_question_visibility, wrap, ticket_base_url, ticket_kb_search_endpoint, ticket_file_uploads_enabled, ticket_max_file_size, ticket_auto_assign_user_ids, tos].hash
     end
 
     # Builds the object from hash

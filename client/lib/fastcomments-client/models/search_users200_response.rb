@@ -20,7 +20,8 @@ module FastCommentsClient
       def openapi_any_of
         [
           :'APIError',
-          :'SearchUsersResponse'
+          :'SearchUsersResponse',
+          :'SearchUsersSectionedResponse'
         ]
       end
 

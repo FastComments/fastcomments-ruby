@@ -32,6 +32,8 @@ module FastCommentsClient
     # Construct a type with a set of properties K of type T
     attr_accessor :progress
 
+    attr_accessor :tos_accepted_at
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -42,7 +44,8 @@ module FastCommentsClient
         :'first_comment_date' => :'firstCommentDate',
         :'auto_trust_factor' => :'autoTrustFactor',
         :'manual_trust_factor' => :'manualTrustFactor',
-        :'progress' => :'progress'
+        :'progress' => :'progress',
+        :'tos_accepted_at' => :'tosAcceptedAt'
       }
     end
 
@@ -66,7 +69,8 @@ module FastCommentsClient
         :'first_comment_date' => :'Time',
         :'auto_trust_factor' => :'Float',
         :'manual_trust_factor' => :'Float',
-        :'progress' => :'Hash<String, Float>'
+        :'progress' => :'Hash<String, Float>',
+        :'tos_accepted_at' => :'Time'
       }
     end
 
@@ -136,6 +140,10 @@ module FastCommentsClient
         end
       else
         self.progress = nil
+      end
+
+      if attributes.key?(:'tos_accepted_at')
+        self.tos_accepted_at = attributes[:'tos_accepted_at']
       end
     end
 
@@ -256,7 +264,8 @@ module FastCommentsClient
           first_comment_date == o.first_comment_date &&
           auto_trust_factor == o.auto_trust_factor &&
           manual_trust_factor == o.manual_trust_factor &&
-          progress == o.progress
+          progress == o.progress &&
+          tos_accepted_at == o.tos_accepted_at
     end
 
     # @see the `==` method
@@ -268,7 +277,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_id, tenant_id, user_id, first_comment_id, first_comment_date, auto_trust_factor, manual_trust_factor, progress].hash
+      [_id, tenant_id, user_id, first_comment_id, first_comment_date, auto_trust_factor, manual_trust_factor, progress, tos_accepted_at].hash
     end
 
     # Builds the object from hash

@@ -12,6 +12,7 @@
 | **auto_trust_factor** | **Float** |  | [optional] |
 | **manual_trust_factor** | **Float** |  | [optional] |
 | **progress** | **Hash&lt;String, Float&gt;** | Construct a type with a set of properties K of type T |  |
+| **tos_accepted_at** | **Time** |  | [optional] |
 
 ## Example
 
@@ -26,7 +27,8 @@ instance = FastCommentsClient::UserBadgeProgress.new(
   first_comment_date: null,
   auto_trust_factor: null,
   manual_trust_factor: null,
-  progress: null
+  progress: null,
+  tos_accepted_at: null
 )
 ```
 

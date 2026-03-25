@@ -40,7 +40,7 @@
 | **is_locked** | **Boolean** |  | [optional] |
 | **flag_count** | **Integer** |  | [optional] |
 | **display_label** | **String** |  | [optional] |
-| **meta** | [**FCommentMeta**](FCommentMeta.md) |  | [optional] |
+| **meta** | [**APICommentBaseMeta**](APICommentBaseMeta.md) |  | [optional] |
 | **moderation_group_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **feedback_ids** | **Array&lt;String&gt;** |  | [optional] |
 

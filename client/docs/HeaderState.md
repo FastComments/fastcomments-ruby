@@ -9,6 +9,7 @@
 | **user_id** | **String** |  |  |
 | **user_id_ws** | **String** |  |  |
 | **notification_counts** | [**Array&lt;NotificationAndCount&gt;**](NotificationAndCount.md) |  |  |
+| **account_notifications** | [**Array&lt;HeaderAccountNotification&gt;**](HeaderAccountNotification.md) |  |  |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = FastCommentsClient::HeaderState.new(
   notification_type: null,
   user_id: null,
   user_id_ws: null,
-  notification_counts: null
+  notification_counts: null,
+  account_notifications: null
 )
 ```
 

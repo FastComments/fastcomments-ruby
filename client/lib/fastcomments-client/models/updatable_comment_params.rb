@@ -187,7 +187,7 @@ module FastCommentsClient
         :'is_locked' => :'Boolean',
         :'flag_count' => :'Integer',
         :'display_label' => :'String',
-        :'meta' => :'FCommentMeta',
+        :'meta' => :'APICommentBaseMeta',
         :'moderation_group_ids' => :'Array<String>',
         :'feedback_ids' => :'Array<String>'
       }

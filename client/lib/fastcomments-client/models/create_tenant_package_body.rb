@@ -47,6 +47,8 @@ module FastCommentsClient
 
     attr_accessor :max_monthly_event_log_requests
 
+    attr_accessor :max_custom_collection_size
+
     attr_accessor :has_white_labeling
 
     attr_accessor :has_debranding
@@ -130,6 +132,7 @@ module FastCommentsClient
         :'max_domains' => :'maxDomains',
         :'max_white_labeled_tenants' => :'maxWhiteLabeledTenants',
         :'max_monthly_event_log_requests' => :'maxMonthlyEventLogRequests',
+        :'max_custom_collection_size' => :'maxCustomCollectionSize',
         :'has_white_labeling' => :'hasWhiteLabeling',
         :'has_debranding' => :'hasDebranding',
         :'has_llm_spam_detection' => :'hasLLMSpamDetection',
@@ -194,6 +197,7 @@ module FastCommentsClient
         :'max_domains' => :'Float',
         :'max_white_labeled_tenants' => :'Float',
         :'max_monthly_event_log_requests' => :'Float',
+        :'max_custom_collection_size' => :'Float',
         :'has_white_labeling' => :'Boolean',
         :'has_debranding' => :'Boolean',
         :'has_llm_spam_detection' => :'Boolean',
@@ -335,6 +339,10 @@ module FastCommentsClient
 
       if attributes.key?(:'max_monthly_event_log_requests')
         self.max_monthly_event_log_requests = attributes[:'max_monthly_event_log_requests']
+      end
+
+      if attributes.key?(:'max_custom_collection_size')
+        self.max_custom_collection_size = attributes[:'max_custom_collection_size']
       end
 
       if attributes.key?(:'has_white_labeling')
@@ -707,6 +715,7 @@ module FastCommentsClient
           max_domains == o.max_domains &&
           max_white_labeled_tenants == o.max_white_labeled_tenants &&
           max_monthly_event_log_requests == o.max_monthly_event_log_requests &&
+          max_custom_collection_size == o.max_custom_collection_size &&
           has_white_labeling == o.has_white_labeling &&
           has_debranding == o.has_debranding &&
           has_llm_spam_detection == o.has_llm_spam_detection &&
@@ -750,7 +759,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, monthly_cost_usd, yearly_cost_usd, monthly_stripe_plan_id, yearly_stripe_plan_id, max_monthly_page_loads, max_monthly_api_credits, max_monthly_small_widgets_credits, max_monthly_comments, max_concurrent_users, max_tenant_users, max_sso_users, max_moderators, max_domains, max_white_labeled_tenants, max_monthly_event_log_requests, has_white_labeling, has_debranding, has_llm_spam_detection, for_who_text, feature_taglines, has_auditing, has_flex_pricing, enable_saml, flex_page_load_cost_cents, flex_page_load_unit, flex_comment_cost_cents, flex_comment_unit, flex_sso_user_cost_cents, flex_sso_user_unit, flex_api_credit_cost_cents, flex_api_credit_unit, flex_small_widgets_credit_cost_cents, flex_small_widgets_credit_unit, flex_moderator_cost_cents, flex_moderator_unit, flex_admin_cost_cents, flex_admin_unit, flex_domain_cost_cents, flex_domain_unit, flex_chat_gpt_cost_cents, flex_chat_gpt_unit, flex_minimum_cost_cents, flex_managed_tenant_cost_cents, flex_sso_admin_cost_cents, flex_sso_admin_unit, flex_sso_moderator_cost_cents, flex_sso_moderator_unit].hash
+      [name, monthly_cost_usd, yearly_cost_usd, monthly_stripe_plan_id, yearly_stripe_plan_id, max_monthly_page_loads, max_monthly_api_credits, max_monthly_small_widgets_credits, max_monthly_comments, max_concurrent_users, max_tenant_users, max_sso_users, max_moderators, max_domains, max_white_labeled_tenants, max_monthly_event_log_requests, max_custom_collection_size, has_white_labeling, has_debranding, has_llm_spam_detection, for_who_text, feature_taglines, has_auditing, has_flex_pricing, enable_saml, flex_page_load_cost_cents, flex_page_load_unit, flex_comment_cost_cents, flex_comment_unit, flex_sso_user_cost_cents, flex_sso_user_unit, flex_api_credit_cost_cents, flex_api_credit_unit, flex_small_widgets_credit_cost_cents, flex_small_widgets_credit_unit, flex_moderator_cost_cents, flex_moderator_unit, flex_admin_cost_cents, flex_admin_unit, flex_domain_cost_cents, flex_domain_unit, flex_chat_gpt_cost_cents, flex_chat_gpt_unit, flex_minimum_cost_cents, flex_managed_tenant_cost_cents, flex_sso_admin_cost_cents, flex_sso_admin_unit, flex_sso_moderator_cost_cents, flex_sso_moderator_unit].hash
     end
 
     # Builds the object from hash

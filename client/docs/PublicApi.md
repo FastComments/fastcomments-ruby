@@ -1817,7 +1817,8 @@ url_id = 'url_id_example' # String |
 opts = {
   username_starts_with: 'username_starts_with_example', # String | 
   mention_group_ids: ['inner_example'], # Array<String> | 
-  sso: 'sso_example' # String | 
+  sso: 'sso_example', # String | 
+  search_section: 'fast' # String | 
 }
 
 begin
@@ -1856,6 +1857,7 @@ end
 | **username_starts_with** | **String** |  | [optional] |
 | **mention_group_ids** | [**Array&lt;String&gt;**](String.md) |  | [optional] |
 | **sso** | **String** |  | [optional] |
+| **search_section** | **String** |  | [optional] |
 
 ### Return type
 

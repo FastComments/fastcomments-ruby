@@ -11,6 +11,8 @@
 | **website_url** | **String** |  | [optional] |
 | **email** | **String** |  |  |
 | **pending_email** | **String** |  | [optional] |
+| **backup_email** | **String** |  | [optional] |
+| **pending_backup_email** | **String** |  | [optional] |
 | **sign_up_date** | **Integer** |  |  |
 | **created_from_url_id** | **String** |  | [optional] |
 | **created_from_tenant_id** | **String** |  |  |
@@ -33,11 +35,16 @@
 | **is_manage_data_admin** | **Boolean** |  | [optional] |
 | **is_comment_moderator_admin** | **Boolean** |  | [optional] |
 | **is_api_admin** | **Boolean** |  | [optional] |
+| **is_site_admin** | **Boolean** |  | [optional] |
 | **moderator_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **is_impersonator** | **Boolean** |  | [optional] |
 | **is_coupon_manager** | **Boolean** |  | [optional] |
 | **locale** | **String** |  | [optional] |
 | **digest_email_frequency** | [**DigestEmailFrequency**](DigestEmailFrequency.md) |  | [optional] |
+| **notification_frequency** | **Float** |  | [optional] |
+| **admin_notification_frequency** | **Float** |  | [optional] |
+| **last_tenant_notification_sent_date** | **Time** |  | [optional] |
+| **last_reply_notification_sent_date** | **Time** |  | [optional] |
 | **ignored_add_to_my_site_messages** | **Boolean** |  | [optional] |
 | **last_login_date** | **Time** |  | [optional] |
 | **display_label** | **String** |  | [optional] |
@@ -55,6 +62,7 @@
 | **country_flag** | **String** |  | [optional] |
 | **social_links** | **Array&lt;String&gt;** |  | [optional] |
 | **has_two_factor** | **Boolean** |  | [optional] |
+| **is_email_suppressed** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -69,6 +77,8 @@ instance = FastCommentsClient::User.new(
   website_url: null,
   email: null,
   pending_email: null,
+  backup_email: null,
+  pending_backup_email: null,
   sign_up_date: null,
   created_from_url_id: null,
   created_from_tenant_id: null,
@@ -91,11 +101,16 @@ instance = FastCommentsClient::User.new(
   is_manage_data_admin: null,
   is_comment_moderator_admin: null,
   is_api_admin: null,
+  is_site_admin: null,
   moderator_ids: null,
   is_impersonator: null,
   is_coupon_manager: null,
   locale: null,
   digest_email_frequency: null,
+  notification_frequency: null,
+  admin_notification_frequency: null,
+  last_tenant_notification_sent_date: null,
+  last_reply_notification_sent_date: null,
   ignored_add_to_my_site_messages: null,
   last_login_date: null,
   display_label: null,
@@ -112,7 +127,8 @@ instance = FastCommentsClient::User.new(
   country_code: null,
   country_flag: null,
   social_links: null,
-  has_two_factor: null
+  has_two_factor: null,
+  is_email_suppressed: null
 )
 ```
 

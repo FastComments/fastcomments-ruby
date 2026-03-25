@@ -28,6 +28,7 @@
 | **autoplay_delay_ms** | **Integer** |  | [optional] |
 | **feedback_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **question_values** | [**Hash&lt;String, RecordStringStringOrNumberValue&gt;**](RecordStringStringOrNumberValue.md) | Construct a type with a set of properties K of type T | [optional] |
+| **tos** | **Boolean** |  | [optional] |
 | **approved** | **Boolean** |  | [optional] |
 | **domain** | **String** |  | [optional] |
 | **ip** | **String** |  | [optional] |
@@ -69,6 +70,7 @@ instance = FastCommentsClient::CreateCommentParams.new(
   autoplay_delay_ms: null,
   feedback_ids: null,
   question_values: null,
+  tos: null,
   approved: null,
   domain: null,
   ip: null,

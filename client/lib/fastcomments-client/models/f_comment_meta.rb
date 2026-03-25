@@ -15,6 +15,8 @@ require 'time'
 
 module FastCommentsClient
   class FCommentMeta < ApiModelBase
+    attr_accessor :wp_id
+
     attr_accessor :wp_user_id
 
     attr_accessor :wp_post_id
@@ -22,6 +24,7 @@ module FastCommentsClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'wp_id' => :'wpId',
         :'wp_user_id' => :'wpUserId',
         :'wp_post_id' => :'wpPostId'
       }
@@ -40,6 +43,7 @@ module FastCommentsClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'wp_id' => :'String',
         :'wp_user_id' => :'String',
         :'wp_post_id' => :'String'
       }
@@ -66,6 +70,10 @@ module FastCommentsClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'wp_id')
+        self.wp_id = attributes[:'wp_id']
+      end
 
       if attributes.key?(:'wp_user_id')
         self.wp_user_id = attributes[:'wp_user_id']
@@ -96,6 +104,7 @@ module FastCommentsClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          wp_id == o.wp_id &&
           wp_user_id == o.wp_user_id &&
           wp_post_id == o.wp_post_id
     end
@@ -109,7 +118,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [wp_user_id, wp_post_id].hash
+      [wp_id, wp_user_id, wp_post_id].hash
     end
 
     # Builds the object from hash

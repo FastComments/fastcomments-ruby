@@ -23,6 +23,7 @@
 | **max_domains** | **Float** |  |  |
 | **max_white_labeled_tenants** | **Float** |  |  |
 | **max_monthly_event_log_requests** | **Float** |  |  |
+| **max_custom_collection_size** | **Float** |  |  |
 | **has_white_labeling** | **Boolean** |  |  |
 | **has_debranding** | **Boolean** |  |  |
 | **has_llm_spam_detection** | **Boolean** |  |  |
@@ -31,6 +32,7 @@
 | **has_auditing** | **Boolean** |  |  |
 | **has_flex_pricing** | **Boolean** |  |  |
 | **enable_saml** | **Boolean** |  | [optional] |
+| **enable_canvas_lti** | **Boolean** |  | [optional] |
 | **flex_page_load_cost_cents** | **Float** |  | [optional] |
 | **flex_page_load_unit** | **Float** |  | [optional] |
 | **flex_comment_cost_cents** | **Float** |  | [optional] |
@@ -82,6 +84,7 @@ instance = FastCommentsClient::TenantPackage.new(
   max_domains: null,
   max_white_labeled_tenants: null,
   max_monthly_event_log_requests: null,
+  max_custom_collection_size: null,
   has_white_labeling: null,
   has_debranding: null,
   has_llm_spam_detection: null,
@@ -90,6 +93,7 @@ instance = FastCommentsClient::TenantPackage.new(
   has_auditing: null,
   has_flex_pricing: null,
   enable_saml: null,
+  enable_canvas_lti: null,
   flex_page_load_cost_cents: null,
   flex_page_load_unit: null,
   flex_comment_cost_cents: null,

@@ -15,6 +15,8 @@ require 'time'
 
 module FastCommentsClient
   class APIUserSubscription < ApiModelBase
+    attr_accessor :notification_frequency
+
     attr_accessor :created_at
 
     attr_accessor :page_title
@@ -32,6 +34,7 @@ module FastCommentsClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'notification_frequency' => :'notificationFrequency',
         :'created_at' => :'createdAt',
         :'page_title' => :'pageTitle',
         :'url' => :'url',
@@ -55,6 +58,7 @@ module FastCommentsClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'notification_frequency' => :'Float',
         :'created_at' => :'Time',
         :'page_title' => :'String',
         :'url' => :'String',
@@ -86,6 +90,10 @@ module FastCommentsClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'notification_frequency')
+        self.notification_frequency = attributes[:'notification_frequency']
+      end
 
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
@@ -187,6 +195,7 @@ module FastCommentsClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          notification_frequency == o.notification_frequency &&
           created_at == o.created_at &&
           page_title == o.page_title &&
           url == o.url &&
@@ -205,7 +214,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [created_at, page_title, url, url_id, anon_user_id, user_id, id].hash
+      [notification_frequency, created_at, page_title, url, url_id, anon_user_id, user_id, id].hash
     end
 
     # Builds the object from hash

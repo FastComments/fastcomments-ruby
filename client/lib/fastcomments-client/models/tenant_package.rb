@@ -53,6 +53,8 @@ module FastCommentsClient
 
     attr_accessor :max_monthly_event_log_requests
 
+    attr_accessor :max_custom_collection_size
+
     attr_accessor :has_white_labeling
 
     attr_accessor :has_debranding
@@ -68,6 +70,8 @@ module FastCommentsClient
     attr_accessor :has_flex_pricing
 
     attr_accessor :enable_saml
+
+    attr_accessor :enable_canvas_lti
 
     attr_accessor :flex_page_load_cost_cents
 
@@ -141,6 +145,7 @@ module FastCommentsClient
         :'max_domains' => :'maxDomains',
         :'max_white_labeled_tenants' => :'maxWhiteLabeledTenants',
         :'max_monthly_event_log_requests' => :'maxMonthlyEventLogRequests',
+        :'max_custom_collection_size' => :'maxCustomCollectionSize',
         :'has_white_labeling' => :'hasWhiteLabeling',
         :'has_debranding' => :'hasDebranding',
         :'has_llm_spam_detection' => :'hasLLMSpamDetection',
@@ -149,6 +154,7 @@ module FastCommentsClient
         :'has_auditing' => :'hasAuditing',
         :'has_flex_pricing' => :'hasFlexPricing',
         :'enable_saml' => :'enableSAML',
+        :'enable_canvas_lti' => :'enableCanvasLTI',
         :'flex_page_load_cost_cents' => :'flexPageLoadCostCents',
         :'flex_page_load_unit' => :'flexPageLoadUnit',
         :'flex_comment_cost_cents' => :'flexCommentCostCents',
@@ -209,6 +215,7 @@ module FastCommentsClient
         :'max_domains' => :'Float',
         :'max_white_labeled_tenants' => :'Float',
         :'max_monthly_event_log_requests' => :'Float',
+        :'max_custom_collection_size' => :'Float',
         :'has_white_labeling' => :'Boolean',
         :'has_debranding' => :'Boolean',
         :'has_llm_spam_detection' => :'Boolean',
@@ -217,6 +224,7 @@ module FastCommentsClient
         :'has_auditing' => :'Boolean',
         :'has_flex_pricing' => :'Boolean',
         :'enable_saml' => :'Boolean',
+        :'enable_canvas_lti' => :'Boolean',
         :'flex_page_load_cost_cents' => :'Float',
         :'flex_page_load_unit' => :'Float',
         :'flex_comment_cost_cents' => :'Float',
@@ -385,6 +393,12 @@ module FastCommentsClient
         self.max_monthly_event_log_requests = nil
       end
 
+      if attributes.key?(:'max_custom_collection_size')
+        self.max_custom_collection_size = attributes[:'max_custom_collection_size']
+      else
+        self.max_custom_collection_size = nil
+      end
+
       if attributes.key?(:'has_white_labeling')
         self.has_white_labeling = attributes[:'has_white_labeling']
       else
@@ -431,6 +445,10 @@ module FastCommentsClient
 
       if attributes.key?(:'enable_saml')
         self.enable_saml = attributes[:'enable_saml']
+      end
+
+      if attributes.key?(:'enable_canvas_lti')
+        self.enable_canvas_lti = attributes[:'enable_canvas_lti']
       end
 
       if attributes.key?(:'flex_page_load_cost_cents')
@@ -599,6 +617,10 @@ module FastCommentsClient
         invalid_properties.push('invalid value for "max_monthly_event_log_requests", max_monthly_event_log_requests cannot be nil.')
       end
 
+      if @max_custom_collection_size.nil?
+        invalid_properties.push('invalid value for "max_custom_collection_size", max_custom_collection_size cannot be nil.')
+      end
+
       if @has_white_labeling.nil?
         invalid_properties.push('invalid value for "has_white_labeling", has_white_labeling cannot be nil.')
       end
@@ -649,6 +671,7 @@ module FastCommentsClient
       return false if @max_domains.nil?
       return false if @max_white_labeled_tenants.nil?
       return false if @max_monthly_event_log_requests.nil?
+      return false if @max_custom_collection_size.nil?
       return false if @has_white_labeling.nil?
       return false if @has_debranding.nil?
       return false if @has_llm_spam_detection.nil?
@@ -810,6 +833,16 @@ module FastCommentsClient
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] max_custom_collection_size Value to be assigned
+    def max_custom_collection_size=(max_custom_collection_size)
+      if max_custom_collection_size.nil?
+        fail ArgumentError, 'max_custom_collection_size cannot be nil'
+      end
+
+      @max_custom_collection_size = max_custom_collection_size
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] has_white_labeling Value to be assigned
     def has_white_labeling=(has_white_labeling)
       if has_white_labeling.nil?
@@ -903,6 +936,7 @@ module FastCommentsClient
           max_domains == o.max_domains &&
           max_white_labeled_tenants == o.max_white_labeled_tenants &&
           max_monthly_event_log_requests == o.max_monthly_event_log_requests &&
+          max_custom_collection_size == o.max_custom_collection_size &&
           has_white_labeling == o.has_white_labeling &&
           has_debranding == o.has_debranding &&
           has_llm_spam_detection == o.has_llm_spam_detection &&
@@ -911,6 +945,7 @@ module FastCommentsClient
           has_auditing == o.has_auditing &&
           has_flex_pricing == o.has_flex_pricing &&
           enable_saml == o.enable_saml &&
+          enable_canvas_lti == o.enable_canvas_lti &&
           flex_page_load_cost_cents == o.flex_page_load_cost_cents &&
           flex_page_load_unit == o.flex_page_load_unit &&
           flex_comment_cost_cents == o.flex_comment_cost_cents &&
@@ -947,7 +982,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_id, name, tenant_id, created_at, monthly_cost_usd, yearly_cost_usd, monthly_stripe_plan_id, yearly_stripe_plan_id, max_monthly_page_loads, max_monthly_api_credits, max_monthly_small_widgets_credits, max_monthly_comments, max_concurrent_users, max_tenant_users, max_sso_users, max_moderators, max_domains, max_white_labeled_tenants, max_monthly_event_log_requests, has_white_labeling, has_debranding, has_llm_spam_detection, for_who_text, feature_taglines, has_auditing, has_flex_pricing, enable_saml, flex_page_load_cost_cents, flex_page_load_unit, flex_comment_cost_cents, flex_comment_unit, flex_sso_user_cost_cents, flex_sso_user_unit, flex_api_credit_cost_cents, flex_api_credit_unit, flex_small_widgets_credit_cost_cents, flex_small_widgets_credit_unit, flex_moderator_cost_cents, flex_moderator_unit, flex_admin_cost_cents, flex_admin_unit, flex_domain_cost_cents, flex_domain_unit, flex_chat_gpt_cost_cents, flex_chat_gpt_unit, flex_minimum_cost_cents, flex_managed_tenant_cost_cents, flex_sso_admin_cost_cents, flex_sso_admin_unit, flex_sso_moderator_cost_cents, flex_sso_moderator_unit, is_sso_billing_monthly_active_users].hash
+      [_id, name, tenant_id, created_at, monthly_cost_usd, yearly_cost_usd, monthly_stripe_plan_id, yearly_stripe_plan_id, max_monthly_page_loads, max_monthly_api_credits, max_monthly_small_widgets_credits, max_monthly_comments, max_concurrent_users, max_tenant_users, max_sso_users, max_moderators, max_domains, max_white_labeled_tenants, max_monthly_event_log_requests, max_custom_collection_size, has_white_labeling, has_debranding, has_llm_spam_detection, for_who_text, feature_taglines, has_auditing, has_flex_pricing, enable_saml, enable_canvas_lti, flex_page_load_cost_cents, flex_page_load_unit, flex_comment_cost_cents, flex_comment_unit, flex_sso_user_cost_cents, flex_sso_user_unit, flex_api_credit_cost_cents, flex_api_credit_unit, flex_small_widgets_credit_cost_cents, flex_small_widgets_credit_unit, flex_moderator_cost_cents, flex_moderator_unit, flex_admin_cost_cents, flex_admin_unit, flex_domain_cost_cents, flex_domain_unit, flex_chat_gpt_cost_cents, flex_chat_gpt_unit, flex_minimum_cost_cents, flex_managed_tenant_cost_cents, flex_sso_admin_cost_cents, flex_sso_admin_unit, flex_sso_moderator_cost_cents, flex_sso_moderator_unit, is_sso_billing_monthly_active_users].hash
     end
 
     # Builds the object from hash

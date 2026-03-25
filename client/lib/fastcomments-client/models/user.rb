@@ -29,6 +29,10 @@ module FastCommentsClient
 
     attr_accessor :pending_email
 
+    attr_accessor :backup_email
+
+    attr_accessor :pending_backup_email
+
     attr_accessor :sign_up_date
 
     attr_accessor :created_from_url_id
@@ -73,6 +77,8 @@ module FastCommentsClient
 
     attr_accessor :is_api_admin
 
+    attr_accessor :is_site_admin
+
     attr_accessor :moderator_ids
 
     attr_accessor :is_impersonator
@@ -82,6 +88,14 @@ module FastCommentsClient
     attr_accessor :locale
 
     attr_accessor :digest_email_frequency
+
+    attr_accessor :notification_frequency
+
+    attr_accessor :admin_notification_frequency
+
+    attr_accessor :last_tenant_notification_sent_date
+
+    attr_accessor :last_reply_notification_sent_date
 
     attr_accessor :ignored_add_to_my_site_messages
 
@@ -117,6 +131,8 @@ module FastCommentsClient
 
     attr_accessor :has_two_factor
 
+    attr_accessor :is_email_suppressed
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -149,6 +165,8 @@ module FastCommentsClient
         :'website_url' => :'websiteUrl',
         :'email' => :'email',
         :'pending_email' => :'pendingEmail',
+        :'backup_email' => :'backupEmail',
+        :'pending_backup_email' => :'pendingBackupEmail',
         :'sign_up_date' => :'signUpDate',
         :'created_from_url_id' => :'createdFromUrlId',
         :'created_from_tenant_id' => :'createdFromTenantId',
@@ -171,11 +189,16 @@ module FastCommentsClient
         :'is_manage_data_admin' => :'isManageDataAdmin',
         :'is_comment_moderator_admin' => :'isCommentModeratorAdmin',
         :'is_api_admin' => :'isAPIAdmin',
+        :'is_site_admin' => :'isSiteAdmin',
         :'moderator_ids' => :'moderatorIds',
         :'is_impersonator' => :'isImpersonator',
         :'is_coupon_manager' => :'isCouponManager',
         :'locale' => :'locale',
         :'digest_email_frequency' => :'digestEmailFrequency',
+        :'notification_frequency' => :'notificationFrequency',
+        :'admin_notification_frequency' => :'adminNotificationFrequency',
+        :'last_tenant_notification_sent_date' => :'lastTenantNotificationSentDate',
+        :'last_reply_notification_sent_date' => :'lastReplyNotificationSentDate',
         :'ignored_add_to_my_site_messages' => :'ignoredAddToMySiteMessages',
         :'last_login_date' => :'lastLoginDate',
         :'display_label' => :'displayLabel',
@@ -192,7 +215,8 @@ module FastCommentsClient
         :'country_code' => :'countryCode',
         :'country_flag' => :'countryFlag',
         :'social_links' => :'socialLinks',
-        :'has_two_factor' => :'hasTwoFactor'
+        :'has_two_factor' => :'hasTwoFactor',
+        :'is_email_suppressed' => :'isEmailSuppressed'
       }
     end
 
@@ -216,6 +240,8 @@ module FastCommentsClient
         :'website_url' => :'String',
         :'email' => :'String',
         :'pending_email' => :'String',
+        :'backup_email' => :'String',
+        :'pending_backup_email' => :'String',
         :'sign_up_date' => :'Integer',
         :'created_from_url_id' => :'String',
         :'created_from_tenant_id' => :'String',
@@ -238,11 +264,16 @@ module FastCommentsClient
         :'is_manage_data_admin' => :'Boolean',
         :'is_comment_moderator_admin' => :'Boolean',
         :'is_api_admin' => :'Boolean',
+        :'is_site_admin' => :'Boolean',
         :'moderator_ids' => :'Array<String>',
         :'is_impersonator' => :'Boolean',
         :'is_coupon_manager' => :'Boolean',
         :'locale' => :'String',
         :'digest_email_frequency' => :'DigestEmailFrequency',
+        :'notification_frequency' => :'Float',
+        :'admin_notification_frequency' => :'Float',
+        :'last_tenant_notification_sent_date' => :'Time',
+        :'last_reply_notification_sent_date' => :'Time',
         :'ignored_add_to_my_site_messages' => :'Boolean',
         :'last_login_date' => :'Time',
         :'display_label' => :'String',
@@ -259,7 +290,8 @@ module FastCommentsClient
         :'country_code' => :'String',
         :'country_flag' => :'String',
         :'social_links' => :'Array<String>',
-        :'has_two_factor' => :'Boolean'
+        :'has_two_factor' => :'Boolean',
+        :'is_email_suppressed' => :'Boolean'
       }
     end
 
@@ -324,6 +356,14 @@ module FastCommentsClient
 
       if attributes.key?(:'pending_email')
         self.pending_email = attributes[:'pending_email']
+      end
+
+      if attributes.key?(:'backup_email')
+        self.backup_email = attributes[:'backup_email']
+      end
+
+      if attributes.key?(:'pending_backup_email')
+        self.pending_backup_email = attributes[:'pending_backup_email']
       end
 
       if attributes.key?(:'sign_up_date')
@@ -426,6 +466,10 @@ module FastCommentsClient
         self.is_api_admin = attributes[:'is_api_admin']
       end
 
+      if attributes.key?(:'is_site_admin')
+        self.is_site_admin = attributes[:'is_site_admin']
+      end
+
       if attributes.key?(:'moderator_ids')
         if (value = attributes[:'moderator_ids']).is_a?(Array)
           self.moderator_ids = value
@@ -446,6 +490,22 @@ module FastCommentsClient
 
       if attributes.key?(:'digest_email_frequency')
         self.digest_email_frequency = attributes[:'digest_email_frequency']
+      end
+
+      if attributes.key?(:'notification_frequency')
+        self.notification_frequency = attributes[:'notification_frequency']
+      end
+
+      if attributes.key?(:'admin_notification_frequency')
+        self.admin_notification_frequency = attributes[:'admin_notification_frequency']
+      end
+
+      if attributes.key?(:'last_tenant_notification_sent_date')
+        self.last_tenant_notification_sent_date = attributes[:'last_tenant_notification_sent_date']
+      end
+
+      if attributes.key?(:'last_reply_notification_sent_date')
+        self.last_reply_notification_sent_date = attributes[:'last_reply_notification_sent_date']
       end
 
       if attributes.key?(:'ignored_add_to_my_site_messages')
@@ -516,6 +576,10 @@ module FastCommentsClient
 
       if attributes.key?(:'has_two_factor')
         self.has_two_factor = attributes[:'has_two_factor']
+      end
+
+      if attributes.key?(:'is_email_suppressed')
+        self.is_email_suppressed = attributes[:'is_email_suppressed']
       end
     end
 
@@ -651,6 +715,8 @@ module FastCommentsClient
           website_url == o.website_url &&
           email == o.email &&
           pending_email == o.pending_email &&
+          backup_email == o.backup_email &&
+          pending_backup_email == o.pending_backup_email &&
           sign_up_date == o.sign_up_date &&
           created_from_url_id == o.created_from_url_id &&
           created_from_tenant_id == o.created_from_tenant_id &&
@@ -673,11 +739,16 @@ module FastCommentsClient
           is_manage_data_admin == o.is_manage_data_admin &&
           is_comment_moderator_admin == o.is_comment_moderator_admin &&
           is_api_admin == o.is_api_admin &&
+          is_site_admin == o.is_site_admin &&
           moderator_ids == o.moderator_ids &&
           is_impersonator == o.is_impersonator &&
           is_coupon_manager == o.is_coupon_manager &&
           locale == o.locale &&
           digest_email_frequency == o.digest_email_frequency &&
+          notification_frequency == o.notification_frequency &&
+          admin_notification_frequency == o.admin_notification_frequency &&
+          last_tenant_notification_sent_date == o.last_tenant_notification_sent_date &&
+          last_reply_notification_sent_date == o.last_reply_notification_sent_date &&
           ignored_add_to_my_site_messages == o.ignored_add_to_my_site_messages &&
           last_login_date == o.last_login_date &&
           display_label == o.display_label &&
@@ -694,7 +765,8 @@ module FastCommentsClient
           country_code == o.country_code &&
           country_flag == o.country_flag &&
           social_links == o.social_links &&
-          has_two_factor == o.has_two_factor
+          has_two_factor == o.has_two_factor &&
+          is_email_suppressed == o.is_email_suppressed
     end
 
     # @see the `==` method
@@ -706,7 +778,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_id, tenant_id, username, display_name, website_url, email, pending_email, sign_up_date, created_from_url_id, created_from_tenant_id, created_from_ip_hashed, verified, login_id, login_id_date, login_count, opted_in_notifications, opted_in_tenant_notifications, hide_account_code, avatar_src, is_fast_comments_help_request_admin, is_help_request_admin, is_account_owner, is_admin_admin, is_billing_admin, is_analytics_admin, is_customization_admin, is_manage_data_admin, is_comment_moderator_admin, is_api_admin, moderator_ids, is_impersonator, is_coupon_manager, locale, digest_email_frequency, ignored_add_to_my_site_messages, last_login_date, display_label, is_profile_activity_private, is_profile_comments_private, is_profile_dm_disabled, profile_comment_approval_mode, karma, password_hash, average_ticket_ack_time_ms, has_blocked_users, bio, header_background_src, country_code, country_flag, social_links, has_two_factor].hash
+      [_id, tenant_id, username, display_name, website_url, email, pending_email, backup_email, pending_backup_email, sign_up_date, created_from_url_id, created_from_tenant_id, created_from_ip_hashed, verified, login_id, login_id_date, login_count, opted_in_notifications, opted_in_tenant_notifications, hide_account_code, avatar_src, is_fast_comments_help_request_admin, is_help_request_admin, is_account_owner, is_admin_admin, is_billing_admin, is_analytics_admin, is_customization_admin, is_manage_data_admin, is_comment_moderator_admin, is_api_admin, is_site_admin, moderator_ids, is_impersonator, is_coupon_manager, locale, digest_email_frequency, notification_frequency, admin_notification_frequency, last_tenant_notification_sent_date, last_reply_notification_sent_date, ignored_add_to_my_site_messages, last_login_date, display_label, is_profile_activity_private, is_profile_comments_private, is_profile_dm_disabled, profile_comment_approval_mode, karma, password_hash, average_ticket_ack_time_ms, has_blocked_users, bio, header_background_src, country_code, country_flag, social_links, has_two_factor, is_email_suppressed].hash
     end
 
     # Builds the object from hash

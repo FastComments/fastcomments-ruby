@@ -22,6 +22,7 @@
 | **verification_id** | **String** |  |  |
 | **created_at** | **Time** |  |  |
 | **moderation_group_ids** | **Array&lt;String&gt;** |  |  |
+| **is_email_suppressed** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -46,7 +47,8 @@ instance = FastCommentsClient::Moderator.new(
   un_flagged_count: null,
   verification_id: null,
   created_at: null,
-  moderation_group_ids: null
+  moderation_group_ids: null,
+  is_email_suppressed: null
 )
 ```
 

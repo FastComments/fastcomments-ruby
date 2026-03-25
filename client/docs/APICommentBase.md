@@ -39,7 +39,7 @@
 | **local_date_string** | **String** |  | [optional] |
 | **locale** | **String** |  |  |
 | **mentions** | [**Array&lt;CommentUserMentionInfo&gt;**](CommentUserMentionInfo.md) |  | [optional] |
-| **meta** | [**FCommentMeta**](FCommentMeta.md) |  | [optional] |
+| **meta** | [**APICommentBaseMeta**](APICommentBaseMeta.md) |  | [optional] |
 | **moderation_group_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **notification_sent_for_parent** | **Boolean** |  | [optional] |
 | **notification_sent_for_parent_tenant** | **Boolean** |  | [optional] |

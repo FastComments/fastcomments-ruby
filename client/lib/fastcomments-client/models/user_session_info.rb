@@ -35,6 +35,8 @@ module FastCommentsClient
 
     attr_accessor :is_anon_session
 
+    attr_accessor :needs_tos
+
     attr_accessor :session_id
 
     attr_accessor :username
@@ -54,6 +56,7 @@ module FastCommentsClient
         :'group_ids' => :'groupIds',
         :'has_blocked_users' => :'hasBlockedUsers',
         :'is_anon_session' => :'isAnonSession',
+        :'needs_tos' => :'needsTOS',
         :'session_id' => :'sessionId',
         :'username' => :'username',
         :'website_url' => :'websiteUrl'
@@ -83,6 +86,7 @@ module FastCommentsClient
         :'group_ids' => :'Array<String>',
         :'has_blocked_users' => :'Boolean',
         :'is_anon_session' => :'Boolean',
+        :'needs_tos' => :'Boolean',
         :'session_id' => :'String',
         :'username' => :'String',
         :'website_url' => :'String'
@@ -158,6 +162,10 @@ module FastCommentsClient
         self.is_anon_session = attributes[:'is_anon_session']
       end
 
+      if attributes.key?(:'needs_tos')
+        self.needs_tos = attributes[:'needs_tos']
+      end
+
       if attributes.key?(:'session_id')
         self.session_id = attributes[:'session_id']
       end
@@ -201,6 +209,7 @@ module FastCommentsClient
           group_ids == o.group_ids &&
           has_blocked_users == o.has_blocked_users &&
           is_anon_session == o.is_anon_session &&
+          needs_tos == o.needs_tos &&
           session_id == o.session_id &&
           username == o.username &&
           website_url == o.website_url
@@ -215,7 +224,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, authorized, avatar_src, badges, display_label, display_name, email, group_ids, has_blocked_users, is_anon_session, session_id, username, website_url].hash
+      [id, authorized, avatar_src, badges, display_label, display_name, email, group_ids, has_blocked_users, is_anon_session, needs_tos, session_id, username, website_url].hash
     end
 
     # Builds the object from hash

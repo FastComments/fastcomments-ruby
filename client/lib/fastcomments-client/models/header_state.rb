@@ -25,6 +25,8 @@ module FastCommentsClient
 
     attr_accessor :notification_counts
 
+    attr_accessor :account_notifications
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -54,7 +56,8 @@ module FastCommentsClient
         :'notification_type' => :'NotificationType',
         :'user_id' => :'userId',
         :'user_id_ws' => :'userIdWS',
-        :'notification_counts' => :'notificationCounts'
+        :'notification_counts' => :'notificationCounts',
+        :'account_notifications' => :'accountNotifications'
       }
     end
 
@@ -75,7 +78,8 @@ module FastCommentsClient
         :'notification_type' => :'Object',
         :'user_id' => :'String',
         :'user_id_ws' => :'String',
-        :'notification_counts' => :'Array<NotificationAndCount>'
+        :'notification_counts' => :'Array<NotificationAndCount>',
+        :'account_notifications' => :'Array<HeaderAccountNotification>'
       }
     end
 
@@ -132,6 +136,14 @@ module FastCommentsClient
       else
         self.notification_counts = nil
       end
+
+      if attributes.key?(:'account_notifications')
+        if (value = attributes[:'account_notifications']).is_a?(Array)
+          self.account_notifications = value
+        end
+      else
+        self.account_notifications = nil
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -159,6 +171,10 @@ module FastCommentsClient
         invalid_properties.push('invalid value for "notification_counts", notification_counts cannot be nil.')
       end
 
+      if @account_notifications.nil?
+        invalid_properties.push('invalid value for "account_notifications", account_notifications cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -171,6 +187,7 @@ module FastCommentsClient
       return false if @user_id.nil?
       return false if @user_id_ws.nil?
       return false if @notification_counts.nil?
+      return false if @account_notifications.nil?
       true
     end
 
@@ -224,6 +241,16 @@ module FastCommentsClient
       @notification_counts = notification_counts
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] account_notifications Value to be assigned
+    def account_notifications=(account_notifications)
+      if account_notifications.nil?
+        fail ArgumentError, 'account_notifications cannot be nil'
+      end
+
+      @account_notifications = account_notifications
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -233,7 +260,8 @@ module FastCommentsClient
           notification_type == o.notification_type &&
           user_id == o.user_id &&
           user_id_ws == o.user_id_ws &&
-          notification_counts == o.notification_counts
+          notification_counts == o.notification_counts &&
+          account_notifications == o.account_notifications
     end
 
     # @see the `==` method
@@ -245,7 +273,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [status, notification_type, user_id, user_id_ws, notification_counts].hash
+      [status, notification_type, user_id, user_id_ws, notification_counts, account_notifications].hash
     end
 
     # Builds the object from hash

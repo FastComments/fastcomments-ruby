@@ -51,6 +51,8 @@ module FastCommentsClient
 
     attr_accessor :moderation_group_ids
 
+    attr_accessor :is_email_suppressed
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -71,7 +73,8 @@ module FastCommentsClient
         :'un_flagged_count' => :'unFlaggedCount',
         :'verification_id' => :'verificationId',
         :'created_at' => :'createdAt',
-        :'moderation_group_ids' => :'moderationGroupIds'
+        :'moderation_group_ids' => :'moderationGroupIds',
+        :'is_email_suppressed' => :'isEmailSuppressed'
       }
     end
 
@@ -105,7 +108,8 @@ module FastCommentsClient
         :'un_flagged_count' => :'Float',
         :'verification_id' => :'String',
         :'created_at' => :'Time',
-        :'moderation_group_ids' => :'Array<String>'
+        :'moderation_group_ids' => :'Array<String>',
+        :'is_email_suppressed' => :'Boolean'
       }
     end
 
@@ -116,7 +120,7 @@ module FastCommentsClient
         :'user_id',
         :'email',
         :'verification_id',
-        :'moderation_group_ids'
+        :'moderation_group_ids',
       ])
     end
 
@@ -244,6 +248,10 @@ module FastCommentsClient
         end
       else
         self.moderation_group_ids = nil
+      end
+
+      if attributes.key?(:'is_email_suppressed')
+        self.is_email_suppressed = attributes[:'is_email_suppressed']
       end
     end
 
@@ -479,7 +487,8 @@ module FastCommentsClient
           un_flagged_count == o.un_flagged_count &&
           verification_id == o.verification_id &&
           created_at == o.created_at &&
-          moderation_group_ids == o.moderation_group_ids
+          moderation_group_ids == o.moderation_group_ids &&
+          is_email_suppressed == o.is_email_suppressed
     end
 
     # @see the `==` method
@@ -491,7 +500,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [_id, tenant_id, name, user_id, accepted_invite, email, mark_reviewed_count, deleted_count, marked_spam_count, marked_not_spam_count, approved_count, un_approved_count, edited_count, banned_count, un_flagged_count, verification_id, created_at, moderation_group_ids].hash
+      [_id, tenant_id, name, user_id, accepted_invite, email, mark_reviewed_count, deleted_count, marked_spam_count, marked_not_spam_count, approved_count, un_approved_count, edited_count, banned_count, un_flagged_count, verification_id, created_at, moderation_group_ids, is_email_suppressed].hash
     end
 
     # Builds the object from hash

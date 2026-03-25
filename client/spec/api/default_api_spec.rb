@@ -143,6 +143,19 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for change_ticket_state
+  # @param tenant_id 
+  # @param user_id 
+  # @param id 
+  # @param change_ticket_state_body 
+  # @param [Hash] opts the optional parameters
+  # @return [ChangeTicketState200Response]
+  describe 'change_ticket_state test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for combine_comments_with_question_results
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
@@ -259,6 +272,18 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [CreateTenantUser200Response]
   describe 'create_tenant_user test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for create_ticket
+  # @param tenant_id 
+  # @param user_id 
+  # @param create_ticket_body 
+  # @param [Hash] opts the optional parameters
+  # @return [CreateTicket200Response]
+  describe 'create_ticket test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -944,6 +969,32 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for get_ticket
+  # @param tenant_id 
+  # @param id 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :user_id 
+  # @return [GetTicket200Response]
+  describe 'get_ticket test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for get_tickets
+  # @param tenant_id 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :user_id 
+  # @option opts [Float] :state 
+  # @option opts [Float] :skip 
+  # @option opts [Float] :limit 
+  # @return [GetTickets200Response]
+  describe 'get_tickets test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for get_user
   # @param tenant_id 
   # @param id 
@@ -1316,6 +1367,19 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [FlagCommentPublic200Response]
   describe 'update_question_result test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for update_subscription
+  # @param tenant_id 
+  # @param id 
+  # @param update_api_user_subscription_data 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :user_id 
+  # @return [UpdateSubscriptionAPIResponse]
+  describe 'update_subscription test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

@@ -123,6 +123,12 @@ describe FastCommentsClient::CreateTenantPackageBody do
     end
   end
 
+  describe 'test attribute "max_custom_collection_size"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "has_white_labeling"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -15,6 +15,7 @@
 | **max_sso_users** | **Float** |  | [optional] |
 | **max_moderators** | **Float** |  | [optional] |
 | **max_domains** | **Float** |  | [optional] |
+| **max_custom_collection_size** | **Float** |  | [optional] |
 | **has_debranding** | **Boolean** |  | [optional] |
 | **has_white_labeling** | **Boolean** |  | [optional] |
 | **for_who_text** | **String** |  | [optional] |
@@ -53,6 +54,7 @@ instance = FastCommentsClient::UpdateTenantPackageBody.new(
   max_sso_users: null,
   max_moderators: null,
   max_domains: null,
+  max_custom_collection_size: null,
   has_debranding: null,
   has_white_labeling: null,
   for_who_text: null,

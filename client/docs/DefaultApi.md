@@ -13,6 +13,7 @@ All URIs are relative to *https://fastcomments.com*
 | [**aggregate_question_results**](DefaultApi.md#aggregate_question_results) | **GET** /api/v1/question-results-aggregation |  |
 | [**block_user_from_comment**](DefaultApi.md#block_user_from_comment) | **POST** /api/v1/comments/{id}/block |  |
 | [**bulk_aggregate_question_results**](DefaultApi.md#bulk_aggregate_question_results) | **POST** /api/v1/question-results-aggregation/bulk |  |
+| [**change_ticket_state**](DefaultApi.md#change_ticket_state) | **PATCH** /api/v1/tickets/{id}/state |  |
 | [**combine_comments_with_question_results**](DefaultApi.md#combine_comments_with_question_results) | **GET** /api/v1/question-results-aggregation/combine/comments |  |
 | [**create_email_template**](DefaultApi.md#create_email_template) | **POST** /api/v1/email-templates |  |
 | [**create_feed_post**](DefaultApi.md#create_feed_post) | **POST** /api/v1/feed-posts |  |
@@ -23,6 +24,7 @@ All URIs are relative to *https://fastcomments.com*
 | [**create_tenant**](DefaultApi.md#create_tenant) | **POST** /api/v1/tenants |  |
 | [**create_tenant_package**](DefaultApi.md#create_tenant_package) | **POST** /api/v1/tenant-packages |  |
 | [**create_tenant_user**](DefaultApi.md#create_tenant_user) | **POST** /api/v1/tenant-users |  |
+| [**create_ticket**](DefaultApi.md#create_ticket) | **POST** /api/v1/tickets |  |
 | [**create_user_badge**](DefaultApi.md#create_user_badge) | **POST** /api/v1/user-badges |  |
 | [**create_vote**](DefaultApi.md#create_vote) | **POST** /api/v1/votes |  |
 | [**delete_comment**](DefaultApi.md#delete_comment) | **DELETE** /api/v1/comments/{id} |  |
@@ -79,6 +81,8 @@ All URIs are relative to *https://fastcomments.com*
 | [**get_tenant_user**](DefaultApi.md#get_tenant_user) | **GET** /api/v1/tenant-users/{id} |  |
 | [**get_tenant_users**](DefaultApi.md#get_tenant_users) | **GET** /api/v1/tenant-users |  |
 | [**get_tenants**](DefaultApi.md#get_tenants) | **GET** /api/v1/tenants |  |
+| [**get_ticket**](DefaultApi.md#get_ticket) | **GET** /api/v1/tickets/{id} |  |
+| [**get_tickets**](DefaultApi.md#get_tickets) | **GET** /api/v1/tickets |  |
 | [**get_user**](DefaultApi.md#get_user) | **GET** /api/v1/users/{id} |  |
 | [**get_user_badge**](DefaultApi.md#get_user_badge) | **GET** /api/v1/user-badges/{id} |  |
 | [**get_user_badge_progress_by_id**](DefaultApi.md#get_user_badge_progress_by_id) | **GET** /api/v1/user-badge-progress/{id} |  |
@@ -109,6 +113,7 @@ All URIs are relative to *https://fastcomments.com*
 | [**update_notification**](DefaultApi.md#update_notification) | **PATCH** /api/v1/notifications/{id} |  |
 | [**update_question_config**](DefaultApi.md#update_question_config) | **PATCH** /api/v1/question-configs/{id} |  |
 | [**update_question_result**](DefaultApi.md#update_question_result) | **PATCH** /api/v1/question-results/{id} |  |
+| [**update_subscription**](DefaultApi.md#update_subscription) | **PATCH** /api/v1/subscriptions/{id} |  |
 | [**update_tenant**](DefaultApi.md#update_tenant) | **PATCH** /api/v1/tenants/{id} |  |
 | [**update_tenant_package**](DefaultApi.md#update_tenant_package) | **PATCH** /api/v1/tenant-packages/{id} |  |
 | [**update_tenant_user**](DefaultApi.md#update_tenant_user) | **PATCH** /api/v1/tenant-users/{id} |  |
@@ -779,6 +784,81 @@ end
 ### Return type
 
 [**BulkAggregateQuestionResults200Response**](BulkAggregateQuestionResults200Response.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## change_ticket_state
+
+> <ChangeTicketState200Response> change_ticket_state(tenant_id, user_id, id, change_ticket_state_body)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'fastcomments-client'
+# setup authorization
+FastCommentsClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
+user_id = 'user_id_example' # String | 
+id = 'id_example' # String | 
+change_ticket_state_body = FastCommentsClient::ChangeTicketStateBody.new({state: 37}) # ChangeTicketStateBody | 
+
+begin
+  
+  result = api_instance.change_ticket_state(tenant_id, user_id, id, change_ticket_state_body)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->change_ticket_state: #{e}"
+end
+```
+
+#### Using the change_ticket_state_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ChangeTicketState200Response>, Integer, Hash)> change_ticket_state_with_http_info(tenant_id, user_id, id, change_ticket_state_body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.change_ticket_state_with_http_info(tenant_id, user_id, id, change_ticket_state_body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ChangeTicketState200Response>
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->change_ticket_state_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **user_id** | **String** |  |  |
+| **id** | **String** |  |  |
+| **change_ticket_state_body** | [**ChangeTicketStateBody**](ChangeTicketStateBody.md) |  |  |
+
+### Return type
+
+[**ChangeTicketState200Response**](ChangeTicketState200Response.md)
 
 ### Authorization
 
@@ -1515,6 +1595,79 @@ end
 ### Return type
 
 [**CreateTenantUser200Response**](CreateTenantUser200Response.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_ticket
+
+> <CreateTicket200Response> create_ticket(tenant_id, user_id, create_ticket_body)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'fastcomments-client'
+# setup authorization
+FastCommentsClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
+user_id = 'user_id_example' # String | 
+create_ticket_body = FastCommentsClient::CreateTicketBody.new({subject: 'subject_example'}) # CreateTicketBody | 
+
+begin
+  
+  result = api_instance.create_ticket(tenant_id, user_id, create_ticket_body)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->create_ticket: #{e}"
+end
+```
+
+#### Using the create_ticket_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreateTicket200Response>, Integer, Hash)> create_ticket_with_http_info(tenant_id, user_id, create_ticket_body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.create_ticket_with_http_info(tenant_id, user_id, create_ticket_body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreateTicket200Response>
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->create_ticket_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **user_id** | **String** |  |  |
+| **create_ticket_body** | [**CreateTicketBody**](CreateTicketBody.md) |  |  |
+
+### Return type
+
+[**CreateTicket200Response**](CreateTicket200Response.md)
 
 ### Authorization
 
@@ -5688,6 +5841,160 @@ end
 - **Accept**: application/json
 
 
+## get_ticket
+
+> <GetTicket200Response> get_ticket(tenant_id, id, opts)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'fastcomments-client'
+# setup authorization
+FastCommentsClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
+id = 'id_example' # String | 
+opts = {
+  user_id: 'user_id_example' # String | 
+}
+
+begin
+  
+  result = api_instance.get_ticket(tenant_id, id, opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->get_ticket: #{e}"
+end
+```
+
+#### Using the get_ticket_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTicket200Response>, Integer, Hash)> get_ticket_with_http_info(tenant_id, id, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_ticket_with_http_info(tenant_id, id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTicket200Response>
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->get_ticket_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **id** | **String** |  |  |
+| **user_id** | **String** |  | [optional] |
+
+### Return type
+
+[**GetTicket200Response**](GetTicket200Response.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_tickets
+
+> <GetTickets200Response> get_tickets(tenant_id, opts)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'fastcomments-client'
+# setup authorization
+FastCommentsClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
+opts = {
+  user_id: 'user_id_example', # String | 
+  state: 1.2, # Float | 
+  skip: 1.2, # Float | 
+  limit: 1.2 # Float | 
+}
+
+begin
+  
+  result = api_instance.get_tickets(tenant_id, opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->get_tickets: #{e}"
+end
+```
+
+#### Using the get_tickets_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetTickets200Response>, Integer, Hash)> get_tickets_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_tickets_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetTickets200Response>
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->get_tickets_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **user_id** | **String** |  | [optional] |
+| **state** | **Float** |  | [optional] |
+| **skip** | **Float** |  | [optional] |
+| **limit** | **Float** |  | [optional] |
+
+### Return type
+
+[**GetTickets200Response**](GetTickets200Response.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## get_user
 
 > <GetUser200Response> get_user(tenant_id, id)
@@ -7931,6 +8238,83 @@ end
 ### Return type
 
 [**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## update_subscription
+
+> <UpdateSubscriptionAPIResponse> update_subscription(tenant_id, id, update_api_user_subscription_data, opts)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'fastcomments-client'
+# setup authorization
+FastCommentsClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
+id = 'id_example' # String | 
+update_api_user_subscription_data = FastCommentsClient::UpdateAPIUserSubscriptionData.new # UpdateAPIUserSubscriptionData | 
+opts = {
+  user_id: 'user_id_example' # String | 
+}
+
+begin
+  
+  result = api_instance.update_subscription(tenant_id, id, update_api_user_subscription_data, opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->update_subscription: #{e}"
+end
+```
+
+#### Using the update_subscription_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UpdateSubscriptionAPIResponse>, Integer, Hash)> update_subscription_with_http_info(tenant_id, id, update_api_user_subscription_data, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.update_subscription_with_http_info(tenant_id, id, update_api_user_subscription_data, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UpdateSubscriptionAPIResponse>
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling DefaultApi->update_subscription_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **id** | **String** |  |  |
+| **update_api_user_subscription_data** | [**UpdateAPIUserSubscriptionData**](UpdateAPIUserSubscriptionData.md) |  |  |
+| **user_id** | **String** |  | [optional] |
+
+### Return type
+
+[**UpdateSubscriptionAPIResponse**](UpdateSubscriptionAPIResponse.md)
 
 ### Authorization
 

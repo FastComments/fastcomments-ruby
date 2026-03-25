@@ -673,6 +673,90 @@ module FastCommentsClient
     end
 
     # @param tenant_id [String] 
+    # @param user_id [String] 
+    # @param id [String] 
+    # @param change_ticket_state_body [ChangeTicketStateBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [ChangeTicketState200Response]
+    def change_ticket_state(tenant_id, user_id, id, change_ticket_state_body, opts = {})
+      data, _status_code, _headers = change_ticket_state_with_http_info(tenant_id, user_id, id, change_ticket_state_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param user_id [String] 
+    # @param id [String] 
+    # @param change_ticket_state_body [ChangeTicketStateBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ChangeTicketState200Response, Integer, Hash)>] ChangeTicketState200Response data, response status code and response headers
+    def change_ticket_state_with_http_info(tenant_id, user_id, id, change_ticket_state_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.change_ticket_state ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.change_ticket_state"
+      end
+      # verify the required parameter 'user_id' is set
+      if @api_client.config.client_side_validation && user_id.nil?
+        fail ArgumentError, "Missing the required parameter 'user_id' when calling DefaultApi.change_ticket_state"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.change_ticket_state"
+      end
+      # verify the required parameter 'change_ticket_state_body' is set
+      if @api_client.config.client_side_validation && change_ticket_state_body.nil?
+        fail ArgumentError, "Missing the required parameter 'change_ticket_state_body' when calling DefaultApi.change_ticket_state"
+      end
+      # resource path
+      local_var_path = '/api/v1/tickets/{id}/state'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = user_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(change_ticket_state_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ChangeTicketState200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.change_ticket_state",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#change_ticket_state\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :question_id 
     # @option opts [Array<String>] :question_ids 
@@ -1403,6 +1487,84 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#create_tenant_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param user_id [String] 
+    # @param create_ticket_body [CreateTicketBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [CreateTicket200Response]
+    def create_ticket(tenant_id, user_id, create_ticket_body, opts = {})
+      data, _status_code, _headers = create_ticket_with_http_info(tenant_id, user_id, create_ticket_body, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param user_id [String] 
+    # @param create_ticket_body [CreateTicketBody] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(CreateTicket200Response, Integer, Hash)>] CreateTicket200Response data, response status code and response headers
+    def create_ticket_with_http_info(tenant_id, user_id, create_ticket_body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_ticket ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.create_ticket"
+      end
+      # verify the required parameter 'user_id' is set
+      if @api_client.config.client_side_validation && user_id.nil?
+        fail ArgumentError, "Missing the required parameter 'user_id' when calling DefaultApi.create_ticket"
+      end
+      # verify the required parameter 'create_ticket_body' is set
+      if @api_client.config.client_side_validation && create_ticket_body.nil?
+        fail ArgumentError, "Missing the required parameter 'create_ticket_body' when calling DefaultApi.create_ticket"
+      end
+      # resource path
+      local_var_path = '/api/v1/tickets'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = user_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_ticket_body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CreateTicket200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_ticket",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_ticket\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5253,6 +5415,147 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @return [GetTicket200Response]
+    def get_ticket(tenant_id, id, opts = {})
+      data, _status_code, _headers = get_ticket_with_http_info(tenant_id, id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @return [Array<(GetTicket200Response, Integer, Hash)>] GetTicket200Response data, response status code and response headers
+    def get_ticket_with_http_info(tenant_id, id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_ticket ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_ticket"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.get_ticket"
+      end
+      # resource path
+      local_var_path = '/api/v1/tickets/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTicket200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_ticket",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_ticket\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [Float] :state 
+    # @option opts [Float] :skip 
+    # @option opts [Float] :limit 
+    # @return [GetTickets200Response]
+    def get_tickets(tenant_id, opts = {})
+      data, _status_code, _headers = get_tickets_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @option opts [Float] :state 
+    # @option opts [Float] :skip 
+    # @option opts [Float] :limit 
+    # @return [Array<(GetTickets200Response, Integer, Hash)>] GetTickets200Response data, response status code and response headers
+    def get_tickets_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_tickets ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.get_tickets"
+      end
+      # resource path
+      local_var_path = '/api/v1/tickets'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+      query_params[:'state'] = opts[:'state'] if !opts[:'state'].nil?
+      query_params[:'skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTickets200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_tickets",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_tickets\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [GetUser200Response]
     def get_user(tenant_id, id, opts = {})
       data, _status_code, _headers = get_user_with_http_info(tenant_id, id, opts)
@@ -7502,6 +7805,86 @@ module FastCommentsClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#update_question_result\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_api_user_subscription_data [UpdateAPIUserSubscriptionData] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @return [UpdateSubscriptionAPIResponse]
+    def update_subscription(tenant_id, id, update_api_user_subscription_data, opts = {})
+      data, _status_code, _headers = update_subscription_with_http_info(tenant_id, id, update_api_user_subscription_data, opts)
+      data
+    end
+
+    # @param tenant_id [String] 
+    # @param id [String] 
+    # @param update_api_user_subscription_data [UpdateAPIUserSubscriptionData] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :user_id 
+    # @return [Array<(UpdateSubscriptionAPIResponse, Integer, Hash)>] UpdateSubscriptionAPIResponse data, response status code and response headers
+    def update_subscription_with_http_info(tenant_id, id, update_api_user_subscription_data, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.update_subscription ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.update_subscription"
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DefaultApi.update_subscription"
+      end
+      # verify the required parameter 'update_api_user_subscription_data' is set
+      if @api_client.config.client_side_validation && update_api_user_subscription_data.nil?
+        fail ArgumentError, "Missing the required parameter 'update_api_user_subscription_data' when calling DefaultApi.update_subscription"
+      end
+      # resource path
+      local_var_path = '/api/v1/subscriptions/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'userId'] = opts[:'user_id'] if !opts[:'user_id'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_api_user_subscription_data)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateSubscriptionAPIResponse'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['api_key']
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.update_subscription",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#update_subscription\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

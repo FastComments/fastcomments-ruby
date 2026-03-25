@@ -64,6 +64,8 @@ module FastCommentsClient
     # Construct a type with a set of properties K of type T
     attr_accessor :question_values
 
+    attr_accessor :tos
+
     attr_accessor :approved
 
     attr_accessor :domain
@@ -112,6 +114,7 @@ module FastCommentsClient
         :'autoplay_delay_ms' => :'autoplayDelayMS',
         :'feedback_ids' => :'feedbackIds',
         :'question_values' => :'questionValues',
+        :'tos' => :'tos',
         :'approved' => :'approved',
         :'domain' => :'domain',
         :'ip' => :'ip',
@@ -162,6 +165,7 @@ module FastCommentsClient
         :'autoplay_delay_ms' => :'Integer',
         :'feedback_ids' => :'Array<String>',
         :'question_values' => :'Hash<String, RecordStringStringOrNumberValue>',
+        :'tos' => :'Boolean',
         :'approved' => :'Boolean',
         :'domain' => :'String',
         :'ip' => :'String',
@@ -314,6 +318,10 @@ module FastCommentsClient
         if (value = attributes[:'question_values']).is_a?(Hash)
           self.question_values = value
         end
+      end
+
+      if attributes.key?(:'tos')
+        self.tos = attributes[:'tos']
       end
 
       if attributes.key?(:'approved')
@@ -478,6 +486,7 @@ module FastCommentsClient
           autoplay_delay_ms == o.autoplay_delay_ms &&
           feedback_ids == o.feedback_ids &&
           question_values == o.question_values &&
+          tos == o.tos &&
           approved == o.approved &&
           domain == o.domain &&
           ip == o.ip &&
@@ -499,7 +508,7 @@ module FastCommentsClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [date, local_date_string, local_date_hours, commenter_name, commenter_email, commenter_link, comment, product_id, user_id, avatar_src, parent_id, mentions, hash_tags, page_title, is_from_my_account_page, url, url_id, meta, moderation_group_ids, rating, from_offline_restore, autoplay_delay_ms, feedback_ids, question_values, approved, domain, ip, is_pinned, locale, reviewed, verified, votes, votes_down, votes_up].hash
+      [date, local_date_string, local_date_hours, commenter_name, commenter_email, commenter_link, comment, product_id, user_id, avatar_src, parent_id, mentions, hash_tags, page_title, is_from_my_account_page, url, url_id, meta, moderation_group_ids, rating, from_offline_restore, autoplay_delay_ms, feedback_ids, question_values, tos, approved, domain, ip, is_pinned, locale, reviewed, verified, votes, votes_down, votes_up].hash
     end
 
     # Builds the object from hash

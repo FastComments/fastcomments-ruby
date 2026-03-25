@@ -14,6 +14,7 @@
 | **group_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **has_blocked_users** | **Boolean** |  | [optional] |
 | **is_anon_session** | **Boolean** |  | [optional] |
+| **needs_tos** | **Boolean** |  | [optional] |
 | **session_id** | **String** |  | [optional] |
 | **username** | **String** |  | [optional] |
 | **website_url** | **String** |  | [optional] |
@@ -34,6 +35,7 @@ instance = FastCommentsClient::UserSessionInfo.new(
   group_ids: null,
   has_blocked_users: null,
   is_anon_session: null,
+  needs_tos: null,
   session_id: null,
   username: null,
   website_url: null

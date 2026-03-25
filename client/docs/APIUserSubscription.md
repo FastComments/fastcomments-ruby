@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **notification_frequency** | **Float** |  | [optional] |
 | **created_at** | **Time** |  |  |
 | **page_title** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
@@ -18,6 +19,7 @@
 require 'fastcomments-client'
 
 instance = FastCommentsClient::APIUserSubscription.new(
+  notification_frequency: null,
   created_at: null,
   page_title: null,
   url: null,

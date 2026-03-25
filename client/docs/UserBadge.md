@@ -22,6 +22,7 @@
 | **displayed_on_comments** | **Boolean** |  |  |
 | **received_at** | **Time** |  |  |
 | **order** | **Integer** |  | [optional] |
+| **url_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -46,7 +47,8 @@ instance = FastCommentsClient::UserBadge.new(
   veteran_user_threshold_millis: null,
   displayed_on_comments: null,
   received_at: null,
-  order: null
+  order: null,
+  url_id: null
 )
 ```
 

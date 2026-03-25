@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 *FastCommentsClient::DefaultApi* | [**aggregate_question_results**](docs/DefaultApi.md#aggregate_question_results) | **GET** /api/v1/question-results-aggregation | 
 *FastCommentsClient::DefaultApi* | [**block_user_from_comment**](docs/DefaultApi.md#block_user_from_comment) | **POST** /api/v1/comments/{id}/block | 
 *FastCommentsClient::DefaultApi* | [**bulk_aggregate_question_results**](docs/DefaultApi.md#bulk_aggregate_question_results) | **POST** /api/v1/question-results-aggregation/bulk | 
+*FastCommentsClient::DefaultApi* | [**change_ticket_state**](docs/DefaultApi.md#change_ticket_state) | **PATCH** /api/v1/tickets/{id}/state | 
 *FastCommentsClient::DefaultApi* | [**combine_comments_with_question_results**](docs/DefaultApi.md#combine_comments_with_question_results) | **GET** /api/v1/question-results-aggregation/combine/comments | 
 *FastCommentsClient::DefaultApi* | [**create_email_template**](docs/DefaultApi.md#create_email_template) | **POST** /api/v1/email-templates | 
 *FastCommentsClient::DefaultApi* | [**create_feed_post**](docs/DefaultApi.md#create_feed_post) | **POST** /api/v1/feed-posts | 
@@ -103,6 +104,7 @@ Class | Method | HTTP request | Description
 *FastCommentsClient::DefaultApi* | [**create_tenant**](docs/DefaultApi.md#create_tenant) | **POST** /api/v1/tenants | 
 *FastCommentsClient::DefaultApi* | [**create_tenant_package**](docs/DefaultApi.md#create_tenant_package) | **POST** /api/v1/tenant-packages | 
 *FastCommentsClient::DefaultApi* | [**create_tenant_user**](docs/DefaultApi.md#create_tenant_user) | **POST** /api/v1/tenant-users | 
+*FastCommentsClient::DefaultApi* | [**create_ticket**](docs/DefaultApi.md#create_ticket) | **POST** /api/v1/tickets | 
 *FastCommentsClient::DefaultApi* | [**create_user_badge**](docs/DefaultApi.md#create_user_badge) | **POST** /api/v1/user-badges | 
 *FastCommentsClient::DefaultApi* | [**create_vote**](docs/DefaultApi.md#create_vote) | **POST** /api/v1/votes | 
 *FastCommentsClient::DefaultApi* | [**delete_comment**](docs/DefaultApi.md#delete_comment) | **DELETE** /api/v1/comments/{id} | 
@@ -159,6 +161,8 @@ Class | Method | HTTP request | Description
 *FastCommentsClient::DefaultApi* | [**get_tenant_user**](docs/DefaultApi.md#get_tenant_user) | **GET** /api/v1/tenant-users/{id} | 
 *FastCommentsClient::DefaultApi* | [**get_tenant_users**](docs/DefaultApi.md#get_tenant_users) | **GET** /api/v1/tenant-users | 
 *FastCommentsClient::DefaultApi* | [**get_tenants**](docs/DefaultApi.md#get_tenants) | **GET** /api/v1/tenants | 
+*FastCommentsClient::DefaultApi* | [**get_ticket**](docs/DefaultApi.md#get_ticket) | **GET** /api/v1/tickets/{id} | 
+*FastCommentsClient::DefaultApi* | [**get_tickets**](docs/DefaultApi.md#get_tickets) | **GET** /api/v1/tickets | 
 *FastCommentsClient::DefaultApi* | [**get_user**](docs/DefaultApi.md#get_user) | **GET** /api/v1/users/{id} | 
 *FastCommentsClient::DefaultApi* | [**get_user_badge**](docs/DefaultApi.md#get_user_badge) | **GET** /api/v1/user-badges/{id} | 
 *FastCommentsClient::DefaultApi* | [**get_user_badge_progress_by_id**](docs/DefaultApi.md#get_user_badge_progress_by_id) | **GET** /api/v1/user-badge-progress/{id} | 
@@ -189,6 +193,7 @@ Class | Method | HTTP request | Description
 *FastCommentsClient::DefaultApi* | [**update_notification**](docs/DefaultApi.md#update_notification) | **PATCH** /api/v1/notifications/{id} | 
 *FastCommentsClient::DefaultApi* | [**update_question_config**](docs/DefaultApi.md#update_question_config) | **PATCH** /api/v1/question-configs/{id} | 
 *FastCommentsClient::DefaultApi* | [**update_question_result**](docs/DefaultApi.md#update_question_result) | **PATCH** /api/v1/question-results/{id} | 
+*FastCommentsClient::DefaultApi* | [**update_subscription**](docs/DefaultApi.md#update_subscription) | **PATCH** /api/v1/subscriptions/{id} | 
 *FastCommentsClient::DefaultApi* | [**update_tenant**](docs/DefaultApi.md#update_tenant) | **PATCH** /api/v1/tenants/{id} | 
 *FastCommentsClient::DefaultApi* | [**update_tenant_package**](docs/DefaultApi.md#update_tenant_package) | **PATCH** /api/v1/tenant-packages/{id} | 
 *FastCommentsClient::DefaultApi* | [**update_tenant_user**](docs/DefaultApi.md#update_tenant_user) | **PATCH** /api/v1/tenant-users/{id} | 
@@ -235,6 +240,7 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::APIAuditLog](docs/APIAuditLog.md)
  - [FastCommentsClient::APIComment](docs/APIComment.md)
  - [FastCommentsClient::APICommentBase](docs/APICommentBase.md)
+ - [FastCommentsClient::APICommentBaseMeta](docs/APICommentBaseMeta.md)
  - [FastCommentsClient::APICreateUserBadgeResponse](docs/APICreateUserBadgeResponse.md)
  - [FastCommentsClient::APIDomainConfiguration](docs/APIDomainConfiguration.md)
  - [FastCommentsClient::APIEmptyResponse](docs/APIEmptyResponse.md)
@@ -251,6 +257,9 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::APIStatus](docs/APIStatus.md)
  - [FastCommentsClient::APITenant](docs/APITenant.md)
  - [FastCommentsClient::APITenantDailyUsage](docs/APITenantDailyUsage.md)
+ - [FastCommentsClient::APITicket](docs/APITicket.md)
+ - [FastCommentsClient::APITicketDetail](docs/APITicketDetail.md)
+ - [FastCommentsClient::APITicketFile](docs/APITicketFile.md)
  - [FastCommentsClient::APIUserSubscription](docs/APIUserSubscription.md)
  - [FastCommentsClient::AddDomainConfig200Response](docs/AddDomainConfig200Response.md)
  - [FastCommentsClient::AddDomainConfig200ResponseAnyOf](docs/AddDomainConfig200ResponseAnyOf.md)
@@ -282,6 +291,9 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::BulkCreateHashTagsBodyTagsInner](docs/BulkCreateHashTagsBodyTagsInner.md)
  - [FastCommentsClient::BulkCreateHashTagsResponse](docs/BulkCreateHashTagsResponse.md)
  - [FastCommentsClient::ChangeCommentPinStatusResponse](docs/ChangeCommentPinStatusResponse.md)
+ - [FastCommentsClient::ChangeTicketState200Response](docs/ChangeTicketState200Response.md)
+ - [FastCommentsClient::ChangeTicketStateBody](docs/ChangeTicketStateBody.md)
+ - [FastCommentsClient::ChangeTicketStateResponse](docs/ChangeTicketStateResponse.md)
  - [FastCommentsClient::CheckBlockedCommentsResponse](docs/CheckBlockedCommentsResponse.md)
  - [FastCommentsClient::CheckedCommentsForBlocked200Response](docs/CheckedCommentsForBlocked200Response.md)
  - [FastCommentsClient::CombineCommentsWithQuestionResults200Response](docs/CombineCommentsWithQuestionResults200Response.md)
@@ -333,6 +345,9 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::CreateTenantUser200Response](docs/CreateTenantUser200Response.md)
  - [FastCommentsClient::CreateTenantUserBody](docs/CreateTenantUserBody.md)
  - [FastCommentsClient::CreateTenantUserResponse](docs/CreateTenantUserResponse.md)
+ - [FastCommentsClient::CreateTicket200Response](docs/CreateTicket200Response.md)
+ - [FastCommentsClient::CreateTicketBody](docs/CreateTicketBody.md)
+ - [FastCommentsClient::CreateTicketResponse](docs/CreateTicketResponse.md)
  - [FastCommentsClient::CreateUserBadge200Response](docs/CreateUserBadge200Response.md)
  - [FastCommentsClient::CreateUserBadgeParams](docs/CreateUserBadgeParams.md)
  - [FastCommentsClient::CustomConfigParameters](docs/CustomConfigParameters.md)
@@ -441,6 +456,10 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::GetTenantUsersResponse](docs/GetTenantUsersResponse.md)
  - [FastCommentsClient::GetTenants200Response](docs/GetTenants200Response.md)
  - [FastCommentsClient::GetTenantsResponse](docs/GetTenantsResponse.md)
+ - [FastCommentsClient::GetTicket200Response](docs/GetTicket200Response.md)
+ - [FastCommentsClient::GetTicketResponse](docs/GetTicketResponse.md)
+ - [FastCommentsClient::GetTickets200Response](docs/GetTickets200Response.md)
+ - [FastCommentsClient::GetTicketsResponse](docs/GetTicketsResponse.md)
  - [FastCommentsClient::GetUser200Response](docs/GetUser200Response.md)
  - [FastCommentsClient::GetUserBadge200Response](docs/GetUserBadge200Response.md)
  - [FastCommentsClient::GetUserBadgeProgressById200Response](docs/GetUserBadgeProgressById200Response.md)
@@ -458,6 +477,7 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::GetVotesForUserResponse](docs/GetVotesForUserResponse.md)
  - [FastCommentsClient::GetVotesResponse](docs/GetVotesResponse.md)
  - [FastCommentsClient::GifRating](docs/GifRating.md)
+ - [FastCommentsClient::HeaderAccountNotification](docs/HeaderAccountNotification.md)
  - [FastCommentsClient::HeaderState](docs/HeaderState.md)
  - [FastCommentsClient::IgnoredResponse](docs/IgnoredResponse.md)
  - [FastCommentsClient::ImageContentProfanityLevel](docs/ImageContentProfanityLevel.md)
@@ -467,6 +487,7 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::LiveEventType](docs/LiveEventType.md)
  - [FastCommentsClient::LockComment200Response](docs/LockComment200Response.md)
  - [FastCommentsClient::MediaAsset](docs/MediaAsset.md)
+ - [FastCommentsClient::MentionAutoCompleteMode](docs/MentionAutoCompleteMode.md)
  - [FastCommentsClient::MetaItem](docs/MetaItem.md)
  - [FastCommentsClient::Moderator](docs/Moderator.md)
  - [FastCommentsClient::NotificationAndCount](docs/NotificationAndCount.md)
@@ -523,11 +544,13 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::SaveCommentsResponseWithPresence](docs/SaveCommentsResponseWithPresence.md)
  - [FastCommentsClient::SearchUsers200Response](docs/SearchUsers200Response.md)
  - [FastCommentsClient::SearchUsersResponse](docs/SearchUsersResponse.md)
+ - [FastCommentsClient::SearchUsersSectionedResponse](docs/SearchUsersSectionedResponse.md)
  - [FastCommentsClient::SetCommentText200Response](docs/SetCommentText200Response.md)
  - [FastCommentsClient::SetCommentTextResult](docs/SetCommentTextResult.md)
  - [FastCommentsClient::SizePreset](docs/SizePreset.md)
  - [FastCommentsClient::SortDirections](docs/SortDirections.md)
  - [FastCommentsClient::SpamRule](docs/SpamRule.md)
+ - [FastCommentsClient::TOSConfig](docs/TOSConfig.md)
  - [FastCommentsClient::TenantHashTag](docs/TenantHashTag.md)
  - [FastCommentsClient::TenantPackage](docs/TenantPackage.md)
  - [FastCommentsClient::UnBlockCommentPublic200Response](docs/UnBlockCommentPublic200Response.md)
@@ -536,6 +559,7 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::UpdatableCommentParams](docs/UpdatableCommentParams.md)
  - [FastCommentsClient::UpdateAPIPageData](docs/UpdateAPIPageData.md)
  - [FastCommentsClient::UpdateAPISSOUserData](docs/UpdateAPISSOUserData.md)
+ - [FastCommentsClient::UpdateAPIUserSubscriptionData](docs/UpdateAPIUserSubscriptionData.md)
  - [FastCommentsClient::UpdateDomainConfigParams](docs/UpdateDomainConfigParams.md)
  - [FastCommentsClient::UpdateEmailTemplateBody](docs/UpdateEmailTemplateBody.md)
  - [FastCommentsClient::UpdateFeedPostParams](docs/UpdateFeedPostParams.md)
@@ -545,6 +569,7 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::UpdateNotificationBody](docs/UpdateNotificationBody.md)
  - [FastCommentsClient::UpdateQuestionConfigBody](docs/UpdateQuestionConfigBody.md)
  - [FastCommentsClient::UpdateQuestionResultBody](docs/UpdateQuestionResultBody.md)
+ - [FastCommentsClient::UpdateSubscriptionAPIResponse](docs/UpdateSubscriptionAPIResponse.md)
  - [FastCommentsClient::UpdateTenantBody](docs/UpdateTenantBody.md)
  - [FastCommentsClient::UpdateTenantPackageBody](docs/UpdateTenantPackageBody.md)
  - [FastCommentsClient::UpdateTenantUserBody](docs/UpdateTenantUserBody.md)
@@ -561,6 +586,8 @@ Class | Method | HTTP request | Description
  - [FastCommentsClient::UserPresenceData](docs/UserPresenceData.md)
  - [FastCommentsClient::UserReactsResponse](docs/UserReactsResponse.md)
  - [FastCommentsClient::UserSearchResult](docs/UserSearchResult.md)
+ - [FastCommentsClient::UserSearchSection](docs/UserSearchSection.md)
+ - [FastCommentsClient::UserSearchSectionResult](docs/UserSearchSectionResult.md)
  - [FastCommentsClient::UserSessionInfo](docs/UserSessionInfo.md)
  - [FastCommentsClient::VoteBodyParams](docs/VoteBodyParams.md)
  - [FastCommentsClient::VoteComment200Response](docs/VoteComment200Response.md)

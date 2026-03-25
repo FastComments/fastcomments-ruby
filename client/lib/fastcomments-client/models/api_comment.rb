@@ -228,7 +228,7 @@ module FastCommentsClient
         :'local_date_string' => :'String',
         :'locale' => :'String',
         :'mentions' => :'Array<CommentUserMentionInfo>',
-        :'meta' => :'FCommentMeta',
+        :'meta' => :'APICommentBaseMeta',
         :'moderation_group_ids' => :'Array<String>',
         :'notification_sent_for_parent' => :'Boolean',
         :'notification_sent_for_parent_tenant' => :'Boolean',
