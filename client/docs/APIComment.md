@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **_id** | **String** |  |  |
+| **id** | **String** |  |  |
 | **ai_determined_spam** | **Boolean** |  | [optional] |
 | **anon_user_id** | **String** |  | [optional] |
 | **approved** | **Boolean** |  |  |
@@ -64,7 +64,7 @@
 require 'fastcomments-client'
 
 instance = FastCommentsClient::APIComment.new(
-  _id: null,
+  id: null,
   ai_determined_spam: null,
   anon_user_id: null,
   approved: null,

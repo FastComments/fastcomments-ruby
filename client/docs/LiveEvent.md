@@ -19,6 +19,7 @@
 | **is_closed** | **Boolean** |  | [optional] |
 | **uj** | **Array&lt;String&gt;** |  | [optional] |
 | **ul** | **Array&lt;String&gt;** |  | [optional] |
+| **sc** | **Integer** |  | [optional] |
 | **changes** | **Hash&lt;String, Integer&gt;** |  | [optional] |
 
 ## Example
@@ -42,6 +43,7 @@ instance = FastCommentsClient::LiveEvent.new(
   is_closed: null,
   uj: null,
   ul: null,
+  sc: null,
   changes: null
 )
 ```

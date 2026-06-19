@@ -13,6 +13,7 @@
 | **link_url** | **String** |  |  |
 | **link_text** | **String** |  |  |
 | **created_at** | **Time** |  |  |
+| **type** | **String** | Discriminator for notifications with a special layout/click handler (e.g. \&quot;feedback-offer\&quot;). | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = FastCommentsClient::HeaderAccountNotification.new(
   severity: null,
   link_url: null,
   link_text: null,
-  created_at: null
+  created_at: null,
+  type: null
 )
 ```
 

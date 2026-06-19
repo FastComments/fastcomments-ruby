@@ -43,6 +43,7 @@
 | **digest_email_frequency** | [**DigestEmailFrequency**](DigestEmailFrequency.md) |  | [optional] |
 | **notification_frequency** | **Float** |  | [optional] |
 | **admin_notification_frequency** | **Float** |  | [optional] |
+| **agent_approval_notification_frequency** | [**ImportedAgentApprovalNotificationFrequency**](ImportedAgentApprovalNotificationFrequency.md) |  | [optional] |
 | **last_tenant_notification_sent_date** | **Time** |  | [optional] |
 | **last_reply_notification_sent_date** | **Time** |  | [optional] |
 | **ignored_add_to_my_site_messages** | **Boolean** |  | [optional] |
@@ -109,6 +110,7 @@ instance = FastCommentsClient::User.new(
   digest_email_frequency: null,
   notification_frequency: null,
   admin_notification_frequency: null,
+  agent_approval_notification_frequency: null,
   last_tenant_notification_sent_date: null,
   last_reply_notification_sent_date: null,
   ignored_add_to_my_site_messages: null,

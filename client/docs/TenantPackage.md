@@ -8,6 +8,7 @@
 | **name** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
 | **created_at** | **Time** |  |  |
+| **template_id** | **String** |  | [optional] |
 | **monthly_cost_usd** | **Float** |  |  |
 | **yearly_cost_usd** | **Float** |  |  |
 | **monthly_stripe_plan_id** | **String** |  |  |
@@ -51,6 +52,8 @@
 | **flex_domain_unit** | **Float** |  | [optional] |
 | **flex_chat_gpt_cost_cents** | **Float** |  | [optional] |
 | **flex_chat_gpt_unit** | **Float** |  | [optional] |
+| **flex_llm_cost_cents** | **Float** |  | [optional] |
+| **flex_llm_unit** | **Float** |  | [optional] |
 | **flex_minimum_cost_cents** | **Float** |  | [optional] |
 | **flex_managed_tenant_cost_cents** | **Float** |  | [optional] |
 | **flex_sso_admin_cost_cents** | **Float** |  | [optional] |
@@ -58,6 +61,10 @@
 | **flex_sso_moderator_cost_cents** | **Float** |  | [optional] |
 | **flex_sso_moderator_unit** | **Float** |  | [optional] |
 | **is_sso_billing_monthly_active_users** | **Boolean** |  | [optional] |
+| **has_ai_agents** | **Boolean** |  | [optional] |
+| **max_ai_agents** | **Float** |  | [optional] |
+| **ai_agent_daily_budget_cents** | **Float** |  | [optional] |
+| **ai_agent_monthly_budget_cents** | **Float** |  | [optional] |
 
 ## Example
 
@@ -69,6 +76,7 @@ instance = FastCommentsClient::TenantPackage.new(
   name: null,
   tenant_id: null,
   created_at: null,
+  template_id: null,
   monthly_cost_usd: null,
   yearly_cost_usd: null,
   monthly_stripe_plan_id: null,
@@ -112,13 +120,19 @@ instance = FastCommentsClient::TenantPackage.new(
   flex_domain_unit: null,
   flex_chat_gpt_cost_cents: null,
   flex_chat_gpt_unit: null,
+  flex_llm_cost_cents: null,
+  flex_llm_unit: null,
   flex_minimum_cost_cents: null,
   flex_managed_tenant_cost_cents: null,
   flex_sso_admin_cost_cents: null,
   flex_sso_admin_unit: null,
   flex_sso_moderator_cost_cents: null,
   flex_sso_moderator_unit: null,
-  is_sso_billing_monthly_active_users: null
+  is_sso_billing_monthly_active_users: null,
+  has_ai_agents: null,
+  max_ai_agents: null,
+  ai_agent_daily_budget_cents: null,
+  ai_agent_monthly_budget_cents: null
 )
 ```
 
