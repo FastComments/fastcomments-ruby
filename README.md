@@ -29,8 +29,12 @@ This library contains the generated API client and the SSO utilities to make wor
 
 ### Public vs Secured APIs
 
-For the API client, there are two classes, `DefaultApi` and `PublicApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
+that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
+
+The `ModerationApi` covers comment moderation (list, count, search, logs, export), moderation actions (remove/restore, flag, set review/spam/approval status, votes, reopen/close thread),
+bans (ban from a comment, undo, pre-ban summaries, ban status/preferences, banned-user counts), and badges & trust (award/remove badge, manual badges, get/set trust factor, user internal profile).
+Each `ModerationApi` method accepts an `sso` parameter so the request can be made on behalf of an SSO-authenticated moderator.
 
 ## Quick Start
 
@@ -91,10 +95,30 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
+### Using Moderation APIs (ModerationApi)
+
+The moderation methods power the moderator dashboard. Pass an `sso` token so the request is made on behalf of an SSO-authenticated moderator:
+
+```ruby
+require 'fastcomments'
+
+moderation_api = FastCommentsClient::ModerationApi.new
+
+begin
+  # Example: List comments in the moderation queue
+  response = moderation_api.get_api_comments(
+    sso: 'YOUR_MODERATOR_SSO_TOKEN'
+  )
+  puts response
+rescue FastCommentsClient::ApiError => e
+  puts e.message
+end
+```
+
 ### Common Issues
 
 1. **401 "missing-api-key" error**: Make sure you set `config.api_key['x-api-key'] = 'YOUR_KEY'` before creating the DefaultApi instance.
-2. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests.
+2. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests, and `ModerationApi` for moderator dashboard requests.
 3. **Null API key**: The SDK will silently skip authentication if the API key is null, leading to 401 errors.
 
 ## Notes
