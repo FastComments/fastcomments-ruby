@@ -19,6 +19,7 @@
 | **engine_response** | **String** |  | [optional] |
 | **engine_tokens** | **Float** |  | [optional] |
 | **trust_factor** | **Float** |  | [optional] |
+| **source** | **String** |  | [optional] |
 | **rule** | [**SpamRule**](SpamRule.md) |  | [optional] |
 | **user_id** | **String** |  | [optional] |
 | **subscribers** | **Float** |  | [optional] |
@@ -72,6 +73,7 @@ instance = FastCommentsClient::CommentLogData.new(
   engine_response: null,
   engine_tokens: null,
   trust_factor: null,
+  source: null,
   rule: null,
   user_id: null,
   subscribers: null,

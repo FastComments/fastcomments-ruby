@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **results** | [**Array&lt;AddHashTag200Response&gt;**](AddHashTag200Response.md) |  |  |
+| **results** | [**Array&lt;BulkCreateHashTagsResponseResultsInner&gt;**](BulkCreateHashTagsResponseResultsInner.md) |  |  |
 
 ## Example
 

@@ -56,11 +56,14 @@
 | **no_custom_config** | **Boolean** |  | [optional] |
 | **mention_auto_complete_mode** | [**MentionAutoCompleteMode**](MentionAutoCompleteMode.md) |  | [optional] |
 | **no_image_uploads** | **Boolean** |  | [optional] |
+| **allow_embeds** | **Boolean** |  | [optional] |
+| **allowed_embed_domains** | **Array&lt;String&gt;** |  | [optional] |
 | **no_styles** | **Boolean** |  | [optional] |
 | **page_size** | **Integer** |  | [optional] |
 | **readonly** | **Boolean** |  | [optional] |
 | **no_new_root_comments** | **Boolean** |  | [optional] |
 | **require_sso** | **Boolean** |  | [optional] |
+| **enable_f_chat** | **Boolean** |  | [optional] |
 | **enable_resize_handle** | **Boolean** |  | [optional] |
 | **restricted_link_domains** | **Array&lt;String&gt;** |  | [optional] |
 | **show_badges_in_top_bar** | **Boolean** |  | [optional] |
@@ -81,6 +84,8 @@
 | **widget_questions_required** | [**CommentQuestionsRequired**](CommentQuestionsRequired.md) |  | [optional] |
 | **widget_sub_question_visibility** | [**QuestionSubQuestionVisibility**](QuestionSubQuestionVisibility.md) |  | [optional] |
 | **wrap** | **Boolean** |  | [optional] |
+| **users_list_location** | [**UsersListLocation**](UsersListLocation.md) |  | [optional] |
+| **users_list_include_offline** | **Boolean** |  | [optional] |
 | **ticket_base_url** | **String** |  | [optional] |
 | **ticket_kb_search_endpoint** | **String** |  | [optional] |
 | **ticket_file_uploads_enabled** | **Boolean** |  | [optional] |
@@ -146,11 +151,14 @@ instance = FastCommentsClient::CustomConfigParameters.new(
   no_custom_config: null,
   mention_auto_complete_mode: null,
   no_image_uploads: null,
+  allow_embeds: null,
+  allowed_embed_domains: null,
   no_styles: null,
   page_size: null,
   readonly: null,
   no_new_root_comments: null,
   require_sso: null,
+  enable_f_chat: null,
   enable_resize_handle: null,
   restricted_link_domains: null,
   show_badges_in_top_bar: null,
@@ -171,6 +179,8 @@ instance = FastCommentsClient::CustomConfigParameters.new(
   widget_questions_required: null,
   widget_sub_question_visibility: null,
   wrap: null,
+  users_list_location: null,
+  users_list_include_offline: null,
   ticket_base_url: null,
   ticket_kb_search_endpoint: null,
   ticket_file_uploads_enabled: null,

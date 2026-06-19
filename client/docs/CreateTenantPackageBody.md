@@ -45,8 +45,8 @@
 | **flex_admin_unit** | **Float** |  | [optional] |
 | **flex_domain_cost_cents** | **Float** |  | [optional] |
 | **flex_domain_unit** | **Float** |  | [optional] |
-| **flex_chat_gpt_cost_cents** | **Float** |  | [optional] |
-| **flex_chat_gpt_unit** | **Float** |  | [optional] |
+| **flex_llm_cost_cents** | **Float** |  | [optional] |
+| **flex_llm_unit** | **Float** |  | [optional] |
 | **flex_minimum_cost_cents** | **Float** |  | [optional] |
 | **flex_managed_tenant_cost_cents** | **Float** |  | [optional] |
 | **flex_sso_admin_cost_cents** | **Float** |  | [optional] |
@@ -101,8 +101,8 @@ instance = FastCommentsClient::CreateTenantPackageBody.new(
   flex_admin_unit: null,
   flex_domain_cost_cents: null,
   flex_domain_unit: null,
-  flex_chat_gpt_cost_cents: null,
-  flex_chat_gpt_unit: null,
+  flex_llm_cost_cents: null,
+  flex_llm_unit: null,
   flex_minimum_cost_cents: null,
   flex_managed_tenant_cost_cents: null,
   flex_sso_admin_cost_cents: null,

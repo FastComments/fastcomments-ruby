@@ -27,8 +27,9 @@
 | **from_offline_restore** | **Boolean** |  | [optional] |
 | **autoplay_delay_ms** | **Integer** |  | [optional] |
 | **feedback_ids** | **Array&lt;String&gt;** |  | [optional] |
-| **question_values** | [**Hash&lt;String, RecordStringStringOrNumberValue&gt;**](RecordStringStringOrNumberValue.md) | Construct a type with a set of properties K of type T | [optional] |
+| **question_values** | [**Hash&lt;String, GifSearchResponseImagesInnerInner&gt;**](GifSearchResponseImagesInnerInner.md) | Construct a type with a set of properties K of type T | [optional] |
 | **tos** | **Boolean** |  | [optional] |
+| **bot_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -60,7 +61,8 @@ instance = FastCommentsClient::CommentData.new(
   autoplay_delay_ms: null,
   feedback_ids: null,
   question_values: null,
-  tos: null
+  tos: null,
+  bot_id: null
 )
 ```
 
