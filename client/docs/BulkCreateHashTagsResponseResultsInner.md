@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **hash_tag** | [**TenantHashTag**](TenantHashTag.md) |  |  |
-| **reason** | **String** |  |  |
-| **code** | **String** |  |  |
+| **hash_tag** | [**TenantHashTag**](TenantHashTag.md) |  | [optional] |
+| **reason** | **String** |  | [optional] |
+| **code** | **String** |  | [optional] |
 | **secondary_code** | **String** |  | [optional] |
 | **banned_until** | **Integer** |  | [optional] |
 | **max_character_length** | **Integer** |  | [optional] |

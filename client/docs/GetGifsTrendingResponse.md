@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **images** | **Array&lt;Array&lt;GifSearchResponseImagesInnerInner&gt;&gt;** |  |  |
+| **images** | **Array&lt;Array&lt;GifSearchResponseImagesInnerInner&gt;&gt;** |  | [optional] |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **code** | **String** |  |  |
+| **code** | **String** |  | [optional] |
 
 ## Example
 

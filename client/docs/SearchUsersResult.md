@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **sections** | [**Array&lt;UserSearchSectionResult&gt;**](UserSearchSectionResult.md) |  |  |
-| **users** | [**Array&lt;UserSearchResult&gt;**](UserSearchResult.md) |  |  |
+| **sections** | [**Array&lt;UserSearchSectionResult&gt;**](UserSearchSectionResult.md) |  | [optional] |
+| **users** | [**Array&lt;UserSearchResult&gt;**](UserSearchResult.md) |  | [optional] |
 
 ## Example
 

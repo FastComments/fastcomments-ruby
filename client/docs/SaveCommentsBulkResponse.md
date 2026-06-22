@@ -5,11 +5,11 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **comment** | [**APIComment**](APIComment.md) |  |  |
-| **user** | [**UserSessionInfo**](UserSessionInfo.md) |  |  |
+| **comment** | [**APIComment**](APIComment.md) |  | [optional] |
+| **user** | [**UserSessionInfo**](UserSessionInfo.md) |  | [optional] |
 | **module_data** | **Hash&lt;String, Object&gt;** | Construct a type with a set of properties K of type T | [optional] |
-| **reason** | **String** |  |  |
-| **code** | **String** |  |  |
+| **reason** | **String** |  | [optional] |
+| **code** | **String** |  | [optional] |
 | **secondary_code** | **String** |  | [optional] |
 | **banned_until** | **Integer** |  | [optional] |
 | **max_character_length** | **Integer** |  | [optional] |

@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **configuration** | **Object** |  |  |
+| **configuration** | **Object** |  | [optional] |
 | **status** | **Object** |  |  |
-| **reason** | **String** |  |  |
-| **code** | **String** |  |  |
+| **reason** | **String** |  | [optional] |
+| **code** | **String** |  | [optional] |
 
 ## Example
 
