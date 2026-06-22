@@ -4,15 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **action** | **String** |  | [optional] |
-| **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **reason** | **String** |  | [optional] |
-| **code** | **String** |  | [optional] |
-| **secondary_code** | **String** |  | [optional] |
-| **banned_until** | **Integer** |  | [optional] |
-| **max_character_length** | **Integer** |  | [optional] |
-| **translated_error** | **String** |  | [optional] |
-| **custom_config** | [**CustomConfigParameters**](CustomConfigParameters.md) |  | [optional] |
+| **action** | **String** |  |  |
+| **status** | **String** |  |  |
 
 ## Example
 
@@ -21,14 +14,7 @@ require 'fastcomments-client'
 
 instance = FastCommentsClient::PostRemoveCommentResponse.new(
   action: null,
-  status: null,
-  reason: null,
-  code: null,
-  secondary_code: null,
-  banned_until: null,
-  max_character_length: null,
-  translated_error: null,
-  custom_config: null
+  status: null
 )
 ```
 

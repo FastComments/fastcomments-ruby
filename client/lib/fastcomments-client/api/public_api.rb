@@ -24,7 +24,7 @@ module FastCommentsClient
     # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [BlockFromCommentPublicResponse]
+    # @return [BlockSuccess]
     def block_from_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts = {})
       data, _status_code, _headers = block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
       data
@@ -35,7 +35,7 @@ module FastCommentsClient
     # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(BlockFromCommentPublicResponse, Integer, Hash)>] BlockFromCommentPublicResponse data, response status code and response headers
+    # @return [Array<(BlockSuccess, Integer, Hash)>] BlockSuccess data, response status code and response headers
     def block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.block_from_comment_public ...'
@@ -77,7 +77,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(public_block_from_comment_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'BlockFromCommentPublicResponse'
+      return_type = opts[:debug_return_type] || 'BlockSuccess'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -103,7 +103,7 @@ module FastCommentsClient
     # @param comment_ids [String] A comma separated list of comment ids.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [CheckedCommentsForBlockedResponse]
+    # @return [CheckBlockedCommentsResponse]
     def checked_comments_for_blocked(tenant_id, comment_ids, opts = {})
       data, _status_code, _headers = checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts)
       data
@@ -113,7 +113,7 @@ module FastCommentsClient
     # @param comment_ids [String] A comma separated list of comment ids.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(CheckedCommentsForBlockedResponse, Integer, Hash)>] CheckedCommentsForBlockedResponse data, response status code and response headers
+    # @return [Array<(CheckBlockedCommentsResponse, Integer, Hash)>] CheckBlockedCommentsResponse data, response status code and response headers
     def checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.checked_comments_for_blocked ...'
@@ -147,7 +147,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CheckedCommentsForBlockedResponse'
+      return_type = opts[:debug_return_type] || 'CheckBlockedCommentsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -176,7 +176,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
-    # @return [CreateCommentPublicResponse]
+    # @return [SaveCommentsResponseWithPresence]
     def create_comment_public(tenant_id, url_id, broadcast_id, comment_data, opts = {})
       data, _status_code, _headers = create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts)
       data
@@ -189,7 +189,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
-    # @return [Array<(CreateCommentPublicResponse, Integer, Hash)>] CreateCommentPublicResponse data, response status code and response headers
+    # @return [Array<(SaveCommentsResponseWithPresence, Integer, Hash)>] SaveCommentsResponseWithPresence data, response status code and response headers
     def create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_comment_public ...'
@@ -237,7 +237,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(comment_data)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CreateCommentPublicResponse'
+      return_type = opts[:debug_return_type] || 'SaveCommentsResponseWithPresence'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -264,7 +264,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
-    # @return [CreateFeedPostPublicResponse]
+    # @return [CreateFeedPostResponse]
     def create_feed_post_public(tenant_id, create_feed_post_params, opts = {})
       data, _status_code, _headers = create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts)
       data
@@ -275,7 +275,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
-    # @return [Array<(CreateFeedPostPublicResponse, Integer, Hash)>] CreateFeedPostPublicResponse data, response status code and response headers
+    # @return [Array<(CreateFeedPostResponse, Integer, Hash)>] CreateFeedPostResponse data, response status code and response headers
     def create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_feed_post_public ...'
@@ -313,7 +313,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(create_feed_post_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CreateFeedPostPublicResponse'
+      return_type = opts[:debug_return_type] || 'CreateFeedPostResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -339,7 +339,7 @@ module FastCommentsClient
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
-    # @return [CreateV1PageReactResponse]
+    # @return [CreateV1PageReact]
     def create_v1_page_react(tenant_id, url_id, opts = {})
       data, _status_code, _headers = create_v1_page_react_with_http_info(tenant_id, url_id, opts)
       data
@@ -349,7 +349,7 @@ module FastCommentsClient
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
-    # @return [Array<(CreateV1PageReactResponse, Integer, Hash)>] CreateV1PageReactResponse data, response status code and response headers
+    # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
     def create_v1_page_react_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_v1_page_react ...'
@@ -382,7 +382,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CreateV1PageReactResponse'
+      return_type = opts[:debug_return_type] || 'CreateV1PageReact'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -409,7 +409,7 @@ module FastCommentsClient
     # @param id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
-    # @return [CreateV2PageReactResponse]
+    # @return [CreateV1PageReact]
     def create_v2_page_react(tenant_id, url_id, id, opts = {})
       data, _status_code, _headers = create_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
       data
@@ -420,7 +420,7 @@ module FastCommentsClient
     # @param id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
-    # @return [Array<(CreateV2PageReactResponse, Integer, Hash)>] CreateV2PageReactResponse data, response status code and response headers
+    # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
     def create_v2_page_react_with_http_info(tenant_id, url_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_v2_page_react ...'
@@ -458,7 +458,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CreateV2PageReactResponse'
+      return_type = opts[:debug_return_type] || 'CreateV1PageReact'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -486,7 +486,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [DeleteCommentPublicResponse]
+    # @return [PublicAPIDeleteCommentResponse]
     def delete_comment_public(tenant_id, comment_id, broadcast_id, opts = {})
       data, _status_code, _headers = delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
@@ -498,7 +498,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [Array<(DeleteCommentPublicResponse, Integer, Hash)>] DeleteCommentPublicResponse data, response status code and response headers
+    # @return [Array<(PublicAPIDeleteCommentResponse, Integer, Hash)>] PublicAPIDeleteCommentResponse data, response status code and response headers
     def delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_comment_public ...'
@@ -536,7 +536,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DeleteCommentPublicResponse'
+      return_type = opts[:debug_return_type] || 'PublicAPIDeleteCommentResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -566,7 +566,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [DeleteCommentVoteResponse]
+    # @return [VoteDeleteResponse]
     def delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts = {})
       data, _status_code, _headers = delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
       data
@@ -580,7 +580,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [Array<(DeleteCommentVoteResponse, Integer, Hash)>] DeleteCommentVoteResponse data, response status code and response headers
+    # @return [Array<(VoteDeleteResponse, Integer, Hash)>] VoteDeleteResponse data, response status code and response headers
     def delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_comment_vote ...'
@@ -627,7 +627,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DeleteCommentVoteResponse'
+      return_type = opts[:debug_return_type] || 'VoteDeleteResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -723,7 +723,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [DeleteV1PageReactResponse]
+    # @return [CreateV1PageReact]
     def delete_v1_page_react(tenant_id, url_id, opts = {})
       data, _status_code, _headers = delete_v1_page_react_with_http_info(tenant_id, url_id, opts)
       data
@@ -732,7 +732,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DeleteV1PageReactResponse, Integer, Hash)>] DeleteV1PageReactResponse data, response status code and response headers
+    # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
     def delete_v1_page_react_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_v1_page_react ...'
@@ -764,7 +764,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DeleteV1PageReactResponse'
+      return_type = opts[:debug_return_type] || 'CreateV1PageReact'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -790,7 +790,7 @@ module FastCommentsClient
     # @param url_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [DeleteV2PageReactResponse]
+    # @return [CreateV1PageReact]
     def delete_v2_page_react(tenant_id, url_id, id, opts = {})
       data, _status_code, _headers = delete_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
       data
@@ -800,7 +800,7 @@ module FastCommentsClient
     # @param url_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DeleteV2PageReactResponse, Integer, Hash)>] DeleteV2PageReactResponse data, response status code and response headers
+    # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
     def delete_v2_page_react_with_http_info(tenant_id, url_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_v2_page_react ...'
@@ -837,7 +837,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DeleteV2PageReactResponse'
+      return_type = opts[:debug_return_type] || 'CreateV1PageReact'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -864,7 +864,7 @@ module FastCommentsClient
     # @param is_flagged [Boolean] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [FlagCommentPublicResponse]
+    # @return [APIEmptyResponse]
     def flag_comment_public(tenant_id, comment_id, is_flagged, opts = {})
       data, _status_code, _headers = flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts)
       data
@@ -875,7 +875,7 @@ module FastCommentsClient
     # @param is_flagged [Boolean] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(FlagCommentPublicResponse, Integer, Hash)>] FlagCommentPublicResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.flag_comment_public ...'
@@ -913,7 +913,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'FlagCommentPublicResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -940,7 +940,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [GetCommentTextResponse1]
+    # @return [PublicAPIGetCommentTextResponse]
     def get_comment_text(tenant_id, comment_id, opts = {})
       data, _status_code, _headers = get_comment_text_with_http_info(tenant_id, comment_id, opts)
       data
@@ -951,7 +951,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [Array<(GetCommentTextResponse1, Integer, Hash)>] GetCommentTextResponse1 data, response status code and response headers
+    # @return [Array<(PublicAPIGetCommentTextResponse, Integer, Hash)>] PublicAPIGetCommentTextResponse data, response status code and response headers
     def get_comment_text_with_http_info(tenant_id, comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comment_text ...'
@@ -984,7 +984,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCommentTextResponse1'
+      return_type = opts[:debug_return_type] || 'PublicAPIGetCommentTextResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1011,7 +1011,7 @@ module FastCommentsClient
     # @param dir [Integer] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [GetCommentVoteUserNamesResponse]
+    # @return [GetCommentVoteUserNamesSuccessResponse]
     def get_comment_vote_user_names(tenant_id, comment_id, dir, opts = {})
       data, _status_code, _headers = get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts)
       data
@@ -1022,7 +1022,7 @@ module FastCommentsClient
     # @param dir [Integer] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(GetCommentVoteUserNamesResponse, Integer, Hash)>] GetCommentVoteUserNamesResponse data, response status code and response headers
+    # @return [Array<(GetCommentVoteUserNamesSuccessResponse, Integer, Hash)>] GetCommentVoteUserNamesSuccessResponse data, response status code and response headers
     def get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comment_vote_user_names ...'
@@ -1059,7 +1059,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCommentVoteUserNamesResponse'
+      return_type = opts[:debug_return_type] || 'GetCommentVoteUserNamesSuccessResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1089,7 +1089,7 @@ module FastCommentsClient
     # @option opts [Boolean] :includei10n 
     # @option opts [String] :locale 
     # @option opts [Boolean] :is_crawler 
-    # @return [GetCommentsForUserResponse1]
+    # @return [GetCommentsForUserResponse]
     def get_comments_for_user(opts = {})
       data, _status_code, _headers = get_comments_for_user_with_http_info(opts)
       data
@@ -1103,7 +1103,7 @@ module FastCommentsClient
     # @option opts [Boolean] :includei10n 
     # @option opts [String] :locale 
     # @option opts [Boolean] :is_crawler 
-    # @return [Array<(GetCommentsForUserResponse1, Integer, Hash)>] GetCommentsForUserResponse1 data, response status code and response headers
+    # @return [Array<(GetCommentsForUserResponse, Integer, Hash)>] GetCommentsForUserResponse data, response status code and response headers
     def get_comments_for_user_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comments_for_user ...'
@@ -1133,7 +1133,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCommentsForUserResponse1'
+      return_type = opts[:debug_return_type] || 'GetCommentsForUserResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1185,7 +1185,7 @@ module FastCommentsClient
     # @option opts [String] :custom_config_str 
     # @option opts [String] :after_comment_id 
     # @option opts [String] :before_comment_id 
-    # @return [GetCommentsPublicResponse]
+    # @return [GetCommentsResponseWithPresencePublicComment]
     def get_comments_public(tenant_id, url_id, opts = {})
       data, _status_code, _headers = get_comments_public_with_http_info(tenant_id, url_id, opts)
       data
@@ -1221,7 +1221,7 @@ module FastCommentsClient
     # @option opts [String] :custom_config_str 
     # @option opts [String] :after_comment_id 
     # @option opts [String] :before_comment_id 
-    # @return [Array<(GetCommentsPublicResponse, Integer, Hash)>] GetCommentsPublicResponse data, response status code and response headers
+    # @return [Array<(GetCommentsResponseWithPresencePublicComment, Integer, Hash)>] GetCommentsResponseWithPresencePublicComment data, response status code and response headers
     def get_comments_public_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comments_public ...'
@@ -1279,7 +1279,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCommentsPublicResponse'
+      return_type = opts[:debug_return_type] || 'GetCommentsResponseWithPresencePublicComment'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1308,7 +1308,7 @@ module FastCommentsClient
     # @param start_time [Integer] 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
-    # @return [GetEventLogResponse1]
+    # @return [GetEventLogResponse]
     def get_event_log(tenant_id, url_id, user_id_ws, start_time, opts = {})
       data, _status_code, _headers = get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
       data
@@ -1321,7 +1321,7 @@ module FastCommentsClient
     # @param start_time [Integer] 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
-    # @return [Array<(GetEventLogResponse1, Integer, Hash)>] GetEventLogResponse1 data, response status code and response headers
+    # @return [Array<(GetEventLogResponse, Integer, Hash)>] GetEventLogResponse data, response status code and response headers
     def get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_event_log ...'
@@ -1364,7 +1364,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetEventLogResponse1'
+      return_type = opts[:debug_return_type] || 'GetEventLogResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1395,7 +1395,7 @@ module FastCommentsClient
     # @option opts [String] :sso 
     # @option opts [Boolean] :is_crawler 
     # @option opts [Boolean] :include_user_info 
-    # @return [GetFeedPostsPublicResponse]
+    # @return [PublicFeedPostsResponse]
     def get_feed_posts_public(tenant_id, opts = {})
       data, _status_code, _headers = get_feed_posts_public_with_http_info(tenant_id, opts)
       data
@@ -1410,7 +1410,7 @@ module FastCommentsClient
     # @option opts [String] :sso 
     # @option opts [Boolean] :is_crawler 
     # @option opts [Boolean] :include_user_info 
-    # @return [Array<(GetFeedPostsPublicResponse, Integer, Hash)>] GetFeedPostsPublicResponse data, response status code and response headers
+    # @return [Array<(PublicFeedPostsResponse, Integer, Hash)>] PublicFeedPostsResponse data, response status code and response headers
     def get_feed_posts_public_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_feed_posts_public ...'
@@ -1443,7 +1443,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetFeedPostsPublicResponse'
+      return_type = opts[:debug_return_type] || 'PublicFeedPostsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1469,7 +1469,7 @@ module FastCommentsClient
     # @param post_ids [Array<String>] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [GetFeedPostsStatsResponse]
+    # @return [FeedPostsStatsResponse]
     def get_feed_posts_stats(tenant_id, post_ids, opts = {})
       data, _status_code, _headers = get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts)
       data
@@ -1479,7 +1479,7 @@ module FastCommentsClient
     # @param post_ids [Array<String>] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(GetFeedPostsStatsResponse, Integer, Hash)>] GetFeedPostsStatsResponse data, response status code and response headers
+    # @return [Array<(FeedPostsStatsResponse, Integer, Hash)>] FeedPostsStatsResponse data, response status code and response headers
     def get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_feed_posts_stats ...'
@@ -1512,7 +1512,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetFeedPostsStatsResponse'
+      return_type = opts[:debug_return_type] || 'FeedPostsStatsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1537,7 +1537,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param large_internal_url_sanitized [String] 
     # @param [Hash] opts the optional parameters
-    # @return [GetGifLargeResponse]
+    # @return [GifGetLargeResponse]
     def get_gif_large(tenant_id, large_internal_url_sanitized, opts = {})
       data, _status_code, _headers = get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized, opts)
       data
@@ -1546,7 +1546,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param large_internal_url_sanitized [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetGifLargeResponse, Integer, Hash)>] GetGifLargeResponse data, response status code and response headers
+    # @return [Array<(GifGetLargeResponse, Integer, Hash)>] GifGetLargeResponse data, response status code and response headers
     def get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_gif_large ...'
@@ -1578,7 +1578,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetGifLargeResponse'
+      return_type = opts[:debug_return_type] || 'GifGetLargeResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1750,7 +1750,7 @@ module FastCommentsClient
     # @param start_time [Integer] 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
-    # @return [GetGlobalEventLogResponse]
+    # @return [GetEventLogResponse]
     def get_global_event_log(tenant_id, url_id, user_id_ws, start_time, opts = {})
       data, _status_code, _headers = get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
       data
@@ -1763,7 +1763,7 @@ module FastCommentsClient
     # @param start_time [Integer] 
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
-    # @return [Array<(GetGlobalEventLogResponse, Integer, Hash)>] GetGlobalEventLogResponse data, response status code and response headers
+    # @return [Array<(GetEventLogResponse, Integer, Hash)>] GetEventLogResponse data, response status code and response headers
     def get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_global_event_log ...'
@@ -1806,7 +1806,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetGlobalEventLogResponse'
+      return_type = opts[:debug_return_type] || 'GetEventLogResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1834,7 +1834,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
-    # @return [GetOfflineUsersResponse]
+    # @return [PageUsersOfflineResponse]
     def get_offline_users(tenant_id, url_id, opts = {})
       data, _status_code, _headers = get_offline_users_with_http_info(tenant_id, url_id, opts)
       data
@@ -1846,7 +1846,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
-    # @return [Array<(GetOfflineUsersResponse, Integer, Hash)>] GetOfflineUsersResponse data, response status code and response headers
+    # @return [Array<(PageUsersOfflineResponse, Integer, Hash)>] PageUsersOfflineResponse data, response status code and response headers
     def get_offline_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_offline_users ...'
@@ -1880,7 +1880,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetOfflineUsersResponse'
+      return_type = opts[:debug_return_type] || 'PageUsersOfflineResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1908,7 +1908,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
-    # @return [GetOnlineUsersResponse]
+    # @return [PageUsersOnlineResponse]
     def get_online_users(tenant_id, url_id, opts = {})
       data, _status_code, _headers = get_online_users_with_http_info(tenant_id, url_id, opts)
       data
@@ -1920,7 +1920,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
-    # @return [Array<(GetOnlineUsersResponse, Integer, Hash)>] GetOnlineUsersResponse data, response status code and response headers
+    # @return [Array<(PageUsersOnlineResponse, Integer, Hash)>] PageUsersOnlineResponse data, response status code and response headers
     def get_online_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_online_users ...'
@@ -1954,7 +1954,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetOnlineUsersResponse'
+      return_type = opts[:debug_return_type] || 'PageUsersOnlineResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1984,7 +1984,7 @@ module FastCommentsClient
     # @option opts [String] :q Optional case-insensitive title prefix filter.
     # @option opts [PagesSortBy] :sort_by Sort order. &#x60;updatedAt&#x60; (default, newest first), &#x60;commentCount&#x60; (most comments first), or &#x60;title&#x60; (alphabetical).
     # @option opts [Boolean] :has_comments If true, only return pages with at least one comment.
-    # @return [GetPagesPublicResponse]
+    # @return [GetPublicPagesResponse]
     def get_pages_public(tenant_id, opts = {})
       data, _status_code, _headers = get_pages_public_with_http_info(tenant_id, opts)
       data
@@ -1998,7 +1998,7 @@ module FastCommentsClient
     # @option opts [String] :q Optional case-insensitive title prefix filter.
     # @option opts [PagesSortBy] :sort_by Sort order. &#x60;updatedAt&#x60; (default, newest first), &#x60;commentCount&#x60; (most comments first), or &#x60;title&#x60; (alphabetical).
     # @option opts [Boolean] :has_comments If true, only return pages with at least one comment.
-    # @return [Array<(GetPagesPublicResponse, Integer, Hash)>] GetPagesPublicResponse data, response status code and response headers
+    # @return [Array<(GetPublicPagesResponse, Integer, Hash)>] GetPublicPagesResponse data, response status code and response headers
     def get_pages_public_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_pages_public ...'
@@ -2030,7 +2030,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetPagesPublicResponse'
+      return_type = opts[:debug_return_type] || 'GetPublicPagesResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2057,7 +2057,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [Boolean] :use_full_translation_ids 
-    # @return [GetTranslationsResponse1]
+    # @return [GetTranslationsResponse]
     def get_translations(namespace, component, opts = {})
       data, _status_code, _headers = get_translations_with_http_info(namespace, component, opts)
       data
@@ -2068,7 +2068,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [Boolean] :use_full_translation_ids 
-    # @return [Array<(GetTranslationsResponse1, Integer, Hash)>] GetTranslationsResponse1 data, response status code and response headers
+    # @return [Array<(GetTranslationsResponse, Integer, Hash)>] GetTranslationsResponse data, response status code and response headers
     def get_translations_with_http_info(namespace, component, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_translations ...'
@@ -2101,7 +2101,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetTranslationsResponse1'
+      return_type = opts[:debug_return_type] || 'GetTranslationsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2126,7 +2126,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [GetUserNotificationCountResponse1]
+    # @return [GetUserNotificationCountResponse]
     def get_user_notification_count(tenant_id, opts = {})
       data, _status_code, _headers = get_user_notification_count_with_http_info(tenant_id, opts)
       data
@@ -2135,7 +2135,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(GetUserNotificationCountResponse1, Integer, Hash)>] GetUserNotificationCountResponse1 data, response status code and response headers
+    # @return [Array<(GetUserNotificationCountResponse, Integer, Hash)>] GetUserNotificationCountResponse data, response status code and response headers
     def get_user_notification_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_notification_count ...'
@@ -2164,7 +2164,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUserNotificationCountResponse1'
+      return_type = opts[:debug_return_type] || 'GetUserNotificationCountResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2199,7 +2199,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_translations 
     # @option opts [Boolean] :include_tenant_notifications 
     # @option opts [String] :sso 
-    # @return [GetUserNotificationsResponse]
+    # @return [GetMyNotificationsResponse]
     def get_user_notifications(tenant_id, opts = {})
       data, _status_code, _headers = get_user_notifications_with_http_info(tenant_id, opts)
       data
@@ -2218,7 +2218,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_translations 
     # @option opts [Boolean] :include_tenant_notifications 
     # @option opts [String] :sso 
-    # @return [Array<(GetUserNotificationsResponse, Integer, Hash)>] GetUserNotificationsResponse data, response status code and response headers
+    # @return [Array<(GetMyNotificationsResponse, Integer, Hash)>] GetMyNotificationsResponse data, response status code and response headers
     def get_user_notifications_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_notifications ...'
@@ -2257,7 +2257,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUserNotificationsResponse'
+      return_type = opts[:debug_return_type] || 'GetMyNotificationsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2283,7 +2283,7 @@ module FastCommentsClient
     # @param url_id_ws [String] 
     # @param user_ids [String] 
     # @param [Hash] opts the optional parameters
-    # @return [GetUserPresenceStatusesResponse1]
+    # @return [GetUserPresenceStatusesResponse]
     def get_user_presence_statuses(tenant_id, url_id_ws, user_ids, opts = {})
       data, _status_code, _headers = get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids, opts)
       data
@@ -2293,7 +2293,7 @@ module FastCommentsClient
     # @param url_id_ws [String] 
     # @param user_ids [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetUserPresenceStatusesResponse1, Integer, Hash)>] GetUserPresenceStatusesResponse1 data, response status code and response headers
+    # @return [Array<(GetUserPresenceStatusesResponse, Integer, Hash)>] GetUserPresenceStatusesResponse data, response status code and response headers
     def get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_presence_statuses ...'
@@ -2331,7 +2331,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUserPresenceStatusesResponse1'
+      return_type = opts[:debug_return_type] || 'GetUserPresenceStatusesResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2357,7 +2357,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :post_ids 
     # @option opts [String] :sso 
-    # @return [GetUserReactsPublicResponse]
+    # @return [UserReactsResponse]
     def get_user_reacts_public(tenant_id, opts = {})
       data, _status_code, _headers = get_user_reacts_public_with_http_info(tenant_id, opts)
       data
@@ -2367,7 +2367,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :post_ids 
     # @option opts [String] :sso 
-    # @return [Array<(GetUserReactsPublicResponse, Integer, Hash)>] GetUserReactsPublicResponse data, response status code and response headers
+    # @return [Array<(UserReactsResponse, Integer, Hash)>] UserReactsResponse data, response status code and response headers
     def get_user_reacts_public_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_reacts_public ...'
@@ -2396,7 +2396,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUserReactsPublicResponse'
+      return_type = opts[:debug_return_type] || 'UserReactsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2422,7 +2422,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param ids [String] Comma-delimited userIds.
     # @param [Hash] opts the optional parameters
-    # @return [GetUsersInfoResponse]
+    # @return [PageUsersInfoResponse]
     def get_users_info(tenant_id, ids, opts = {})
       data, _status_code, _headers = get_users_info_with_http_info(tenant_id, ids, opts)
       data
@@ -2432,7 +2432,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param ids [String] Comma-delimited userIds.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetUsersInfoResponse, Integer, Hash)>] GetUsersInfoResponse data, response status code and response headers
+    # @return [Array<(PageUsersInfoResponse, Integer, Hash)>] PageUsersInfoResponse data, response status code and response headers
     def get_users_info_with_http_info(tenant_id, ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_users_info ...'
@@ -2464,7 +2464,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUsersInfoResponse'
+      return_type = opts[:debug_return_type] || 'PageUsersInfoResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2489,7 +2489,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [GetV1PageLikesResponse]
+    # @return [GetV1PageLikes]
     def get_v1_page_likes(tenant_id, url_id, opts = {})
       data, _status_code, _headers = get_v1_page_likes_with_http_info(tenant_id, url_id, opts)
       data
@@ -2498,7 +2498,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetV1PageLikesResponse, Integer, Hash)>] GetV1PageLikesResponse data, response status code and response headers
+    # @return [Array<(GetV1PageLikes, Integer, Hash)>] GetV1PageLikes data, response status code and response headers
     def get_v1_page_likes_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_v1_page_likes ...'
@@ -2530,7 +2530,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetV1PageLikesResponse'
+      return_type = opts[:debug_return_type] || 'GetV1PageLikes'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2556,7 +2556,7 @@ module FastCommentsClient
     # @param url_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [GetV2PageReactUsersResponse1]
+    # @return [GetV2PageReactUsersResponse]
     def get_v2_page_react_users(tenant_id, url_id, id, opts = {})
       data, _status_code, _headers = get_v2_page_react_users_with_http_info(tenant_id, url_id, id, opts)
       data
@@ -2566,7 +2566,7 @@ module FastCommentsClient
     # @param url_id [String] 
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetV2PageReactUsersResponse1, Integer, Hash)>] GetV2PageReactUsersResponse1 data, response status code and response headers
+    # @return [Array<(GetV2PageReactUsersResponse, Integer, Hash)>] GetV2PageReactUsersResponse data, response status code and response headers
     def get_v2_page_react_users_with_http_info(tenant_id, url_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_v2_page_react_users ...'
@@ -2603,7 +2603,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetV2PageReactUsersResponse1'
+      return_type = opts[:debug_return_type] || 'GetV2PageReactUsersResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2628,7 +2628,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [GetV2PageReactsResponse]
+    # @return [GetV2PageReacts]
     def get_v2_page_reacts(tenant_id, url_id, opts = {})
       data, _status_code, _headers = get_v2_page_reacts_with_http_info(tenant_id, url_id, opts)
       data
@@ -2637,7 +2637,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param url_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetV2PageReactsResponse, Integer, Hash)>] GetV2PageReactsResponse data, response status code and response headers
+    # @return [Array<(GetV2PageReacts, Integer, Hash)>] GetV2PageReacts data, response status code and response headers
     def get_v2_page_reacts_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_v2_page_reacts ...'
@@ -2669,7 +2669,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetV2PageReactsResponse'
+      return_type = opts[:debug_return_type] || 'GetV2PageReacts'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2696,7 +2696,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [LockCommentResponse]
+    # @return [APIEmptyResponse]
     def lock_comment(tenant_id, comment_id, broadcast_id, opts = {})
       data, _status_code, _headers = lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
@@ -2707,7 +2707,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(LockCommentResponse, Integer, Hash)>] LockCommentResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.lock_comment ...'
@@ -2744,7 +2744,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'LockCommentResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2824,7 +2824,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [PinCommentResponse]
+    # @return [ChangeCommentPinStatusResponse]
     def pin_comment(tenant_id, comment_id, broadcast_id, opts = {})
       data, _status_code, _headers = pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
@@ -2835,7 +2835,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(PinCommentResponse, Integer, Hash)>] PinCommentResponse data, response status code and response headers
+    # @return [Array<(ChangeCommentPinStatusResponse, Integer, Hash)>] ChangeCommentPinStatusResponse data, response status code and response headers
     def pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.pin_comment ...'
@@ -2872,7 +2872,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PinCommentResponse'
+      return_type = opts[:debug_return_type] || 'ChangeCommentPinStatusResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2901,7 +2901,7 @@ module FastCommentsClient
     # @option opts [Boolean] :is_undo 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
-    # @return [ReactFeedPostPublicResponse]
+    # @return [ReactFeedPostResponse]
     def react_feed_post_public(tenant_id, post_id, react_body_params, opts = {})
       data, _status_code, _headers = react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts)
       data
@@ -2914,7 +2914,7 @@ module FastCommentsClient
     # @option opts [Boolean] :is_undo 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
-    # @return [Array<(ReactFeedPostPublicResponse, Integer, Hash)>] ReactFeedPostPublicResponse data, response status code and response headers
+    # @return [Array<(ReactFeedPostResponse, Integer, Hash)>] ReactFeedPostResponse data, response status code and response headers
     def react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.react_feed_post_public ...'
@@ -2957,7 +2957,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(react_body_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'ReactFeedPostPublicResponse'
+      return_type = opts[:debug_return_type] || 'ReactFeedPostResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2982,7 +2982,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [ResetUserNotificationCountResponse]
+    # @return [ResetUserNotificationsResponse]
     def reset_user_notification_count(tenant_id, opts = {})
       data, _status_code, _headers = reset_user_notification_count_with_http_info(tenant_id, opts)
       data
@@ -2991,7 +2991,7 @@ module FastCommentsClient
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(ResetUserNotificationCountResponse, Integer, Hash)>] ResetUserNotificationCountResponse data, response status code and response headers
+    # @return [Array<(ResetUserNotificationsResponse, Integer, Hash)>] ResetUserNotificationsResponse data, response status code and response headers
     def reset_user_notification_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.reset_user_notification_count ...'
@@ -3020,7 +3020,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'ResetUserNotificationCountResponse'
+      return_type = opts[:debug_return_type] || 'ResetUserNotificationsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3050,7 +3050,7 @@ module FastCommentsClient
     # @option opts [Boolean] :dm_only 
     # @option opts [Boolean] :no_dm 
     # @option opts [String] :sso 
-    # @return [ResetUserNotificationsResponse1]
+    # @return [ResetUserNotificationsResponse]
     def reset_user_notifications(tenant_id, opts = {})
       data, _status_code, _headers = reset_user_notifications_with_http_info(tenant_id, opts)
       data
@@ -3064,7 +3064,7 @@ module FastCommentsClient
     # @option opts [Boolean] :dm_only 
     # @option opts [Boolean] :no_dm 
     # @option opts [String] :sso 
-    # @return [Array<(ResetUserNotificationsResponse1, Integer, Hash)>] ResetUserNotificationsResponse1 data, response status code and response headers
+    # @return [Array<(ResetUserNotificationsResponse, Integer, Hash)>] ResetUserNotificationsResponse data, response status code and response headers
     def reset_user_notifications_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.reset_user_notifications ...'
@@ -3098,7 +3098,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'ResetUserNotificationsResponse1'
+      return_type = opts[:debug_return_type] || 'ResetUserNotificationsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3127,7 +3127,7 @@ module FastCommentsClient
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
     # @option opts [String] :search_section 
-    # @return [SearchUsersResponse1]
+    # @return [SearchUsersResult]
     def search_users(tenant_id, url_id, opts = {})
       data, _status_code, _headers = search_users_with_http_info(tenant_id, url_id, opts)
       data
@@ -3140,7 +3140,7 @@ module FastCommentsClient
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
     # @option opts [String] :search_section 
-    # @return [Array<(SearchUsersResponse1, Integer, Hash)>] SearchUsersResponse1 data, response status code and response headers
+    # @return [Array<(SearchUsersResult, Integer, Hash)>] SearchUsersResult data, response status code and response headers
     def search_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.search_users ...'
@@ -3180,7 +3180,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'SearchUsersResponse1'
+      return_type = opts[:debug_return_type] || 'SearchUsersResult'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3209,7 +3209,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [SetCommentTextResponse1]
+    # @return [PublicAPISetCommentTextResponse]
     def set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts = {})
       data, _status_code, _headers = set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
       data
@@ -3222,7 +3222,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
-    # @return [Array<(SetCommentTextResponse1, Integer, Hash)>] SetCommentTextResponse1 data, response status code and response headers
+    # @return [Array<(PublicAPISetCommentTextResponse, Integer, Hash)>] PublicAPISetCommentTextResponse data, response status code and response headers
     def set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.set_comment_text ...'
@@ -3269,7 +3269,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(comment_text_update_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'SetCommentTextResponse1'
+      return_type = opts[:debug_return_type] || 'PublicAPISetCommentTextResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3296,7 +3296,7 @@ module FastCommentsClient
     # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [UnBlockCommentPublicResponse]
+    # @return [UnblockSuccess]
     def un_block_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts = {})
       data, _status_code, _headers = un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
       data
@@ -3307,7 +3307,7 @@ module FastCommentsClient
     # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(UnBlockCommentPublicResponse, Integer, Hash)>] UnBlockCommentPublicResponse data, response status code and response headers
+    # @return [Array<(UnblockSuccess, Integer, Hash)>] UnblockSuccess data, response status code and response headers
     def un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.un_block_comment_public ...'
@@ -3349,7 +3349,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(public_block_from_comment_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UnBlockCommentPublicResponse'
+      return_type = opts[:debug_return_type] || 'UnblockSuccess'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3376,7 +3376,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [UnLockCommentResponse]
+    # @return [APIEmptyResponse]
     def un_lock_comment(tenant_id, comment_id, broadcast_id, opts = {})
       data, _status_code, _headers = un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
@@ -3387,7 +3387,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(UnLockCommentResponse, Integer, Hash)>] UnLockCommentResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.un_lock_comment ...'
@@ -3424,7 +3424,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UnLockCommentResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3451,7 +3451,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [UnPinCommentResponse]
+    # @return [ChangeCommentPinStatusResponse]
     def un_pin_comment(tenant_id, comment_id, broadcast_id, opts = {})
       data, _status_code, _headers = un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
@@ -3462,7 +3462,7 @@ module FastCommentsClient
     # @param broadcast_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
-    # @return [Array<(UnPinCommentResponse, Integer, Hash)>] UnPinCommentResponse data, response status code and response headers
+    # @return [Array<(ChangeCommentPinStatusResponse, Integer, Hash)>] ChangeCommentPinStatusResponse data, response status code and response headers
     def un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.un_pin_comment ...'
@@ -3499,7 +3499,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UnPinCommentResponse'
+      return_type = opts[:debug_return_type] || 'ChangeCommentPinStatusResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3527,7 +3527,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
-    # @return [UpdateFeedPostPublicResponse]
+    # @return [CreateFeedPostResponse]
     def update_feed_post_public(tenant_id, post_id, update_feed_post_params, opts = {})
       data, _status_code, _headers = update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts)
       data
@@ -3539,7 +3539,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
-    # @return [Array<(UpdateFeedPostPublicResponse, Integer, Hash)>] UpdateFeedPostPublicResponse data, response status code and response headers
+    # @return [Array<(CreateFeedPostResponse, Integer, Hash)>] CreateFeedPostResponse data, response status code and response headers
     def update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.update_feed_post_public ...'
@@ -3581,7 +3581,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(update_feed_post_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UpdateFeedPostPublicResponse'
+      return_type = opts[:debug_return_type] || 'CreateFeedPostResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -3956,7 +3956,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
-    # @return [VoteCommentResponse]
+    # @return [VoteResponse]
     def vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts = {})
       data, _status_code, _headers = vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
       data
@@ -3970,7 +3970,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
-    # @return [Array<(VoteCommentResponse, Integer, Hash)>] VoteCommentResponse data, response status code and response headers
+    # @return [Array<(VoteResponse, Integer, Hash)>] VoteResponse data, response status code and response headers
     def vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.vote_comment ...'
@@ -4022,7 +4022,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(vote_body_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'VoteCommentResponse'
+      return_type = opts[:debug_return_type] || 'VoteResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

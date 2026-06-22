@@ -60,7 +60,7 @@ All URIs are relative to *https://fastcomments.com*
 
 ## block_from_comment_public
 
-> <BlockFromCommentPublicResponse> block_from_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts)
+> <BlockSuccess> block_from_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts)
 
 
 
@@ -91,7 +91,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlockFromCommentPublicResponse>, Integer, Hash)> block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
+> <Array(<BlockSuccess>, Integer, Hash)> block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
 
 ```ruby
 begin
@@ -99,7 +99,7 @@ begin
   data, status_code, headers = api_instance.block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <BlockFromCommentPublicResponse>
+  p data # => <BlockSuccess>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->block_from_comment_public_with_http_info: #{e}"
 end
@@ -116,7 +116,7 @@ end
 
 ### Return type
 
-[**BlockFromCommentPublicResponse**](BlockFromCommentPublicResponse.md)
+[**BlockSuccess**](BlockSuccess.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ No authorization required
 
 ## checked_comments_for_blocked
 
-> <CheckedCommentsForBlockedResponse> checked_comments_for_blocked(tenant_id, comment_ids, opts)
+> <CheckBlockedCommentsResponse> checked_comments_for_blocked(tenant_id, comment_ids, opts)
 
 
 
@@ -160,7 +160,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CheckedCommentsForBlockedResponse>, Integer, Hash)> checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts)
+> <Array(<CheckBlockedCommentsResponse>, Integer, Hash)> checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts)
 
 ```ruby
 begin
@@ -168,7 +168,7 @@ begin
   data, status_code, headers = api_instance.checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CheckedCommentsForBlockedResponse>
+  p data # => <CheckBlockedCommentsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->checked_comments_for_blocked_with_http_info: #{e}"
 end
@@ -184,7 +184,7 @@ end
 
 ### Return type
 
-[**CheckedCommentsForBlockedResponse**](CheckedCommentsForBlockedResponse.md)
+[**CheckBlockedCommentsResponse**](CheckBlockedCommentsResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 ## create_comment_public
 
-> <CreateCommentPublicResponse> create_comment_public(tenant_id, url_id, broadcast_id, comment_data, opts)
+> <SaveCommentsResponseWithPresence> create_comment_public(tenant_id, url_id, broadcast_id, comment_data, opts)
 
 
 
@@ -231,7 +231,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateCommentPublicResponse>, Integer, Hash)> create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts)
+> <Array(<SaveCommentsResponseWithPresence>, Integer, Hash)> create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts)
 
 ```ruby
 begin
@@ -239,7 +239,7 @@ begin
   data, status_code, headers = api_instance.create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateCommentPublicResponse>
+  p data # => <SaveCommentsResponseWithPresence>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_comment_public_with_http_info: #{e}"
 end
@@ -258,7 +258,7 @@ end
 
 ### Return type
 
-[**CreateCommentPublicResponse**](CreateCommentPublicResponse.md)
+[**SaveCommentsResponseWithPresence**](SaveCommentsResponseWithPresence.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ No authorization required
 
 ## create_feed_post_public
 
-> <CreateFeedPostPublicResponse> create_feed_post_public(tenant_id, create_feed_post_params, opts)
+> <CreateFeedPostResponse> create_feed_post_public(tenant_id, create_feed_post_params, opts)
 
 
 
@@ -303,7 +303,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateFeedPostPublicResponse>, Integer, Hash)> create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts)
+> <Array(<CreateFeedPostResponse>, Integer, Hash)> create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts)
 
 ```ruby
 begin
@@ -311,7 +311,7 @@ begin
   data, status_code, headers = api_instance.create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateFeedPostPublicResponse>
+  p data # => <CreateFeedPostResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_feed_post_public_with_http_info: #{e}"
 end
@@ -328,7 +328,7 @@ end
 
 ### Return type
 
-[**CreateFeedPostPublicResponse**](CreateFeedPostPublicResponse.md)
+[**CreateFeedPostResponse**](CreateFeedPostResponse.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ No authorization required
 
 ## create_v1_page_react
 
-> <CreateV1PageReactResponse> create_v1_page_react(tenant_id, url_id, opts)
+> <CreateV1PageReact> create_v1_page_react(tenant_id, url_id, opts)
 
 
 
@@ -372,7 +372,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateV1PageReactResponse>, Integer, Hash)> create_v1_page_react_with_http_info(tenant_id, url_id, opts)
+> <Array(<CreateV1PageReact>, Integer, Hash)> create_v1_page_react_with_http_info(tenant_id, url_id, opts)
 
 ```ruby
 begin
@@ -380,7 +380,7 @@ begin
   data, status_code, headers = api_instance.create_v1_page_react_with_http_info(tenant_id, url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateV1PageReactResponse>
+  p data # => <CreateV1PageReact>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_v1_page_react_with_http_info: #{e}"
 end
@@ -396,7 +396,7 @@ end
 
 ### Return type
 
-[**CreateV1PageReactResponse**](CreateV1PageReactResponse.md)
+[**CreateV1PageReact**](CreateV1PageReact.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ No authorization required
 
 ## create_v2_page_react
 
-> <CreateV2PageReactResponse> create_v2_page_react(tenant_id, url_id, id, opts)
+> <CreateV1PageReact> create_v2_page_react(tenant_id, url_id, id, opts)
 
 
 
@@ -441,7 +441,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateV2PageReactResponse>, Integer, Hash)> create_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
+> <Array(<CreateV1PageReact>, Integer, Hash)> create_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
 
 ```ruby
 begin
@@ -449,7 +449,7 @@ begin
   data, status_code, headers = api_instance.create_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateV2PageReactResponse>
+  p data # => <CreateV1PageReact>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_v2_page_react_with_http_info: #{e}"
 end
@@ -466,7 +466,7 @@ end
 
 ### Return type
 
-[**CreateV2PageReactResponse**](CreateV2PageReactResponse.md)
+[**CreateV1PageReact**](CreateV1PageReact.md)
 
 ### Authorization
 
@@ -480,7 +480,7 @@ No authorization required
 
 ## delete_comment_public
 
-> <DeleteCommentPublicResponse> delete_comment_public(tenant_id, comment_id, broadcast_id, opts)
+> <PublicAPIDeleteCommentResponse> delete_comment_public(tenant_id, comment_id, broadcast_id, opts)
 
 
 
@@ -512,7 +512,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DeleteCommentPublicResponse>, Integer, Hash)> delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts)
+> <Array(<PublicAPIDeleteCommentResponse>, Integer, Hash)> delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts)
 
 ```ruby
 begin
@@ -520,7 +520,7 @@ begin
   data, status_code, headers = api_instance.delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DeleteCommentPublicResponse>
+  p data # => <PublicAPIDeleteCommentResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_public_with_http_info: #{e}"
 end
@@ -538,7 +538,7 @@ end
 
 ### Return type
 
-[**DeleteCommentPublicResponse**](DeleteCommentPublicResponse.md)
+[**PublicAPIDeleteCommentResponse**](PublicAPIDeleteCommentResponse.md)
 
 ### Authorization
 
@@ -552,7 +552,7 @@ No authorization required
 
 ## delete_comment_vote
 
-> <DeleteCommentVoteResponse> delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
+> <VoteDeleteResponse> delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
 
 
 
@@ -586,7 +586,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DeleteCommentVoteResponse>, Integer, Hash)> delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
+> <Array(<VoteDeleteResponse>, Integer, Hash)> delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
 
 ```ruby
 begin
@@ -594,7 +594,7 @@ begin
   data, status_code, headers = api_instance.delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DeleteCommentVoteResponse>
+  p data # => <VoteDeleteResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_vote_with_http_info: #{e}"
 end
@@ -614,7 +614,7 @@ end
 
 ### Return type
 
-[**DeleteCommentVoteResponse**](DeleteCommentVoteResponse.md)
+[**VoteDeleteResponse**](VoteDeleteResponse.md)
 
 ### Authorization
 
@@ -698,7 +698,7 @@ No authorization required
 
 ## delete_v1_page_react
 
-> <DeleteV1PageReactResponse> delete_v1_page_react(tenant_id, url_id)
+> <CreateV1PageReact> delete_v1_page_react(tenant_id, url_id)
 
 
 
@@ -725,7 +725,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DeleteV1PageReactResponse>, Integer, Hash)> delete_v1_page_react_with_http_info(tenant_id, url_id)
+> <Array(<CreateV1PageReact>, Integer, Hash)> delete_v1_page_react_with_http_info(tenant_id, url_id)
 
 ```ruby
 begin
@@ -733,7 +733,7 @@ begin
   data, status_code, headers = api_instance.delete_v1_page_react_with_http_info(tenant_id, url_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DeleteV1PageReactResponse>
+  p data # => <CreateV1PageReact>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_v1_page_react_with_http_info: #{e}"
 end
@@ -748,7 +748,7 @@ end
 
 ### Return type
 
-[**DeleteV1PageReactResponse**](DeleteV1PageReactResponse.md)
+[**CreateV1PageReact**](CreateV1PageReact.md)
 
 ### Authorization
 
@@ -762,7 +762,7 @@ No authorization required
 
 ## delete_v2_page_react
 
-> <DeleteV2PageReactResponse> delete_v2_page_react(tenant_id, url_id, id)
+> <CreateV1PageReact> delete_v2_page_react(tenant_id, url_id, id)
 
 
 
@@ -790,7 +790,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DeleteV2PageReactResponse>, Integer, Hash)> delete_v2_page_react_with_http_info(tenant_id, url_id, id)
+> <Array(<CreateV1PageReact>, Integer, Hash)> delete_v2_page_react_with_http_info(tenant_id, url_id, id)
 
 ```ruby
 begin
@@ -798,7 +798,7 @@ begin
   data, status_code, headers = api_instance.delete_v2_page_react_with_http_info(tenant_id, url_id, id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DeleteV2PageReactResponse>
+  p data # => <CreateV1PageReact>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_v2_page_react_with_http_info: #{e}"
 end
@@ -814,7 +814,7 @@ end
 
 ### Return type
 
-[**DeleteV2PageReactResponse**](DeleteV2PageReactResponse.md)
+[**CreateV1PageReact**](CreateV1PageReact.md)
 
 ### Authorization
 
@@ -828,7 +828,7 @@ No authorization required
 
 ## flag_comment_public
 
-> <FlagCommentPublicResponse> flag_comment_public(tenant_id, comment_id, is_flagged, opts)
+> <APIEmptyResponse> flag_comment_public(tenant_id, comment_id, is_flagged, opts)
 
 
 
@@ -859,7 +859,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FlagCommentPublicResponse>, Integer, Hash)> flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts)
 
 ```ruby
 begin
@@ -867,7 +867,7 @@ begin
   data, status_code, headers = api_instance.flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <FlagCommentPublicResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->flag_comment_public_with_http_info: #{e}"
 end
@@ -884,7 +884,7 @@ end
 
 ### Return type
 
-[**FlagCommentPublicResponse**](FlagCommentPublicResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -898,7 +898,7 @@ No authorization required
 
 ## get_comment_text
 
-> <GetCommentTextResponse1> get_comment_text(tenant_id, comment_id, opts)
+> <PublicAPIGetCommentTextResponse> get_comment_text(tenant_id, comment_id, opts)
 
 
 
@@ -929,7 +929,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentTextResponse1>, Integer, Hash)> get_comment_text_with_http_info(tenant_id, comment_id, opts)
+> <Array(<PublicAPIGetCommentTextResponse>, Integer, Hash)> get_comment_text_with_http_info(tenant_id, comment_id, opts)
 
 ```ruby
 begin
@@ -937,7 +937,7 @@ begin
   data, status_code, headers = api_instance.get_comment_text_with_http_info(tenant_id, comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCommentTextResponse1>
+  p data # => <PublicAPIGetCommentTextResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_text_with_http_info: #{e}"
 end
@@ -954,7 +954,7 @@ end
 
 ### Return type
 
-[**GetCommentTextResponse1**](GetCommentTextResponse1.md)
+[**PublicAPIGetCommentTextResponse**](PublicAPIGetCommentTextResponse.md)
 
 ### Authorization
 
@@ -968,7 +968,7 @@ No authorization required
 
 ## get_comment_vote_user_names
 
-> <GetCommentVoteUserNamesResponse> get_comment_vote_user_names(tenant_id, comment_id, dir, opts)
+> <GetCommentVoteUserNamesSuccessResponse> get_comment_vote_user_names(tenant_id, comment_id, dir, opts)
 
 
 
@@ -999,7 +999,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentVoteUserNamesResponse>, Integer, Hash)> get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts)
+> <Array(<GetCommentVoteUserNamesSuccessResponse>, Integer, Hash)> get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts)
 
 ```ruby
 begin
@@ -1007,7 +1007,7 @@ begin
   data, status_code, headers = api_instance.get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCommentVoteUserNamesResponse>
+  p data # => <GetCommentVoteUserNamesSuccessResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_vote_user_names_with_http_info: #{e}"
 end
@@ -1024,7 +1024,7 @@ end
 
 ### Return type
 
-[**GetCommentVoteUserNamesResponse**](GetCommentVoteUserNamesResponse.md)
+[**GetCommentVoteUserNamesSuccessResponse**](GetCommentVoteUserNamesSuccessResponse.md)
 
 ### Authorization
 
@@ -1038,7 +1038,7 @@ No authorization required
 
 ## get_comments_for_user
 
-> <GetCommentsForUserResponse1> get_comments_for_user(opts)
+> <GetCommentsForUserResponse> get_comments_for_user(opts)
 
 
 
@@ -1072,7 +1072,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentsForUserResponse1>, Integer, Hash)> get_comments_for_user_with_http_info(opts)
+> <Array(<GetCommentsForUserResponse>, Integer, Hash)> get_comments_for_user_with_http_info(opts)
 
 ```ruby
 begin
@@ -1080,7 +1080,7 @@ begin
   data, status_code, headers = api_instance.get_comments_for_user_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCommentsForUserResponse1>
+  p data # => <GetCommentsForUserResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comments_for_user_with_http_info: #{e}"
 end
@@ -1100,7 +1100,7 @@ end
 
 ### Return type
 
-[**GetCommentsForUserResponse1**](GetCommentsForUserResponse1.md)
+[**GetCommentsForUserResponse**](GetCommentsForUserResponse.md)
 
 ### Authorization
 
@@ -1114,7 +1114,7 @@ No authorization required
 
 ## get_comments_public
 
-> <GetCommentsPublicResponse> get_comments_public(tenant_id, url_id, opts)
+> <GetCommentsResponseWithPresencePublicComment> get_comments_public(tenant_id, url_id, opts)
 
 
 
@@ -1171,7 +1171,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentsPublicResponse>, Integer, Hash)> get_comments_public_with_http_info(tenant_id, url_id, opts)
+> <Array(<GetCommentsResponseWithPresencePublicComment>, Integer, Hash)> get_comments_public_with_http_info(tenant_id, url_id, opts)
 
 ```ruby
 begin
@@ -1179,7 +1179,7 @@ begin
   data, status_code, headers = api_instance.get_comments_public_with_http_info(tenant_id, url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCommentsPublicResponse>
+  p data # => <GetCommentsResponseWithPresencePublicComment>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comments_public_with_http_info: #{e}"
 end
@@ -1220,7 +1220,7 @@ end
 
 ### Return type
 
-[**GetCommentsPublicResponse**](GetCommentsPublicResponse.md)
+[**GetCommentsResponseWithPresencePublicComment**](GetCommentsResponseWithPresencePublicComment.md)
 
 ### Authorization
 
@@ -1234,7 +1234,7 @@ No authorization required
 
 ## get_event_log
 
-> <GetEventLogResponse1> get_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
+> <GetEventLogResponse> get_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
 
 
 
@@ -1268,7 +1268,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetEventLogResponse1>, Integer, Hash)> get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
+> <Array(<GetEventLogResponse>, Integer, Hash)> get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
 
 ```ruby
 begin
@@ -1276,7 +1276,7 @@ begin
   data, status_code, headers = api_instance.get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetEventLogResponse1>
+  p data # => <GetEventLogResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_event_log_with_http_info: #{e}"
 end
@@ -1294,7 +1294,7 @@ end
 
 ### Return type
 
-[**GetEventLogResponse1**](GetEventLogResponse1.md)
+[**GetEventLogResponse**](GetEventLogResponse.md)
 
 ### Authorization
 
@@ -1308,7 +1308,7 @@ No authorization required
 
 ## get_feed_posts_public
 
-> <GetFeedPostsPublicResponse> get_feed_posts_public(tenant_id, opts)
+> <PublicFeedPostsResponse> get_feed_posts_public(tenant_id, opts)
 
 
 
@@ -1344,7 +1344,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetFeedPostsPublicResponse>, Integer, Hash)> get_feed_posts_public_with_http_info(tenant_id, opts)
+> <Array(<PublicFeedPostsResponse>, Integer, Hash)> get_feed_posts_public_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -1352,7 +1352,7 @@ begin
   data, status_code, headers = api_instance.get_feed_posts_public_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetFeedPostsPublicResponse>
+  p data # => <PublicFeedPostsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_public_with_http_info: #{e}"
 end
@@ -1372,7 +1372,7 @@ end
 
 ### Return type
 
-[**GetFeedPostsPublicResponse**](GetFeedPostsPublicResponse.md)
+[**PublicFeedPostsResponse**](PublicFeedPostsResponse.md)
 
 ### Authorization
 
@@ -1386,7 +1386,7 @@ No authorization required
 
 ## get_feed_posts_stats
 
-> <GetFeedPostsStatsResponse> get_feed_posts_stats(tenant_id, post_ids, opts)
+> <FeedPostsStatsResponse> get_feed_posts_stats(tenant_id, post_ids, opts)
 
 
 
@@ -1416,7 +1416,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetFeedPostsStatsResponse>, Integer, Hash)> get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts)
+> <Array(<FeedPostsStatsResponse>, Integer, Hash)> get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts)
 
 ```ruby
 begin
@@ -1424,7 +1424,7 @@ begin
   data, status_code, headers = api_instance.get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetFeedPostsStatsResponse>
+  p data # => <FeedPostsStatsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_stats_with_http_info: #{e}"
 end
@@ -1440,7 +1440,7 @@ end
 
 ### Return type
 
-[**GetFeedPostsStatsResponse**](GetFeedPostsStatsResponse.md)
+[**FeedPostsStatsResponse**](FeedPostsStatsResponse.md)
 
 ### Authorization
 
@@ -1454,7 +1454,7 @@ No authorization required
 
 ## get_gif_large
 
-> <GetGifLargeResponse> get_gif_large(tenant_id, large_internal_url_sanitized)
+> <GifGetLargeResponse> get_gif_large(tenant_id, large_internal_url_sanitized)
 
 
 
@@ -1481,7 +1481,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetGifLargeResponse>, Integer, Hash)> get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized)
+> <Array(<GifGetLargeResponse>, Integer, Hash)> get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized)
 
 ```ruby
 begin
@@ -1489,7 +1489,7 @@ begin
   data, status_code, headers = api_instance.get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetGifLargeResponse>
+  p data # => <GifGetLargeResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_gif_large_with_http_info: #{e}"
 end
@@ -1504,7 +1504,7 @@ end
 
 ### Return type
 
-[**GetGifLargeResponse**](GetGifLargeResponse.md)
+[**GifGetLargeResponse**](GifGetLargeResponse.md)
 
 ### Authorization
 
@@ -1660,7 +1660,7 @@ No authorization required
 
 ## get_global_event_log
 
-> <GetGlobalEventLogResponse> get_global_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
+> <GetEventLogResponse> get_global_event_log(tenant_id, url_id, user_id_ws, start_time, opts)
 
 
 
@@ -1694,7 +1694,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetGlobalEventLogResponse>, Integer, Hash)> get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
+> <Array(<GetEventLogResponse>, Integer, Hash)> get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
 
 ```ruby
 begin
@@ -1702,7 +1702,7 @@ begin
   data, status_code, headers = api_instance.get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetGlobalEventLogResponse>
+  p data # => <GetEventLogResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_global_event_log_with_http_info: #{e}"
 end
@@ -1720,7 +1720,7 @@ end
 
 ### Return type
 
-[**GetGlobalEventLogResponse**](GetGlobalEventLogResponse.md)
+[**GetEventLogResponse**](GetEventLogResponse.md)
 
 ### Authorization
 
@@ -1734,7 +1734,7 @@ No authorization required
 
 ## get_offline_users
 
-> <GetOfflineUsersResponse> get_offline_users(tenant_id, url_id, opts)
+> <PageUsersOfflineResponse> get_offline_users(tenant_id, url_id, opts)
 
 
 
@@ -1767,7 +1767,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetOfflineUsersResponse>, Integer, Hash)> get_offline_users_with_http_info(tenant_id, url_id, opts)
+> <Array(<PageUsersOfflineResponse>, Integer, Hash)> get_offline_users_with_http_info(tenant_id, url_id, opts)
 
 ```ruby
 begin
@@ -1775,7 +1775,7 @@ begin
   data, status_code, headers = api_instance.get_offline_users_with_http_info(tenant_id, url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetOfflineUsersResponse>
+  p data # => <PageUsersOfflineResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users_with_http_info: #{e}"
 end
@@ -1792,7 +1792,7 @@ end
 
 ### Return type
 
-[**GetOfflineUsersResponse**](GetOfflineUsersResponse.md)
+[**PageUsersOfflineResponse**](PageUsersOfflineResponse.md)
 
 ### Authorization
 
@@ -1806,7 +1806,7 @@ No authorization required
 
 ## get_online_users
 
-> <GetOnlineUsersResponse> get_online_users(tenant_id, url_id, opts)
+> <PageUsersOnlineResponse> get_online_users(tenant_id, url_id, opts)
 
 
 
@@ -1839,7 +1839,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetOnlineUsersResponse>, Integer, Hash)> get_online_users_with_http_info(tenant_id, url_id, opts)
+> <Array(<PageUsersOnlineResponse>, Integer, Hash)> get_online_users_with_http_info(tenant_id, url_id, opts)
 
 ```ruby
 begin
@@ -1847,7 +1847,7 @@ begin
   data, status_code, headers = api_instance.get_online_users_with_http_info(tenant_id, url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetOnlineUsersResponse>
+  p data # => <PageUsersOnlineResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users_with_http_info: #{e}"
 end
@@ -1864,7 +1864,7 @@ end
 
 ### Return type
 
-[**GetOnlineUsersResponse**](GetOnlineUsersResponse.md)
+[**PageUsersOnlineResponse**](PageUsersOnlineResponse.md)
 
 ### Authorization
 
@@ -1878,7 +1878,7 @@ No authorization required
 
 ## get_pages_public
 
-> <GetPagesPublicResponse> get_pages_public(tenant_id, opts)
+> <GetPublicPagesResponse> get_pages_public(tenant_id, opts)
 
 
 
@@ -1913,7 +1913,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetPagesPublicResponse>, Integer, Hash)> get_pages_public_with_http_info(tenant_id, opts)
+> <Array(<GetPublicPagesResponse>, Integer, Hash)> get_pages_public_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -1921,7 +1921,7 @@ begin
   data, status_code, headers = api_instance.get_pages_public_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetPagesPublicResponse>
+  p data # => <GetPublicPagesResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_pages_public_with_http_info: #{e}"
 end
@@ -1940,7 +1940,7 @@ end
 
 ### Return type
 
-[**GetPagesPublicResponse**](GetPagesPublicResponse.md)
+[**GetPublicPagesResponse**](GetPublicPagesResponse.md)
 
 ### Authorization
 
@@ -1954,7 +1954,7 @@ No authorization required
 
 ## get_translations
 
-> <GetTranslationsResponse1> get_translations(namespace, component, opts)
+> <GetTranslationsResponse> get_translations(namespace, component, opts)
 
 
 
@@ -1985,7 +1985,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetTranslationsResponse1>, Integer, Hash)> get_translations_with_http_info(namespace, component, opts)
+> <Array(<GetTranslationsResponse>, Integer, Hash)> get_translations_with_http_info(namespace, component, opts)
 
 ```ruby
 begin
@@ -1993,7 +1993,7 @@ begin
   data, status_code, headers = api_instance.get_translations_with_http_info(namespace, component, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetTranslationsResponse1>
+  p data # => <GetTranslationsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_translations_with_http_info: #{e}"
 end
@@ -2010,7 +2010,7 @@ end
 
 ### Return type
 
-[**GetTranslationsResponse1**](GetTranslationsResponse1.md)
+[**GetTranslationsResponse**](GetTranslationsResponse.md)
 
 ### Authorization
 
@@ -2024,7 +2024,7 @@ No authorization required
 
 ## get_user_notification_count
 
-> <GetUserNotificationCountResponse1> get_user_notification_count(tenant_id, opts)
+> <GetUserNotificationCountResponse> get_user_notification_count(tenant_id, opts)
 
 
 
@@ -2053,7 +2053,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUserNotificationCountResponse1>, Integer, Hash)> get_user_notification_count_with_http_info(tenant_id, opts)
+> <Array(<GetUserNotificationCountResponse>, Integer, Hash)> get_user_notification_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -2061,7 +2061,7 @@ begin
   data, status_code, headers = api_instance.get_user_notification_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUserNotificationCountResponse1>
+  p data # => <GetUserNotificationCountResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notification_count_with_http_info: #{e}"
 end
@@ -2076,7 +2076,7 @@ end
 
 ### Return type
 
-[**GetUserNotificationCountResponse1**](GetUserNotificationCountResponse1.md)
+[**GetUserNotificationCountResponse**](GetUserNotificationCountResponse.md)
 
 ### Authorization
 
@@ -2090,7 +2090,7 @@ No authorization required
 
 ## get_user_notifications
 
-> <GetUserNotificationsResponse> get_user_notifications(tenant_id, opts)
+> <GetMyNotificationsResponse> get_user_notifications(tenant_id, opts)
 
 
 
@@ -2129,7 +2129,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUserNotificationsResponse>, Integer, Hash)> get_user_notifications_with_http_info(tenant_id, opts)
+> <Array(<GetMyNotificationsResponse>, Integer, Hash)> get_user_notifications_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -2137,7 +2137,7 @@ begin
   data, status_code, headers = api_instance.get_user_notifications_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUserNotificationsResponse>
+  p data # => <GetMyNotificationsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications_with_http_info: #{e}"
 end
@@ -2162,7 +2162,7 @@ end
 
 ### Return type
 
-[**GetUserNotificationsResponse**](GetUserNotificationsResponse.md)
+[**GetMyNotificationsResponse**](GetMyNotificationsResponse.md)
 
 ### Authorization
 
@@ -2176,7 +2176,7 @@ No authorization required
 
 ## get_user_presence_statuses
 
-> <GetUserPresenceStatusesResponse1> get_user_presence_statuses(tenant_id, url_id_ws, user_ids)
+> <GetUserPresenceStatusesResponse> get_user_presence_statuses(tenant_id, url_id_ws, user_ids)
 
 
 
@@ -2204,7 +2204,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUserPresenceStatusesResponse1>, Integer, Hash)> get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids)
+> <Array(<GetUserPresenceStatusesResponse>, Integer, Hash)> get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids)
 
 ```ruby
 begin
@@ -2212,7 +2212,7 @@ begin
   data, status_code, headers = api_instance.get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUserPresenceStatusesResponse1>
+  p data # => <GetUserPresenceStatusesResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_presence_statuses_with_http_info: #{e}"
 end
@@ -2228,7 +2228,7 @@ end
 
 ### Return type
 
-[**GetUserPresenceStatusesResponse1**](GetUserPresenceStatusesResponse1.md)
+[**GetUserPresenceStatusesResponse**](GetUserPresenceStatusesResponse.md)
 
 ### Authorization
 
@@ -2242,7 +2242,7 @@ No authorization required
 
 ## get_user_reacts_public
 
-> <GetUserReactsPublicResponse> get_user_reacts_public(tenant_id, opts)
+> <UserReactsResponse> get_user_reacts_public(tenant_id, opts)
 
 
 
@@ -2272,7 +2272,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUserReactsPublicResponse>, Integer, Hash)> get_user_reacts_public_with_http_info(tenant_id, opts)
+> <Array(<UserReactsResponse>, Integer, Hash)> get_user_reacts_public_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -2280,7 +2280,7 @@ begin
   data, status_code, headers = api_instance.get_user_reacts_public_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUserReactsPublicResponse>
+  p data # => <UserReactsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_reacts_public_with_http_info: #{e}"
 end
@@ -2296,7 +2296,7 @@ end
 
 ### Return type
 
-[**GetUserReactsPublicResponse**](GetUserReactsPublicResponse.md)
+[**UserReactsResponse**](UserReactsResponse.md)
 
 ### Authorization
 
@@ -2310,7 +2310,7 @@ No authorization required
 
 ## get_users_info
 
-> <GetUsersInfoResponse> get_users_info(tenant_id, ids)
+> <PageUsersInfoResponse> get_users_info(tenant_id, ids)
 
 
 
@@ -2339,7 +2339,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUsersInfoResponse>, Integer, Hash)> get_users_info_with_http_info(tenant_id, ids)
+> <Array(<PageUsersInfoResponse>, Integer, Hash)> get_users_info_with_http_info(tenant_id, ids)
 
 ```ruby
 begin
@@ -2347,7 +2347,7 @@ begin
   data, status_code, headers = api_instance.get_users_info_with_http_info(tenant_id, ids)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUsersInfoResponse>
+  p data # => <PageUsersInfoResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_users_info_with_http_info: #{e}"
 end
@@ -2362,7 +2362,7 @@ end
 
 ### Return type
 
-[**GetUsersInfoResponse**](GetUsersInfoResponse.md)
+[**PageUsersInfoResponse**](PageUsersInfoResponse.md)
 
 ### Authorization
 
@@ -2376,7 +2376,7 @@ No authorization required
 
 ## get_v1_page_likes
 
-> <GetV1PageLikesResponse> get_v1_page_likes(tenant_id, url_id)
+> <GetV1PageLikes> get_v1_page_likes(tenant_id, url_id)
 
 
 
@@ -2403,7 +2403,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetV1PageLikesResponse>, Integer, Hash)> get_v1_page_likes_with_http_info(tenant_id, url_id)
+> <Array(<GetV1PageLikes>, Integer, Hash)> get_v1_page_likes_with_http_info(tenant_id, url_id)
 
 ```ruby
 begin
@@ -2411,7 +2411,7 @@ begin
   data, status_code, headers = api_instance.get_v1_page_likes_with_http_info(tenant_id, url_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetV1PageLikesResponse>
+  p data # => <GetV1PageLikes>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_v1_page_likes_with_http_info: #{e}"
 end
@@ -2426,7 +2426,7 @@ end
 
 ### Return type
 
-[**GetV1PageLikesResponse**](GetV1PageLikesResponse.md)
+[**GetV1PageLikes**](GetV1PageLikes.md)
 
 ### Authorization
 
@@ -2440,7 +2440,7 @@ No authorization required
 
 ## get_v2_page_react_users
 
-> <GetV2PageReactUsersResponse1> get_v2_page_react_users(tenant_id, url_id, id)
+> <GetV2PageReactUsersResponse> get_v2_page_react_users(tenant_id, url_id, id)
 
 
 
@@ -2468,7 +2468,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetV2PageReactUsersResponse1>, Integer, Hash)> get_v2_page_react_users_with_http_info(tenant_id, url_id, id)
+> <Array(<GetV2PageReactUsersResponse>, Integer, Hash)> get_v2_page_react_users_with_http_info(tenant_id, url_id, id)
 
 ```ruby
 begin
@@ -2476,7 +2476,7 @@ begin
   data, status_code, headers = api_instance.get_v2_page_react_users_with_http_info(tenant_id, url_id, id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetV2PageReactUsersResponse1>
+  p data # => <GetV2PageReactUsersResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_v2_page_react_users_with_http_info: #{e}"
 end
@@ -2492,7 +2492,7 @@ end
 
 ### Return type
 
-[**GetV2PageReactUsersResponse1**](GetV2PageReactUsersResponse1.md)
+[**GetV2PageReactUsersResponse**](GetV2PageReactUsersResponse.md)
 
 ### Authorization
 
@@ -2506,7 +2506,7 @@ No authorization required
 
 ## get_v2_page_reacts
 
-> <GetV2PageReactsResponse> get_v2_page_reacts(tenant_id, url_id)
+> <GetV2PageReacts> get_v2_page_reacts(tenant_id, url_id)
 
 
 
@@ -2533,7 +2533,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetV2PageReactsResponse>, Integer, Hash)> get_v2_page_reacts_with_http_info(tenant_id, url_id)
+> <Array(<GetV2PageReacts>, Integer, Hash)> get_v2_page_reacts_with_http_info(tenant_id, url_id)
 
 ```ruby
 begin
@@ -2541,7 +2541,7 @@ begin
   data, status_code, headers = api_instance.get_v2_page_reacts_with_http_info(tenant_id, url_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetV2PageReactsResponse>
+  p data # => <GetV2PageReacts>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_v2_page_reacts_with_http_info: #{e}"
 end
@@ -2556,7 +2556,7 @@ end
 
 ### Return type
 
-[**GetV2PageReactsResponse**](GetV2PageReactsResponse.md)
+[**GetV2PageReacts**](GetV2PageReacts.md)
 
 ### Authorization
 
@@ -2570,7 +2570,7 @@ No authorization required
 
 ## lock_comment
 
-> <LockCommentResponse> lock_comment(tenant_id, comment_id, broadcast_id, opts)
+> <APIEmptyResponse> lock_comment(tenant_id, comment_id, broadcast_id, opts)
 
 
 
@@ -2601,7 +2601,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<LockCommentResponse>, Integer, Hash)> lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
 
 ```ruby
 begin
@@ -2609,7 +2609,7 @@ begin
   data, status_code, headers = api_instance.lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <LockCommentResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->lock_comment_with_http_info: #{e}"
 end
@@ -2626,7 +2626,7 @@ end
 
 ### Return type
 
-[**LockCommentResponse**](LockCommentResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2699,7 +2699,7 @@ No authorization required
 
 ## pin_comment
 
-> <PinCommentResponse> pin_comment(tenant_id, comment_id, broadcast_id, opts)
+> <ChangeCommentPinStatusResponse> pin_comment(tenant_id, comment_id, broadcast_id, opts)
 
 
 
@@ -2730,7 +2730,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PinCommentResponse>, Integer, Hash)> pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
+> <Array(<ChangeCommentPinStatusResponse>, Integer, Hash)> pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
 
 ```ruby
 begin
@@ -2738,7 +2738,7 @@ begin
   data, status_code, headers = api_instance.pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PinCommentResponse>
+  p data # => <ChangeCommentPinStatusResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->pin_comment_with_http_info: #{e}"
 end
@@ -2755,7 +2755,7 @@ end
 
 ### Return type
 
-[**PinCommentResponse**](PinCommentResponse.md)
+[**ChangeCommentPinStatusResponse**](ChangeCommentPinStatusResponse.md)
 
 ### Authorization
 
@@ -2769,7 +2769,7 @@ No authorization required
 
 ## react_feed_post_public
 
-> <ReactFeedPostPublicResponse> react_feed_post_public(tenant_id, post_id, react_body_params, opts)
+> <ReactFeedPostResponse> react_feed_post_public(tenant_id, post_id, react_body_params, opts)
 
 
 
@@ -2802,7 +2802,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ReactFeedPostPublicResponse>, Integer, Hash)> react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts)
+> <Array(<ReactFeedPostResponse>, Integer, Hash)> react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts)
 
 ```ruby
 begin
@@ -2810,7 +2810,7 @@ begin
   data, status_code, headers = api_instance.react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ReactFeedPostPublicResponse>
+  p data # => <ReactFeedPostResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->react_feed_post_public_with_http_info: #{e}"
 end
@@ -2829,7 +2829,7 @@ end
 
 ### Return type
 
-[**ReactFeedPostPublicResponse**](ReactFeedPostPublicResponse.md)
+[**ReactFeedPostResponse**](ReactFeedPostResponse.md)
 
 ### Authorization
 
@@ -2843,7 +2843,7 @@ No authorization required
 
 ## reset_user_notification_count
 
-> <ResetUserNotificationCountResponse> reset_user_notification_count(tenant_id, opts)
+> <ResetUserNotificationsResponse> reset_user_notification_count(tenant_id, opts)
 
 
 
@@ -2872,7 +2872,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ResetUserNotificationCountResponse>, Integer, Hash)> reset_user_notification_count_with_http_info(tenant_id, opts)
+> <Array(<ResetUserNotificationsResponse>, Integer, Hash)> reset_user_notification_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -2880,7 +2880,7 @@ begin
   data, status_code, headers = api_instance.reset_user_notification_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ResetUserNotificationCountResponse>
+  p data # => <ResetUserNotificationsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notification_count_with_http_info: #{e}"
 end
@@ -2895,7 +2895,7 @@ end
 
 ### Return type
 
-[**ResetUserNotificationCountResponse**](ResetUserNotificationCountResponse.md)
+[**ResetUserNotificationsResponse**](ResetUserNotificationsResponse.md)
 
 ### Authorization
 
@@ -2909,7 +2909,7 @@ No authorization required
 
 ## reset_user_notifications
 
-> <ResetUserNotificationsResponse1> reset_user_notifications(tenant_id, opts)
+> <ResetUserNotificationsResponse> reset_user_notifications(tenant_id, opts)
 
 
 
@@ -2943,7 +2943,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ResetUserNotificationsResponse1>, Integer, Hash)> reset_user_notifications_with_http_info(tenant_id, opts)
+> <Array(<ResetUserNotificationsResponse>, Integer, Hash)> reset_user_notifications_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
@@ -2951,7 +2951,7 @@ begin
   data, status_code, headers = api_instance.reset_user_notifications_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ResetUserNotificationsResponse1>
+  p data # => <ResetUserNotificationsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->reset_user_notifications_with_http_info: #{e}"
 end
@@ -2971,7 +2971,7 @@ end
 
 ### Return type
 
-[**ResetUserNotificationsResponse1**](ResetUserNotificationsResponse1.md)
+[**ResetUserNotificationsResponse**](ResetUserNotificationsResponse.md)
 
 ### Authorization
 
@@ -2985,7 +2985,7 @@ No authorization required
 
 ## search_users
 
-> <SearchUsersResponse1> search_users(tenant_id, url_id, opts)
+> <SearchUsersResult> search_users(tenant_id, url_id, opts)
 
 
 
@@ -3018,7 +3018,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SearchUsersResponse1>, Integer, Hash)> search_users_with_http_info(tenant_id, url_id, opts)
+> <Array(<SearchUsersResult>, Integer, Hash)> search_users_with_http_info(tenant_id, url_id, opts)
 
 ```ruby
 begin
@@ -3026,7 +3026,7 @@ begin
   data, status_code, headers = api_instance.search_users_with_http_info(tenant_id, url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SearchUsersResponse1>
+  p data # => <SearchUsersResult>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->search_users_with_http_info: #{e}"
 end
@@ -3045,7 +3045,7 @@ end
 
 ### Return type
 
-[**SearchUsersResponse1**](SearchUsersResponse1.md)
+[**SearchUsersResult**](SearchUsersResult.md)
 
 ### Authorization
 
@@ -3059,7 +3059,7 @@ No authorization required
 
 ## set_comment_text
 
-> <SetCommentTextResponse1> set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
+> <PublicAPISetCommentTextResponse> set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
 
 
 
@@ -3092,7 +3092,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SetCommentTextResponse1>, Integer, Hash)> set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
+> <Array(<PublicAPISetCommentTextResponse>, Integer, Hash)> set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
 
 ```ruby
 begin
@@ -3100,7 +3100,7 @@ begin
   data, status_code, headers = api_instance.set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SetCommentTextResponse1>
+  p data # => <PublicAPISetCommentTextResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->set_comment_text_with_http_info: #{e}"
 end
@@ -3119,7 +3119,7 @@ end
 
 ### Return type
 
-[**SetCommentTextResponse1**](SetCommentTextResponse1.md)
+[**PublicAPISetCommentTextResponse**](PublicAPISetCommentTextResponse.md)
 
 ### Authorization
 
@@ -3133,7 +3133,7 @@ No authorization required
 
 ## un_block_comment_public
 
-> <UnBlockCommentPublicResponse> un_block_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts)
+> <UnblockSuccess> un_block_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts)
 
 
 
@@ -3164,7 +3164,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UnBlockCommentPublicResponse>, Integer, Hash)> un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
+> <Array(<UnblockSuccess>, Integer, Hash)> un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
 
 ```ruby
 begin
@@ -3172,7 +3172,7 @@ begin
   data, status_code, headers = api_instance.un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UnBlockCommentPublicResponse>
+  p data # => <UnblockSuccess>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_block_comment_public_with_http_info: #{e}"
 end
@@ -3189,7 +3189,7 @@ end
 
 ### Return type
 
-[**UnBlockCommentPublicResponse**](UnBlockCommentPublicResponse.md)
+[**UnblockSuccess**](UnblockSuccess.md)
 
 ### Authorization
 
@@ -3203,7 +3203,7 @@ No authorization required
 
 ## un_lock_comment
 
-> <UnLockCommentResponse> un_lock_comment(tenant_id, comment_id, broadcast_id, opts)
+> <APIEmptyResponse> un_lock_comment(tenant_id, comment_id, broadcast_id, opts)
 
 
 
@@ -3234,7 +3234,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UnLockCommentResponse>, Integer, Hash)> un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
 
 ```ruby
 begin
@@ -3242,7 +3242,7 @@ begin
   data, status_code, headers = api_instance.un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UnLockCommentResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_lock_comment_with_http_info: #{e}"
 end
@@ -3259,7 +3259,7 @@ end
 
 ### Return type
 
-[**UnLockCommentResponse**](UnLockCommentResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -3273,7 +3273,7 @@ No authorization required
 
 ## un_pin_comment
 
-> <UnPinCommentResponse> un_pin_comment(tenant_id, comment_id, broadcast_id, opts)
+> <ChangeCommentPinStatusResponse> un_pin_comment(tenant_id, comment_id, broadcast_id, opts)
 
 
 
@@ -3304,7 +3304,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UnPinCommentResponse>, Integer, Hash)> un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
+> <Array(<ChangeCommentPinStatusResponse>, Integer, Hash)> un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
 
 ```ruby
 begin
@@ -3312,7 +3312,7 @@ begin
   data, status_code, headers = api_instance.un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UnPinCommentResponse>
+  p data # => <ChangeCommentPinStatusResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->un_pin_comment_with_http_info: #{e}"
 end
@@ -3329,7 +3329,7 @@ end
 
 ### Return type
 
-[**UnPinCommentResponse**](UnPinCommentResponse.md)
+[**ChangeCommentPinStatusResponse**](ChangeCommentPinStatusResponse.md)
 
 ### Authorization
 
@@ -3343,7 +3343,7 @@ No authorization required
 
 ## update_feed_post_public
 
-> <UpdateFeedPostPublicResponse> update_feed_post_public(tenant_id, post_id, update_feed_post_params, opts)
+> <CreateFeedPostResponse> update_feed_post_public(tenant_id, post_id, update_feed_post_params, opts)
 
 
 
@@ -3375,7 +3375,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UpdateFeedPostPublicResponse>, Integer, Hash)> update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts)
+> <Array(<CreateFeedPostResponse>, Integer, Hash)> update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts)
 
 ```ruby
 begin
@@ -3383,7 +3383,7 @@ begin
   data, status_code, headers = api_instance.update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UpdateFeedPostPublicResponse>
+  p data # => <CreateFeedPostResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_feed_post_public_with_http_info: #{e}"
 end
@@ -3401,7 +3401,7 @@ end
 
 ### Return type
 
-[**UpdateFeedPostPublicResponse**](UpdateFeedPostPublicResponse.md)
+[**CreateFeedPostResponse**](CreateFeedPostResponse.md)
 
 ### Authorization
 
@@ -3707,7 +3707,7 @@ No authorization required
 
 ## vote_comment
 
-> <VoteCommentResponse> vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
+> <VoteResponse> vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
 
 
 
@@ -3741,7 +3741,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<VoteCommentResponse>, Integer, Hash)> vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
+> <Array(<VoteResponse>, Integer, Hash)> vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
 
 ```ruby
 begin
@@ -3749,7 +3749,7 @@ begin
   data, status_code, headers = api_instance.vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <VoteCommentResponse>
+  p data # => <VoteResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->vote_comment_with_http_info: #{e}"
 end
@@ -3769,7 +3769,7 @@ end
 
 ### Return type
 
-[**VoteCommentResponse**](VoteCommentResponse.md)
+[**VoteResponse**](VoteResponse.md)
 
 ### Authorization
 

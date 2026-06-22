@@ -38,7 +38,7 @@ describe 'PublicApi' do
   # @param public_block_from_comment_params 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [BlockFromCommentPublicResponse]
+  # @return [BlockSuccess]
   describe 'block_from_comment_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -50,7 +50,7 @@ describe 'PublicApi' do
   # @param comment_ids A comma separated list of comment ids.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [CheckedCommentsForBlockedResponse]
+  # @return [CheckBlockedCommentsResponse]
   describe 'checked_comments_for_blocked test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -65,7 +65,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :session_id 
   # @option opts [String] :sso 
-  # @return [CreateCommentPublicResponse]
+  # @return [SaveCommentsResponseWithPresence]
   describe 'create_comment_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -78,7 +78,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
-  # @return [CreateFeedPostPublicResponse]
+  # @return [CreateFeedPostResponse]
   describe 'create_feed_post_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -90,7 +90,7 @@ describe 'PublicApi' do
   # @param url_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :title 
-  # @return [CreateV1PageReactResponse]
+  # @return [CreateV1PageReact]
   describe 'create_v1_page_react test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -103,7 +103,7 @@ describe 'PublicApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :title 
-  # @return [CreateV2PageReactResponse]
+  # @return [CreateV1PageReact]
   describe 'create_v2_page_react test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -117,7 +117,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :edit_key 
   # @option opts [String] :sso 
-  # @return [DeleteCommentPublicResponse]
+  # @return [PublicAPIDeleteCommentResponse]
   describe 'delete_comment_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -133,7 +133,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :edit_key 
   # @option opts [String] :sso 
-  # @return [DeleteCommentVoteResponse]
+  # @return [VoteDeleteResponse]
   describe 'delete_comment_vote test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -157,7 +157,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param url_id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteV1PageReactResponse]
+  # @return [CreateV1PageReact]
   describe 'delete_v1_page_react test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -169,7 +169,7 @@ describe 'PublicApi' do
   # @param url_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteV2PageReactResponse]
+  # @return [CreateV1PageReact]
   describe 'delete_v2_page_react test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -182,7 +182,7 @@ describe 'PublicApi' do
   # @param is_flagged 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [FlagCommentPublicResponse]
+  # @return [APIEmptyResponse]
   describe 'flag_comment_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -195,7 +195,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :edit_key 
   # @option opts [String] :sso 
-  # @return [GetCommentTextResponse1]
+  # @return [PublicAPIGetCommentTextResponse]
   describe 'get_comment_text test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -208,7 +208,7 @@ describe 'PublicApi' do
   # @param dir 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [GetCommentVoteUserNamesResponse]
+  # @return [GetCommentVoteUserNamesSuccessResponse]
   describe 'get_comment_vote_user_names test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -224,7 +224,7 @@ describe 'PublicApi' do
   # @option opts [Boolean] :includei10n 
   # @option opts [String] :locale 
   # @option opts [Boolean] :is_crawler 
-  # @return [GetCommentsForUserResponse1]
+  # @return [GetCommentsForUserResponse]
   describe 'get_comments_for_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -262,7 +262,7 @@ describe 'PublicApi' do
   # @option opts [String] :custom_config_str 
   # @option opts [String] :after_comment_id 
   # @option opts [String] :before_comment_id 
-  # @return [GetCommentsPublicResponse]
+  # @return [GetCommentsResponseWithPresencePublicComment]
   describe 'get_comments_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -277,7 +277,7 @@ describe 'PublicApi' do
   # @param start_time 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :end_time 
-  # @return [GetEventLogResponse1]
+  # @return [GetEventLogResponse]
   describe 'get_event_log test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -294,7 +294,7 @@ describe 'PublicApi' do
   # @option opts [String] :sso 
   # @option opts [Boolean] :is_crawler 
   # @option opts [Boolean] :include_user_info 
-  # @return [GetFeedPostsPublicResponse]
+  # @return [PublicFeedPostsResponse]
   describe 'get_feed_posts_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -306,7 +306,7 @@ describe 'PublicApi' do
   # @param post_ids 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [GetFeedPostsStatsResponse]
+  # @return [FeedPostsStatsResponse]
   describe 'get_feed_posts_stats test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -317,7 +317,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param large_internal_url_sanitized 
   # @param [Hash] opts the optional parameters
-  # @return [GetGifLargeResponse]
+  # @return [GifGetLargeResponse]
   describe 'get_gif_large test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -359,7 +359,7 @@ describe 'PublicApi' do
   # @param start_time 
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :end_time 
-  # @return [GetGlobalEventLogResponse]
+  # @return [GetEventLogResponse]
   describe 'get_global_event_log test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -373,7 +373,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
   # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
-  # @return [GetOfflineUsersResponse]
+  # @return [PageUsersOfflineResponse]
   describe 'get_offline_users test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -387,7 +387,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
   # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
-  # @return [GetOnlineUsersResponse]
+  # @return [PageUsersOnlineResponse]
   describe 'get_online_users test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -403,7 +403,7 @@ describe 'PublicApi' do
   # @option opts [String] :q Optional case-insensitive title prefix filter.
   # @option opts [PagesSortBy] :sort_by Sort order. &#x60;updatedAt&#x60; (default, newest first), &#x60;commentCount&#x60; (most comments first), or &#x60;title&#x60; (alphabetical).
   # @option opts [Boolean] :has_comments If true, only return pages with at least one comment.
-  # @return [GetPagesPublicResponse]
+  # @return [GetPublicPagesResponse]
   describe 'get_pages_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -416,7 +416,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :locale 
   # @option opts [Boolean] :use_full_translation_ids 
-  # @return [GetTranslationsResponse1]
+  # @return [GetTranslationsResponse]
   describe 'get_translations test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -427,7 +427,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [GetUserNotificationCountResponse1]
+  # @return [GetUserNotificationCountResponse]
   describe 'get_user_notification_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -448,7 +448,7 @@ describe 'PublicApi' do
   # @option opts [Boolean] :include_translations 
   # @option opts [Boolean] :include_tenant_notifications 
   # @option opts [String] :sso 
-  # @return [GetUserNotificationsResponse]
+  # @return [GetMyNotificationsResponse]
   describe 'get_user_notifications test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -460,7 +460,7 @@ describe 'PublicApi' do
   # @param url_id_ws 
   # @param user_ids 
   # @param [Hash] opts the optional parameters
-  # @return [GetUserPresenceStatusesResponse1]
+  # @return [GetUserPresenceStatusesResponse]
   describe 'get_user_presence_statuses test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -472,7 +472,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :post_ids 
   # @option opts [String] :sso 
-  # @return [GetUserReactsPublicResponse]
+  # @return [UserReactsResponse]
   describe 'get_user_reacts_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -484,7 +484,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param ids Comma-delimited userIds.
   # @param [Hash] opts the optional parameters
-  # @return [GetUsersInfoResponse]
+  # @return [PageUsersInfoResponse]
   describe 'get_users_info test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -495,7 +495,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param url_id 
   # @param [Hash] opts the optional parameters
-  # @return [GetV1PageLikesResponse]
+  # @return [GetV1PageLikes]
   describe 'get_v1_page_likes test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -507,7 +507,7 @@ describe 'PublicApi' do
   # @param url_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetV2PageReactUsersResponse1]
+  # @return [GetV2PageReactUsersResponse]
   describe 'get_v2_page_react_users test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -518,7 +518,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param url_id 
   # @param [Hash] opts the optional parameters
-  # @return [GetV2PageReactsResponse]
+  # @return [GetV2PageReacts]
   describe 'get_v2_page_reacts test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -531,7 +531,7 @@ describe 'PublicApi' do
   # @param broadcast_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [LockCommentResponse]
+  # @return [APIEmptyResponse]
   describe 'lock_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -553,7 +553,7 @@ describe 'PublicApi' do
   # @param broadcast_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [PinCommentResponse]
+  # @return [ChangeCommentPinStatusResponse]
   describe 'pin_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -568,7 +568,7 @@ describe 'PublicApi' do
   # @option opts [Boolean] :is_undo 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
-  # @return [ReactFeedPostPublicResponse]
+  # @return [ReactFeedPostResponse]
   describe 'react_feed_post_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -579,7 +579,7 @@ describe 'PublicApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [ResetUserNotificationCountResponse]
+  # @return [ResetUserNotificationsResponse]
   describe 'reset_user_notification_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -595,7 +595,7 @@ describe 'PublicApi' do
   # @option opts [Boolean] :dm_only 
   # @option opts [Boolean] :no_dm 
   # @option opts [String] :sso 
-  # @return [ResetUserNotificationsResponse1]
+  # @return [ResetUserNotificationsResponse]
   describe 'reset_user_notifications test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -610,7 +610,7 @@ describe 'PublicApi' do
   # @option opts [Array<String>] :mention_group_ids 
   # @option opts [String] :sso 
   # @option opts [String] :search_section 
-  # @return [SearchUsersResponse1]
+  # @return [SearchUsersResult]
   describe 'search_users test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -625,7 +625,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :edit_key 
   # @option opts [String] :sso 
-  # @return [SetCommentTextResponse1]
+  # @return [PublicAPISetCommentTextResponse]
   describe 'set_comment_text test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -638,7 +638,7 @@ describe 'PublicApi' do
   # @param public_block_from_comment_params 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [UnBlockCommentPublicResponse]
+  # @return [UnblockSuccess]
   describe 'un_block_comment_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -651,7 +651,7 @@ describe 'PublicApi' do
   # @param broadcast_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [UnLockCommentResponse]
+  # @return [APIEmptyResponse]
   describe 'un_lock_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -664,7 +664,7 @@ describe 'PublicApi' do
   # @param broadcast_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sso 
-  # @return [UnPinCommentResponse]
+  # @return [ChangeCommentPinStatusResponse]
   describe 'un_pin_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -678,7 +678,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
-  # @return [UpdateFeedPostPublicResponse]
+  # @return [CreateFeedPostResponse]
   describe 'update_feed_post_public test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -752,7 +752,7 @@ describe 'PublicApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :session_id 
   # @option opts [String] :sso 
-  # @return [VoteCommentResponse]
+  # @return [VoteResponse]
   describe 'vote_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

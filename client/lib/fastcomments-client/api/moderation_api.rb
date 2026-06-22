@@ -25,7 +25,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [DeleteModerationVoteResponse]
+    # @return [VoteDeleteResponse]
     def delete_moderation_vote(comment_id, vote_id, opts = {})
       data, _status_code, _headers = delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
       data
@@ -37,7 +37,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(DeleteModerationVoteResponse, Integer, Hash)>] DeleteModerationVoteResponse data, response status code and response headers
+    # @return [Array<(VoteDeleteResponse, Integer, Hash)>] VoteDeleteResponse data, response status code and response headers
     def delete_moderation_vote_with_http_info(comment_id, vote_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.delete_moderation_vote ...'
@@ -71,7 +71,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DeleteModerationVoteResponse'
+      return_type = opts[:debug_return_type] || 'VoteDeleteResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -104,7 +104,7 @@ module FastCommentsClient
     # @option opts [Boolean] :demo 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetApiCommentsResponse]
+    # @return [ModerationAPIGetCommentsResponse]
     def get_api_comments(opts = {})
       data, _status_code, _headers = get_api_comments_with_http_info(opts)
       data
@@ -121,7 +121,7 @@ module FastCommentsClient
     # @option opts [Boolean] :demo 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetApiCommentsResponse, Integer, Hash)>] GetApiCommentsResponse data, response status code and response headers
+    # @return [Array<(ModerationAPIGetCommentsResponse, Integer, Hash)>] ModerationAPIGetCommentsResponse data, response status code and response headers
     def get_api_comments_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_api_comments ...'
@@ -154,7 +154,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetApiCommentsResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPIGetCommentsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -180,7 +180,7 @@ module FastCommentsClient
     # @option opts [String] :batch_job_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetApiExportStatusResponse]
+    # @return [ModerationExportStatusResponse]
     def get_api_export_status(opts = {})
       data, _status_code, _headers = get_api_export_status_with_http_info(opts)
       data
@@ -190,7 +190,7 @@ module FastCommentsClient
     # @option opts [String] :batch_job_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetApiExportStatusResponse, Integer, Hash)>] GetApiExportStatusResponse data, response status code and response headers
+    # @return [Array<(ModerationExportStatusResponse, Integer, Hash)>] ModerationExportStatusResponse data, response status code and response headers
     def get_api_export_status_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_api_export_status ...'
@@ -216,7 +216,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetApiExportStatusResponse'
+      return_type = opts[:debug_return_type] || 'ModerationExportStatusResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -247,7 +247,7 @@ module FastCommentsClient
     # @option opts [Boolean] :demo 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetApiIdsResponse]
+    # @return [ModerationAPIGetCommentIdsResponse]
     def get_api_ids(opts = {})
       data, _status_code, _headers = get_api_ids_with_http_info(opts)
       data
@@ -262,7 +262,7 @@ module FastCommentsClient
     # @option opts [Boolean] :demo 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetApiIdsResponse, Integer, Hash)>] GetApiIdsResponse data, response status code and response headers
+    # @return [Array<(ModerationAPIGetCommentIdsResponse, Integer, Hash)>] ModerationAPIGetCommentIdsResponse data, response status code and response headers
     def get_api_ids_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_api_ids ...'
@@ -293,7 +293,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetApiIdsResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPIGetCommentIdsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -319,7 +319,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetBanUsersFromCommentResponse]
+    # @return [GetBannedUsersFromCommentResponse]
     def get_ban_users_from_comment(comment_id, opts = {})
       data, _status_code, _headers = get_ban_users_from_comment_with_http_info(comment_id, opts)
       data
@@ -329,7 +329,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetBanUsersFromCommentResponse, Integer, Hash)>] GetBanUsersFromCommentResponse data, response status code and response headers
+    # @return [Array<(GetBannedUsersFromCommentResponse, Integer, Hash)>] GetBannedUsersFromCommentResponse data, response status code and response headers
     def get_ban_users_from_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_ban_users_from_comment ...'
@@ -358,7 +358,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetBanUsersFromCommentResponse'
+      return_type = opts[:debug_return_type] || 'GetBannedUsersFromCommentResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -384,7 +384,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetCommentBanStatusResponse1]
+    # @return [GetCommentBanStatusResponse]
     def get_comment_ban_status(comment_id, opts = {})
       data, _status_code, _headers = get_comment_ban_status_with_http_info(comment_id, opts)
       data
@@ -394,7 +394,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetCommentBanStatusResponse1, Integer, Hash)>] GetCommentBanStatusResponse1 data, response status code and response headers
+    # @return [Array<(GetCommentBanStatusResponse, Integer, Hash)>] GetCommentBanStatusResponse data, response status code and response headers
     def get_comment_ban_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_comment_ban_status ...'
@@ -423,7 +423,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCommentBanStatusResponse1'
+      return_type = opts[:debug_return_type] || 'GetCommentBanStatusResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -449,7 +449,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetCommentChildrenResponse]
+    # @return [ModerationAPIChildCommentsResponse]
     def get_comment_children(comment_id, opts = {})
       data, _status_code, _headers = get_comment_children_with_http_info(comment_id, opts)
       data
@@ -459,7 +459,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetCommentChildrenResponse, Integer, Hash)>] GetCommentChildrenResponse data, response status code and response headers
+    # @return [Array<(ModerationAPIChildCommentsResponse, Integer, Hash)>] ModerationAPIChildCommentsResponse data, response status code and response headers
     def get_comment_children_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_comment_children ...'
@@ -488,7 +488,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCommentChildrenResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPIChildCommentsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -518,7 +518,7 @@ module FastCommentsClient
     # @option opts [Boolean] :demo 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetCountResponse]
+    # @return [ModerationAPICountCommentsResponse]
     def get_count(opts = {})
       data, _status_code, _headers = get_count_with_http_info(opts)
       data
@@ -532,7 +532,7 @@ module FastCommentsClient
     # @option opts [Boolean] :demo 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetCountResponse, Integer, Hash)>] GetCountResponse data, response status code and response headers
+    # @return [Array<(ModerationAPICountCommentsResponse, Integer, Hash)>] ModerationAPICountCommentsResponse data, response status code and response headers
     def get_count_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_count ...'
@@ -562,7 +562,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCountResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPICountCommentsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -587,7 +587,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetCountsResponse]
+    # @return [GetBannedUsersCountResponse]
     def get_counts(opts = {})
       data, _status_code, _headers = get_counts_with_http_info(opts)
       data
@@ -596,7 +596,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetCountsResponse, Integer, Hash)>] GetCountsResponse data, response status code and response headers
+    # @return [Array<(GetBannedUsersCountResponse, Integer, Hash)>] GetBannedUsersCountResponse data, response status code and response headers
     def get_counts_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_counts ...'
@@ -621,7 +621,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetCountsResponse'
+      return_type = opts[:debug_return_type] || 'GetBannedUsersCountResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -647,7 +647,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetLogsResponse]
+    # @return [ModerationAPIGetLogsResponse]
     def get_logs(comment_id, opts = {})
       data, _status_code, _headers = get_logs_with_http_info(comment_id, opts)
       data
@@ -657,7 +657,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetLogsResponse, Integer, Hash)>] GetLogsResponse data, response status code and response headers
+    # @return [Array<(ModerationAPIGetLogsResponse, Integer, Hash)>] ModerationAPIGetLogsResponse data, response status code and response headers
     def get_logs_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_logs ...'
@@ -686,7 +686,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetLogsResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPIGetLogsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -711,7 +711,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetManualBadgesResponse]
+    # @return [GetTenantManualBadgesResponse]
     def get_manual_badges(opts = {})
       data, _status_code, _headers = get_manual_badges_with_http_info(opts)
       data
@@ -720,7 +720,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetManualBadgesResponse, Integer, Hash)>] GetManualBadgesResponse data, response status code and response headers
+    # @return [Array<(GetTenantManualBadgesResponse, Integer, Hash)>] GetTenantManualBadgesResponse data, response status code and response headers
     def get_manual_badges_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_manual_badges ...'
@@ -745,7 +745,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetManualBadgesResponse'
+      return_type = opts[:debug_return_type] || 'GetTenantManualBadgesResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -772,7 +772,7 @@ module FastCommentsClient
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetManualBadgesForUserResponse]
+    # @return [GetUserManualBadgesResponse]
     def get_manual_badges_for_user(opts = {})
       data, _status_code, _headers = get_manual_badges_for_user_with_http_info(opts)
       data
@@ -783,7 +783,7 @@ module FastCommentsClient
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetManualBadgesForUserResponse, Integer, Hash)>] GetManualBadgesForUserResponse data, response status code and response headers
+    # @return [Array<(GetUserManualBadgesResponse, Integer, Hash)>] GetUserManualBadgesResponse data, response status code and response headers
     def get_manual_badges_for_user_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_manual_badges_for_user ...'
@@ -810,7 +810,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetManualBadgesForUserResponse'
+      return_type = opts[:debug_return_type] || 'GetUserManualBadgesResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -838,7 +838,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_ip 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetModerationCommentResponse]
+    # @return [ModerationAPICommentResponse]
     def get_moderation_comment(comment_id, opts = {})
       data, _status_code, _headers = get_moderation_comment_with_http_info(comment_id, opts)
       data
@@ -850,7 +850,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_ip 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetModerationCommentResponse, Integer, Hash)>] GetModerationCommentResponse data, response status code and response headers
+    # @return [Array<(ModerationAPICommentResponse, Integer, Hash)>] ModerationAPICommentResponse data, response status code and response headers
     def get_moderation_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_moderation_comment ...'
@@ -881,7 +881,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetModerationCommentResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPICommentResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -907,7 +907,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetModerationCommentTextResponse]
+    # @return [GetCommentTextResponse]
     def get_moderation_comment_text(comment_id, opts = {})
       data, _status_code, _headers = get_moderation_comment_text_with_http_info(comment_id, opts)
       data
@@ -917,7 +917,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetModerationCommentTextResponse, Integer, Hash)>] GetModerationCommentTextResponse data, response status code and response headers
+    # @return [Array<(GetCommentTextResponse, Integer, Hash)>] GetCommentTextResponse data, response status code and response headers
     def get_moderation_comment_text_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_moderation_comment_text ...'
@@ -946,7 +946,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetModerationCommentTextResponse'
+      return_type = opts[:debug_return_type] || 'GetCommentTextResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -975,7 +975,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetPreBanSummaryResponse]
+    # @return [PreBanSummary]
     def get_pre_ban_summary(comment_id, opts = {})
       data, _status_code, _headers = get_pre_ban_summary_with_http_info(comment_id, opts)
       data
@@ -988,7 +988,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetPreBanSummaryResponse, Integer, Hash)>] GetPreBanSummaryResponse data, response status code and response headers
+    # @return [Array<(PreBanSummary, Integer, Hash)>] PreBanSummary data, response status code and response headers
     def get_pre_ban_summary_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_pre_ban_summary ...'
@@ -1020,7 +1020,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetPreBanSummaryResponse'
+      return_type = opts[:debug_return_type] || 'PreBanSummary'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1048,7 +1048,7 @@ module FastCommentsClient
     # @option opts [String] :search_filters 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetSearchCommentsSummaryResponse]
+    # @return [ModerationCommentSearchResponse]
     def get_search_comments_summary(opts = {})
       data, _status_code, _headers = get_search_comments_summary_with_http_info(opts)
       data
@@ -1060,7 +1060,7 @@ module FastCommentsClient
     # @option opts [String] :search_filters 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetSearchCommentsSummaryResponse, Integer, Hash)>] GetSearchCommentsSummaryResponse data, response status code and response headers
+    # @return [Array<(ModerationCommentSearchResponse, Integer, Hash)>] ModerationCommentSearchResponse data, response status code and response headers
     def get_search_comments_summary_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_comments_summary ...'
@@ -1088,7 +1088,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetSearchCommentsSummaryResponse'
+      return_type = opts[:debug_return_type] || 'ModerationCommentSearchResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1114,7 +1114,7 @@ module FastCommentsClient
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetSearchPagesResponse]
+    # @return [ModerationPageSearchResponse]
     def get_search_pages(opts = {})
       data, _status_code, _headers = get_search_pages_with_http_info(opts)
       data
@@ -1124,7 +1124,7 @@ module FastCommentsClient
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetSearchPagesResponse, Integer, Hash)>] GetSearchPagesResponse data, response status code and response headers
+    # @return [Array<(ModerationPageSearchResponse, Integer, Hash)>] ModerationPageSearchResponse data, response status code and response headers
     def get_search_pages_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_pages ...'
@@ -1150,7 +1150,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetSearchPagesResponse'
+      return_type = opts[:debug_return_type] || 'ModerationPageSearchResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1176,7 +1176,7 @@ module FastCommentsClient
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetSearchSitesResponse]
+    # @return [ModerationSiteSearchResponse]
     def get_search_sites(opts = {})
       data, _status_code, _headers = get_search_sites_with_http_info(opts)
       data
@@ -1186,7 +1186,7 @@ module FastCommentsClient
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetSearchSitesResponse, Integer, Hash)>] GetSearchSitesResponse data, response status code and response headers
+    # @return [Array<(ModerationSiteSearchResponse, Integer, Hash)>] ModerationSiteSearchResponse data, response status code and response headers
     def get_search_sites_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_sites ...'
@@ -1212,7 +1212,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetSearchSitesResponse'
+      return_type = opts[:debug_return_type] || 'ModerationSiteSearchResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1238,7 +1238,7 @@ module FastCommentsClient
     # @option opts [String] :text_search 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetSearchSuggestResponse]
+    # @return [ModerationSuggestResponse]
     def get_search_suggest(opts = {})
       data, _status_code, _headers = get_search_suggest_with_http_info(opts)
       data
@@ -1248,7 +1248,7 @@ module FastCommentsClient
     # @option opts [String] :text_search 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetSearchSuggestResponse, Integer, Hash)>] GetSearchSuggestResponse data, response status code and response headers
+    # @return [Array<(ModerationSuggestResponse, Integer, Hash)>] ModerationSuggestResponse data, response status code and response headers
     def get_search_suggest_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_suggest ...'
@@ -1274,7 +1274,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetSearchSuggestResponse'
+      return_type = opts[:debug_return_type] || 'ModerationSuggestResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1300,7 +1300,7 @@ module FastCommentsClient
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetSearchUsersResponse]
+    # @return [ModerationUserSearchResponse]
     def get_search_users(opts = {})
       data, _status_code, _headers = get_search_users_with_http_info(opts)
       data
@@ -1310,7 +1310,7 @@ module FastCommentsClient
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetSearchUsersResponse, Integer, Hash)>] GetSearchUsersResponse data, response status code and response headers
+    # @return [Array<(ModerationUserSearchResponse, Integer, Hash)>] ModerationUserSearchResponse data, response status code and response headers
     def get_search_users_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_users ...'
@@ -1336,7 +1336,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetSearchUsersResponse'
+      return_type = opts[:debug_return_type] || 'ModerationUserSearchResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1362,7 +1362,7 @@ module FastCommentsClient
     # @option opts [String] :user_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetTrustFactorResponse]
+    # @return [GetUserTrustFactorResponse]
     def get_trust_factor(opts = {})
       data, _status_code, _headers = get_trust_factor_with_http_info(opts)
       data
@@ -1372,7 +1372,7 @@ module FastCommentsClient
     # @option opts [String] :user_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetTrustFactorResponse, Integer, Hash)>] GetTrustFactorResponse data, response status code and response headers
+    # @return [Array<(GetUserTrustFactorResponse, Integer, Hash)>] GetUserTrustFactorResponse data, response status code and response headers
     def get_trust_factor_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_trust_factor ...'
@@ -1398,7 +1398,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetTrustFactorResponse'
+      return_type = opts[:debug_return_type] || 'GetUserTrustFactorResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1423,7 +1423,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetUserBanPreferenceResponse]
+    # @return [APIModerateGetUserBanPreferencesResponse]
     def get_user_ban_preference(opts = {})
       data, _status_code, _headers = get_user_ban_preference_with_http_info(opts)
       data
@@ -1432,7 +1432,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetUserBanPreferenceResponse, Integer, Hash)>] GetUserBanPreferenceResponse data, response status code and response headers
+    # @return [Array<(APIModerateGetUserBanPreferencesResponse, Integer, Hash)>] APIModerateGetUserBanPreferencesResponse data, response status code and response headers
     def get_user_ban_preference_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_user_ban_preference ...'
@@ -1457,7 +1457,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUserBanPreferenceResponse'
+      return_type = opts[:debug_return_type] || 'APIModerateGetUserBanPreferencesResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1483,7 +1483,7 @@ module FastCommentsClient
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [GetUserInternalProfileResponse1]
+    # @return [GetUserInternalProfileResponse]
     def get_user_internal_profile(opts = {})
       data, _status_code, _headers = get_user_internal_profile_with_http_info(opts)
       data
@@ -1493,7 +1493,7 @@ module FastCommentsClient
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(GetUserInternalProfileResponse1, Integer, Hash)>] GetUserInternalProfileResponse1 data, response status code and response headers
+    # @return [Array<(GetUserInternalProfileResponse, Integer, Hash)>] GetUserInternalProfileResponse data, response status code and response headers
     def get_user_internal_profile_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_user_internal_profile ...'
@@ -1519,7 +1519,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'GetUserInternalProfileResponse1'
+      return_type = opts[:debug_return_type] || 'GetUserInternalProfileResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1547,7 +1547,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostAdjustCommentVotesResponse]
+    # @return [AdjustVotesResponse]
     def post_adjust_comment_votes(comment_id, adjust_comment_votes_params, opts = {})
       data, _status_code, _headers = post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
       data
@@ -1559,7 +1559,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostAdjustCommentVotesResponse, Integer, Hash)>] PostAdjustCommentVotesResponse data, response status code and response headers
+    # @return [Array<(AdjustVotesResponse, Integer, Hash)>] AdjustVotesResponse data, response status code and response headers
     def post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_adjust_comment_votes ...'
@@ -1598,7 +1598,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(adjust_comment_votes_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostAdjustCommentVotesResponse'
+      return_type = opts[:debug_return_type] || 'AdjustVotesResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1628,7 +1628,7 @@ module FastCommentsClient
     # @option opts [String] :sorts 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostApiExportResponse]
+    # @return [ModerationExportResponse]
     def post_api_export(opts = {})
       data, _status_code, _headers = post_api_export_with_http_info(opts)
       data
@@ -1642,7 +1642,7 @@ module FastCommentsClient
     # @option opts [String] :sorts 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostApiExportResponse, Integer, Hash)>] PostApiExportResponse data, response status code and response headers
+    # @return [Array<(ModerationExportResponse, Integer, Hash)>] ModerationExportResponse data, response status code and response headers
     def post_api_export_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_api_export ...'
@@ -1672,7 +1672,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostApiExportResponse'
+      return_type = opts[:debug_return_type] || 'ModerationExportResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1706,7 +1706,7 @@ module FastCommentsClient
     # @option opts [String] :ban_reason 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostBanUserFromCommentResponse]
+    # @return [BanUserFromCommentResult]
     def post_ban_user_from_comment(comment_id, opts = {})
       data, _status_code, _headers = post_ban_user_from_comment_with_http_info(comment_id, opts)
       data
@@ -1724,7 +1724,7 @@ module FastCommentsClient
     # @option opts [String] :ban_reason 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostBanUserFromCommentResponse, Integer, Hash)>] PostBanUserFromCommentResponse data, response status code and response headers
+    # @return [Array<(BanUserFromCommentResult, Integer, Hash)>] BanUserFromCommentResult data, response status code and response headers
     def post_ban_user_from_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_ban_user_from_comment ...'
@@ -1761,7 +1761,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostBanUserFromCommentResponse'
+      return_type = opts[:debug_return_type] || 'BanUserFromCommentResult'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1787,7 +1787,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostBanUserUndoResponse]
+    # @return [APIEmptyResponse]
     def post_ban_user_undo(ban_user_undo_params, opts = {})
       data, _status_code, _headers = post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
       data
@@ -1797,7 +1797,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostBanUserUndoResponse, Integer, Hash)>] PostBanUserUndoResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def post_ban_user_undo_with_http_info(ban_user_undo_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_ban_user_undo ...'
@@ -1831,7 +1831,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(ban_user_undo_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostBanUserUndoResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1860,7 +1860,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostBulkPreBanSummaryResponse]
+    # @return [BulkPreBanSummary]
     def post_bulk_pre_ban_summary(bulk_pre_ban_params, opts = {})
       data, _status_code, _headers = post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
       data
@@ -1873,7 +1873,7 @@ module FastCommentsClient
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostBulkPreBanSummaryResponse, Integer, Hash)>] PostBulkPreBanSummaryResponse data, response status code and response headers
+    # @return [Array<(BulkPreBanSummary, Integer, Hash)>] BulkPreBanSummary data, response status code and response headers
     def post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_bulk_pre_ban_summary ...'
@@ -1910,7 +1910,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(bulk_pre_ban_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostBulkPreBanSummaryResponse'
+      return_type = opts[:debug_return_type] || 'BulkPreBanSummary'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1936,7 +1936,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostCommentsByIdsResponse]
+    # @return [ModerationAPIChildCommentsResponse]
     def post_comments_by_ids(comments_by_ids_params, opts = {})
       data, _status_code, _headers = post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
       data
@@ -1946,7 +1946,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostCommentsByIdsResponse, Integer, Hash)>] PostCommentsByIdsResponse data, response status code and response headers
+    # @return [Array<(ModerationAPIChildCommentsResponse, Integer, Hash)>] ModerationAPIChildCommentsResponse data, response status code and response headers
     def post_comments_by_ids_with_http_info(comments_by_ids_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_comments_by_ids ...'
@@ -1980,7 +1980,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(comments_by_ids_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostCommentsByIdsResponse'
+      return_type = opts[:debug_return_type] || 'ModerationAPIChildCommentsResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2007,7 +2007,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostFlagCommentResponse]
+    # @return [APIEmptyResponse]
     def post_flag_comment(comment_id, opts = {})
       data, _status_code, _headers = post_flag_comment_with_http_info(comment_id, opts)
       data
@@ -2018,7 +2018,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostFlagCommentResponse, Integer, Hash)>] PostFlagCommentResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def post_flag_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_flag_comment ...'
@@ -2048,7 +2048,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostFlagCommentResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2143,7 +2143,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostRestoreDeletedCommentResponse]
+    # @return [APIEmptyResponse]
     def post_restore_deleted_comment(comment_id, opts = {})
       data, _status_code, _headers = post_restore_deleted_comment_with_http_info(comment_id, opts)
       data
@@ -2154,7 +2154,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostRestoreDeletedCommentResponse, Integer, Hash)>] PostRestoreDeletedCommentResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def post_restore_deleted_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_restore_deleted_comment ...'
@@ -2184,7 +2184,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostRestoreDeletedCommentResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2212,7 +2212,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostSetCommentApprovalStatusResponse]
+    # @return [SetCommentApprovedResponse]
     def post_set_comment_approval_status(comment_id, opts = {})
       data, _status_code, _headers = post_set_comment_approval_status_with_http_info(comment_id, opts)
       data
@@ -2224,7 +2224,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostSetCommentApprovalStatusResponse, Integer, Hash)>] PostSetCommentApprovalStatusResponse data, response status code and response headers
+    # @return [Array<(SetCommentApprovedResponse, Integer, Hash)>] SetCommentApprovedResponse data, response status code and response headers
     def post_set_comment_approval_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_approval_status ...'
@@ -2255,7 +2255,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostSetCommentApprovalStatusResponse'
+      return_type = opts[:debug_return_type] || 'SetCommentApprovedResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2283,7 +2283,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostSetCommentReviewStatusResponse]
+    # @return [APIEmptyResponse]
     def post_set_comment_review_status(comment_id, opts = {})
       data, _status_code, _headers = post_set_comment_review_status_with_http_info(comment_id, opts)
       data
@@ -2295,7 +2295,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostSetCommentReviewStatusResponse, Integer, Hash)>] PostSetCommentReviewStatusResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def post_set_comment_review_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_review_status ...'
@@ -2326,7 +2326,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostSetCommentReviewStatusResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2355,7 +2355,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostSetCommentSpamStatusResponse]
+    # @return [APIEmptyResponse]
     def post_set_comment_spam_status(comment_id, opts = {})
       data, _status_code, _headers = post_set_comment_spam_status_with_http_info(comment_id, opts)
       data
@@ -2368,7 +2368,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostSetCommentSpamStatusResponse, Integer, Hash)>] PostSetCommentSpamStatusResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def post_set_comment_spam_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_spam_status ...'
@@ -2400,7 +2400,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostSetCommentSpamStatusResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2428,7 +2428,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostSetCommentTextResponse]
+    # @return [SetCommentTextResponse]
     def post_set_comment_text(comment_id, set_comment_text_params, opts = {})
       data, _status_code, _headers = post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
       data
@@ -2440,7 +2440,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostSetCommentTextResponse, Integer, Hash)>] PostSetCommentTextResponse data, response status code and response headers
+    # @return [Array<(SetCommentTextResponse, Integer, Hash)>] SetCommentTextResponse data, response status code and response headers
     def post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_text ...'
@@ -2479,7 +2479,7 @@ module FastCommentsClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(set_comment_text_params)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostSetCommentTextResponse'
+      return_type = opts[:debug_return_type] || 'SetCommentTextResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2506,7 +2506,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostUnFlagCommentResponse]
+    # @return [APIEmptyResponse]
     def post_un_flag_comment(comment_id, opts = {})
       data, _status_code, _headers = post_un_flag_comment_with_http_info(comment_id, opts)
       data
@@ -2517,7 +2517,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostUnFlagCommentResponse, Integer, Hash)>] PostUnFlagCommentResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def post_un_flag_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_un_flag_comment ...'
@@ -2547,7 +2547,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostUnFlagCommentResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2575,7 +2575,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PostVoteResponse]
+    # @return [VoteResponse]
     def post_vote(comment_id, opts = {})
       data, _status_code, _headers = post_vote_with_http_info(comment_id, opts)
       data
@@ -2587,7 +2587,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PostVoteResponse, Integer, Hash)>] PostVoteResponse data, response status code and response headers
+    # @return [Array<(VoteResponse, Integer, Hash)>] VoteResponse data, response status code and response headers
     def post_vote_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_vote ...'
@@ -2618,7 +2618,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PostVoteResponse'
+      return_type = opts[:debug_return_type] || 'VoteResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2647,7 +2647,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PutAwardBadgeResponse]
+    # @return [AwardUserBadgeResponse]
     def put_award_badge(badge_id, opts = {})
       data, _status_code, _headers = put_award_badge_with_http_info(badge_id, opts)
       data
@@ -2660,7 +2660,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PutAwardBadgeResponse, Integer, Hash)>] PutAwardBadgeResponse data, response status code and response headers
+    # @return [Array<(AwardUserBadgeResponse, Integer, Hash)>] AwardUserBadgeResponse data, response status code and response headers
     def put_award_badge_with_http_info(badge_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_award_badge ...'
@@ -2693,7 +2693,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PutAwardBadgeResponse'
+      return_type = opts[:debug_return_type] || 'AwardUserBadgeResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2719,7 +2719,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PutCloseThreadResponse]
+    # @return [APIEmptyResponse]
     def put_close_thread(url_id, opts = {})
       data, _status_code, _headers = put_close_thread_with_http_info(url_id, opts)
       data
@@ -2729,7 +2729,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PutCloseThreadResponse, Integer, Hash)>] PutCloseThreadResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def put_close_thread_with_http_info(url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_close_thread ...'
@@ -2759,7 +2759,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PutCloseThreadResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2788,7 +2788,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PutRemoveBadgeResponse]
+    # @return [RemoveUserBadgeResponse]
     def put_remove_badge(badge_id, opts = {})
       data, _status_code, _headers = put_remove_badge_with_http_info(badge_id, opts)
       data
@@ -2801,7 +2801,7 @@ module FastCommentsClient
     # @option opts [String] :broadcast_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PutRemoveBadgeResponse, Integer, Hash)>] PutRemoveBadgeResponse data, response status code and response headers
+    # @return [Array<(RemoveUserBadgeResponse, Integer, Hash)>] RemoveUserBadgeResponse data, response status code and response headers
     def put_remove_badge_with_http_info(badge_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_remove_badge ...'
@@ -2834,7 +2834,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PutRemoveBadgeResponse'
+      return_type = opts[:debug_return_type] || 'RemoveUserBadgeResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2860,7 +2860,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [PutReopenThreadResponse]
+    # @return [APIEmptyResponse]
     def put_reopen_thread(url_id, opts = {})
       data, _status_code, _headers = put_reopen_thread_with_http_info(url_id, opts)
       data
@@ -2870,7 +2870,7 @@ module FastCommentsClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(PutReopenThreadResponse, Integer, Hash)>] PutReopenThreadResponse data, response status code and response headers
+    # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def put_reopen_thread_with_http_info(url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_reopen_thread ...'
@@ -2900,7 +2900,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'PutReopenThreadResponse'
+      return_type = opts[:debug_return_type] || 'APIEmptyResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2927,7 +2927,7 @@ module FastCommentsClient
     # @option opts [String] :trust_factor 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [SetTrustFactorResponse]
+    # @return [SetUserTrustFactorResponse]
     def set_trust_factor(opts = {})
       data, _status_code, _headers = set_trust_factor_with_http_info(opts)
       data
@@ -2938,7 +2938,7 @@ module FastCommentsClient
     # @option opts [String] :trust_factor 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
-    # @return [Array<(SetTrustFactorResponse, Integer, Hash)>] SetTrustFactorResponse data, response status code and response headers
+    # @return [Array<(SetUserTrustFactorResponse, Integer, Hash)>] SetUserTrustFactorResponse data, response status code and response headers
     def set_trust_factor_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.set_trust_factor ...'
@@ -2965,7 +2965,7 @@ module FastCommentsClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'SetTrustFactorResponse'
+      return_type = opts[:debug_return_type] || 'SetUserTrustFactorResponse'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

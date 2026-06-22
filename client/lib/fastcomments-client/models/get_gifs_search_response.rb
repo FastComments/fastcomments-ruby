@@ -19,7 +19,6 @@ module FastCommentsClient
       # List of class defined in anyOf (OpenAPI v3)
       def openapi_any_of
         [
-          :'APIError',
           :'GifSearchInternalError',
           :'GifSearchResponse'
         ]

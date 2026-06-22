@@ -47,7 +47,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [CreateHashTagBody] :create_hash_tag_body 
-  # @return [AddHashTagResponse]
+  # @return [CreateHashTagResponse]
   describe 'add_hash_tag test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -58,7 +58,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [BulkCreateHashTagsBody] :bulk_create_hash_tags_body 
-  # @return [AddHashTagsBulkResponse]
+  # @return [BulkCreateHashTagsResponse]
   describe 'add_hash_tags_bulk test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -110,7 +110,7 @@ describe 'DefaultApi' do
   # @option opts [AggregateTimeBucket] :time_bucket 
   # @option opts [Time] :start_date 
   # @option opts [Boolean] :force_recalculate 
-  # @return [AggregateQuestionResultsResponse1]
+  # @return [AggregateQuestionResultsResponse]
   describe 'aggregate_question_results test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -124,7 +124,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :anon_user_id 
-  # @return [BlockUserFromCommentResponse]
+  # @return [BlockSuccess]
   describe 'block_user_from_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -136,7 +136,7 @@ describe 'DefaultApi' do
   # @param bulk_aggregate_question_results_request 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :force_recalculate 
-  # @return [BulkAggregateQuestionResultsResponse1]
+  # @return [BulkAggregateQuestionResultsResponse]
   describe 'bulk_aggregate_question_results test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -149,7 +149,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param change_ticket_state_body 
   # @param [Hash] opts the optional parameters
-  # @return [ChangeTicketStateResponse1]
+  # @return [ChangeTicketStateResponse]
   describe 'change_ticket_state test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -167,7 +167,7 @@ describe 'DefaultApi' do
   # @option opts [Float] :min_value 
   # @option opts [Float] :max_value 
   # @option opts [Float] :limit 
-  # @return [CombineCommentsWithQuestionResultsResponse]
+  # @return [CombineQuestionResultsWithCommentsResponse]
   describe 'combine_comments_with_question_results test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -178,7 +178,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_email_template_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateEmailTemplateResponse1]
+  # @return [CreateEmailTemplateResponse]
   describe 'create_email_template test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -193,7 +193,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :is_live 
   # @option opts [Boolean] :do_spam_check 
   # @option opts [Boolean] :skip_dup_check 
-  # @return [CreateFeedPostResponse1]
+  # @return [CreateFeedPostsResponse]
   describe 'create_feed_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -204,7 +204,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_moderator_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateModeratorResponse1]
+  # @return [CreateModeratorResponse]
   describe 'create_moderator test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -215,7 +215,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_question_config_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateQuestionConfigResponse1]
+  # @return [CreateQuestionConfigResponse]
   describe 'create_question_config test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -226,7 +226,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_question_result_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateQuestionResultResponse1]
+  # @return [CreateQuestionResultResponse]
   describe 'create_question_result test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -248,7 +248,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_tenant_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateTenantResponse1]
+  # @return [CreateTenantResponse]
   describe 'create_tenant test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -259,7 +259,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_tenant_package_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateTenantPackageResponse1]
+  # @return [CreateTenantPackageResponse]
   describe 'create_tenant_package test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -270,7 +270,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_tenant_user_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateTenantUserResponse1]
+  # @return [CreateTenantUserResponse]
   describe 'create_tenant_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -282,7 +282,7 @@ describe 'DefaultApi' do
   # @param user_id 
   # @param create_ticket_body 
   # @param [Hash] opts the optional parameters
-  # @return [CreateTicketResponse1]
+  # @return [CreateTicketResponse]
   describe 'create_ticket test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -293,7 +293,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param create_user_badge_params 
   # @param [Hash] opts the optional parameters
-  # @return [CreateUserBadgeResponse]
+  # @return [APICreateUserBadgeResponse]
   describe 'create_user_badge test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -307,7 +307,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :anon_user_id 
-  # @return [CreateVoteResponse]
+  # @return [VoteResponse]
   describe 'create_vote test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -320,7 +320,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :context_user_id 
   # @option opts [Boolean] :is_live 
-  # @return [DeleteCommentResponse]
+  # @return [DeleteCommentResult]
   describe 'delete_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -342,7 +342,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteEmailTemplateResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_email_template test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -354,7 +354,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param error_id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteEmailTemplateRenderErrorResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_email_template_render_error test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -366,7 +366,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [DeleteHashTagRequestBody] :delete_hash_tag_request_body 
-  # @return [DeleteHashTagResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_hash_tag test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -378,7 +378,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :send_email 
-  # @return [DeleteModeratorResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_moderator test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -389,7 +389,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteNotificationCountResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_notification_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -411,7 +411,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeletePendingWebhookEventResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_pending_webhook_event test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -422,7 +422,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteQuestionConfigResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_question_config test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -433,7 +433,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteQuestionResultResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_question_result test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -470,7 +470,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :sure 
-  # @return [DeleteTenantResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_tenant test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -481,7 +481,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteTenantPackageResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_tenant_package test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -494,7 +494,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :delete_comments 
   # @option opts [String] :comment_delete_mode 
-  # @return [DeleteTenantUserResponse]
+  # @return [APIEmptyResponse]
   describe 'delete_tenant_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -505,7 +505,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [DeleteUserBadgeResponse]
+  # @return [APIEmptySuccessResponse]
   describe 'delete_user_badge test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -517,7 +517,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :edit_key 
-  # @return [DeleteVoteResponse]
+  # @return [VoteDeleteResponse]
   describe 'delete_vote test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -530,7 +530,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :anon_user_id 
-  # @return [FlagCommentResponse1]
+  # @return [FlagCommentResponse]
   describe 'flag_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -545,7 +545,7 @@ describe 'DefaultApi' do
   # @option opts [SORTDIR] :order 
   # @option opts [Float] :after 
   # @option opts [Float] :before 
-  # @return [GetAuditLogsResponse1]
+  # @return [GetAuditLogsResponse]
   describe 'get_audit_logs test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -556,7 +556,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetCachedNotificationCountResponse1]
+  # @return [GetCachedNotificationCountResponse]
   describe 'get_cached_notification_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -567,7 +567,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetCommentResponse]
+  # @return [APIGetCommentResponse]
   describe 'get_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -593,7 +593,7 @@ describe 'DefaultApi' do
   # @option opts [SortDirections] :direction 
   # @option opts [Integer] :from_date 
   # @option opts [Integer] :to_date 
-  # @return [GetCommentsResponse]
+  # @return [APIGetCommentsResponse]
   describe 'get_comments test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -625,7 +625,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetEmailTemplateResponse1]
+  # @return [GetEmailTemplateResponse]
   describe 'get_email_template test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -635,7 +635,7 @@ describe 'DefaultApi' do
   # unit tests for get_email_template_definitions
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
-  # @return [GetEmailTemplateDefinitionsResponse1]
+  # @return [GetEmailTemplateDefinitionsResponse]
   describe 'get_email_template_definitions test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -647,7 +647,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :skip 
-  # @return [GetEmailTemplateRenderErrorsResponse1]
+  # @return [GetEmailTemplateRenderErrorsResponse]
   describe 'get_email_template_render_errors test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -658,7 +658,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :skip 
-  # @return [GetEmailTemplatesResponse1]
+  # @return [GetEmailTemplatesResponse]
   describe 'get_email_templates test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -672,7 +672,7 @@ describe 'DefaultApi' do
   # @option opts [String] :after_id 
   # @option opts [Integer] :limit 
   # @option opts [Array<String>] :tags 
-  # @return [GetFeedPostsResponse1]
+  # @return [GetFeedPostsResponse]
   describe 'get_feed_posts test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -683,7 +683,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :page 
-  # @return [GetHashTagsResponse1]
+  # @return [GetHashTagsResponse]
   describe 'get_hash_tags test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -694,7 +694,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetModeratorResponse1]
+  # @return [GetModeratorResponse]
   describe 'get_moderator test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -705,7 +705,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :skip 
-  # @return [GetModeratorsResponse1]
+  # @return [GetModeratorsResponse]
   describe 'get_moderators test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -720,7 +720,7 @@ describe 'DefaultApi' do
   # @option opts [String] :from_comment_id 
   # @option opts [Boolean] :viewed 
   # @option opts [String] :type 
-  # @return [GetNotificationCountResponse1]
+  # @return [GetNotificationCountResponse]
   describe 'get_notification_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -736,7 +736,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :viewed 
   # @option opts [String] :type 
   # @option opts [Float] :skip 
-  # @return [GetNotificationsResponse1]
+  # @return [GetNotificationsResponse]
   describe 'get_notifications test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -773,7 +773,7 @@ describe 'DefaultApi' do
   # @option opts [String] :type 
   # @option opts [String] :domain 
   # @option opts [Float] :attempt_count_gt 
-  # @return [GetPendingWebhookEventCountResponse1]
+  # @return [GetPendingWebhookEventCountResponse]
   describe 'get_pending_webhook_event_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -790,7 +790,7 @@ describe 'DefaultApi' do
   # @option opts [String] :domain 
   # @option opts [Float] :attempt_count_gt 
   # @option opts [Float] :skip 
-  # @return [GetPendingWebhookEventsResponse1]
+  # @return [GetPendingWebhookEventsResponse]
   describe 'get_pending_webhook_events test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -801,7 +801,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetQuestionConfigResponse1]
+  # @return [GetQuestionConfigResponse]
   describe 'get_question_config test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -812,7 +812,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :skip 
-  # @return [GetQuestionConfigsResponse1]
+  # @return [GetQuestionConfigsResponse]
   describe 'get_question_configs test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -823,7 +823,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetQuestionResultResponse1]
+  # @return [GetQuestionResultResponse]
   describe 'get_question_result test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -839,7 +839,7 @@ describe 'DefaultApi' do
   # @option opts [String] :question_id 
   # @option opts [String] :question_ids 
   # @option opts [Float] :skip 
-  # @return [GetQuestionResultsResponse1]
+  # @return [GetQuestionResultsResponse]
   describe 'get_question_results test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -894,7 +894,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetTenantResponse1]
+  # @return [GetTenantResponse]
   describe 'get_tenant test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -908,7 +908,7 @@ describe 'DefaultApi' do
   # @option opts [Float] :month_number 
   # @option opts [Float] :day_number 
   # @option opts [Float] :skip 
-  # @return [GetTenantDailyUsagesResponse1]
+  # @return [GetTenantDailyUsagesResponse]
   describe 'get_tenant_daily_usages test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -919,7 +919,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetTenantPackageResponse1]
+  # @return [GetTenantPackageResponse]
   describe 'get_tenant_package test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -930,7 +930,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :skip 
-  # @return [GetTenantPackagesResponse1]
+  # @return [GetTenantPackagesResponse]
   describe 'get_tenant_packages test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -941,7 +941,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetTenantUserResponse1]
+  # @return [GetTenantUserResponse]
   describe 'get_tenant_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -952,7 +952,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :skip 
-  # @return [GetTenantUsersResponse1]
+  # @return [GetTenantUsersResponse]
   describe 'get_tenant_users test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -964,7 +964,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :meta 
   # @option opts [Float] :skip 
-  # @return [GetTenantsResponse1]
+  # @return [GetTenantsResponse]
   describe 'get_tenants test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -976,7 +976,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
-  # @return [GetTicketResponse1]
+  # @return [GetTicketResponse]
   describe 'get_ticket test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -990,7 +990,7 @@ describe 'DefaultApi' do
   # @option opts [Float] :state 
   # @option opts [Float] :skip 
   # @option opts [Float] :limit 
-  # @return [GetTicketsResponse1]
+  # @return [GetTicketsResponse]
   describe 'get_tickets test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1001,7 +1001,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetUserResponse1]
+  # @return [GetUserResponse]
   describe 'get_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1012,7 +1012,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetUserBadgeResponse]
+  # @return [APIGetUserBadgeResponse]
   describe 'get_user_badge test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1023,7 +1023,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param id 
   # @param [Hash] opts the optional parameters
-  # @return [GetUserBadgeProgressByIdResponse]
+  # @return [APIGetUserBadgeProgressResponse]
   describe 'get_user_badge_progress_by_id test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1034,7 +1034,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [GetUserBadgeProgressByUserIdResponse]
+  # @return [APIGetUserBadgeProgressResponse]
   describe 'get_user_badge_progress_by_user_id test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1047,7 +1047,7 @@ describe 'DefaultApi' do
   # @option opts [String] :user_id 
   # @option opts [Float] :limit 
   # @option opts [Float] :skip 
-  # @return [GetUserBadgeProgressListResponse]
+  # @return [APIGetUserBadgeProgressListResponse]
   describe 'get_user_badge_progress_list test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1063,7 +1063,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :displayed_on_comments 
   # @option opts [Float] :limit 
   # @option opts [Float] :skip 
-  # @return [GetUserBadgesResponse]
+  # @return [APIGetUserBadgesResponse]
   describe 'get_user_badges test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1074,7 +1074,7 @@ describe 'DefaultApi' do
   # @param tenant_id 
   # @param url_id 
   # @param [Hash] opts the optional parameters
-  # @return [GetVotesResponse1]
+  # @return [GetVotesResponse]
   describe 'get_votes test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1087,7 +1087,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :anon_user_id 
-  # @return [GetVotesForUserResponse1]
+  # @return [GetVotesForUserResponse]
   describe 'get_votes_for_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1111,7 +1111,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [UpdateHashTagBody] :update_hash_tag_body 
-  # @return [PatchHashTagResponse]
+  # @return [UpdateHashTagResponse]
   describe 'patch_hash_tag test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1173,7 +1173,7 @@ describe 'DefaultApi' do
   # @param render_email_template_body 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :locale 
-  # @return [RenderEmailTemplateResponse1]
+  # @return [RenderEmailTemplateResponse]
   describe 'render_email_template test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1185,7 +1185,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param replace_tenant_package_body 
   # @param [Hash] opts the optional parameters
-  # @return [ReplaceTenantPackageResponse]
+  # @return [APIEmptyResponse]
   describe 'replace_tenant_package test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1198,7 +1198,7 @@ describe 'DefaultApi' do
   # @param replace_tenant_user_body 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :update_comments 
-  # @return [ReplaceTenantUserResponse]
+  # @return [APIEmptyResponse]
   describe 'replace_tenant_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1213,7 +1213,7 @@ describe 'DefaultApi' do
   # @option opts [Boolean] :do_spam_check 
   # @option opts [Boolean] :send_emails 
   # @option opts [Boolean] :populate_notifications 
-  # @return [SaveCommentResponse]
+  # @return [APISaveCommentResponse]
   describe 'save_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1240,7 +1240,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param from_name 
   # @param [Hash] opts the optional parameters
-  # @return [SendInviteResponse]
+  # @return [APIEmptyResponse]
   describe 'send_invite test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1252,7 +1252,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :redirect_url 
-  # @return [SendLoginLinkResponse]
+  # @return [APIEmptyResponse]
   describe 'send_login_link test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1266,7 +1266,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :anon_user_id 
-  # @return [UnBlockUserFromCommentResponse]
+  # @return [UnblockSuccess]
   describe 'un_block_user_from_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1279,7 +1279,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :anon_user_id 
-  # @return [UnFlagCommentResponse]
+  # @return [FlagCommentResponse]
   describe 'un_flag_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1294,7 +1294,7 @@ describe 'DefaultApi' do
   # @option opts [String] :context_user_id 
   # @option opts [Boolean] :do_spam_check 
   # @option opts [Boolean] :is_live 
-  # @return [UpdateCommentResponse]
+  # @return [APIEmptyResponse]
   describe 'update_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1306,7 +1306,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_email_template_body 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateEmailTemplateResponse]
+  # @return [APIEmptyResponse]
   describe 'update_email_template test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1318,7 +1318,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param feed_post 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateFeedPostResponse]
+  # @return [APIEmptyResponse]
   describe 'update_feed_post test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1330,7 +1330,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_moderator_body 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateModeratorResponse]
+  # @return [APIEmptyResponse]
   describe 'update_moderator test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1343,7 +1343,7 @@ describe 'DefaultApi' do
   # @param update_notification_body 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
-  # @return [UpdateNotificationResponse]
+  # @return [APIEmptyResponse]
   describe 'update_notification test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1355,7 +1355,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_question_config_body 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateQuestionConfigResponse]
+  # @return [APIEmptyResponse]
   describe 'update_question_config test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1367,7 +1367,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_question_result_body 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateQuestionResultResponse]
+  # @return [APIEmptyResponse]
   describe 'update_question_result test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1392,7 +1392,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_tenant_body 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateTenantResponse]
+  # @return [APIEmptyResponse]
   describe 'update_tenant test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1404,7 +1404,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_tenant_package_body 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateTenantPackageResponse]
+  # @return [APIEmptyResponse]
   describe 'update_tenant_package test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1417,7 +1417,7 @@ describe 'DefaultApi' do
   # @param update_tenant_user_body 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :update_comments 
-  # @return [UpdateTenantUserResponse]
+  # @return [APIEmptyResponse]
   describe 'update_tenant_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1429,7 +1429,7 @@ describe 'DefaultApi' do
   # @param id 
   # @param update_user_badge_params 
   # @param [Hash] opts the optional parameters
-  # @return [UpdateUserBadgeResponse]
+  # @return [APIEmptySuccessResponse]
   describe 'update_user_badge test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -39,7 +39,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [DeleteModerationVoteResponse]
+  # @return [VoteDeleteResponse]
   describe 'delete_moderation_vote test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -58,7 +58,7 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :demo 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetApiCommentsResponse]
+  # @return [ModerationAPIGetCommentsResponse]
   describe 'get_api_comments test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -70,7 +70,7 @@ describe 'ModerationApi' do
   # @option opts [String] :batch_job_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetApiExportStatusResponse]
+  # @return [ModerationExportStatusResponse]
   describe 'get_api_export_status test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -87,7 +87,7 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :demo 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetApiIdsResponse]
+  # @return [ModerationAPIGetCommentIdsResponse]
   describe 'get_api_ids test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -99,7 +99,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetBanUsersFromCommentResponse]
+  # @return [GetBannedUsersFromCommentResponse]
   describe 'get_ban_users_from_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -111,7 +111,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetCommentBanStatusResponse1]
+  # @return [GetCommentBanStatusResponse]
   describe 'get_comment_ban_status test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -123,7 +123,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetCommentChildrenResponse]
+  # @return [ModerationAPIChildCommentsResponse]
   describe 'get_comment_children test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -139,7 +139,7 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :demo 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetCountResponse]
+  # @return [ModerationAPICountCommentsResponse]
   describe 'get_count test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -150,7 +150,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetCountsResponse]
+  # @return [GetBannedUsersCountResponse]
   describe 'get_counts test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -162,7 +162,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetLogsResponse]
+  # @return [ModerationAPIGetLogsResponse]
   describe 'get_logs test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -173,7 +173,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetManualBadgesResponse]
+  # @return [GetTenantManualBadgesResponse]
   describe 'get_manual_badges test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -186,7 +186,7 @@ describe 'ModerationApi' do
   # @option opts [String] :comment_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetManualBadgesForUserResponse]
+  # @return [GetUserManualBadgesResponse]
   describe 'get_manual_badges_for_user test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -200,7 +200,7 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :include_ip 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetModerationCommentResponse]
+  # @return [ModerationAPICommentResponse]
   describe 'get_moderation_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -212,7 +212,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetModerationCommentTextResponse]
+  # @return [GetCommentTextResponse]
   describe 'get_moderation_comment_text test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -227,7 +227,7 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :include_by_email_domain 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetPreBanSummaryResponse]
+  # @return [PreBanSummary]
   describe 'get_pre_ban_summary test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -241,7 +241,7 @@ describe 'ModerationApi' do
   # @option opts [String] :search_filters 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetSearchCommentsSummaryResponse]
+  # @return [ModerationCommentSearchResponse]
   describe 'get_search_comments_summary test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -253,7 +253,7 @@ describe 'ModerationApi' do
   # @option opts [String] :value 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetSearchPagesResponse]
+  # @return [ModerationPageSearchResponse]
   describe 'get_search_pages test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -265,7 +265,7 @@ describe 'ModerationApi' do
   # @option opts [String] :value 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetSearchSitesResponse]
+  # @return [ModerationSiteSearchResponse]
   describe 'get_search_sites test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -277,7 +277,7 @@ describe 'ModerationApi' do
   # @option opts [String] :text_search 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetSearchSuggestResponse]
+  # @return [ModerationSuggestResponse]
   describe 'get_search_suggest test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -289,7 +289,7 @@ describe 'ModerationApi' do
   # @option opts [String] :value 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetSearchUsersResponse]
+  # @return [ModerationUserSearchResponse]
   describe 'get_search_users test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -301,7 +301,7 @@ describe 'ModerationApi' do
   # @option opts [String] :user_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetTrustFactorResponse]
+  # @return [GetUserTrustFactorResponse]
   describe 'get_trust_factor test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -312,7 +312,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetUserBanPreferenceResponse]
+  # @return [APIModerateGetUserBanPreferencesResponse]
   describe 'get_user_ban_preference test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -324,7 +324,7 @@ describe 'ModerationApi' do
   # @option opts [String] :comment_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [GetUserInternalProfileResponse1]
+  # @return [GetUserInternalProfileResponse]
   describe 'get_user_internal_profile test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -338,7 +338,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostAdjustCommentVotesResponse]
+  # @return [AdjustVotesResponse]
   describe 'post_adjust_comment_votes test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -354,7 +354,7 @@ describe 'ModerationApi' do
   # @option opts [String] :sorts 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostApiExportResponse]
+  # @return [ModerationExportResponse]
   describe 'post_api_export test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -374,7 +374,7 @@ describe 'ModerationApi' do
   # @option opts [String] :ban_reason 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostBanUserFromCommentResponse]
+  # @return [BanUserFromCommentResult]
   describe 'post_ban_user_from_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -386,7 +386,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostBanUserUndoResponse]
+  # @return [APIEmptyResponse]
   describe 'post_ban_user_undo test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -401,7 +401,7 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :include_by_email_domain 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostBulkPreBanSummaryResponse]
+  # @return [BulkPreBanSummary]
   describe 'post_bulk_pre_ban_summary test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -413,7 +413,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostCommentsByIdsResponse]
+  # @return [ModerationAPIChildCommentsResponse]
   describe 'post_comments_by_ids test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -426,7 +426,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostFlagCommentResponse]
+  # @return [APIEmptyResponse]
   describe 'post_flag_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -452,7 +452,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostRestoreDeletedCommentResponse]
+  # @return [APIEmptyResponse]
   describe 'post_restore_deleted_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -466,7 +466,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostSetCommentApprovalStatusResponse]
+  # @return [SetCommentApprovedResponse]
   describe 'post_set_comment_approval_status test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -480,7 +480,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostSetCommentReviewStatusResponse]
+  # @return [APIEmptyResponse]
   describe 'post_set_comment_review_status test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -495,7 +495,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostSetCommentSpamStatusResponse]
+  # @return [APIEmptyResponse]
   describe 'post_set_comment_spam_status test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -509,7 +509,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostSetCommentTextResponse]
+  # @return [SetCommentTextResponse]
   describe 'post_set_comment_text test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -522,7 +522,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostUnFlagCommentResponse]
+  # @return [APIEmptyResponse]
   describe 'post_un_flag_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -536,7 +536,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PostVoteResponse]
+  # @return [VoteResponse]
   describe 'post_vote test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -551,7 +551,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PutAwardBadgeResponse]
+  # @return [AwardUserBadgeResponse]
   describe 'put_award_badge test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -563,7 +563,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PutCloseThreadResponse]
+  # @return [APIEmptyResponse]
   describe 'put_close_thread test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -578,7 +578,7 @@ describe 'ModerationApi' do
   # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PutRemoveBadgeResponse]
+  # @return [RemoveUserBadgeResponse]
   describe 'put_remove_badge test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -590,7 +590,7 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [PutReopenThreadResponse]
+  # @return [APIEmptyResponse]
   describe 'put_reopen_thread test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -603,7 +603,7 @@ describe 'ModerationApi' do
   # @option opts [String] :trust_factor 
   # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
-  # @return [SetTrustFactorResponse]
+  # @return [SetUserTrustFactorResponse]
   describe 'set_trust_factor test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -51,7 +51,7 @@ All URIs are relative to *https://fastcomments.com*
 
 ## delete_moderation_vote
 
-> <DeleteModerationVoteResponse> delete_moderation_vote(comment_id, vote_id, opts)
+> <VoteDeleteResponse> delete_moderation_vote(comment_id, vote_id, opts)
 
 
 
@@ -83,7 +83,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DeleteModerationVoteResponse>, Integer, Hash)> delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
+> <Array(<VoteDeleteResponse>, Integer, Hash)> delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
 
 ```ruby
 begin
@@ -91,7 +91,7 @@ begin
   data, status_code, headers = api_instance.delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DeleteModerationVoteResponse>
+  p data # => <VoteDeleteResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->delete_moderation_vote_with_http_info: #{e}"
 end
@@ -109,7 +109,7 @@ end
 
 ### Return type
 
-[**DeleteModerationVoteResponse**](DeleteModerationVoteResponse.md)
+[**VoteDeleteResponse**](VoteDeleteResponse.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ No authorization required
 
 ## get_api_comments
 
-> <GetApiCommentsResponse> get_api_comments(opts)
+> <ModerationAPIGetCommentsResponse> get_api_comments(opts)
 
 
 
@@ -160,7 +160,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetApiCommentsResponse>, Integer, Hash)> get_api_comments_with_http_info(opts)
+> <Array(<ModerationAPIGetCommentsResponse>, Integer, Hash)> get_api_comments_with_http_info(opts)
 
 ```ruby
 begin
@@ -168,7 +168,7 @@ begin
   data, status_code, headers = api_instance.get_api_comments_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetApiCommentsResponse>
+  p data # => <ModerationAPIGetCommentsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_comments_with_http_info: #{e}"
 end
@@ -191,7 +191,7 @@ end
 
 ### Return type
 
-[**GetApiCommentsResponse**](GetApiCommentsResponse.md)
+[**ModerationAPIGetCommentsResponse**](ModerationAPIGetCommentsResponse.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ No authorization required
 
 ## get_api_export_status
 
-> <GetApiExportStatusResponse> get_api_export_status(opts)
+> <ModerationExportStatusResponse> get_api_export_status(opts)
 
 
 
@@ -235,7 +235,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetApiExportStatusResponse>, Integer, Hash)> get_api_export_status_with_http_info(opts)
+> <Array(<ModerationExportStatusResponse>, Integer, Hash)> get_api_export_status_with_http_info(opts)
 
 ```ruby
 begin
@@ -243,7 +243,7 @@ begin
   data, status_code, headers = api_instance.get_api_export_status_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetApiExportStatusResponse>
+  p data # => <ModerationExportStatusResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_export_status_with_http_info: #{e}"
 end
@@ -259,7 +259,7 @@ end
 
 ### Return type
 
-[**GetApiExportStatusResponse**](GetApiExportStatusResponse.md)
+[**ModerationExportStatusResponse**](ModerationExportStatusResponse.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ No authorization required
 
 ## get_api_ids
 
-> <GetApiIdsResponse> get_api_ids(opts)
+> <ModerationAPIGetCommentIdsResponse> get_api_ids(opts)
 
 
 
@@ -308,7 +308,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetApiIdsResponse>, Integer, Hash)> get_api_ids_with_http_info(opts)
+> <Array(<ModerationAPIGetCommentIdsResponse>, Integer, Hash)> get_api_ids_with_http_info(opts)
 
 ```ruby
 begin
@@ -316,7 +316,7 @@ begin
   data, status_code, headers = api_instance.get_api_ids_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetApiIdsResponse>
+  p data # => <ModerationAPIGetCommentIdsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_ids_with_http_info: #{e}"
 end
@@ -337,7 +337,7 @@ end
 
 ### Return type
 
-[**GetApiIdsResponse**](GetApiIdsResponse.md)
+[**ModerationAPIGetCommentIdsResponse**](ModerationAPIGetCommentIdsResponse.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ No authorization required
 
 ## get_ban_users_from_comment
 
-> <GetBanUsersFromCommentResponse> get_ban_users_from_comment(comment_id, opts)
+> <GetBannedUsersFromCommentResponse> get_ban_users_from_comment(comment_id, opts)
 
 
 
@@ -381,7 +381,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetBanUsersFromCommentResponse>, Integer, Hash)> get_ban_users_from_comment_with_http_info(comment_id, opts)
+> <Array(<GetBannedUsersFromCommentResponse>, Integer, Hash)> get_ban_users_from_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -389,7 +389,7 @@ begin
   data, status_code, headers = api_instance.get_ban_users_from_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetBanUsersFromCommentResponse>
+  p data # => <GetBannedUsersFromCommentResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_ban_users_from_comment_with_http_info: #{e}"
 end
@@ -405,7 +405,7 @@ end
 
 ### Return type
 
-[**GetBanUsersFromCommentResponse**](GetBanUsersFromCommentResponse.md)
+[**GetBannedUsersFromCommentResponse**](GetBannedUsersFromCommentResponse.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ No authorization required
 
 ## get_comment_ban_status
 
-> <GetCommentBanStatusResponse1> get_comment_ban_status(comment_id, opts)
+> <GetCommentBanStatusResponse> get_comment_ban_status(comment_id, opts)
 
 
 
@@ -449,7 +449,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentBanStatusResponse1>, Integer, Hash)> get_comment_ban_status_with_http_info(comment_id, opts)
+> <Array(<GetCommentBanStatusResponse>, Integer, Hash)> get_comment_ban_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -457,7 +457,7 @@ begin
   data, status_code, headers = api_instance.get_comment_ban_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCommentBanStatusResponse1>
+  p data # => <GetCommentBanStatusResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_ban_status_with_http_info: #{e}"
 end
@@ -473,7 +473,7 @@ end
 
 ### Return type
 
-[**GetCommentBanStatusResponse1**](GetCommentBanStatusResponse1.md)
+[**GetCommentBanStatusResponse**](GetCommentBanStatusResponse.md)
 
 ### Authorization
 
@@ -487,7 +487,7 @@ No authorization required
 
 ## get_comment_children
 
-> <GetCommentChildrenResponse> get_comment_children(comment_id, opts)
+> <ModerationAPIChildCommentsResponse> get_comment_children(comment_id, opts)
 
 
 
@@ -517,7 +517,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentChildrenResponse>, Integer, Hash)> get_comment_children_with_http_info(comment_id, opts)
+> <Array(<ModerationAPIChildCommentsResponse>, Integer, Hash)> get_comment_children_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -525,7 +525,7 @@ begin
   data, status_code, headers = api_instance.get_comment_children_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCommentChildrenResponse>
+  p data # => <ModerationAPIChildCommentsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_children_with_http_info: #{e}"
 end
@@ -541,7 +541,7 @@ end
 
 ### Return type
 
-[**GetCommentChildrenResponse**](GetCommentChildrenResponse.md)
+[**ModerationAPIChildCommentsResponse**](ModerationAPIChildCommentsResponse.md)
 
 ### Authorization
 
@@ -555,7 +555,7 @@ No authorization required
 
 ## get_count
 
-> <GetCountResponse> get_count(opts)
+> <ModerationAPICountCommentsResponse> get_count(opts)
 
 
 
@@ -589,7 +589,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCountResponse>, Integer, Hash)> get_count_with_http_info(opts)
+> <Array(<ModerationAPICountCommentsResponse>, Integer, Hash)> get_count_with_http_info(opts)
 
 ```ruby
 begin
@@ -597,7 +597,7 @@ begin
   data, status_code, headers = api_instance.get_count_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCountResponse>
+  p data # => <ModerationAPICountCommentsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_count_with_http_info: #{e}"
 end
@@ -617,7 +617,7 @@ end
 
 ### Return type
 
-[**GetCountResponse**](GetCountResponse.md)
+[**ModerationAPICountCommentsResponse**](ModerationAPICountCommentsResponse.md)
 
 ### Authorization
 
@@ -631,7 +631,7 @@ No authorization required
 
 ## get_counts
 
-> <GetCountsResponse> get_counts(opts)
+> <GetBannedUsersCountResponse> get_counts(opts)
 
 
 
@@ -660,7 +660,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCountsResponse>, Integer, Hash)> get_counts_with_http_info(opts)
+> <Array(<GetBannedUsersCountResponse>, Integer, Hash)> get_counts_with_http_info(opts)
 
 ```ruby
 begin
@@ -668,7 +668,7 @@ begin
   data, status_code, headers = api_instance.get_counts_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetCountsResponse>
+  p data # => <GetBannedUsersCountResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_counts_with_http_info: #{e}"
 end
@@ -683,7 +683,7 @@ end
 
 ### Return type
 
-[**GetCountsResponse**](GetCountsResponse.md)
+[**GetBannedUsersCountResponse**](GetBannedUsersCountResponse.md)
 
 ### Authorization
 
@@ -697,7 +697,7 @@ No authorization required
 
 ## get_logs
 
-> <GetLogsResponse> get_logs(comment_id, opts)
+> <ModerationAPIGetLogsResponse> get_logs(comment_id, opts)
 
 
 
@@ -727,7 +727,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetLogsResponse>, Integer, Hash)> get_logs_with_http_info(comment_id, opts)
+> <Array(<ModerationAPIGetLogsResponse>, Integer, Hash)> get_logs_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -735,7 +735,7 @@ begin
   data, status_code, headers = api_instance.get_logs_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetLogsResponse>
+  p data # => <ModerationAPIGetLogsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_logs_with_http_info: #{e}"
 end
@@ -751,7 +751,7 @@ end
 
 ### Return type
 
-[**GetLogsResponse**](GetLogsResponse.md)
+[**ModerationAPIGetLogsResponse**](ModerationAPIGetLogsResponse.md)
 
 ### Authorization
 
@@ -765,7 +765,7 @@ No authorization required
 
 ## get_manual_badges
 
-> <GetManualBadgesResponse> get_manual_badges(opts)
+> <GetTenantManualBadgesResponse> get_manual_badges(opts)
 
 
 
@@ -794,7 +794,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetManualBadgesResponse>, Integer, Hash)> get_manual_badges_with_http_info(opts)
+> <Array(<GetTenantManualBadgesResponse>, Integer, Hash)> get_manual_badges_with_http_info(opts)
 
 ```ruby
 begin
@@ -802,7 +802,7 @@ begin
   data, status_code, headers = api_instance.get_manual_badges_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetManualBadgesResponse>
+  p data # => <GetTenantManualBadgesResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_with_http_info: #{e}"
 end
@@ -817,7 +817,7 @@ end
 
 ### Return type
 
-[**GetManualBadgesResponse**](GetManualBadgesResponse.md)
+[**GetTenantManualBadgesResponse**](GetTenantManualBadgesResponse.md)
 
 ### Authorization
 
@@ -831,7 +831,7 @@ No authorization required
 
 ## get_manual_badges_for_user
 
-> <GetManualBadgesForUserResponse> get_manual_badges_for_user(opts)
+> <GetUserManualBadgesResponse> get_manual_badges_for_user(opts)
 
 
 
@@ -862,7 +862,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetManualBadgesForUserResponse>, Integer, Hash)> get_manual_badges_for_user_with_http_info(opts)
+> <Array(<GetUserManualBadgesResponse>, Integer, Hash)> get_manual_badges_for_user_with_http_info(opts)
 
 ```ruby
 begin
@@ -870,7 +870,7 @@ begin
   data, status_code, headers = api_instance.get_manual_badges_for_user_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetManualBadgesForUserResponse>
+  p data # => <GetUserManualBadgesResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user_with_http_info: #{e}"
 end
@@ -887,7 +887,7 @@ end
 
 ### Return type
 
-[**GetManualBadgesForUserResponse**](GetManualBadgesForUserResponse.md)
+[**GetUserManualBadgesResponse**](GetUserManualBadgesResponse.md)
 
 ### Authorization
 
@@ -901,7 +901,7 @@ No authorization required
 
 ## get_moderation_comment
 
-> <GetModerationCommentResponse> get_moderation_comment(comment_id, opts)
+> <ModerationAPICommentResponse> get_moderation_comment(comment_id, opts)
 
 
 
@@ -933,7 +933,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetModerationCommentResponse>, Integer, Hash)> get_moderation_comment_with_http_info(comment_id, opts)
+> <Array(<ModerationAPICommentResponse>, Integer, Hash)> get_moderation_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -941,7 +941,7 @@ begin
   data, status_code, headers = api_instance.get_moderation_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetModerationCommentResponse>
+  p data # => <ModerationAPICommentResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment_with_http_info: #{e}"
 end
@@ -959,7 +959,7 @@ end
 
 ### Return type
 
-[**GetModerationCommentResponse**](GetModerationCommentResponse.md)
+[**ModerationAPICommentResponse**](ModerationAPICommentResponse.md)
 
 ### Authorization
 
@@ -973,7 +973,7 @@ No authorization required
 
 ## get_moderation_comment_text
 
-> <GetModerationCommentTextResponse> get_moderation_comment_text(comment_id, opts)
+> <GetCommentTextResponse> get_moderation_comment_text(comment_id, opts)
 
 
 
@@ -1003,7 +1003,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetModerationCommentTextResponse>, Integer, Hash)> get_moderation_comment_text_with_http_info(comment_id, opts)
+> <Array(<GetCommentTextResponse>, Integer, Hash)> get_moderation_comment_text_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -1011,7 +1011,7 @@ begin
   data, status_code, headers = api_instance.get_moderation_comment_text_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetModerationCommentTextResponse>
+  p data # => <GetCommentTextResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment_text_with_http_info: #{e}"
 end
@@ -1027,7 +1027,7 @@ end
 
 ### Return type
 
-[**GetModerationCommentTextResponse**](GetModerationCommentTextResponse.md)
+[**GetCommentTextResponse**](GetCommentTextResponse.md)
 
 ### Authorization
 
@@ -1041,7 +1041,7 @@ No authorization required
 
 ## get_pre_ban_summary
 
-> <GetPreBanSummaryResponse> get_pre_ban_summary(comment_id, opts)
+> <PreBanSummary> get_pre_ban_summary(comment_id, opts)
 
 
 
@@ -1074,7 +1074,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetPreBanSummaryResponse>, Integer, Hash)> get_pre_ban_summary_with_http_info(comment_id, opts)
+> <Array(<PreBanSummary>, Integer, Hash)> get_pre_ban_summary_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -1082,7 +1082,7 @@ begin
   data, status_code, headers = api_instance.get_pre_ban_summary_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetPreBanSummaryResponse>
+  p data # => <PreBanSummary>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_pre_ban_summary_with_http_info: #{e}"
 end
@@ -1101,7 +1101,7 @@ end
 
 ### Return type
 
-[**GetPreBanSummaryResponse**](GetPreBanSummaryResponse.md)
+[**PreBanSummary**](PreBanSummary.md)
 
 ### Authorization
 
@@ -1115,7 +1115,7 @@ No authorization required
 
 ## get_search_comments_summary
 
-> <GetSearchCommentsSummaryResponse> get_search_comments_summary(opts)
+> <ModerationCommentSearchResponse> get_search_comments_summary(opts)
 
 
 
@@ -1147,7 +1147,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetSearchCommentsSummaryResponse>, Integer, Hash)> get_search_comments_summary_with_http_info(opts)
+> <Array(<ModerationCommentSearchResponse>, Integer, Hash)> get_search_comments_summary_with_http_info(opts)
 
 ```ruby
 begin
@@ -1155,7 +1155,7 @@ begin
   data, status_code, headers = api_instance.get_search_comments_summary_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetSearchCommentsSummaryResponse>
+  p data # => <ModerationCommentSearchResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_comments_summary_with_http_info: #{e}"
 end
@@ -1173,7 +1173,7 @@ end
 
 ### Return type
 
-[**GetSearchCommentsSummaryResponse**](GetSearchCommentsSummaryResponse.md)
+[**ModerationCommentSearchResponse**](ModerationCommentSearchResponse.md)
 
 ### Authorization
 
@@ -1187,7 +1187,7 @@ No authorization required
 
 ## get_search_pages
 
-> <GetSearchPagesResponse> get_search_pages(opts)
+> <ModerationPageSearchResponse> get_search_pages(opts)
 
 
 
@@ -1217,7 +1217,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetSearchPagesResponse>, Integer, Hash)> get_search_pages_with_http_info(opts)
+> <Array(<ModerationPageSearchResponse>, Integer, Hash)> get_search_pages_with_http_info(opts)
 
 ```ruby
 begin
@@ -1225,7 +1225,7 @@ begin
   data, status_code, headers = api_instance.get_search_pages_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetSearchPagesResponse>
+  p data # => <ModerationPageSearchResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_pages_with_http_info: #{e}"
 end
@@ -1241,7 +1241,7 @@ end
 
 ### Return type
 
-[**GetSearchPagesResponse**](GetSearchPagesResponse.md)
+[**ModerationPageSearchResponse**](ModerationPageSearchResponse.md)
 
 ### Authorization
 
@@ -1255,7 +1255,7 @@ No authorization required
 
 ## get_search_sites
 
-> <GetSearchSitesResponse> get_search_sites(opts)
+> <ModerationSiteSearchResponse> get_search_sites(opts)
 
 
 
@@ -1285,7 +1285,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetSearchSitesResponse>, Integer, Hash)> get_search_sites_with_http_info(opts)
+> <Array(<ModerationSiteSearchResponse>, Integer, Hash)> get_search_sites_with_http_info(opts)
 
 ```ruby
 begin
@@ -1293,7 +1293,7 @@ begin
   data, status_code, headers = api_instance.get_search_sites_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetSearchSitesResponse>
+  p data # => <ModerationSiteSearchResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_sites_with_http_info: #{e}"
 end
@@ -1309,7 +1309,7 @@ end
 
 ### Return type
 
-[**GetSearchSitesResponse**](GetSearchSitesResponse.md)
+[**ModerationSiteSearchResponse**](ModerationSiteSearchResponse.md)
 
 ### Authorization
 
@@ -1323,7 +1323,7 @@ No authorization required
 
 ## get_search_suggest
 
-> <GetSearchSuggestResponse> get_search_suggest(opts)
+> <ModerationSuggestResponse> get_search_suggest(opts)
 
 
 
@@ -1353,7 +1353,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetSearchSuggestResponse>, Integer, Hash)> get_search_suggest_with_http_info(opts)
+> <Array(<ModerationSuggestResponse>, Integer, Hash)> get_search_suggest_with_http_info(opts)
 
 ```ruby
 begin
@@ -1361,7 +1361,7 @@ begin
   data, status_code, headers = api_instance.get_search_suggest_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetSearchSuggestResponse>
+  p data # => <ModerationSuggestResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_suggest_with_http_info: #{e}"
 end
@@ -1377,7 +1377,7 @@ end
 
 ### Return type
 
-[**GetSearchSuggestResponse**](GetSearchSuggestResponse.md)
+[**ModerationSuggestResponse**](ModerationSuggestResponse.md)
 
 ### Authorization
 
@@ -1391,7 +1391,7 @@ No authorization required
 
 ## get_search_users
 
-> <GetSearchUsersResponse> get_search_users(opts)
+> <ModerationUserSearchResponse> get_search_users(opts)
 
 
 
@@ -1421,7 +1421,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetSearchUsersResponse>, Integer, Hash)> get_search_users_with_http_info(opts)
+> <Array(<ModerationUserSearchResponse>, Integer, Hash)> get_search_users_with_http_info(opts)
 
 ```ruby
 begin
@@ -1429,7 +1429,7 @@ begin
   data, status_code, headers = api_instance.get_search_users_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetSearchUsersResponse>
+  p data # => <ModerationUserSearchResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_users_with_http_info: #{e}"
 end
@@ -1445,7 +1445,7 @@ end
 
 ### Return type
 
-[**GetSearchUsersResponse**](GetSearchUsersResponse.md)
+[**ModerationUserSearchResponse**](ModerationUserSearchResponse.md)
 
 ### Authorization
 
@@ -1459,7 +1459,7 @@ No authorization required
 
 ## get_trust_factor
 
-> <GetTrustFactorResponse> get_trust_factor(opts)
+> <GetUserTrustFactorResponse> get_trust_factor(opts)
 
 
 
@@ -1489,7 +1489,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetTrustFactorResponse>, Integer, Hash)> get_trust_factor_with_http_info(opts)
+> <Array(<GetUserTrustFactorResponse>, Integer, Hash)> get_trust_factor_with_http_info(opts)
 
 ```ruby
 begin
@@ -1497,7 +1497,7 @@ begin
   data, status_code, headers = api_instance.get_trust_factor_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetTrustFactorResponse>
+  p data # => <GetUserTrustFactorResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_trust_factor_with_http_info: #{e}"
 end
@@ -1513,7 +1513,7 @@ end
 
 ### Return type
 
-[**GetTrustFactorResponse**](GetTrustFactorResponse.md)
+[**GetUserTrustFactorResponse**](GetUserTrustFactorResponse.md)
 
 ### Authorization
 
@@ -1527,7 +1527,7 @@ No authorization required
 
 ## get_user_ban_preference
 
-> <GetUserBanPreferenceResponse> get_user_ban_preference(opts)
+> <APIModerateGetUserBanPreferencesResponse> get_user_ban_preference(opts)
 
 
 
@@ -1556,7 +1556,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUserBanPreferenceResponse>, Integer, Hash)> get_user_ban_preference_with_http_info(opts)
+> <Array(<APIModerateGetUserBanPreferencesResponse>, Integer, Hash)> get_user_ban_preference_with_http_info(opts)
 
 ```ruby
 begin
@@ -1564,7 +1564,7 @@ begin
   data, status_code, headers = api_instance.get_user_ban_preference_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUserBanPreferenceResponse>
+  p data # => <APIModerateGetUserBanPreferencesResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_user_ban_preference_with_http_info: #{e}"
 end
@@ -1579,7 +1579,7 @@ end
 
 ### Return type
 
-[**GetUserBanPreferenceResponse**](GetUserBanPreferenceResponse.md)
+[**APIModerateGetUserBanPreferencesResponse**](APIModerateGetUserBanPreferencesResponse.md)
 
 ### Authorization
 
@@ -1593,7 +1593,7 @@ No authorization required
 
 ## get_user_internal_profile
 
-> <GetUserInternalProfileResponse1> get_user_internal_profile(opts)
+> <GetUserInternalProfileResponse> get_user_internal_profile(opts)
 
 
 
@@ -1623,7 +1623,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetUserInternalProfileResponse1>, Integer, Hash)> get_user_internal_profile_with_http_info(opts)
+> <Array(<GetUserInternalProfileResponse>, Integer, Hash)> get_user_internal_profile_with_http_info(opts)
 
 ```ruby
 begin
@@ -1631,7 +1631,7 @@ begin
   data, status_code, headers = api_instance.get_user_internal_profile_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <GetUserInternalProfileResponse1>
+  p data # => <GetUserInternalProfileResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_user_internal_profile_with_http_info: #{e}"
 end
@@ -1647,7 +1647,7 @@ end
 
 ### Return type
 
-[**GetUserInternalProfileResponse1**](GetUserInternalProfileResponse1.md)
+[**GetUserInternalProfileResponse**](GetUserInternalProfileResponse.md)
 
 ### Authorization
 
@@ -1661,7 +1661,7 @@ No authorization required
 
 ## post_adjust_comment_votes
 
-> <PostAdjustCommentVotesResponse> post_adjust_comment_votes(comment_id, adjust_comment_votes_params, opts)
+> <AdjustVotesResponse> post_adjust_comment_votes(comment_id, adjust_comment_votes_params, opts)
 
 
 
@@ -1693,7 +1693,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostAdjustCommentVotesResponse>, Integer, Hash)> post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
+> <Array(<AdjustVotesResponse>, Integer, Hash)> post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
 
 ```ruby
 begin
@@ -1701,7 +1701,7 @@ begin
   data, status_code, headers = api_instance.post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostAdjustCommentVotesResponse>
+  p data # => <AdjustVotesResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_adjust_comment_votes_with_http_info: #{e}"
 end
@@ -1719,7 +1719,7 @@ end
 
 ### Return type
 
-[**PostAdjustCommentVotesResponse**](PostAdjustCommentVotesResponse.md)
+[**AdjustVotesResponse**](AdjustVotesResponse.md)
 
 ### Authorization
 
@@ -1733,7 +1733,7 @@ No authorization required
 
 ## post_api_export
 
-> <PostApiExportResponse> post_api_export(opts)
+> <ModerationExportResponse> post_api_export(opts)
 
 
 
@@ -1767,7 +1767,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostApiExportResponse>, Integer, Hash)> post_api_export_with_http_info(opts)
+> <Array(<ModerationExportResponse>, Integer, Hash)> post_api_export_with_http_info(opts)
 
 ```ruby
 begin
@@ -1775,7 +1775,7 @@ begin
   data, status_code, headers = api_instance.post_api_export_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostApiExportResponse>
+  p data # => <ModerationExportResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_api_export_with_http_info: #{e}"
 end
@@ -1795,7 +1795,7 @@ end
 
 ### Return type
 
-[**PostApiExportResponse**](PostApiExportResponse.md)
+[**ModerationExportResponse**](ModerationExportResponse.md)
 
 ### Authorization
 
@@ -1809,7 +1809,7 @@ No authorization required
 
 ## post_ban_user_from_comment
 
-> <PostBanUserFromCommentResponse> post_ban_user_from_comment(comment_id, opts)
+> <BanUserFromCommentResult> post_ban_user_from_comment(comment_id, opts)
 
 
 
@@ -1847,7 +1847,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostBanUserFromCommentResponse>, Integer, Hash)> post_ban_user_from_comment_with_http_info(comment_id, opts)
+> <Array(<BanUserFromCommentResult>, Integer, Hash)> post_ban_user_from_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -1855,7 +1855,7 @@ begin
   data, status_code, headers = api_instance.post_ban_user_from_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostBanUserFromCommentResponse>
+  p data # => <BanUserFromCommentResult>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment_with_http_info: #{e}"
 end
@@ -1879,7 +1879,7 @@ end
 
 ### Return type
 
-[**PostBanUserFromCommentResponse**](PostBanUserFromCommentResponse.md)
+[**BanUserFromCommentResult**](BanUserFromCommentResult.md)
 
 ### Authorization
 
@@ -1893,7 +1893,7 @@ No authorization required
 
 ## post_ban_user_undo
 
-> <PostBanUserUndoResponse> post_ban_user_undo(ban_user_undo_params, opts)
+> <APIEmptyResponse> post_ban_user_undo(ban_user_undo_params, opts)
 
 
 
@@ -1923,7 +1923,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostBanUserUndoResponse>, Integer, Hash)> post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
 
 ```ruby
 begin
@@ -1931,7 +1931,7 @@ begin
   data, status_code, headers = api_instance.post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostBanUserUndoResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_undo_with_http_info: #{e}"
 end
@@ -1947,7 +1947,7 @@ end
 
 ### Return type
 
-[**PostBanUserUndoResponse**](PostBanUserUndoResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1961,7 +1961,7 @@ No authorization required
 
 ## post_bulk_pre_ban_summary
 
-> <PostBulkPreBanSummaryResponse> post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
+> <BulkPreBanSummary> post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
 
 
 
@@ -1994,7 +1994,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostBulkPreBanSummaryResponse>, Integer, Hash)> post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
+> <Array(<BulkPreBanSummary>, Integer, Hash)> post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
 
 ```ruby
 begin
@@ -2002,7 +2002,7 @@ begin
   data, status_code, headers = api_instance.post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostBulkPreBanSummaryResponse>
+  p data # => <BulkPreBanSummary>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_bulk_pre_ban_summary_with_http_info: #{e}"
 end
@@ -2021,7 +2021,7 @@ end
 
 ### Return type
 
-[**PostBulkPreBanSummaryResponse**](PostBulkPreBanSummaryResponse.md)
+[**BulkPreBanSummary**](BulkPreBanSummary.md)
 
 ### Authorization
 
@@ -2035,7 +2035,7 @@ No authorization required
 
 ## post_comments_by_ids
 
-> <PostCommentsByIdsResponse> post_comments_by_ids(comments_by_ids_params, opts)
+> <ModerationAPIChildCommentsResponse> post_comments_by_ids(comments_by_ids_params, opts)
 
 
 
@@ -2065,7 +2065,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostCommentsByIdsResponse>, Integer, Hash)> post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
+> <Array(<ModerationAPIChildCommentsResponse>, Integer, Hash)> post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
 
 ```ruby
 begin
@@ -2073,7 +2073,7 @@ begin
   data, status_code, headers = api_instance.post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostCommentsByIdsResponse>
+  p data # => <ModerationAPIChildCommentsResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_comments_by_ids_with_http_info: #{e}"
 end
@@ -2089,7 +2089,7 @@ end
 
 ### Return type
 
-[**PostCommentsByIdsResponse**](PostCommentsByIdsResponse.md)
+[**ModerationAPIChildCommentsResponse**](ModerationAPIChildCommentsResponse.md)
 
 ### Authorization
 
@@ -2103,7 +2103,7 @@ No authorization required
 
 ## post_flag_comment
 
-> <PostFlagCommentResponse> post_flag_comment(comment_id, opts)
+> <APIEmptyResponse> post_flag_comment(comment_id, opts)
 
 
 
@@ -2134,7 +2134,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostFlagCommentResponse>, Integer, Hash)> post_flag_comment_with_http_info(comment_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_flag_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2142,7 +2142,7 @@ begin
   data, status_code, headers = api_instance.post_flag_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostFlagCommentResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_flag_comment_with_http_info: #{e}"
 end
@@ -2159,7 +2159,7 @@ end
 
 ### Return type
 
-[**PostFlagCommentResponse**](PostFlagCommentResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2243,7 +2243,7 @@ No authorization required
 
 ## post_restore_deleted_comment
 
-> <PostRestoreDeletedCommentResponse> post_restore_deleted_comment(comment_id, opts)
+> <APIEmptyResponse> post_restore_deleted_comment(comment_id, opts)
 
 
 
@@ -2274,7 +2274,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostRestoreDeletedCommentResponse>, Integer, Hash)> post_restore_deleted_comment_with_http_info(comment_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_restore_deleted_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2282,7 +2282,7 @@ begin
   data, status_code, headers = api_instance.post_restore_deleted_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostRestoreDeletedCommentResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_restore_deleted_comment_with_http_info: #{e}"
 end
@@ -2299,7 +2299,7 @@ end
 
 ### Return type
 
-[**PostRestoreDeletedCommentResponse**](PostRestoreDeletedCommentResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2313,7 +2313,7 @@ No authorization required
 
 ## post_set_comment_approval_status
 
-> <PostSetCommentApprovalStatusResponse> post_set_comment_approval_status(comment_id, opts)
+> <SetCommentApprovedResponse> post_set_comment_approval_status(comment_id, opts)
 
 
 
@@ -2345,7 +2345,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostSetCommentApprovalStatusResponse>, Integer, Hash)> post_set_comment_approval_status_with_http_info(comment_id, opts)
+> <Array(<SetCommentApprovedResponse>, Integer, Hash)> post_set_comment_approval_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2353,7 +2353,7 @@ begin
   data, status_code, headers = api_instance.post_set_comment_approval_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostSetCommentApprovalStatusResponse>
+  p data # => <SetCommentApprovedResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_approval_status_with_http_info: #{e}"
 end
@@ -2371,7 +2371,7 @@ end
 
 ### Return type
 
-[**PostSetCommentApprovalStatusResponse**](PostSetCommentApprovalStatusResponse.md)
+[**SetCommentApprovedResponse**](SetCommentApprovedResponse.md)
 
 ### Authorization
 
@@ -2385,7 +2385,7 @@ No authorization required
 
 ## post_set_comment_review_status
 
-> <PostSetCommentReviewStatusResponse> post_set_comment_review_status(comment_id, opts)
+> <APIEmptyResponse> post_set_comment_review_status(comment_id, opts)
 
 
 
@@ -2417,7 +2417,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostSetCommentReviewStatusResponse>, Integer, Hash)> post_set_comment_review_status_with_http_info(comment_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_set_comment_review_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2425,7 +2425,7 @@ begin
   data, status_code, headers = api_instance.post_set_comment_review_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostSetCommentReviewStatusResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_review_status_with_http_info: #{e}"
 end
@@ -2443,7 +2443,7 @@ end
 
 ### Return type
 
-[**PostSetCommentReviewStatusResponse**](PostSetCommentReviewStatusResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2457,7 +2457,7 @@ No authorization required
 
 ## post_set_comment_spam_status
 
-> <PostSetCommentSpamStatusResponse> post_set_comment_spam_status(comment_id, opts)
+> <APIEmptyResponse> post_set_comment_spam_status(comment_id, opts)
 
 
 
@@ -2490,7 +2490,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostSetCommentSpamStatusResponse>, Integer, Hash)> post_set_comment_spam_status_with_http_info(comment_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_set_comment_spam_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2498,7 +2498,7 @@ begin
   data, status_code, headers = api_instance.post_set_comment_spam_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostSetCommentSpamStatusResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_spam_status_with_http_info: #{e}"
 end
@@ -2517,7 +2517,7 @@ end
 
 ### Return type
 
-[**PostSetCommentSpamStatusResponse**](PostSetCommentSpamStatusResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2531,7 +2531,7 @@ No authorization required
 
 ## post_set_comment_text
 
-> <PostSetCommentTextResponse> post_set_comment_text(comment_id, set_comment_text_params, opts)
+> <SetCommentTextResponse> post_set_comment_text(comment_id, set_comment_text_params, opts)
 
 
 
@@ -2563,7 +2563,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostSetCommentTextResponse>, Integer, Hash)> post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
+> <Array(<SetCommentTextResponse>, Integer, Hash)> post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
 
 ```ruby
 begin
@@ -2571,7 +2571,7 @@ begin
   data, status_code, headers = api_instance.post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostSetCommentTextResponse>
+  p data # => <SetCommentTextResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_text_with_http_info: #{e}"
 end
@@ -2589,7 +2589,7 @@ end
 
 ### Return type
 
-[**PostSetCommentTextResponse**](PostSetCommentTextResponse.md)
+[**SetCommentTextResponse**](SetCommentTextResponse.md)
 
 ### Authorization
 
@@ -2603,7 +2603,7 @@ No authorization required
 
 ## post_un_flag_comment
 
-> <PostUnFlagCommentResponse> post_un_flag_comment(comment_id, opts)
+> <APIEmptyResponse> post_un_flag_comment(comment_id, opts)
 
 
 
@@ -2634,7 +2634,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostUnFlagCommentResponse>, Integer, Hash)> post_un_flag_comment_with_http_info(comment_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_un_flag_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2642,7 +2642,7 @@ begin
   data, status_code, headers = api_instance.post_un_flag_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostUnFlagCommentResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_un_flag_comment_with_http_info: #{e}"
 end
@@ -2659,7 +2659,7 @@ end
 
 ### Return type
 
-[**PostUnFlagCommentResponse**](PostUnFlagCommentResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2673,7 +2673,7 @@ No authorization required
 
 ## post_vote
 
-> <PostVoteResponse> post_vote(comment_id, opts)
+> <VoteResponse> post_vote(comment_id, opts)
 
 
 
@@ -2705,7 +2705,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostVoteResponse>, Integer, Hash)> post_vote_with_http_info(comment_id, opts)
+> <Array(<VoteResponse>, Integer, Hash)> post_vote_with_http_info(comment_id, opts)
 
 ```ruby
 begin
@@ -2713,7 +2713,7 @@ begin
   data, status_code, headers = api_instance.post_vote_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PostVoteResponse>
+  p data # => <VoteResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_vote_with_http_info: #{e}"
 end
@@ -2731,7 +2731,7 @@ end
 
 ### Return type
 
-[**PostVoteResponse**](PostVoteResponse.md)
+[**VoteResponse**](VoteResponse.md)
 
 ### Authorization
 
@@ -2745,7 +2745,7 @@ No authorization required
 
 ## put_award_badge
 
-> <PutAwardBadgeResponse> put_award_badge(badge_id, opts)
+> <AwardUserBadgeResponse> put_award_badge(badge_id, opts)
 
 
 
@@ -2778,7 +2778,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PutAwardBadgeResponse>, Integer, Hash)> put_award_badge_with_http_info(badge_id, opts)
+> <Array(<AwardUserBadgeResponse>, Integer, Hash)> put_award_badge_with_http_info(badge_id, opts)
 
 ```ruby
 begin
@@ -2786,7 +2786,7 @@ begin
   data, status_code, headers = api_instance.put_award_badge_with_http_info(badge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PutAwardBadgeResponse>
+  p data # => <AwardUserBadgeResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_award_badge_with_http_info: #{e}"
 end
@@ -2805,7 +2805,7 @@ end
 
 ### Return type
 
-[**PutAwardBadgeResponse**](PutAwardBadgeResponse.md)
+[**AwardUserBadgeResponse**](AwardUserBadgeResponse.md)
 
 ### Authorization
 
@@ -2819,7 +2819,7 @@ No authorization required
 
 ## put_close_thread
 
-> <PutCloseThreadResponse> put_close_thread(url_id, opts)
+> <APIEmptyResponse> put_close_thread(url_id, opts)
 
 
 
@@ -2849,7 +2849,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PutCloseThreadResponse>, Integer, Hash)> put_close_thread_with_http_info(url_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> put_close_thread_with_http_info(url_id, opts)
 
 ```ruby
 begin
@@ -2857,7 +2857,7 @@ begin
   data, status_code, headers = api_instance.put_close_thread_with_http_info(url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PutCloseThreadResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_close_thread_with_http_info: #{e}"
 end
@@ -2873,7 +2873,7 @@ end
 
 ### Return type
 
-[**PutCloseThreadResponse**](PutCloseThreadResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2887,7 +2887,7 @@ No authorization required
 
 ## put_remove_badge
 
-> <PutRemoveBadgeResponse> put_remove_badge(badge_id, opts)
+> <RemoveUserBadgeResponse> put_remove_badge(badge_id, opts)
 
 
 
@@ -2920,7 +2920,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PutRemoveBadgeResponse>, Integer, Hash)> put_remove_badge_with_http_info(badge_id, opts)
+> <Array(<RemoveUserBadgeResponse>, Integer, Hash)> put_remove_badge_with_http_info(badge_id, opts)
 
 ```ruby
 begin
@@ -2928,7 +2928,7 @@ begin
   data, status_code, headers = api_instance.put_remove_badge_with_http_info(badge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PutRemoveBadgeResponse>
+  p data # => <RemoveUserBadgeResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge_with_http_info: #{e}"
 end
@@ -2947,7 +2947,7 @@ end
 
 ### Return type
 
-[**PutRemoveBadgeResponse**](PutRemoveBadgeResponse.md)
+[**RemoveUserBadgeResponse**](RemoveUserBadgeResponse.md)
 
 ### Authorization
 
@@ -2961,7 +2961,7 @@ No authorization required
 
 ## put_reopen_thread
 
-> <PutReopenThreadResponse> put_reopen_thread(url_id, opts)
+> <APIEmptyResponse> put_reopen_thread(url_id, opts)
 
 
 
@@ -2991,7 +2991,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PutReopenThreadResponse>, Integer, Hash)> put_reopen_thread_with_http_info(url_id, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> put_reopen_thread_with_http_info(url_id, opts)
 
 ```ruby
 begin
@@ -2999,7 +2999,7 @@ begin
   data, status_code, headers = api_instance.put_reopen_thread_with_http_info(url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PutReopenThreadResponse>
+  p data # => <APIEmptyResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_reopen_thread_with_http_info: #{e}"
 end
@@ -3015,7 +3015,7 @@ end
 
 ### Return type
 
-[**PutReopenThreadResponse**](PutReopenThreadResponse.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -3029,7 +3029,7 @@ No authorization required
 
 ## set_trust_factor
 
-> <SetTrustFactorResponse> set_trust_factor(opts)
+> <SetUserTrustFactorResponse> set_trust_factor(opts)
 
 
 
@@ -3060,7 +3060,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SetTrustFactorResponse>, Integer, Hash)> set_trust_factor_with_http_info(opts)
+> <Array(<SetUserTrustFactorResponse>, Integer, Hash)> set_trust_factor_with_http_info(opts)
 
 ```ruby
 begin
@@ -3068,7 +3068,7 @@ begin
   data, status_code, headers = api_instance.set_trust_factor_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SetTrustFactorResponse>
+  p data # => <SetUserTrustFactorResponse>
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->set_trust_factor_with_http_info: #{e}"
 end
@@ -3085,7 +3085,7 @@ end
 
 ### Return type
 
-[**SetTrustFactorResponse**](SetTrustFactorResponse.md)
+[**SetUserTrustFactorResponse**](SetUserTrustFactorResponse.md)
 
 ### Authorization
 
