@@ -36,8 +36,8 @@ describe 'ModerationApi' do
   # @param comment_id 
   # @param vote_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [VoteDeleteResponse]
   describe 'delete_moderation_vote test' do
@@ -335,8 +335,8 @@ describe 'ModerationApi' do
   # @param comment_id 
   # @param adjust_comment_votes_params 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [AdjustVotesResponse]
   describe 'post_adjust_comment_votes test' do
@@ -423,8 +423,8 @@ describe 'ModerationApi' do
   # unit tests for post_flag_comment
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'post_flag_comment test' do
@@ -436,8 +436,8 @@ describe 'ModerationApi' do
   # unit tests for post_remove_comment
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [PostRemoveCommentResponse]
   describe 'post_remove_comment test' do
@@ -449,8 +449,8 @@ describe 'ModerationApi' do
   # unit tests for post_restore_deleted_comment
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'post_restore_deleted_comment test' do
@@ -463,8 +463,8 @@ describe 'ModerationApi' do
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :approved 
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [SetCommentApprovedResponse]
   describe 'post_set_comment_approval_status test' do
@@ -477,8 +477,8 @@ describe 'ModerationApi' do
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :reviewed 
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'post_set_comment_review_status test' do
@@ -492,8 +492,8 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :spam 
   # @option opts [Boolean] :perm_not_spam 
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'post_set_comment_spam_status test' do
@@ -506,8 +506,8 @@ describe 'ModerationApi' do
   # @param comment_id 
   # @param set_comment_text_params 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [SetCommentTextResponse]
   describe 'post_set_comment_text test' do
@@ -519,8 +519,8 @@ describe 'ModerationApi' do
   # unit tests for post_un_flag_comment
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'post_un_flag_comment test' do
@@ -533,8 +533,8 @@ describe 'ModerationApi' do
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :direction 
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [VoteResponse]
   describe 'post_vote test' do
@@ -548,8 +548,8 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :comment_id 
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [AwardUserBadgeResponse]
   describe 'put_award_badge test' do
@@ -575,8 +575,8 @@ describe 'ModerationApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :comment_id 
-  # @option opts [String] :broadcast_id 
   # @option opts [String] :tenant_id 
+  # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [RemoveUserBadgeResponse]
   describe 'put_remove_badge test' do

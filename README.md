@@ -64,7 +64,7 @@ begin
     displayName: 'John Doe'
   }
 
-  response = api.add_sso_user('YOUR_TENANT_ID', user_data)
+  response = api.add_sso_user(tenant_id: 'YOUR_TENANT_ID', create_apisso_user_data: user_data)
   puts "User created: #{response}"
 
 rescue FastCommentsClient::ApiError => e
