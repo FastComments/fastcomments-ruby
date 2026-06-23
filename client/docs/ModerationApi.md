@@ -51,7 +51,7 @@ All URIs are relative to *https://fastcomments.com*
 
 ## delete_moderation_vote
 
-> <VoteDeleteResponse> delete_moderation_vote(opts)
+> <VoteDeleteResponse> delete_moderation_vote(comment_id, vote_id, opts)
 
 
 
@@ -62,17 +62,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
+vote_id = 'vote_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    vote_id: 'vote_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.delete_moderation_vote(opts)
+  result = api_instance.delete_moderation_vote(comment_id, vote_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->delete_moderation_vote: #{e}"
@@ -83,12 +83,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<VoteDeleteResponse>, Integer, Hash)> delete_moderation_vote_with_http_info(opts)
+> <Array(<VoteDeleteResponse>, Integer, Hash)> delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.delete_moderation_vote_with_http_info(opts)
+  data, status_code, headers = api_instance.delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <VoteDeleteResponse>
@@ -135,16 +135,16 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    page: 1.2, # Float | 
-    count: 1.2, # Float | 
-    text_search: 'text_search_example', # String | 
-    by_ip_from_comment: 'by_ip_from_comment_example', # String | 
-    filters: 'filters_example', # String | 
-    search_filters: 'search_filters_example', # String | 
-    sorts: 'sorts_example', # String | 
-    demo: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  page: 1.2, # Float | 
+  count: 1.2, # Float | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  sorts: 'sorts_example', # String | 
+  demo: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -217,9 +217,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    batch_job_id: 'batch_job_id_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  batch_job_id: 'batch_job_id_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -285,14 +285,14 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    text_search: 'text_search_example', # String | 
-    by_ip_from_comment: 'by_ip_from_comment_example', # String | 
-    filters: 'filters_example', # String | 
-    search_filters: 'search_filters_example', # String | 
-    after_id: 'after_id_example', # String | 
-    demo: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  after_id: 'after_id_example', # String | 
+  demo: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -351,7 +351,7 @@ No authorization required
 
 ## get_ban_users_from_comment
 
-> <GetBannedUsersFromCommentResponse> get_ban_users_from_comment(opts)
+> <GetBannedUsersFromCommentResponse> get_ban_users_from_comment(comment_id, opts)
 
 
 
@@ -362,15 +362,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_ban_users_from_comment(opts)
+  result = api_instance.get_ban_users_from_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_ban_users_from_comment: #{e}"
@@ -381,12 +381,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetBannedUsersFromCommentResponse>, Integer, Hash)> get_ban_users_from_comment_with_http_info(opts)
+> <Array(<GetBannedUsersFromCommentResponse>, Integer, Hash)> get_ban_users_from_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_ban_users_from_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.get_ban_users_from_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetBannedUsersFromCommentResponse>
@@ -419,7 +419,7 @@ No authorization required
 
 ## get_comment_ban_status
 
-> <GetCommentBanStatusResponse> get_comment_ban_status(opts)
+> <GetCommentBanStatusResponse> get_comment_ban_status(comment_id, opts)
 
 
 
@@ -430,15 +430,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_comment_ban_status(opts)
+  result = api_instance.get_comment_ban_status(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_ban_status: #{e}"
@@ -449,12 +449,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentBanStatusResponse>, Integer, Hash)> get_comment_ban_status_with_http_info(opts)
+> <Array(<GetCommentBanStatusResponse>, Integer, Hash)> get_comment_ban_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_comment_ban_status_with_http_info(opts)
+  data, status_code, headers = api_instance.get_comment_ban_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetCommentBanStatusResponse>
@@ -487,7 +487,7 @@ No authorization required
 
 ## get_comment_children
 
-> <ModerationAPIChildCommentsResponse> get_comment_children(opts)
+> <ModerationAPIChildCommentsResponse> get_comment_children(comment_id, opts)
 
 
 
@@ -498,15 +498,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_comment_children(opts)
+  result = api_instance.get_comment_children(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_comment_children: #{e}"
@@ -517,12 +517,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModerationAPIChildCommentsResponse>, Integer, Hash)> get_comment_children_with_http_info(opts)
+> <Array(<ModerationAPIChildCommentsResponse>, Integer, Hash)> get_comment_children_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_comment_children_with_http_info(opts)
+  data, status_code, headers = api_instance.get_comment_children_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModerationAPIChildCommentsResponse>
@@ -567,13 +567,13 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    text_search: 'text_search_example', # String | 
-    by_ip_from_comment: 'by_ip_from_comment_example', # String | 
-    filter: 'filter_example', # String | 
-    search_filters: 'search_filters_example', # String | 
-    demo: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filter: 'filter_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  demo: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -643,8 +643,8 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -697,7 +697,7 @@ No authorization required
 
 ## get_logs
 
-> <ModerationAPIGetLogsResponse> get_logs(opts)
+> <ModerationAPIGetLogsResponse> get_logs(comment_id, opts)
 
 
 
@@ -708,15 +708,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_logs(opts)
+  result = api_instance.get_logs(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_logs: #{e}"
@@ -727,12 +727,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModerationAPIGetLogsResponse>, Integer, Hash)> get_logs_with_http_info(opts)
+> <Array(<ModerationAPIGetLogsResponse>, Integer, Hash)> get_logs_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_logs_with_http_info(opts)
+  data, status_code, headers = api_instance.get_logs_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModerationAPIGetLogsResponse>
@@ -777,8 +777,8 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -843,10 +843,10 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    badges_user_id: 'badges_user_id_example', # String | 
-    comment_id: 'comment_id_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  badges_user_id: 'badges_user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -901,7 +901,7 @@ No authorization required
 
 ## get_moderation_comment
 
-> <ModerationAPICommentResponse> get_moderation_comment(opts)
+> <ModerationAPICommentResponse> get_moderation_comment(comment_id, opts)
 
 
 
@@ -912,17 +912,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    include_email: true, # Boolean | 
-    include_ip: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  include_email: true, # Boolean | 
+  include_ip: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_moderation_comment(opts)
+  result = api_instance.get_moderation_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment: #{e}"
@@ -933,12 +933,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModerationAPICommentResponse>, Integer, Hash)> get_moderation_comment_with_http_info(opts)
+> <Array(<ModerationAPICommentResponse>, Integer, Hash)> get_moderation_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_moderation_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.get_moderation_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModerationAPICommentResponse>
@@ -973,7 +973,7 @@ No authorization required
 
 ## get_moderation_comment_text
 
-> <GetCommentTextResponse> get_moderation_comment_text(opts)
+> <GetCommentTextResponse> get_moderation_comment_text(comment_id, opts)
 
 
 
@@ -984,15 +984,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_moderation_comment_text(opts)
+  result = api_instance.get_moderation_comment_text(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_moderation_comment_text: #{e}"
@@ -1003,12 +1003,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<GetCommentTextResponse>, Integer, Hash)> get_moderation_comment_text_with_http_info(opts)
+> <Array(<GetCommentTextResponse>, Integer, Hash)> get_moderation_comment_text_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_moderation_comment_text_with_http_info(opts)
+  data, status_code, headers = api_instance.get_moderation_comment_text_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetCommentTextResponse>
@@ -1041,7 +1041,7 @@ No authorization required
 
 ## get_pre_ban_summary
 
-> <PreBanSummary> get_pre_ban_summary(opts)
+> <PreBanSummary> get_pre_ban_summary(comment_id, opts)
 
 
 
@@ -1052,18 +1052,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    include_by_user_id_and_email: true, # Boolean | 
-    include_by_ip: true, # Boolean | 
-    include_by_email_domain: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  include_by_user_id_and_email: true, # Boolean | 
+  include_by_ip: true, # Boolean | 
+  include_by_email_domain: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.get_pre_ban_summary(opts)
+  result = api_instance.get_pre_ban_summary(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_pre_ban_summary: #{e}"
@@ -1074,12 +1074,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PreBanSummary>, Integer, Hash)> get_pre_ban_summary_with_http_info(opts)
+> <Array(<PreBanSummary>, Integer, Hash)> get_pre_ban_summary_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_pre_ban_summary_with_http_info(opts)
+  data, status_code, headers = api_instance.get_pre_ban_summary_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PreBanSummary>
@@ -1127,11 +1127,11 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    value: 'value_example', # String | 
-    filters: 'filters_example', # String | 
-    search_filters: 'search_filters_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  value: 'value_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1199,9 +1199,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    value: 'value_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  value: 'value_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1267,9 +1267,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    value: 'value_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  value: 'value_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1335,9 +1335,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    text_search: 'text_search_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  text_search: 'text_search_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1403,9 +1403,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    value: 'value_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  value: 'value_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1471,9 +1471,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    user_id: 'user_id_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  user_id: 'user_id_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1539,8 +1539,8 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1605,9 +1605,9 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    comment_id: 'comment_id_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1661,7 +1661,7 @@ No authorization required
 
 ## post_adjust_comment_votes
 
-> <AdjustVotesResponse> post_adjust_comment_votes(opts)
+> <AdjustVotesResponse> post_adjust_comment_votes(comment_id, adjust_comment_votes_params, opts)
 
 
 
@@ -1672,17 +1672,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
+adjust_comment_votes_params = FastCommentsClient::AdjustCommentVotesParams.new({adjust_vote_amount: 3.56}) # AdjustCommentVotesParams | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    adjust_comment_votes_params: FastCommentsClient::AdjustCommentVotesParams.new({adjust_vote_amount: 3.56}), # AdjustCommentVotesParams |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_adjust_comment_votes(opts)
+  result = api_instance.post_adjust_comment_votes(comment_id, adjust_comment_votes_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_adjust_comment_votes: #{e}"
@@ -1693,12 +1693,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AdjustVotesResponse>, Integer, Hash)> post_adjust_comment_votes_with_http_info(opts)
+> <Array(<AdjustVotesResponse>, Integer, Hash)> post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_adjust_comment_votes_with_http_info(opts)
+  data, status_code, headers = api_instance.post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AdjustVotesResponse>
@@ -1745,13 +1745,13 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    text_search: 'text_search_example', # String | 
-    by_ip_from_comment: 'by_ip_from_comment_example', # String | 
-    filters: 'filters_example', # String | 
-    search_filters: 'search_filters_example', # String | 
-    sorts: 'sorts_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  text_search: 'text_search_example', # String | 
+  by_ip_from_comment: 'by_ip_from_comment_example', # String | 
+  filters: 'filters_example', # String | 
+  search_filters: 'search_filters_example', # String | 
+  sorts: 'sorts_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
@@ -1809,7 +1809,7 @@ No authorization required
 
 ## post_ban_user_from_comment
 
-> <BanUserFromCommentResult> post_ban_user_from_comment(opts)
+> <BanUserFromCommentResult> post_ban_user_from_comment(comment_id, opts)
 
 
 
@@ -1820,23 +1820,23 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    ban_email: true, # Boolean | 
-    ban_email_domain: true, # Boolean | 
-    ban_ip: true, # Boolean | 
-    delete_all_users_comments: true, # Boolean | 
-    banned_until: 'banned_until_example', # String | 
-    is_shadow_ban: true, # Boolean | 
-    update_id: 'update_id_example', # String | 
-    ban_reason: 'ban_reason_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  ban_email: true, # Boolean | 
+  ban_email_domain: true, # Boolean | 
+  ban_ip: true, # Boolean | 
+  delete_all_users_comments: true, # Boolean | 
+  banned_until: 'banned_until_example', # String | 
+  is_shadow_ban: true, # Boolean | 
+  update_id: 'update_id_example', # String | 
+  ban_reason: 'ban_reason_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_ban_user_from_comment(opts)
+  result = api_instance.post_ban_user_from_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_from_comment: #{e}"
@@ -1847,12 +1847,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BanUserFromCommentResult>, Integer, Hash)> post_ban_user_from_comment_with_http_info(opts)
+> <Array(<BanUserFromCommentResult>, Integer, Hash)> post_ban_user_from_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_ban_user_from_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.post_ban_user_from_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BanUserFromCommentResult>
@@ -1893,7 +1893,7 @@ No authorization required
 
 ## post_ban_user_undo
 
-> <APIEmptyResponse> post_ban_user_undo(opts)
+> <APIEmptyResponse> post_ban_user_undo(ban_user_undo_params, opts)
 
 
 
@@ -1904,15 +1904,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+ban_user_undo_params = FastCommentsClient::BanUserUndoParams.new({changelog: FastCommentsClient::APIBanUserChangeLog.new}) # BanUserUndoParams | 
 opts = {
-    ban_user_undo_params: FastCommentsClient::BanUserUndoParams.new({changelog: FastCommentsClient::APIBanUserChangeLog.new}), # BanUserUndoParams |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_ban_user_undo(opts)
+  result = api_instance.post_ban_user_undo(ban_user_undo_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_undo: #{e}"
@@ -1923,12 +1923,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> post_ban_user_undo_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_ban_user_undo_with_http_info(opts)
+  data, status_code, headers = api_instance.post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -1961,7 +1961,7 @@ No authorization required
 
 ## post_bulk_pre_ban_summary
 
-> <BulkPreBanSummary> post_bulk_pre_ban_summary(opts)
+> <BulkPreBanSummary> post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
 
 
 
@@ -1972,18 +1972,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+bulk_pre_ban_params = FastCommentsClient::BulkPreBanParams.new({comment_ids: ['comment_ids_example']}) # BulkPreBanParams | 
 opts = {
-    bulk_pre_ban_params: FastCommentsClient::BulkPreBanParams.new({comment_ids: ['comment_ids_example']}), # BulkPreBanParams |  (required)
-    include_by_user_id_and_email: true, # Boolean | 
-    include_by_ip: true, # Boolean | 
-    include_by_email_domain: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  include_by_user_id_and_email: true, # Boolean | 
+  include_by_ip: true, # Boolean | 
+  include_by_email_domain: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_bulk_pre_ban_summary(opts)
+  result = api_instance.post_bulk_pre_ban_summary(bulk_pre_ban_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_bulk_pre_ban_summary: #{e}"
@@ -1994,12 +1994,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BulkPreBanSummary>, Integer, Hash)> post_bulk_pre_ban_summary_with_http_info(opts)
+> <Array(<BulkPreBanSummary>, Integer, Hash)> post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_bulk_pre_ban_summary_with_http_info(opts)
+  data, status_code, headers = api_instance.post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BulkPreBanSummary>
@@ -2035,7 +2035,7 @@ No authorization required
 
 ## post_comments_by_ids
 
-> <ModerationAPIChildCommentsResponse> post_comments_by_ids(opts)
+> <ModerationAPIChildCommentsResponse> post_comments_by_ids(comments_by_ids_params, opts)
 
 
 
@@ -2046,15 +2046,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comments_by_ids_params = FastCommentsClient::CommentsByIdsParams.new({ids: ['ids_example']}) # CommentsByIdsParams | 
 opts = {
-    comments_by_ids_params: FastCommentsClient::CommentsByIdsParams.new({ids: ['ids_example']}), # CommentsByIdsParams |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_comments_by_ids(opts)
+  result = api_instance.post_comments_by_ids(comments_by_ids_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_comments_by_ids: #{e}"
@@ -2065,12 +2065,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModerationAPIChildCommentsResponse>, Integer, Hash)> post_comments_by_ids_with_http_info(opts)
+> <Array(<ModerationAPIChildCommentsResponse>, Integer, Hash)> post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_comments_by_ids_with_http_info(opts)
+  data, status_code, headers = api_instance.post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ModerationAPIChildCommentsResponse>
@@ -2103,7 +2103,7 @@ No authorization required
 
 ## post_flag_comment
 
-> <APIEmptyResponse> post_flag_comment(opts)
+> <APIEmptyResponse> post_flag_comment(comment_id, opts)
 
 
 
@@ -2114,16 +2114,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_flag_comment(opts)
+  result = api_instance.post_flag_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_flag_comment: #{e}"
@@ -2134,12 +2134,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> post_flag_comment_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_flag_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_flag_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.post_flag_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2173,7 +2173,7 @@ No authorization required
 
 ## post_remove_comment
 
-> <PostRemoveCommentResponse> post_remove_comment(opts)
+> <PostRemoveCommentResponse> post_remove_comment(comment_id, opts)
 
 
 
@@ -2184,16 +2184,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_remove_comment(opts)
+  result = api_instance.post_remove_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_remove_comment: #{e}"
@@ -2204,12 +2204,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PostRemoveCommentResponse>, Integer, Hash)> post_remove_comment_with_http_info(opts)
+> <Array(<PostRemoveCommentResponse>, Integer, Hash)> post_remove_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_remove_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.post_remove_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PostRemoveCommentResponse>
@@ -2243,7 +2243,7 @@ No authorization required
 
 ## post_restore_deleted_comment
 
-> <APIEmptyResponse> post_restore_deleted_comment(opts)
+> <APIEmptyResponse> post_restore_deleted_comment(comment_id, opts)
 
 
 
@@ -2254,16 +2254,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_restore_deleted_comment(opts)
+  result = api_instance.post_restore_deleted_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_restore_deleted_comment: #{e}"
@@ -2274,12 +2274,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> post_restore_deleted_comment_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_restore_deleted_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_restore_deleted_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.post_restore_deleted_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2313,7 +2313,7 @@ No authorization required
 
 ## post_set_comment_approval_status
 
-> <SetCommentApprovedResponse> post_set_comment_approval_status(opts)
+> <SetCommentApprovedResponse> post_set_comment_approval_status(comment_id, opts)
 
 
 
@@ -2324,17 +2324,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    approved: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  approved: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_approval_status(opts)
+  result = api_instance.post_set_comment_approval_status(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_approval_status: #{e}"
@@ -2345,12 +2345,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SetCommentApprovedResponse>, Integer, Hash)> post_set_comment_approval_status_with_http_info(opts)
+> <Array(<SetCommentApprovedResponse>, Integer, Hash)> post_set_comment_approval_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_set_comment_approval_status_with_http_info(opts)
+  data, status_code, headers = api_instance.post_set_comment_approval_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SetCommentApprovedResponse>
@@ -2385,7 +2385,7 @@ No authorization required
 
 ## post_set_comment_review_status
 
-> <APIEmptyResponse> post_set_comment_review_status(opts)
+> <APIEmptyResponse> post_set_comment_review_status(comment_id, opts)
 
 
 
@@ -2396,17 +2396,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    reviewed: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  reviewed: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_review_status(opts)
+  result = api_instance.post_set_comment_review_status(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_review_status: #{e}"
@@ -2417,12 +2417,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> post_set_comment_review_status_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_set_comment_review_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_set_comment_review_status_with_http_info(opts)
+  data, status_code, headers = api_instance.post_set_comment_review_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2457,7 +2457,7 @@ No authorization required
 
 ## post_set_comment_spam_status
 
-> <APIEmptyResponse> post_set_comment_spam_status(opts)
+> <APIEmptyResponse> post_set_comment_spam_status(comment_id, opts)
 
 
 
@@ -2468,18 +2468,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    spam: true, # Boolean | 
-    perm_not_spam: true, # Boolean | 
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  spam: true, # Boolean | 
+  perm_not_spam: true, # Boolean | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_spam_status(opts)
+  result = api_instance.post_set_comment_spam_status(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_spam_status: #{e}"
@@ -2490,12 +2490,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> post_set_comment_spam_status_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_set_comment_spam_status_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_set_comment_spam_status_with_http_info(opts)
+  data, status_code, headers = api_instance.post_set_comment_spam_status_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2531,7 +2531,7 @@ No authorization required
 
 ## post_set_comment_text
 
-> <SetCommentTextResponse> post_set_comment_text(opts)
+> <SetCommentTextResponse> post_set_comment_text(comment_id, set_comment_text_params, opts)
 
 
 
@@ -2542,17 +2542,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
+set_comment_text_params = FastCommentsClient::SetCommentTextParams.new({comment: 'comment_example'}) # SetCommentTextParams | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    set_comment_text_params: FastCommentsClient::SetCommentTextParams.new({comment: 'comment_example'}), # SetCommentTextParams |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_set_comment_text(opts)
+  result = api_instance.post_set_comment_text(comment_id, set_comment_text_params, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_text: #{e}"
@@ -2563,12 +2563,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SetCommentTextResponse>, Integer, Hash)> post_set_comment_text_with_http_info(opts)
+> <Array(<SetCommentTextResponse>, Integer, Hash)> post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_set_comment_text_with_http_info(opts)
+  data, status_code, headers = api_instance.post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SetCommentTextResponse>
@@ -2603,7 +2603,7 @@ No authorization required
 
 ## post_un_flag_comment
 
-> <APIEmptyResponse> post_un_flag_comment(opts)
+> <APIEmptyResponse> post_un_flag_comment(comment_id, opts)
 
 
 
@@ -2614,16 +2614,16 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_un_flag_comment(opts)
+  result = api_instance.post_un_flag_comment(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_un_flag_comment: #{e}"
@@ -2634,12 +2634,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> post_un_flag_comment_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> post_un_flag_comment_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_un_flag_comment_with_http_info(opts)
+  data, status_code, headers = api_instance.post_un_flag_comment_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2673,7 +2673,7 @@ No authorization required
 
 ## post_vote
 
-> <VoteResponse> post_vote(opts)
+> <VoteResponse> post_vote(comment_id, opts)
 
 
 
@@ -2684,17 +2684,17 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+comment_id = 'comment_id_example' # String | 
 opts = {
-    comment_id: 'comment_id_example', # String |  (required)
-    direction: 'direction_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  direction: 'direction_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.post_vote(opts)
+  result = api_instance.post_vote(comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_vote: #{e}"
@@ -2705,12 +2705,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<VoteResponse>, Integer, Hash)> post_vote_with_http_info(opts)
+> <Array(<VoteResponse>, Integer, Hash)> post_vote_with_http_info(comment_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.post_vote_with_http_info(opts)
+  data, status_code, headers = api_instance.post_vote_with_http_info(comment_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <VoteResponse>
@@ -2745,7 +2745,7 @@ No authorization required
 
 ## put_award_badge
 
-> <AwardUserBadgeResponse> put_award_badge(opts)
+> <AwardUserBadgeResponse> put_award_badge(badge_id, opts)
 
 
 
@@ -2756,18 +2756,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+badge_id = 'badge_id_example' # String | 
 opts = {
-    badge_id: 'badge_id_example', # String |  (required)
-    user_id: 'user_id_example', # String | 
-    comment_id: 'comment_id_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  user_id: 'user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_award_badge(opts)
+  result = api_instance.put_award_badge(badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_award_badge: #{e}"
@@ -2778,12 +2778,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AwardUserBadgeResponse>, Integer, Hash)> put_award_badge_with_http_info(opts)
+> <Array(<AwardUserBadgeResponse>, Integer, Hash)> put_award_badge_with_http_info(badge_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.put_award_badge_with_http_info(opts)
+  data, status_code, headers = api_instance.put_award_badge_with_http_info(badge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AwardUserBadgeResponse>
@@ -2819,7 +2819,7 @@ No authorization required
 
 ## put_close_thread
 
-> <APIEmptyResponse> put_close_thread(opts)
+> <APIEmptyResponse> put_close_thread(url_id, opts)
 
 
 
@@ -2830,15 +2830,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+url_id = 'url_id_example' # String | 
 opts = {
-    url_id: 'url_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_close_thread(opts)
+  result = api_instance.put_close_thread(url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_close_thread: #{e}"
@@ -2849,12 +2849,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> put_close_thread_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> put_close_thread_with_http_info(url_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.put_close_thread_with_http_info(opts)
+  data, status_code, headers = api_instance.put_close_thread_with_http_info(url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2887,7 +2887,7 @@ No authorization required
 
 ## put_remove_badge
 
-> <RemoveUserBadgeResponse> put_remove_badge(opts)
+> <RemoveUserBadgeResponse> put_remove_badge(badge_id, opts)
 
 
 
@@ -2898,18 +2898,18 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+badge_id = 'badge_id_example' # String | 
 opts = {
-    badge_id: 'badge_id_example', # String |  (required)
-    user_id: 'user_id_example', # String | 
-    comment_id: 'comment_id_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    broadcast_id: 'broadcast_id_example', # String | 
-    sso: 'sso_example', # String | 
+  user_id: 'user_id_example', # String | 
+  comment_id: 'comment_id_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  broadcast_id: 'broadcast_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_remove_badge(opts)
+  result = api_instance.put_remove_badge(badge_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_remove_badge: #{e}"
@@ -2920,12 +2920,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RemoveUserBadgeResponse>, Integer, Hash)> put_remove_badge_with_http_info(opts)
+> <Array(<RemoveUserBadgeResponse>, Integer, Hash)> put_remove_badge_with_http_info(badge_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.put_remove_badge_with_http_info(opts)
+  data, status_code, headers = api_instance.put_remove_badge_with_http_info(badge_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <RemoveUserBadgeResponse>
@@ -2961,7 +2961,7 @@ No authorization required
 
 ## put_reopen_thread
 
-> <APIEmptyResponse> put_reopen_thread(opts)
+> <APIEmptyResponse> put_reopen_thread(url_id, opts)
 
 
 
@@ -2972,15 +2972,15 @@ require 'time'
 require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
+url_id = 'url_id_example' # String | 
 opts = {
-    url_id: 'url_id_example', # String |  (required)
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin
   
-  result = api_instance.put_reopen_thread(opts)
+  result = api_instance.put_reopen_thread(url_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_reopen_thread: #{e}"
@@ -2991,12 +2991,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> put_reopen_thread_with_http_info(opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> put_reopen_thread_with_http_info(url_id, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.put_reopen_thread_with_http_info(opts)
+  data, status_code, headers = api_instance.put_reopen_thread_with_http_info(url_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -3041,10 +3041,10 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::ModerationApi.new
 opts = {
-    user_id: 'user_id_example', # String | 
-    trust_factor: 'trust_factor_example', # String | 
-    tenant_id: 'tenant_id_example', # String | 
-    sso: 'sso_example', # String | 
+  user_id: 'user_id_example', # String | 
+  trust_factor: 'trust_factor_example', # String | 
+  tenant_id: 'tenant_id_example', # String | 
+  sso: 'sso_example' # String | 
 }
 
 begin

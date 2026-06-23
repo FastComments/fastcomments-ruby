@@ -61,8 +61,8 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         sso_token = sso.create_token
 
         response = public_api.get_comments_public(
-          tenant_id: TENANT_ID,
-          url_id: 'sdk-test-page-secure',
+          TENANT_ID,
+          'sdk-test-page-secure',
           sso: sso_token
         )
 
@@ -83,10 +83,10 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         }
 
         response = public_api.create_comment_public(
-          tenant_id: TENANT_ID,
-          url_id: 'sdk-test-page-secure-comment',
-          broadcast_id: "test-#{timestamp}",
-          comment_data: comment_data,
+          TENANT_ID,
+          'sdk-test-page-secure-comment',
+          "test-#{timestamp}",
+          comment_data,
           sso: sso_token
         )
 
@@ -111,13 +111,13 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         })
 
         default_api.add_sso_user(
-          tenant_id: TENANT_ID,
-          create_apisso_user_data: user_data
+          TENANT_ID,
+          user_data
         )
 
         # Then get comments with that user's context
         response = default_api.get_comments(
-          tenant_id: TENANT_ID,
+          TENANT_ID,
           url_id: 'sdk-test-page-secure-admin',
           context_user_id: mock_secure_user.user_id
         )
@@ -132,8 +132,8 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         sso_token = sso.create_token
 
         response = public_api.get_comments_public(
-          tenant_id: TENANT_ID,
-          url_id: 'sdk-test-page-simple',
+          TENANT_ID,
+          'sdk-test-page-simple',
           sso: sso_token
         )
 
@@ -154,10 +154,10 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         }
 
         response = public_api.create_comment_public(
-          tenant_id: TENANT_ID,
-          url_id: 'sdk-test-page-simple-comment',
-          broadcast_id: "test-#{timestamp}",
-          comment_data: comment_data,
+          TENANT_ID,
+          'sdk-test-page-simple-comment',
+          "test-#{timestamp}",
+          comment_data,
           sso: sso_token
         )
 
@@ -172,8 +172,8 @@ RSpec.describe 'FastComments SSO Integration Tests' do
 
         expect {
           public_api.get_comments_public(
-            tenant_id: 'invalid-tenant-123',
-            url_id: 'sdk-test-page-secure',
+            'invalid-tenant-123',
+            'sdk-test-page-secure',
             sso: sso_token
           )
         }.to raise_error(FastCommentsClient::ApiError) do |error|

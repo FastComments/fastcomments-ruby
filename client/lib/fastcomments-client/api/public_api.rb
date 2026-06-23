@@ -19,31 +19,27 @@ module FastCommentsClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [PublicBlockFromCommentParams] :public_block_from_comment_params  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [BlockSuccess]
-    def block_from_comment_public(opts = {})
-      data, _status_code, _headers = block_from_comment_public_with_http_info(opts)
+    def block_from_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts = {})
+      data, _status_code, _headers = block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [PublicBlockFromCommentParams] :public_block_from_comment_params  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(BlockSuccess, Integer, Hash)>] BlockSuccess data, response status code and response headers
-    def block_from_comment_public_with_http_info(opts = {})
+    def block_from_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.block_from_comment_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      public_block_from_comment_params = opts[:'public_block_from_comment_params']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.block_from_comment_public"
@@ -103,28 +99,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_ids A comma separated list of comment ids. (required)
+    # @param tenant_id [String] 
+    # @param comment_ids [String] A comma separated list of comment ids.
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [CheckBlockedCommentsResponse]
-    def checked_comments_for_blocked(opts = {})
-      data, _status_code, _headers = checked_comments_for_blocked_with_http_info(opts)
+    def checked_comments_for_blocked(tenant_id, comment_ids, opts = {})
+      data, _status_code, _headers = checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_ids A comma separated list of comment ids. (required)
+    # @param tenant_id [String] 
+    # @param comment_ids [String] A comma separated list of comment ids.
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(CheckBlockedCommentsResponse, Integer, Hash)>] CheckBlockedCommentsResponse data, response status code and response headers
-    def checked_comments_for_blocked_with_http_info(opts = {})
+    def checked_comments_for_blocked_with_http_info(tenant_id, comment_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.checked_comments_for_blocked ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_ids = opts[:'comment_ids']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.checked_comments_for_blocked"
@@ -176,36 +169,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :broadcast_id  (required)
-    # @option opts [CommentData] :comment_data  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param broadcast_id [String] 
+    # @param comment_data [CommentData] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
     # @return [SaveCommentsResponseWithPresence]
-    def create_comment_public(opts = {})
-      data, _status_code, _headers = create_comment_public_with_http_info(opts)
+    def create_comment_public(tenant_id, url_id, broadcast_id, comment_data, opts = {})
+      data, _status_code, _headers = create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :broadcast_id  (required)
-    # @option opts [CommentData] :comment_data  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param broadcast_id [String] 
+    # @param comment_data [CommentData] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
     # @return [Array<(SaveCommentsResponseWithPresence, Integer, Hash)>] SaveCommentsResponseWithPresence data, response status code and response headers
-    def create_comment_public_with_http_info(opts = {})
+    def create_comment_public_with_http_info(tenant_id, url_id, broadcast_id, comment_data, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_comment_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      broadcast_id = opts[:'broadcast_id']
-      comment_data = opts[:'comment_data']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.create_comment_public"
@@ -271,30 +259,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [CreateFeedPostParams] :create_feed_post_params  (required)
+    # @param tenant_id [String] 
+    # @param create_feed_post_params [CreateFeedPostParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [CreateFeedPostResponse]
-    def create_feed_post_public(opts = {})
-      data, _status_code, _headers = create_feed_post_public_with_http_info(opts)
+    def create_feed_post_public(tenant_id, create_feed_post_params, opts = {})
+      data, _status_code, _headers = create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [CreateFeedPostParams] :create_feed_post_params  (required)
+    # @param tenant_id [String] 
+    # @param create_feed_post_params [CreateFeedPostParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(CreateFeedPostResponse, Integer, Hash)>] CreateFeedPostResponse data, response status code and response headers
-    def create_feed_post_public_with_http_info(opts = {})
+    def create_feed_post_public_with_http_info(tenant_id, create_feed_post_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_feed_post_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      create_feed_post_params = opts[:'create_feed_post_params']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.create_feed_post_public"
@@ -350,28 +335,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
     # @return [CreateV1PageReact]
-    def create_v1_page_react(opts = {})
-      data, _status_code, _headers = create_v1_page_react_with_http_info(opts)
+    def create_v1_page_react(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = create_v1_page_react_with_http_info(tenant_id, url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
     # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
-    def create_v1_page_react_with_http_info(opts = {})
+    def create_v1_page_react_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_v1_page_react ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.create_v1_page_react"
@@ -422,31 +404,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
     # @return [CreateV1PageReact]
-    def create_v2_page_react(opts = {})
-      data, _status_code, _headers = create_v2_page_react_with_http_info(opts)
+    def create_v2_page_react(tenant_id, url_id, id, opts = {})
+      data, _status_code, _headers = create_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :title 
     # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
-    def create_v2_page_react_with_http_info(opts = {})
+    def create_v2_page_react_with_http_info(tenant_id, url_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.create_v2_page_react ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      id = opts[:'id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.create_v2_page_react"
@@ -502,33 +480,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [PublicAPIDeleteCommentResponse]
-    def delete_comment_public(opts = {})
-      data, _status_code, _headers = delete_comment_public_with_http_info(opts)
+    def delete_comment_public(tenant_id, comment_id, broadcast_id, opts = {})
+      data, _status_code, _headers = delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [Array<(PublicAPIDeleteCommentResponse, Integer, Hash)>] PublicAPIDeleteCommentResponse data, response status code and response headers
-    def delete_comment_public_with_http_info(opts = {})
+    def delete_comment_public_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_comment_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      broadcast_id = opts[:'broadcast_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.delete_comment_public"
@@ -584,39 +558,33 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :vote_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param vote_id [String] 
+    # @param url_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [VoteDeleteResponse]
-    def delete_comment_vote(opts = {})
-      data, _status_code, _headers = delete_comment_vote_with_http_info(opts)
+    def delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts = {})
+      data, _status_code, _headers = delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :vote_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param vote_id [String] 
+    # @param url_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [Array<(VoteDeleteResponse, Integer, Hash)>] VoteDeleteResponse data, response status code and response headers
-    def delete_comment_vote_with_http_info(opts = {})
+    def delete_comment_vote_with_http_info(tenant_id, comment_id, vote_id, url_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_comment_vote ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      vote_id = opts[:'vote_id']
-      url_id = opts[:'url_id']
-      broadcast_id = opts[:'broadcast_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.delete_comment_vote"
@@ -681,30 +649,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :post_id  (required)
+    # @param tenant_id [String] 
+    # @param post_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [DeleteFeedPostPublicResponse]
-    def delete_feed_post_public(opts = {})
-      data, _status_code, _headers = delete_feed_post_public_with_http_info(opts)
+    def delete_feed_post_public(tenant_id, post_id, opts = {})
+      data, _status_code, _headers = delete_feed_post_public_with_http_info(tenant_id, post_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :post_id  (required)
+    # @param tenant_id [String] 
+    # @param post_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(DeleteFeedPostPublicResponse, Integer, Hash)>] DeleteFeedPostPublicResponse data, response status code and response headers
-    def delete_feed_post_public_with_http_info(opts = {})
+    def delete_feed_post_public_with_http_info(tenant_id, post_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_feed_post_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      post_id = opts[:'post_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.delete_feed_post_public"
@@ -755,26 +720,23 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [CreateV1PageReact]
-    def delete_v1_page_react(opts = {})
-      data, _status_code, _headers = delete_v1_page_react_with_http_info(opts)
+    def delete_v1_page_react(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = delete_v1_page_react_with_http_info(tenant_id, url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
-    def delete_v1_page_react_with_http_info(opts = {})
+    def delete_v1_page_react_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_v1_page_react ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.delete_v1_page_react"
@@ -824,29 +786,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [CreateV1PageReact]
-    def delete_v2_page_react(opts = {})
-      data, _status_code, _headers = delete_v2_page_react_with_http_info(opts)
+    def delete_v2_page_react(tenant_id, url_id, id, opts = {})
+      data, _status_code, _headers = delete_v2_page_react_with_http_info(tenant_id, url_id, id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(CreateV1PageReact, Integer, Hash)>] CreateV1PageReact data, response status code and response headers
-    def delete_v2_page_react_with_http_info(opts = {})
+    def delete_v2_page_react_with_http_info(tenant_id, url_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.delete_v2_page_react ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      id = opts[:'id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.delete_v2_page_react"
@@ -901,31 +859,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [Boolean] :is_flagged  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param is_flagged [Boolean] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def flag_comment_public(opts = {})
-      data, _status_code, _headers = flag_comment_public_with_http_info(opts)
+    def flag_comment_public(tenant_id, comment_id, is_flagged, opts = {})
+      data, _status_code, _headers = flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [Boolean] :is_flagged  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param is_flagged [Boolean] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def flag_comment_public_with_http_info(opts = {})
+    def flag_comment_public_with_http_info(tenant_id, comment_id, is_flagged, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.flag_comment_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      is_flagged = opts[:'is_flagged']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.flag_comment_public"
@@ -981,30 +935,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [PublicAPIGetCommentTextResponse]
-    def get_comment_text(opts = {})
-      data, _status_code, _headers = get_comment_text_with_http_info(opts)
+    def get_comment_text(tenant_id, comment_id, opts = {})
+      data, _status_code, _headers = get_comment_text_with_http_info(tenant_id, comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [Array<(PublicAPIGetCommentTextResponse, Integer, Hash)>] PublicAPIGetCommentTextResponse data, response status code and response headers
-    def get_comment_text_with_http_info(opts = {})
+    def get_comment_text_with_http_info(tenant_id, comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comment_text ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_comment_text"
@@ -1055,31 +1006,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [Integer] :dir  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param dir [Integer] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [GetCommentVoteUserNamesSuccessResponse]
-    def get_comment_vote_user_names(opts = {})
-      data, _status_code, _headers = get_comment_vote_user_names_with_http_info(opts)
+    def get_comment_vote_user_names(tenant_id, comment_id, dir, opts = {})
+      data, _status_code, _headers = get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [Integer] :dir  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param dir [Integer] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(GetCommentVoteUserNamesSuccessResponse, Integer, Hash)>] GetCommentVoteUserNamesSuccessResponse data, response status code and response headers
-    def get_comment_vote_user_names_with_http_info(opts = {})
+    def get_comment_vote_user_names_with_http_info(tenant_id, comment_id, dir, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comment_vote_user_names ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      dir = opts[:'dir']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_comment_vote_user_names"
@@ -1134,7 +1081,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [SortDirections] :direction 
     # @option opts [String] :replies_to_user_id 
@@ -1148,7 +1095,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [SortDirections] :direction 
     # @option opts [String] :replies_to_user_id 
@@ -1161,7 +1108,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comments_for_user ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/comments-for-user'
 
@@ -1210,9 +1156,9 @@ module FastCommentsClient
     end
 
     #  req tenantId urlId
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page 
     # @option opts [SortDirections] :direction 
     # @option opts [String] :sso 
@@ -1240,15 +1186,15 @@ module FastCommentsClient
     # @option opts [String] :after_comment_id 
     # @option opts [String] :before_comment_id 
     # @return [GetCommentsResponseWithPresencePublicComment]
-    def get_comments_public(opts = {})
-      data, _status_code, _headers = get_comments_public_with_http_info(opts)
+    def get_comments_public(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_comments_public_with_http_info(tenant_id, url_id, opts)
       data
     end
 
     #  req tenantId urlId
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page 
     # @option opts [SortDirections] :direction 
     # @option opts [String] :sso 
@@ -1276,13 +1222,10 @@ module FastCommentsClient
     # @option opts [String] :after_comment_id 
     # @option opts [String] :before_comment_id 
     # @return [Array<(GetCommentsResponseWithPresencePublicComment, Integer, Hash)>] GetCommentsResponseWithPresencePublicComment data, response status code and response headers
-    def get_comments_public_with_http_info(opts = {})
+    def get_comments_public_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_comments_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_comments_public"
@@ -1359,35 +1302,30 @@ module FastCommentsClient
     end
 
     #  req tenantId urlId userIdWS
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :user_id_ws  (required)
-    # @option opts [Integer] :start_time  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param user_id_ws [String] 
+    # @param start_time [Integer] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
     # @return [GetEventLogResponse]
-    def get_event_log(opts = {})
-      data, _status_code, _headers = get_event_log_with_http_info(opts)
+    def get_event_log(tenant_id, url_id, user_id_ws, start_time, opts = {})
+      data, _status_code, _headers = get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
       data
     end
 
     #  req tenantId urlId userIdWS
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :user_id_ws  (required)
-    # @option opts [Integer] :start_time  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param user_id_ws [String] 
+    # @param start_time [Integer] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
     # @return [Array<(GetEventLogResponse, Integer, Hash)>] GetEventLogResponse data, response status code and response headers
-    def get_event_log_with_http_info(opts = {})
+    def get_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_event_log ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      user_id_ws = opts[:'user_id_ws']
-      start_time = opts[:'start_time']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_event_log"
@@ -1449,8 +1387,8 @@ module FastCommentsClient
     end
 
     #  req tenantId afterId
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_id 
     # @option opts [Integer] :limit 
     # @option opts [Array<String>] :tags 
@@ -1458,14 +1396,14 @@ module FastCommentsClient
     # @option opts [Boolean] :is_crawler 
     # @option opts [Boolean] :include_user_info 
     # @return [PublicFeedPostsResponse]
-    def get_feed_posts_public(opts = {})
-      data, _status_code, _headers = get_feed_posts_public_with_http_info(opts)
+    def get_feed_posts_public(tenant_id, opts = {})
+      data, _status_code, _headers = get_feed_posts_public_with_http_info(tenant_id, opts)
       data
     end
 
     #  req tenantId afterId
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_id 
     # @option opts [Integer] :limit 
     # @option opts [Array<String>] :tags 
@@ -1473,12 +1411,10 @@ module FastCommentsClient
     # @option opts [Boolean] :is_crawler 
     # @option opts [Boolean] :include_user_info 
     # @return [Array<(PublicFeedPostsResponse, Integer, Hash)>] PublicFeedPostsResponse data, response status code and response headers
-    def get_feed_posts_public_with_http_info(opts = {})
+    def get_feed_posts_public_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_feed_posts_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_feed_posts_public"
@@ -1529,28 +1465,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [Array<String>] :post_ids  (required)
+    # @param tenant_id [String] 
+    # @param post_ids [Array<String>] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [FeedPostsStatsResponse]
-    def get_feed_posts_stats(opts = {})
-      data, _status_code, _headers = get_feed_posts_stats_with_http_info(opts)
+    def get_feed_posts_stats(tenant_id, post_ids, opts = {})
+      data, _status_code, _headers = get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [Array<String>] :post_ids  (required)
+    # @param tenant_id [String] 
+    # @param post_ids [Array<String>] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(FeedPostsStatsResponse, Integer, Hash)>] FeedPostsStatsResponse data, response status code and response headers
-    def get_feed_posts_stats_with_http_info(opts = {})
+    def get_feed_posts_stats_with_http_info(tenant_id, post_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_feed_posts_stats ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      post_ids = opts[:'post_ids']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_feed_posts_stats"
@@ -1601,26 +1534,23 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :large_internal_url_sanitized  (required)
+    # @param tenant_id [String] 
+    # @param large_internal_url_sanitized [String] 
+    # @param [Hash] opts the optional parameters
     # @return [GifGetLargeResponse]
-    def get_gif_large(opts = {})
-      data, _status_code, _headers = get_gif_large_with_http_info(opts)
+    def get_gif_large(tenant_id, large_internal_url_sanitized, opts = {})
+      data, _status_code, _headers = get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :large_internal_url_sanitized  (required)
+    # @param tenant_id [String] 
+    # @param large_internal_url_sanitized [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(GifGetLargeResponse, Integer, Hash)>] GifGetLargeResponse data, response status code and response headers
-    def get_gif_large_with_http_info(opts = {})
+    def get_gif_large_with_http_info(tenant_id, large_internal_url_sanitized, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_gif_large ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      large_internal_url_sanitized = opts[:'large_internal_url_sanitized']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_gif_large"
@@ -1670,32 +1600,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :search  (required)
+    # @param tenant_id [String] 
+    # @param search [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [String] :rating 
     # @option opts [Float] :page 
     # @return [GetGifsSearchResponse]
-    def get_gifs_search(opts = {})
-      data, _status_code, _headers = get_gifs_search_with_http_info(opts)
+    def get_gifs_search(tenant_id, search, opts = {})
+      data, _status_code, _headers = get_gifs_search_with_http_info(tenant_id, search, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :search  (required)
+    # @param tenant_id [String] 
+    # @param search [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [String] :rating 
     # @option opts [Float] :page 
     # @return [Array<(GetGifsSearchResponse, Integer, Hash)>] GetGifsSearchResponse data, response status code and response headers
-    def get_gifs_search_with_http_info(opts = {})
+    def get_gifs_search_with_http_info(tenant_id, search, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_gifs_search ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      search = opts[:'search']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_gifs_search"
@@ -1748,29 +1675,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [String] :rating 
     # @option opts [Float] :page 
     # @return [GetGifsTrendingResponse]
-    def get_gifs_trending(opts = {})
-      data, _status_code, _headers = get_gifs_trending_with_http_info(opts)
+    def get_gifs_trending(tenant_id, opts = {})
+      data, _status_code, _headers = get_gifs_trending_with_http_info(tenant_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [String] :rating 
     # @option opts [Float] :page 
     # @return [Array<(GetGifsTrendingResponse, Integer, Hash)>] GetGifsTrendingResponse data, response status code and response headers
-    def get_gifs_trending_with_http_info(opts = {})
+    def get_gifs_trending_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_gifs_trending ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_gifs_trending"
@@ -1819,35 +1744,30 @@ module FastCommentsClient
     end
 
     #  req tenantId urlId userIdWS
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :user_id_ws  (required)
-    # @option opts [Integer] :start_time  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param user_id_ws [String] 
+    # @param start_time [Integer] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
     # @return [GetEventLogResponse]
-    def get_global_event_log(opts = {})
-      data, _status_code, _headers = get_global_event_log_with_http_info(opts)
+    def get_global_event_log(tenant_id, url_id, user_id_ws, start_time, opts = {})
+      data, _status_code, _headers = get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts)
       data
     end
 
     #  req tenantId urlId userIdWS
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :user_id_ws  (required)
-    # @option opts [Integer] :start_time  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param user_id_ws [String] 
+    # @param start_time [Integer] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Integer] :end_time 
     # @return [Array<(GetEventLogResponse, Integer, Hash)>] GetEventLogResponse data, response status code and response headers
-    def get_global_event_log_with_http_info(opts = {})
+    def get_global_event_log_with_http_info(tenant_id, url_id, user_id_ws, start_time, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_global_event_log ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      user_id_ws = opts[:'user_id_ws']
-      start_time = opts[:'start_time']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_global_event_log"
@@ -1909,31 +1829,28 @@ module FastCommentsClient
     end
 
     # Past commenters on the page who are NOT currently online. Sorted by displayName. Use this after exhausting /users/online to render a \"Members\" section. Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id Page URL identifier (cleaned server-side). (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] Page URL identifier (cleaned server-side).
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
     # @return [PageUsersOfflineResponse]
-    def get_offline_users(opts = {})
-      data, _status_code, _headers = get_offline_users_with_http_info(opts)
+    def get_offline_users(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_offline_users_with_http_info(tenant_id, url_id, opts)
       data
     end
 
     # Past commenters on the page who are NOT currently online. Sorted by displayName. Use this after exhausting /users/online to render a \&quot;Members\&quot; section. Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id Page URL identifier (cleaned server-side). (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] Page URL identifier (cleaned server-side).
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
     # @return [Array<(PageUsersOfflineResponse, Integer, Hash)>] PageUsersOfflineResponse data, response status code and response headers
-    def get_offline_users_with_http_info(opts = {})
+    def get_offline_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_offline_users ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_offline_users"
@@ -1986,31 +1903,28 @@ module FastCommentsClient
     end
 
     # Currently-online viewers of a page: people whose websocket session is subscribed to the page right now. Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id Page URL identifier (cleaned server-side). (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] Page URL identifier (cleaned server-side).
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
     # @return [PageUsersOnlineResponse]
-    def get_online_users(opts = {})
-      data, _status_code, _headers = get_online_users_with_http_info(opts)
+    def get_online_users(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_online_users_with_http_info(tenant_id, url_id, opts)
       data
     end
 
     # Currently-online viewers of a page: people whose websocket session is subscribed to the page right now. Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don&#39;t enumerate).
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id Page URL identifier (cleaned server-side). (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] Page URL identifier (cleaned server-side).
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_name Cursor: pass nextAfterName from the previous response.
     # @option opts [String] :after_user_id Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don&#39;t drop entries.
     # @return [Array<(PageUsersOnlineResponse, Integer, Hash)>] PageUsersOnlineResponse data, response status code and response headers
-    def get_online_users_with_http_info(opts = {})
+    def get_online_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_online_users ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_online_users"
@@ -2063,34 +1977,32 @@ module FastCommentsClient
     end
 
     # List pages for a tenant. Used by the FChat desktop client to populate its room list. Requires `enableFChat` to be true on the resolved custom config for each page. Pages that require SSO are filtered against the requesting user's group access.
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :cursor Opaque pagination cursor returned as &#x60;nextCursor&#x60; from a prior request. Tied to the same &#x60;sortBy&#x60;.
     # @option opts [Integer] :limit 1..200, default 50
     # @option opts [String] :q Optional case-insensitive title prefix filter.
     # @option opts [PagesSortBy] :sort_by Sort order. &#x60;updatedAt&#x60; (default, newest first), &#x60;commentCount&#x60; (most comments first), or &#x60;title&#x60; (alphabetical).
     # @option opts [Boolean] :has_comments If true, only return pages with at least one comment.
     # @return [GetPublicPagesResponse]
-    def get_pages_public(opts = {})
-      data, _status_code, _headers = get_pages_public_with_http_info(opts)
+    def get_pages_public(tenant_id, opts = {})
+      data, _status_code, _headers = get_pages_public_with_http_info(tenant_id, opts)
       data
     end
 
     # List pages for a tenant. Used by the FChat desktop client to populate its room list. Requires &#x60;enableFChat&#x60; to be true on the resolved custom config for each page. Pages that require SSO are filtered against the requesting user&#39;s group access.
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :cursor Opaque pagination cursor returned as &#x60;nextCursor&#x60; from a prior request. Tied to the same &#x60;sortBy&#x60;.
     # @option opts [Integer] :limit 1..200, default 50
     # @option opts [String] :q Optional case-insensitive title prefix filter.
     # @option opts [PagesSortBy] :sort_by Sort order. &#x60;updatedAt&#x60; (default, newest first), &#x60;commentCount&#x60; (most comments first), or &#x60;title&#x60; (alphabetical).
     # @option opts [Boolean] :has_comments If true, only return pages with at least one comment.
     # @return [Array<(GetPublicPagesResponse, Integer, Hash)>] GetPublicPagesResponse data, response status code and response headers
-    def get_pages_public_with_http_info(opts = {})
+    def get_pages_public_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_pages_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_pages_public"
@@ -2140,30 +2052,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :namespace  (required)
-    # @option opts [String] :component  (required)
+    # @param namespace [String] 
+    # @param component [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [Boolean] :use_full_translation_ids 
     # @return [GetTranslationsResponse]
-    def get_translations(opts = {})
-      data, _status_code, _headers = get_translations_with_http_info(opts)
+    def get_translations(namespace, component, opts = {})
+      data, _status_code, _headers = get_translations_with_http_info(namespace, component, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :namespace  (required)
-    # @option opts [String] :component  (required)
+    # @param namespace [String] 
+    # @param component [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :locale 
     # @option opts [Boolean] :use_full_translation_ids 
     # @return [Array<(GetTranslationsResponse, Integer, Hash)>] GetTranslationsResponse data, response status code and response headers
-    def get_translations_with_http_info(opts = {})
+    def get_translations_with_http_info(namespace, component, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_translations ...'
       end
-      # unbox the parameters from the hash
-      namespace = opts[:'namespace']
-      component = opts[:'component']
       # verify the required parameter 'namespace' is set
       if @api_client.config.client_side_validation && namespace.nil?
         fail ArgumentError, "Missing the required parameter 'namespace' when calling PublicApi.get_translations"
@@ -2214,25 +2123,23 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [GetUserNotificationCountResponse]
-    def get_user_notification_count(opts = {})
-      data, _status_code, _headers = get_user_notification_count_with_http_info(opts)
+    def get_user_notification_count(tenant_id, opts = {})
+      data, _status_code, _headers = get_user_notification_count_with_http_info(tenant_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(GetUserNotificationCountResponse, Integer, Hash)>] GetUserNotificationCountResponse data, response status code and response headers
-    def get_user_notification_count_with_http_info(opts = {})
+    def get_user_notification_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_notification_count ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_user_notification_count"
@@ -2279,8 +2186,8 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :url_id Used to determine whether the current page is subscribed.
     # @option opts [Integer] :page_size 
     # @option opts [String] :after_id 
@@ -2293,13 +2200,13 @@ module FastCommentsClient
     # @option opts [Boolean] :include_tenant_notifications 
     # @option opts [String] :sso 
     # @return [GetMyNotificationsResponse]
-    def get_user_notifications(opts = {})
-      data, _status_code, _headers = get_user_notifications_with_http_info(opts)
+    def get_user_notifications(tenant_id, opts = {})
+      data, _status_code, _headers = get_user_notifications_with_http_info(tenant_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :url_id Used to determine whether the current page is subscribed.
     # @option opts [Integer] :page_size 
     # @option opts [String] :after_id 
@@ -2312,12 +2219,10 @@ module FastCommentsClient
     # @option opts [Boolean] :include_tenant_notifications 
     # @option opts [String] :sso 
     # @return [Array<(GetMyNotificationsResponse, Integer, Hash)>] GetMyNotificationsResponse data, response status code and response headers
-    def get_user_notifications_with_http_info(opts = {})
+    def get_user_notifications_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_notifications ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_user_notifications"
@@ -2374,29 +2279,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id_ws  (required)
-    # @option opts [String] :user_ids  (required)
+    # @param tenant_id [String] 
+    # @param url_id_ws [String] 
+    # @param user_ids [String] 
+    # @param [Hash] opts the optional parameters
     # @return [GetUserPresenceStatusesResponse]
-    def get_user_presence_statuses(opts = {})
-      data, _status_code, _headers = get_user_presence_statuses_with_http_info(opts)
+    def get_user_presence_statuses(tenant_id, url_id_ws, user_ids, opts = {})
+      data, _status_code, _headers = get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id_ws  (required)
-    # @option opts [String] :user_ids  (required)
+    # @param tenant_id [String] 
+    # @param url_id_ws [String] 
+    # @param user_ids [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(GetUserPresenceStatusesResponse, Integer, Hash)>] GetUserPresenceStatusesResponse data, response status code and response headers
-    def get_user_presence_statuses_with_http_info(opts = {})
+    def get_user_presence_statuses_with_http_info(tenant_id, url_id_ws, user_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_presence_statuses ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id_ws = opts[:'url_id_ws']
-      user_ids = opts[:'user_ids']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_user_presence_statuses"
@@ -2452,27 +2353,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :post_ids 
     # @option opts [String] :sso 
     # @return [UserReactsResponse]
-    def get_user_reacts_public(opts = {})
-      data, _status_code, _headers = get_user_reacts_public_with_http_info(opts)
+    def get_user_reacts_public(tenant_id, opts = {})
+      data, _status_code, _headers = get_user_reacts_public_with_http_info(tenant_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :post_ids 
     # @option opts [String] :sso 
     # @return [Array<(UserReactsResponse, Integer, Hash)>] UserReactsResponse data, response status code and response headers
-    def get_user_reacts_public_with_http_info(opts = {})
+    def get_user_reacts_public_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_user_reacts_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_user_reacts_public"
@@ -2520,27 +2419,24 @@ module FastCommentsClient
     end
 
     # Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :ids Comma-delimited userIds. (required)
+    # @param tenant_id [String] 
+    # @param ids [String] Comma-delimited userIds.
+    # @param [Hash] opts the optional parameters
     # @return [PageUsersInfoResponse]
-    def get_users_info(opts = {})
-      data, _status_code, _headers = get_users_info_with_http_info(opts)
+    def get_users_info(tenant_id, ids, opts = {})
+      data, _status_code, _headers = get_users_info_with_http_info(tenant_id, ids, opts)
       data
     end
 
     # Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :ids Comma-delimited userIds. (required)
+    # @param tenant_id [String] 
+    # @param ids [String] Comma-delimited userIds.
+    # @param [Hash] opts the optional parameters
     # @return [Array<(PageUsersInfoResponse, Integer, Hash)>] PageUsersInfoResponse data, response status code and response headers
-    def get_users_info_with_http_info(opts = {})
+    def get_users_info_with_http_info(tenant_id, ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_users_info ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      ids = opts[:'ids']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_users_info"
@@ -2590,26 +2486,23 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [GetV1PageLikes]
-    def get_v1_page_likes(opts = {})
-      data, _status_code, _headers = get_v1_page_likes_with_http_info(opts)
+    def get_v1_page_likes(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_v1_page_likes_with_http_info(tenant_id, url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(GetV1PageLikes, Integer, Hash)>] GetV1PageLikes data, response status code and response headers
-    def get_v1_page_likes_with_http_info(opts = {})
+    def get_v1_page_likes_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_v1_page_likes ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_v1_page_likes"
@@ -2659,29 +2552,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [GetV2PageReactUsersResponse]
-    def get_v2_page_react_users(opts = {})
-      data, _status_code, _headers = get_v2_page_react_users_with_http_info(opts)
+    def get_v2_page_react_users(tenant_id, url_id, id, opts = {})
+      data, _status_code, _headers = get_v2_page_react_users_with_http_info(tenant_id, url_id, id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(GetV2PageReactUsersResponse, Integer, Hash)>] GetV2PageReactUsersResponse data, response status code and response headers
-    def get_v2_page_react_users_with_http_info(opts = {})
+    def get_v2_page_react_users_with_http_info(tenant_id, url_id, id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_v2_page_react_users ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      id = opts[:'id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_v2_page_react_users"
@@ -2736,26 +2625,23 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [GetV2PageReacts]
-    def get_v2_page_reacts(opts = {})
-      data, _status_code, _headers = get_v2_page_reacts_with_http_info(opts)
+    def get_v2_page_reacts(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = get_v2_page_reacts_with_http_info(tenant_id, url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @return [Array<(GetV2PageReacts, Integer, Hash)>] GetV2PageReacts data, response status code and response headers
-    def get_v2_page_reacts_with_http_info(opts = {})
+    def get_v2_page_reacts_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.get_v2_page_reacts ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.get_v2_page_reacts"
@@ -2805,31 +2691,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def lock_comment(opts = {})
-      data, _status_code, _headers = lock_comment_with_http_info(opts)
+    def lock_comment(tenant_id, comment_id, broadcast_id, opts = {})
+      data, _status_code, _headers = lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def lock_comment_with_http_info(opts = {})
+    def lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.lock_comment ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      broadcast_id = opts[:'broadcast_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.lock_comment"
@@ -2884,20 +2766,19 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @return [APIEmptyResponse]
     def logout_public(opts = {})
       data, _status_code, _headers = logout_public_with_http_info(opts)
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
     def logout_public_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.logout_public ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/logout'
 
@@ -2938,31 +2819,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [ChangeCommentPinStatusResponse]
-    def pin_comment(opts = {})
-      data, _status_code, _headers = pin_comment_with_http_info(opts)
+    def pin_comment(tenant_id, comment_id, broadcast_id, opts = {})
+      data, _status_code, _headers = pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(ChangeCommentPinStatusResponse, Integer, Hash)>] ChangeCommentPinStatusResponse data, response status code and response headers
-    def pin_comment_with_http_info(opts = {})
+    def pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.pin_comment ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      broadcast_id = opts[:'broadcast_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.pin_comment"
@@ -3017,35 +2894,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :post_id  (required)
-    # @option opts [ReactBodyParams] :react_body_params  (required)
+    # @param tenant_id [String] 
+    # @param post_id [String] 
+    # @param react_body_params [ReactBodyParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :is_undo 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [ReactFeedPostResponse]
-    def react_feed_post_public(opts = {})
-      data, _status_code, _headers = react_feed_post_public_with_http_info(opts)
+    def react_feed_post_public(tenant_id, post_id, react_body_params, opts = {})
+      data, _status_code, _headers = react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :post_id  (required)
-    # @option opts [ReactBodyParams] :react_body_params  (required)
+    # @param tenant_id [String] 
+    # @param post_id [String] 
+    # @param react_body_params [ReactBodyParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :is_undo 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(ReactFeedPostResponse, Integer, Hash)>] ReactFeedPostResponse data, response status code and response headers
-    def react_feed_post_public_with_http_info(opts = {})
+    def react_feed_post_public_with_http_info(tenant_id, post_id, react_body_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.react_feed_post_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      post_id = opts[:'post_id']
-      react_body_params = opts[:'react_body_params']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.react_feed_post_public"
@@ -3106,25 +2979,23 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [ResetUserNotificationsResponse]
-    def reset_user_notification_count(opts = {})
-      data, _status_code, _headers = reset_user_notification_count_with_http_info(opts)
+    def reset_user_notification_count(tenant_id, opts = {})
+      data, _status_code, _headers = reset_user_notification_count_with_http_info(tenant_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(ResetUserNotificationsResponse, Integer, Hash)>] ResetUserNotificationsResponse data, response status code and response headers
-    def reset_user_notification_count_with_http_info(opts = {})
+    def reset_user_notification_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.reset_user_notification_count ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.reset_user_notification_count"
@@ -3171,8 +3042,8 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_id 
     # @option opts [Integer] :after_created_at 
     # @option opts [Boolean] :unread_only 
@@ -3180,13 +3051,13 @@ module FastCommentsClient
     # @option opts [Boolean] :no_dm 
     # @option opts [String] :sso 
     # @return [ResetUserNotificationsResponse]
-    def reset_user_notifications(opts = {})
-      data, _status_code, _headers = reset_user_notifications_with_http_info(opts)
+    def reset_user_notifications(tenant_id, opts = {})
+      data, _status_code, _headers = reset_user_notifications_with_http_info(tenant_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :after_id 
     # @option opts [Integer] :after_created_at 
     # @option opts [Boolean] :unread_only 
@@ -3194,12 +3065,10 @@ module FastCommentsClient
     # @option opts [Boolean] :no_dm 
     # @option opts [String] :sso 
     # @return [Array<(ResetUserNotificationsResponse, Integer, Hash)>] ResetUserNotificationsResponse data, response status code and response headers
-    def reset_user_notifications_with_http_info(opts = {})
+    def reset_user_notifications_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.reset_user_notifications ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.reset_user_notifications"
@@ -3251,34 +3120,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :username_starts_with 
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
     # @option opts [String] :search_section 
     # @return [SearchUsersResult]
-    def search_users(opts = {})
-      data, _status_code, _headers = search_users_with_http_info(opts)
+    def search_users(tenant_id, url_id, opts = {})
+      data, _status_code, _headers = search_users_with_http_info(tenant_id, url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :username_starts_with 
     # @option opts [Array<String>] :mention_group_ids 
     # @option opts [String] :sso 
     # @option opts [String] :search_section 
     # @return [Array<(SearchUsersResult, Integer, Hash)>] SearchUsersResult data, response status code and response headers
-    def search_users_with_http_info(opts = {})
+    def search_users_with_http_info(tenant_id, url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.search_users ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.search_users"
@@ -3336,36 +3202,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
-    # @option opts [CommentTextUpdateRequest] :comment_text_update_request  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param comment_text_update_request [CommentTextUpdateRequest] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [PublicAPISetCommentTextResponse]
-    def set_comment_text(opts = {})
-      data, _status_code, _headers = set_comment_text_with_http_info(opts)
+    def set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts = {})
+      data, _status_code, _headers = set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
-    # @option opts [CommentTextUpdateRequest] :comment_text_update_request  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param comment_text_update_request [CommentTextUpdateRequest] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :edit_key 
     # @option opts [String] :sso 
     # @return [Array<(PublicAPISetCommentTextResponse, Integer, Hash)>] PublicAPISetCommentTextResponse data, response status code and response headers
-    def set_comment_text_with_http_info(opts = {})
+    def set_comment_text_with_http_info(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.set_comment_text ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      broadcast_id = opts[:'broadcast_id']
-      comment_text_update_request = opts[:'comment_text_update_request']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.set_comment_text"
@@ -3430,31 +3291,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [PublicBlockFromCommentParams] :public_block_from_comment_params  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [UnblockSuccess]
-    def un_block_comment_public(opts = {})
-      data, _status_code, _headers = un_block_comment_public_with_http_info(opts)
+    def un_block_comment_public(tenant_id, comment_id, public_block_from_comment_params, opts = {})
+      data, _status_code, _headers = un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [PublicBlockFromCommentParams] :public_block_from_comment_params  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param public_block_from_comment_params [PublicBlockFromCommentParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(UnblockSuccess, Integer, Hash)>] UnblockSuccess data, response status code and response headers
-    def un_block_comment_public_with_http_info(opts = {})
+    def un_block_comment_public_with_http_info(tenant_id, comment_id, public_block_from_comment_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.un_block_comment_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      public_block_from_comment_params = opts[:'public_block_from_comment_params']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.un_block_comment_public"
@@ -3514,31 +3371,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def un_lock_comment(opts = {})
-      data, _status_code, _headers = un_lock_comment_with_http_info(opts)
+    def un_lock_comment(tenant_id, comment_id, broadcast_id, opts = {})
+      data, _status_code, _headers = un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def un_lock_comment_with_http_info(opts = {})
+    def un_lock_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.un_lock_comment ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      broadcast_id = opts[:'broadcast_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.un_lock_comment"
@@ -3593,31 +3446,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [ChangeCommentPinStatusResponse]
-    def un_pin_comment(opts = {})
-      data, _status_code, _headers = un_pin_comment_with_http_info(opts)
+    def un_pin_comment(tenant_id, comment_id, broadcast_id, opts = {})
+      data, _status_code, _headers = un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :broadcast_id  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param broadcast_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(ChangeCommentPinStatusResponse, Integer, Hash)>] ChangeCommentPinStatusResponse data, response status code and response headers
-    def un_pin_comment_with_http_info(opts = {})
+    def un_pin_comment_with_http_info(tenant_id, comment_id, broadcast_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.un_pin_comment ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      broadcast_id = opts[:'broadcast_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.un_pin_comment"
@@ -3672,33 +3521,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :post_id  (required)
-    # @option opts [UpdateFeedPostParams] :update_feed_post_params  (required)
+    # @param tenant_id [String] 
+    # @param post_id [String] 
+    # @param update_feed_post_params [UpdateFeedPostParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [CreateFeedPostResponse]
-    def update_feed_post_public(opts = {})
-      data, _status_code, _headers = update_feed_post_public_with_http_info(opts)
+    def update_feed_post_public(tenant_id, post_id, update_feed_post_params, opts = {})
+      data, _status_code, _headers = update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :post_id  (required)
-    # @option opts [UpdateFeedPostParams] :update_feed_post_params  (required)
+    # @param tenant_id [String] 
+    # @param post_id [String] 
+    # @param update_feed_post_params [UpdateFeedPostParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(CreateFeedPostResponse, Integer, Hash)>] CreateFeedPostResponse data, response status code and response headers
-    def update_feed_post_public_with_http_info(opts = {})
+    def update_feed_post_public_with_http_info(tenant_id, post_id, update_feed_post_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.update_feed_post_public ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      post_id = opts[:'post_id']
-      update_feed_post_params = opts[:'update_feed_post_params']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.update_feed_post_public"
@@ -3759,35 +3604,30 @@ module FastCommentsClient
     end
 
     # Enable or disable notifications for a specific comment.
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :notification_id  (required)
-    # @option opts [String] :opted_in_or_out  (required)
-    # @option opts [String] :comment_id  (required)
+    # @param tenant_id [String] 
+    # @param notification_id [String] 
+    # @param opted_in_or_out [String] 
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [UpdateUserNotificationCommentSubscriptionStatusResponse]
-    def update_user_notification_comment_subscription_status(opts = {})
-      data, _status_code, _headers = update_user_notification_comment_subscription_status_with_http_info(opts)
+    def update_user_notification_comment_subscription_status(tenant_id, notification_id, opted_in_or_out, comment_id, opts = {})
+      data, _status_code, _headers = update_user_notification_comment_subscription_status_with_http_info(tenant_id, notification_id, opted_in_or_out, comment_id, opts)
       data
     end
 
     # Enable or disable notifications for a specific comment.
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :notification_id  (required)
-    # @option opts [String] :opted_in_or_out  (required)
-    # @option opts [String] :comment_id  (required)
+    # @param tenant_id [String] 
+    # @param notification_id [String] 
+    # @param opted_in_or_out [String] 
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(UpdateUserNotificationCommentSubscriptionStatusResponse, Integer, Hash)>] UpdateUserNotificationCommentSubscriptionStatusResponse data, response status code and response headers
-    def update_user_notification_comment_subscription_status_with_http_info(opts = {})
+    def update_user_notification_comment_subscription_status_with_http_info(tenant_id, notification_id, opted_in_or_out, comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.update_user_notification_comment_subscription_status ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      notification_id = opts[:'notification_id']
-      opted_in_or_out = opts[:'opted_in_or_out']
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.update_user_notification_comment_subscription_status"
@@ -3853,38 +3693,32 @@ module FastCommentsClient
     end
 
     # Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :url  (required)
-    # @option opts [String] :page_title  (required)
-    # @option opts [String] :subscribed_or_unsubscribed  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param url [String] 
+    # @param page_title [String] 
+    # @param subscribed_or_unsubscribed [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [UpdateUserNotificationPageSubscriptionStatusResponse]
-    def update_user_notification_page_subscription_status(opts = {})
-      data, _status_code, _headers = update_user_notification_page_subscription_status_with_http_info(opts)
+    def update_user_notification_page_subscription_status(tenant_id, url_id, url, page_title, subscribed_or_unsubscribed, opts = {})
+      data, _status_code, _headers = update_user_notification_page_subscription_status_with_http_info(tenant_id, url_id, url, page_title, subscribed_or_unsubscribed, opts)
       data
     end
 
     # Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :url  (required)
-    # @option opts [String] :page_title  (required)
-    # @option opts [String] :subscribed_or_unsubscribed  (required)
+    # @param tenant_id [String] 
+    # @param url_id [String] 
+    # @param url [String] 
+    # @param page_title [String] 
+    # @param subscribed_or_unsubscribed [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(UpdateUserNotificationPageSubscriptionStatusResponse, Integer, Hash)>] UpdateUserNotificationPageSubscriptionStatusResponse data, response status code and response headers
-    def update_user_notification_page_subscription_status_with_http_info(opts = {})
+    def update_user_notification_page_subscription_status_with_http_info(tenant_id, url_id, url, page_title, subscribed_or_unsubscribed, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.update_user_notification_page_subscription_status ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      url_id = opts[:'url_id']
-      url = opts[:'url']
-      page_title = opts[:'page_title']
-      subscribed_or_unsubscribed = opts[:'subscribed_or_unsubscribed']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.update_user_notification_page_subscription_status"
@@ -3955,31 +3789,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :notification_id  (required)
-    # @option opts [String] :new_status  (required)
+    # @param tenant_id [String] 
+    # @param notification_id [String] 
+    # @param new_status [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [UpdateUserNotificationStatusResponse]
-    def update_user_notification_status(opts = {})
-      data, _status_code, _headers = update_user_notification_status_with_http_info(opts)
+    def update_user_notification_status(tenant_id, notification_id, new_status, opts = {})
+      data, _status_code, _headers = update_user_notification_status_with_http_info(tenant_id, notification_id, new_status, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :notification_id  (required)
-    # @option opts [String] :new_status  (required)
+    # @param tenant_id [String] 
+    # @param notification_id [String] 
+    # @param new_status [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :sso 
     # @return [Array<(UpdateUserNotificationStatusResponse, Integer, Hash)>] UpdateUserNotificationStatusResponse data, response status code and response headers
-    def update_user_notification_status_with_http_info(opts = {})
+    def update_user_notification_status_with_http_info(tenant_id, notification_id, new_status, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.update_user_notification_status ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      notification_id = opts[:'notification_id']
-      new_status = opts[:'new_status']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.update_user_notification_status"
@@ -4040,31 +3870,28 @@ module FastCommentsClient
     end
 
     # Upload and resize an image
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [File] :file  (required)
+    # @param tenant_id [String] 
+    # @param file [File] 
+    # @param [Hash] opts the optional parameters
     # @option opts [SizePreset] :size_preset Size preset: \&quot;Default\&quot; (1000x1000px) or \&quot;CrossPlatform\&quot; (creates sizes for popular devices)
     # @option opts [String] :url_id Page id that upload is happening from, to configure
     # @return [UploadImageResponse]
-    def upload_image(opts = {})
-      data, _status_code, _headers = upload_image_with_http_info(opts)
+    def upload_image(tenant_id, file, opts = {})
+      data, _status_code, _headers = upload_image_with_http_info(tenant_id, file, opts)
       data
     end
 
     # Upload and resize an image
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [File] :file  (required)
+    # @param tenant_id [String] 
+    # @param file [File] 
+    # @param [Hash] opts the optional parameters
     # @option opts [SizePreset] :size_preset Size preset: \&quot;Default\&quot; (1000x1000px) or \&quot;CrossPlatform\&quot; (creates sizes for popular devices)
     # @option opts [String] :url_id Page id that upload is happening from, to configure
     # @return [Array<(UploadImageResponse, Integer, Hash)>] UploadImageResponse data, response status code and response headers
-    def upload_image_with_http_info(opts = {})
+    def upload_image_with_http_info(tenant_id, file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.upload_image ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      file = opts[:'file']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.upload_image"
@@ -4121,39 +3948,33 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :broadcast_id  (required)
-    # @option opts [VoteBodyParams] :vote_body_params  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param url_id [String] 
+    # @param broadcast_id [String] 
+    # @param vote_body_params [VoteBodyParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
     # @return [VoteResponse]
-    def vote_comment(opts = {})
-      data, _status_code, _headers = vote_comment_with_http_info(opts)
+    def vote_comment(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts = {})
+      data, _status_code, _headers = vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :tenant_id  (required)
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :url_id  (required)
-    # @option opts [String] :broadcast_id  (required)
-    # @option opts [VoteBodyParams] :vote_body_params  (required)
+    # @param tenant_id [String] 
+    # @param comment_id [String] 
+    # @param url_id [String] 
+    # @param broadcast_id [String] 
+    # @param vote_body_params [VoteBodyParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :session_id 
     # @option opts [String] :sso 
     # @return [Array<(VoteResponse, Integer, Hash)>] VoteResponse data, response status code and response headers
-    def vote_comment_with_http_info(opts = {})
+    def vote_comment_with_http_info(tenant_id, comment_id, url_id, broadcast_id, vote_body_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PublicApi.vote_comment ...'
       end
-      # unbox the parameters from the hash
-      tenant_id = opts[:'tenant_id']
-      comment_id = opts[:'comment_id']
-      url_id = opts[:'url_id']
-      broadcast_id = opts[:'broadcast_id']
-      vote_body_params = opts[:'vote_body_params']
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling PublicApi.vote_comment"

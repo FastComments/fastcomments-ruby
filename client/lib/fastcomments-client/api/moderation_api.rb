@@ -19,32 +19,29 @@ module FastCommentsClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :vote_id  (required)
+    # @param comment_id [String] 
+    # @param vote_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [VoteDeleteResponse]
-    def delete_moderation_vote(opts = {})
-      data, _status_code, _headers = delete_moderation_vote_with_http_info(opts)
+    def delete_moderation_vote(comment_id, vote_id, opts = {})
+      data, _status_code, _headers = delete_moderation_vote_with_http_info(comment_id, vote_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
-    # @option opts [String] :vote_id  (required)
+    # @param comment_id [String] 
+    # @param vote_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(VoteDeleteResponse, Integer, Hash)>] VoteDeleteResponse data, response status code and response headers
-    def delete_moderation_vote_with_http_info(opts = {})
+    def delete_moderation_vote_with_http_info(comment_id, vote_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.delete_moderation_vote ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
-      vote_id = opts[:'vote_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.delete_moderation_vote"
@@ -96,7 +93,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [Float] :page 
     # @option opts [Float] :count 
     # @option opts [String] :text_search 
@@ -113,7 +110,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [Float] :page 
     # @option opts [Float] :count 
     # @option opts [String] :text_search 
@@ -129,7 +126,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_api_comments ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/api/comments'
 
@@ -180,7 +176,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :batch_job_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -190,7 +186,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :batch_job_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -199,7 +195,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_api_export_status ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/api/export/status'
 
@@ -243,7 +238,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :by_ip_from_comment 
     # @option opts [String] :filters 
@@ -258,7 +253,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :by_ip_from_comment 
     # @option opts [String] :filters 
@@ -272,7 +267,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_api_ids ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/api/ids'
 
@@ -321,27 +315,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [GetBannedUsersFromCommentResponse]
-    def get_ban_users_from_comment(opts = {})
-      data, _status_code, _headers = get_ban_users_from_comment_with_http_info(opts)
+    def get_ban_users_from_comment(comment_id, opts = {})
+      data, _status_code, _headers = get_ban_users_from_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(GetBannedUsersFromCommentResponse, Integer, Hash)>] GetBannedUsersFromCommentResponse data, response status code and response headers
-    def get_ban_users_from_comment_with_http_info(opts = {})
+    def get_ban_users_from_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_ban_users_from_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_ban_users_from_comment"
@@ -388,27 +380,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [GetCommentBanStatusResponse]
-    def get_comment_ban_status(opts = {})
-      data, _status_code, _headers = get_comment_ban_status_with_http_info(opts)
+    def get_comment_ban_status(comment_id, opts = {})
+      data, _status_code, _headers = get_comment_ban_status_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(GetCommentBanStatusResponse, Integer, Hash)>] GetCommentBanStatusResponse data, response status code and response headers
-    def get_comment_ban_status_with_http_info(opts = {})
+    def get_comment_ban_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_comment_ban_status ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_comment_ban_status"
@@ -455,27 +445,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [ModerationAPIChildCommentsResponse]
-    def get_comment_children(opts = {})
-      data, _status_code, _headers = get_comment_children_with_http_info(opts)
+    def get_comment_children(comment_id, opts = {})
+      data, _status_code, _headers = get_comment_children_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(ModerationAPIChildCommentsResponse, Integer, Hash)>] ModerationAPIChildCommentsResponse data, response status code and response headers
-    def get_comment_children_with_http_info(opts = {})
+    def get_comment_children_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_comment_children ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_comment_children"
@@ -522,7 +510,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :by_ip_from_comment 
     # @option opts [String] :filter 
@@ -536,7 +524,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :by_ip_from_comment 
     # @option opts [String] :filter 
@@ -549,7 +537,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_count ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/count'
 
@@ -597,7 +584,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [GetBannedUsersCountResponse]
@@ -606,7 +593,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(GetBannedUsersCountResponse, Integer, Hash)>] GetBannedUsersCountResponse data, response status code and response headers
@@ -614,7 +601,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_counts ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/banned-users/counts'
 
@@ -657,27 +643,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [ModerationAPIGetLogsResponse]
-    def get_logs(opts = {})
-      data, _status_code, _headers = get_logs_with_http_info(opts)
+    def get_logs(comment_id, opts = {})
+      data, _status_code, _headers = get_logs_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(ModerationAPIGetLogsResponse, Integer, Hash)>] ModerationAPIGetLogsResponse data, response status code and response headers
-    def get_logs_with_http_info(opts = {})
+    def get_logs_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_logs ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_logs"
@@ -724,7 +708,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [GetTenantManualBadgesResponse]
@@ -733,7 +717,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(GetTenantManualBadgesResponse, Integer, Hash)>] GetTenantManualBadgesResponse data, response status code and response headers
@@ -741,7 +725,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_manual_badges ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/get-manual-badges'
 
@@ -784,7 +767,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :badges_user_id 
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
@@ -795,7 +778,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :badges_user_id 
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
@@ -805,7 +788,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_manual_badges_for_user ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/get-manual-badges-for-user'
 
@@ -850,31 +832,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :include_email 
     # @option opts [Boolean] :include_ip 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [ModerationAPICommentResponse]
-    def get_moderation_comment(opts = {})
-      data, _status_code, _headers = get_moderation_comment_with_http_info(opts)
+    def get_moderation_comment(comment_id, opts = {})
+      data, _status_code, _headers = get_moderation_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :include_email 
     # @option opts [Boolean] :include_ip 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(ModerationAPICommentResponse, Integer, Hash)>] ModerationAPICommentResponse data, response status code and response headers
-    def get_moderation_comment_with_http_info(opts = {})
+    def get_moderation_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_moderation_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_moderation_comment"
@@ -923,27 +903,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [GetCommentTextResponse]
-    def get_moderation_comment_text(opts = {})
-      data, _status_code, _headers = get_moderation_comment_text_with_http_info(opts)
+    def get_moderation_comment_text(comment_id, opts = {})
+      data, _status_code, _headers = get_moderation_comment_text_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(GetCommentTextResponse, Integer, Hash)>] GetCommentTextResponse data, response status code and response headers
-    def get_moderation_comment_text_with_http_info(opts = {})
+    def get_moderation_comment_text_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_moderation_comment_text ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_moderation_comment_text"
@@ -990,33 +968,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :include_by_user_id_and_email 
     # @option opts [Boolean] :include_by_ip 
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [PreBanSummary]
-    def get_pre_ban_summary(opts = {})
-      data, _status_code, _headers = get_pre_ban_summary_with_http_info(opts)
+    def get_pre_ban_summary(comment_id, opts = {})
+      data, _status_code, _headers = get_pre_ban_summary_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :include_by_user_id_and_email 
     # @option opts [Boolean] :include_by_ip 
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(PreBanSummary, Integer, Hash)>] PreBanSummary data, response status code and response headers
-    def get_pre_ban_summary_with_http_info(opts = {})
+    def get_pre_ban_summary_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_pre_ban_summary ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.get_pre_ban_summary"
@@ -1066,7 +1042,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :filters 
     # @option opts [String] :search_filters 
@@ -1078,7 +1054,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :filters 
     # @option opts [String] :search_filters 
@@ -1089,7 +1065,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_comments_summary ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/search/comments/summary'
 
@@ -1135,7 +1110,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1145,7 +1120,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1154,7 +1129,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_pages ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/search/pages'
 
@@ -1198,7 +1172,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1208,7 +1182,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1217,7 +1191,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_sites ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/search/sites'
 
@@ -1261,7 +1234,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1271,7 +1244,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1280,7 +1253,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_suggest ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/search/suggest'
 
@@ -1324,7 +1296,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1334,7 +1306,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :value 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1343,7 +1315,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_search_users ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/search/users'
 
@@ -1387,7 +1358,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1397,7 +1368,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1406,7 +1377,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_trust_factor ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/get-trust-factor'
 
@@ -1450,7 +1420,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [APIModerateGetUserBanPreferencesResponse]
@@ -1459,7 +1429,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(APIModerateGetUserBanPreferencesResponse, Integer, Hash)>] APIModerateGetUserBanPreferencesResponse data, response status code and response headers
@@ -1467,7 +1437,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_user_ban_preference ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/user-ban-preference'
 
@@ -1510,7 +1479,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1520,7 +1489,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
@@ -1529,7 +1498,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.get_user_internal_profile ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/get-user-internal-profile'
 
@@ -1573,32 +1541,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
-    # @option opts [AdjustCommentVotesParams] :adjust_comment_votes_params  (required)
+    # @param comment_id [String] 
+    # @param adjust_comment_votes_params [AdjustCommentVotesParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [AdjustVotesResponse]
-    def post_adjust_comment_votes(opts = {})
-      data, _status_code, _headers = post_adjust_comment_votes_with_http_info(opts)
+    def post_adjust_comment_votes(comment_id, adjust_comment_votes_params, opts = {})
+      data, _status_code, _headers = post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
-    # @option opts [AdjustCommentVotesParams] :adjust_comment_votes_params  (required)
+    # @param comment_id [String] 
+    # @param adjust_comment_votes_params [AdjustCommentVotesParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(AdjustVotesResponse, Integer, Hash)>] AdjustVotesResponse data, response status code and response headers
-    def post_adjust_comment_votes_with_http_info(opts = {})
+    def post_adjust_comment_votes_with_http_info(comment_id, adjust_comment_votes_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_adjust_comment_votes ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
-      adjust_comment_votes_params = opts[:'adjust_comment_votes_params']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_adjust_comment_votes"
@@ -1655,7 +1620,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :by_ip_from_comment 
     # @option opts [String] :filters 
@@ -1669,7 +1634,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :text_search 
     # @option opts [String] :by_ip_from_comment 
     # @option opts [String] :filters 
@@ -1682,7 +1647,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_api_export ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/api/export'
 
@@ -1730,8 +1694,8 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :ban_email 
     # @option opts [Boolean] :ban_email_domain 
     # @option opts [Boolean] :ban_ip 
@@ -1743,13 +1707,13 @@ module FastCommentsClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [BanUserFromCommentResult]
-    def post_ban_user_from_comment(opts = {})
-      data, _status_code, _headers = post_ban_user_from_comment_with_http_info(opts)
+    def post_ban_user_from_comment(comment_id, opts = {})
+      data, _status_code, _headers = post_ban_user_from_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :ban_email 
     # @option opts [Boolean] :ban_email_domain 
     # @option opts [Boolean] :ban_ip 
@@ -1761,12 +1725,10 @@ module FastCommentsClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(BanUserFromCommentResult, Integer, Hash)>] BanUserFromCommentResult data, response status code and response headers
-    def post_ban_user_from_comment_with_http_info(opts = {})
+    def post_ban_user_from_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_ban_user_from_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_ban_user_from_comment"
@@ -1821,27 +1783,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [BanUserUndoParams] :ban_user_undo_params  (required)
+    # @param ban_user_undo_params [BanUserUndoParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def post_ban_user_undo(opts = {})
-      data, _status_code, _headers = post_ban_user_undo_with_http_info(opts)
+    def post_ban_user_undo(ban_user_undo_params, opts = {})
+      data, _status_code, _headers = post_ban_user_undo_with_http_info(ban_user_undo_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [BanUserUndoParams] :ban_user_undo_params  (required)
+    # @param ban_user_undo_params [BanUserUndoParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def post_ban_user_undo_with_http_info(opts = {})
+    def post_ban_user_undo_with_http_info(ban_user_undo_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_ban_user_undo ...'
       end
-      # unbox the parameters from the hash
-      ban_user_undo_params = opts[:'ban_user_undo_params']
       # verify the required parameter 'ban_user_undo_params' is set
       if @api_client.config.client_side_validation && ban_user_undo_params.nil?
         fail ArgumentError, "Missing the required parameter 'ban_user_undo_params' when calling ModerationApi.post_ban_user_undo"
@@ -1893,33 +1853,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [BulkPreBanParams] :bulk_pre_ban_params  (required)
+    # @param bulk_pre_ban_params [BulkPreBanParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :include_by_user_id_and_email 
     # @option opts [Boolean] :include_by_ip 
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [BulkPreBanSummary]
-    def post_bulk_pre_ban_summary(opts = {})
-      data, _status_code, _headers = post_bulk_pre_ban_summary_with_http_info(opts)
+    def post_bulk_pre_ban_summary(bulk_pre_ban_params, opts = {})
+      data, _status_code, _headers = post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [BulkPreBanParams] :bulk_pre_ban_params  (required)
+    # @param bulk_pre_ban_params [BulkPreBanParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :include_by_user_id_and_email 
     # @option opts [Boolean] :include_by_ip 
     # @option opts [Boolean] :include_by_email_domain 
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(BulkPreBanSummary, Integer, Hash)>] BulkPreBanSummary data, response status code and response headers
-    def post_bulk_pre_ban_summary_with_http_info(opts = {})
+    def post_bulk_pre_ban_summary_with_http_info(bulk_pre_ban_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_bulk_pre_ban_summary ...'
       end
-      # unbox the parameters from the hash
-      bulk_pre_ban_params = opts[:'bulk_pre_ban_params']
       # verify the required parameter 'bulk_pre_ban_params' is set
       if @api_client.config.client_side_validation && bulk_pre_ban_params.nil?
         fail ArgumentError, "Missing the required parameter 'bulk_pre_ban_params' when calling ModerationApi.post_bulk_pre_ban_summary"
@@ -1974,27 +1932,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [CommentsByIdsParams] :comments_by_ids_params  (required)
+    # @param comments_by_ids_params [CommentsByIdsParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [ModerationAPIChildCommentsResponse]
-    def post_comments_by_ids(opts = {})
-      data, _status_code, _headers = post_comments_by_ids_with_http_info(opts)
+    def post_comments_by_ids(comments_by_ids_params, opts = {})
+      data, _status_code, _headers = post_comments_by_ids_with_http_info(comments_by_ids_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [CommentsByIdsParams] :comments_by_ids_params  (required)
+    # @param comments_by_ids_params [CommentsByIdsParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(ModerationAPIChildCommentsResponse, Integer, Hash)>] ModerationAPIChildCommentsResponse data, response status code and response headers
-    def post_comments_by_ids_with_http_info(opts = {})
+    def post_comments_by_ids_with_http_info(comments_by_ids_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_comments_by_ids ...'
       end
-      # unbox the parameters from the hash
-      comments_by_ids_params = opts[:'comments_by_ids_params']
       # verify the required parameter 'comments_by_ids_params' is set
       if @api_client.config.client_side_validation && comments_by_ids_params.nil?
         fail ArgumentError, "Missing the required parameter 'comments_by_ids_params' when calling ModerationApi.post_comments_by_ids"
@@ -2046,29 +2002,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def post_flag_comment(opts = {})
-      data, _status_code, _headers = post_flag_comment_with_http_info(opts)
+    def post_flag_comment(comment_id, opts = {})
+      data, _status_code, _headers = post_flag_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def post_flag_comment_with_http_info(opts = {})
+    def post_flag_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_flag_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_flag_comment"
@@ -2116,29 +2070,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [PostRemoveCommentResponse]
-    def post_remove_comment(opts = {})
-      data, _status_code, _headers = post_remove_comment_with_http_info(opts)
+    def post_remove_comment(comment_id, opts = {})
+      data, _status_code, _headers = post_remove_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(PostRemoveCommentResponse, Integer, Hash)>] PostRemoveCommentResponse data, response status code and response headers
-    def post_remove_comment_with_http_info(opts = {})
+    def post_remove_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_remove_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_remove_comment"
@@ -2186,29 +2138,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def post_restore_deleted_comment(opts = {})
-      data, _status_code, _headers = post_restore_deleted_comment_with_http_info(opts)
+    def post_restore_deleted_comment(comment_id, opts = {})
+      data, _status_code, _headers = post_restore_deleted_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def post_restore_deleted_comment_with_http_info(opts = {})
+    def post_restore_deleted_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_restore_deleted_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_restore_deleted_comment"
@@ -2256,31 +2206,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :approved 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [SetCommentApprovedResponse]
-    def post_set_comment_approval_status(opts = {})
-      data, _status_code, _headers = post_set_comment_approval_status_with_http_info(opts)
+    def post_set_comment_approval_status(comment_id, opts = {})
+      data, _status_code, _headers = post_set_comment_approval_status_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :approved 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(SetCommentApprovedResponse, Integer, Hash)>] SetCommentApprovedResponse data, response status code and response headers
-    def post_set_comment_approval_status_with_http_info(opts = {})
+    def post_set_comment_approval_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_approval_status ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_set_comment_approval_status"
@@ -2329,31 +2277,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :reviewed 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def post_set_comment_review_status(opts = {})
-      data, _status_code, _headers = post_set_comment_review_status_with_http_info(opts)
+    def post_set_comment_review_status(comment_id, opts = {})
+      data, _status_code, _headers = post_set_comment_review_status_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :reviewed 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def post_set_comment_review_status_with_http_info(opts = {})
+    def post_set_comment_review_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_review_status ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_set_comment_review_status"
@@ -2402,33 +2348,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :spam 
     # @option opts [Boolean] :perm_not_spam 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def post_set_comment_spam_status(opts = {})
-      data, _status_code, _headers = post_set_comment_spam_status_with_http_info(opts)
+    def post_set_comment_spam_status(comment_id, opts = {})
+      data, _status_code, _headers = post_set_comment_spam_status_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :spam 
     # @option opts [Boolean] :perm_not_spam 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def post_set_comment_spam_status_with_http_info(opts = {})
+    def post_set_comment_spam_status_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_spam_status ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_set_comment_spam_status"
@@ -2478,32 +2422,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
-    # @option opts [SetCommentTextParams] :set_comment_text_params  (required)
+    # @param comment_id [String] 
+    # @param set_comment_text_params [SetCommentTextParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [SetCommentTextResponse]
-    def post_set_comment_text(opts = {})
-      data, _status_code, _headers = post_set_comment_text_with_http_info(opts)
+    def post_set_comment_text(comment_id, set_comment_text_params, opts = {})
+      data, _status_code, _headers = post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
-    # @option opts [SetCommentTextParams] :set_comment_text_params  (required)
+    # @param comment_id [String] 
+    # @param set_comment_text_params [SetCommentTextParams] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(SetCommentTextResponse, Integer, Hash)>] SetCommentTextResponse data, response status code and response headers
-    def post_set_comment_text_with_http_info(opts = {})
+    def post_set_comment_text_with_http_info(comment_id, set_comment_text_params, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_set_comment_text ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
-      set_comment_text_params = opts[:'set_comment_text_params']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_set_comment_text"
@@ -2560,29 +2501,27 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def post_un_flag_comment(opts = {})
-      data, _status_code, _headers = post_un_flag_comment_with_http_info(opts)
+    def post_un_flag_comment(comment_id, opts = {})
+      data, _status_code, _headers = post_un_flag_comment_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def post_un_flag_comment_with_http_info(opts = {})
+    def post_un_flag_comment_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_un_flag_comment ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_un_flag_comment"
@@ -2630,31 +2569,29 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :direction 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [VoteResponse]
-    def post_vote(opts = {})
-      data, _status_code, _headers = post_vote_with_http_info(opts)
+    def post_vote(comment_id, opts = {})
+      data, _status_code, _headers = post_vote_with_http_info(comment_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :comment_id  (required)
+    # @param comment_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :direction 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(VoteResponse, Integer, Hash)>] VoteResponse data, response status code and response headers
-    def post_vote_with_http_info(opts = {})
+    def post_vote_with_http_info(comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.post_vote ...'
       end
-      # unbox the parameters from the hash
-      comment_id = opts[:'comment_id']
       # verify the required parameter 'comment_id' is set
       if @api_client.config.client_side_validation && comment_id.nil?
         fail ArgumentError, "Missing the required parameter 'comment_id' when calling ModerationApi.post_vote"
@@ -2703,33 +2640,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :badge_id  (required)
+    # @param badge_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [AwardUserBadgeResponse]
-    def put_award_badge(opts = {})
-      data, _status_code, _headers = put_award_badge_with_http_info(opts)
+    def put_award_badge(badge_id, opts = {})
+      data, _status_code, _headers = put_award_badge_with_http_info(badge_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :badge_id  (required)
+    # @param badge_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(AwardUserBadgeResponse, Integer, Hash)>] AwardUserBadgeResponse data, response status code and response headers
-    def put_award_badge_with_http_info(opts = {})
+    def put_award_badge_with_http_info(badge_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_award_badge ...'
       end
-      # unbox the parameters from the hash
-      badge_id = opts[:'badge_id']
       # verify the required parameter 'badge_id' is set
       if @api_client.config.client_side_validation && badge_id.nil?
         fail ArgumentError, "Missing the required parameter 'badge_id' when calling ModerationApi.put_award_badge"
@@ -2780,27 +2715,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :url_id  (required)
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def put_close_thread(opts = {})
-      data, _status_code, _headers = put_close_thread_with_http_info(opts)
+    def put_close_thread(url_id, opts = {})
+      data, _status_code, _headers = put_close_thread_with_http_info(url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :url_id  (required)
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def put_close_thread_with_http_info(opts = {})
+    def put_close_thread_with_http_info(url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_close_thread ...'
       end
-      # unbox the parameters from the hash
-      url_id = opts[:'url_id']
       # verify the required parameter 'url_id' is set
       if @api_client.config.client_side_validation && url_id.nil?
         fail ArgumentError, "Missing the required parameter 'url_id' when calling ModerationApi.put_close_thread"
@@ -2848,33 +2781,31 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :badge_id  (required)
+    # @param badge_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [RemoveUserBadgeResponse]
-    def put_remove_badge(opts = {})
-      data, _status_code, _headers = put_remove_badge_with_http_info(opts)
+    def put_remove_badge(badge_id, opts = {})
+      data, _status_code, _headers = put_remove_badge_with_http_info(badge_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :badge_id  (required)
+    # @param badge_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :comment_id 
     # @option opts [String] :tenant_id 
     # @option opts [String] :broadcast_id 
     # @option opts [String] :sso 
     # @return [Array<(RemoveUserBadgeResponse, Integer, Hash)>] RemoveUserBadgeResponse data, response status code and response headers
-    def put_remove_badge_with_http_info(opts = {})
+    def put_remove_badge_with_http_info(badge_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_remove_badge ...'
       end
-      # unbox the parameters from the hash
-      badge_id = opts[:'badge_id']
       # verify the required parameter 'badge_id' is set
       if @api_client.config.client_side_validation && badge_id.nil?
         fail ArgumentError, "Missing the required parameter 'badge_id' when calling ModerationApi.put_remove_badge"
@@ -2925,27 +2856,25 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :url_id  (required)
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [APIEmptyResponse]
-    def put_reopen_thread(opts = {})
-      data, _status_code, _headers = put_reopen_thread_with_http_info(opts)
+    def put_reopen_thread(url_id, opts = {})
+      data, _status_code, _headers = put_reopen_thread_with_http_info(url_id, opts)
       data
     end
 
-    # @param [Hash] opts the parameters
-    # @option opts [String] :url_id  (required)
+    # @param url_id [String] 
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
     # @option opts [String] :sso 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def put_reopen_thread_with_http_info(opts = {})
+    def put_reopen_thread_with_http_info(url_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.put_reopen_thread ...'
       end
-      # unbox the parameters from the hash
-      url_id = opts[:'url_id']
       # verify the required parameter 'url_id' is set
       if @api_client.config.client_side_validation && url_id.nil?
         fail ArgumentError, "Missing the required parameter 'url_id' when calling ModerationApi.put_reopen_thread"
@@ -2993,7 +2922,7 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :trust_factor 
     # @option opts [String] :tenant_id 
@@ -3004,7 +2933,7 @@ module FastCommentsClient
       data
     end
 
-    # @param [Hash] opts the parameters
+    # @param [Hash] opts the optional parameters
     # @option opts [String] :user_id 
     # @option opts [String] :trust_factor 
     # @option opts [String] :tenant_id 
@@ -3014,7 +2943,6 @@ module FastCommentsClient
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModerationApi.set_trust_factor ...'
       end
-      # unbox the parameters from the hash
       # resource path
       local_var_path = '/auth/my-account/moderate-comments/set-trust-factor'
 
