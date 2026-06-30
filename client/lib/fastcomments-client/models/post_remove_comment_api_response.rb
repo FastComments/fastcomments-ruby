@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module FastCommentsClient
-  module PostRemoveCommentResponse
+  module PostRemoveCommentApiResponse
     class << self
       # List of class defined in anyOf (OpenAPI v3)
       def openapi_any_of

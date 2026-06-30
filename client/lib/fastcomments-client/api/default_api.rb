@@ -90,29 +90,33 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
+    # @param tenant_id [String] 
     # @param create_hash_tag_body [CreateHashTagBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [CreateHashTagResponse]
-    def add_hash_tag(create_hash_tag_body, opts = {})
-      data, _status_code, _headers = add_hash_tag_with_http_info(create_hash_tag_body, opts)
+    def add_hash_tag(tenant_id, create_hash_tag_body, opts = {})
+      data, _status_code, _headers = add_hash_tag_with_http_info(tenant_id, create_hash_tag_body, opts)
       data
     end
 
+    # @param tenant_id [String] 
     # @param create_hash_tag_body [CreateHashTagBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [Array<(CreateHashTagResponse, Integer, Hash)>] CreateHashTagResponse data, response status code and response headers
-    def add_hash_tag_with_http_info(create_hash_tag_body, opts = {})
+    def add_hash_tag_with_http_info(tenant_id, create_hash_tag_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.add_hash_tag ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.add_hash_tag"
       end
       # resource path
       local_var_path = '/api/v1/hash-tags'
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+      query_params[:'tenantId'] = tenant_id
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -153,29 +157,33 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
+    # @param tenant_id [String] 
     # @param bulk_create_hash_tags_body [BulkCreateHashTagsBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [BulkCreateHashTagsResponse]
-    def add_hash_tags_bulk(bulk_create_hash_tags_body, opts = {})
-      data, _status_code, _headers = add_hash_tags_bulk_with_http_info(bulk_create_hash_tags_body, opts)
+    def add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body, opts = {})
+      data, _status_code, _headers = add_hash_tags_bulk_with_http_info(tenant_id, bulk_create_hash_tags_body, opts)
       data
     end
 
+    # @param tenant_id [String] 
     # @param bulk_create_hash_tags_body [BulkCreateHashTagsBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [Array<(BulkCreateHashTagsResponse, Integer, Hash)>] BulkCreateHashTagsResponse data, response status code and response headers
-    def add_hash_tags_bulk_with_http_info(bulk_create_hash_tags_body, opts = {})
+    def add_hash_tags_bulk_with_http_info(tenant_id, bulk_create_hash_tags_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.add_hash_tags_bulk ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.add_hash_tags_bulk"
       end
       # resource path
       local_var_path = '/api/v1/hash-tags/bulk'
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+      query_params[:'tenantId'] = tenant_id
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2001,24 +2009,28 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
+    # @param tenant_id [String] 
     # @param tag [String] 
     # @param delete_hash_tag_request_body [DeleteHashTagRequestBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [APIEmptyResponse]
-    def delete_hash_tag(tag, delete_hash_tag_request_body, opts = {})
-      data, _status_code, _headers = delete_hash_tag_with_http_info(tag, delete_hash_tag_request_body, opts)
+    def delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body, opts = {})
+      data, _status_code, _headers = delete_hash_tag_with_http_info(tenant_id, tag, delete_hash_tag_request_body, opts)
       data
     end
 
+    # @param tenant_id [String] 
     # @param tag [String] 
     # @param delete_hash_tag_request_body [DeleteHashTagRequestBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [Array<(APIEmptyResponse, Integer, Hash)>] APIEmptyResponse data, response status code and response headers
-    def delete_hash_tag_with_http_info(tag, delete_hash_tag_request_body, opts = {})
+    def delete_hash_tag_with_http_info(tenant_id, tag, delete_hash_tag_request_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.delete_hash_tag ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.delete_hash_tag"
       end
       # verify the required parameter 'tag' is set
       if @api_client.config.client_side_validation && tag.nil?
@@ -2029,7 +2041,7 @@ module FastCommentsClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+      query_params[:'tenantId'] = tenant_id
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -6187,24 +6199,28 @@ module FastCommentsClient
       return data, status_code, headers
     end
 
+    # @param tenant_id [String] 
     # @param tag [String] 
     # @param update_hash_tag_body [UpdateHashTagBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [UpdateHashTagResponse]
-    def patch_hash_tag(tag, update_hash_tag_body, opts = {})
-      data, _status_code, _headers = patch_hash_tag_with_http_info(tag, update_hash_tag_body, opts)
+    def patch_hash_tag(tenant_id, tag, update_hash_tag_body, opts = {})
+      data, _status_code, _headers = patch_hash_tag_with_http_info(tenant_id, tag, update_hash_tag_body, opts)
       data
     end
 
+    # @param tenant_id [String] 
     # @param tag [String] 
     # @param update_hash_tag_body [UpdateHashTagBody] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :tenant_id 
     # @return [Array<(UpdateHashTagResponse, Integer, Hash)>] UpdateHashTagResponse data, response status code and response headers
-    def patch_hash_tag_with_http_info(tag, update_hash_tag_body, opts = {})
+    def patch_hash_tag_with_http_info(tenant_id, tag, update_hash_tag_body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.patch_hash_tag ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling DefaultApi.patch_hash_tag"
       end
       # verify the required parameter 'tag' is set
       if @api_client.config.client_side_validation && tag.nil?
@@ -6215,7 +6231,7 @@ module FastCommentsClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
+      query_params[:'tenantId'] = tenant_id
 
       # header parameters
       header_params = opts[:header_params] || {}

@@ -193,7 +193,7 @@ end
 
 ## add_hash_tag
 
-> <CreateHashTagResponse> add_hash_tag(create_hash_tag_body, opts)
+> <CreateHashTagResponse> add_hash_tag(tenant_id, create_hash_tag_body)
 
 
 
@@ -211,14 +211,12 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 create_hash_tag_body = FastCommentsClient::CreateHashTagBody.new({tag: 'tag_example'}) # CreateHashTagBody | 
-opts = {
-  tenant_id: 'tenant_id_example' # String | 
-}
 
 begin
   
-  result = api_instance.add_hash_tag(create_hash_tag_body, opts)
+  result = api_instance.add_hash_tag(tenant_id, create_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tag: #{e}"
@@ -229,12 +227,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateHashTagResponse>, Integer, Hash)> add_hash_tag_with_http_info(create_hash_tag_body, opts)
+> <Array(<CreateHashTagResponse>, Integer, Hash)> add_hash_tag_with_http_info(tenant_id, create_hash_tag_body)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.add_hash_tag_with_http_info(create_hash_tag_body, opts)
+  data, status_code, headers = api_instance.add_hash_tag_with_http_info(tenant_id, create_hash_tag_body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateHashTagResponse>
@@ -247,7 +245,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  |  |
 | **create_hash_tag_body** | [**CreateHashTagBody**](CreateHashTagBody.md) |  | [optional] |
 
 ### Return type
@@ -266,7 +264,7 @@ end
 
 ## add_hash_tags_bulk
 
-> <BulkCreateHashTagsResponse> add_hash_tags_bulk(bulk_create_hash_tags_body, opts)
+> <BulkCreateHashTagsResponse> add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
 
 
 
@@ -284,14 +282,12 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 bulk_create_hash_tags_body = FastCommentsClient::BulkCreateHashTagsBody.new({tags: [FastCommentsClient::BulkCreateHashTagsBodyTagsInner.new({tag: 'tag_example'})]}) # BulkCreateHashTagsBody | 
-opts = {
-  tenant_id: 'tenant_id_example' # String | 
-}
 
 begin
   
-  result = api_instance.add_hash_tags_bulk(bulk_create_hash_tags_body, opts)
+  result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"
@@ -302,12 +298,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BulkCreateHashTagsResponse>, Integer, Hash)> add_hash_tags_bulk_with_http_info(bulk_create_hash_tags_body, opts)
+> <Array(<BulkCreateHashTagsResponse>, Integer, Hash)> add_hash_tags_bulk_with_http_info(tenant_id, bulk_create_hash_tags_body)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.add_hash_tags_bulk_with_http_info(bulk_create_hash_tags_body, opts)
+  data, status_code, headers = api_instance.add_hash_tags_bulk_with_http_info(tenant_id, bulk_create_hash_tags_body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BulkCreateHashTagsResponse>
@@ -320,7 +316,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  |  |
 | **bulk_create_hash_tags_body** | [**BulkCreateHashTagsBody**](BulkCreateHashTagsBody.md) |  | [optional] |
 
 ### Return type
@@ -2123,7 +2119,7 @@ end
 
 ## delete_hash_tag
 
-> <APIEmptyResponse> delete_hash_tag(tag, delete_hash_tag_request_body, opts)
+> <APIEmptyResponse> delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
 
 
 
@@ -2141,15 +2137,13 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
 delete_hash_tag_request_body = FastCommentsClient::DeleteHashTagRequestBody.new # DeleteHashTagRequestBody | 
-opts = {
-  tenant_id: 'tenant_id_example' # String | 
-}
 
 begin
   
-  result = api_instance.delete_hash_tag(tag, delete_hash_tag_request_body, opts)
+  result = api_instance.delete_hash_tag(tenant_id, tag, delete_hash_tag_request_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_hash_tag: #{e}"
@@ -2160,12 +2154,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<APIEmptyResponse>, Integer, Hash)> delete_hash_tag_with_http_info(tag, delete_hash_tag_request_body, opts)
+> <Array(<APIEmptyResponse>, Integer, Hash)> delete_hash_tag_with_http_info(tenant_id, tag, delete_hash_tag_request_body)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.delete_hash_tag_with_http_info(tag, delete_hash_tag_request_body, opts)
+  data, status_code, headers = api_instance.delete_hash_tag_with_http_info(tenant_id, tag, delete_hash_tag_request_body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <APIEmptyResponse>
@@ -2178,8 +2172,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **tag** | **String** |  |  |
-| **tenant_id** | **String** |  | [optional] |
 | **delete_hash_tag_request_body** | [**DeleteHashTagRequestBody**](DeleteHashTagRequestBody.md) |  | [optional] |
 
 ### Return type
@@ -6666,7 +6660,7 @@ end
 
 ## patch_hash_tag
 
-> <UpdateHashTagResponse> patch_hash_tag(tag, update_hash_tag_body, opts)
+> <UpdateHashTagResponse> patch_hash_tag(tenant_id, tag, update_hash_tag_body)
 
 
 
@@ -6684,15 +6678,13 @@ FastCommentsClient.configure do |config|
 end
 
 api_instance = FastCommentsClient::DefaultApi.new
+tenant_id = 'tenant_id_example' # String | 
 tag = 'tag_example' # String | 
 update_hash_tag_body = FastCommentsClient::UpdateHashTagBody.new # UpdateHashTagBody | 
-opts = {
-  tenant_id: 'tenant_id_example' # String | 
-}
 
 begin
   
-  result = api_instance.patch_hash_tag(tag, update_hash_tag_body, opts)
+  result = api_instance.patch_hash_tag(tenant_id, tag, update_hash_tag_body)
   p result
 rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_hash_tag: #{e}"
@@ -6703,12 +6695,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UpdateHashTagResponse>, Integer, Hash)> patch_hash_tag_with_http_info(tag, update_hash_tag_body, opts)
+> <Array(<UpdateHashTagResponse>, Integer, Hash)> patch_hash_tag_with_http_info(tenant_id, tag, update_hash_tag_body)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.patch_hash_tag_with_http_info(tag, update_hash_tag_body, opts)
+  data, status_code, headers = api_instance.patch_hash_tag_with_http_info(tenant_id, tag, update_hash_tag_body)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateHashTagResponse>
@@ -6721,8 +6713,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **tag** | **String** |  |  |
-| **tenant_id** | **String** |  | [optional] |
 | **update_hash_tag_body** | [**UpdateHashTagBody**](UpdateHashTagBody.md) |  | [optional] |
 
 ### Return type

@@ -1,4 +1,4 @@
-# FastCommentsClient::PostRemoveCommentResponse
+# FastCommentsClient::PostRemoveCommentApiResponse
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'fastcomments-client'
 
-instance = FastCommentsClient::PostRemoveCommentResponse.new(
+instance = FastCommentsClient::PostRemoveCommentApiResponse.new(
   action: null,
   status: null
 )

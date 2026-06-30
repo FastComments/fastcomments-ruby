@@ -33,10 +33,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for delete_moderation_vote
+  # @param tenant_id 
   # @param comment_id 
   # @param vote_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [VoteDeleteResponse]
@@ -47,6 +47,7 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_api_comments
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Float] :page 
   # @option opts [Float] :count 
@@ -56,7 +57,6 @@ describe 'ModerationApi' do
   # @option opts [String] :search_filters 
   # @option opts [String] :sorts 
   # @option opts [Boolean] :demo 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPIGetCommentsResponse]
   describe 'get_api_comments test' do
@@ -66,9 +66,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_api_export_status
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :batch_job_id 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationExportStatusResponse]
   describe 'get_api_export_status test' do
@@ -78,6 +78,7 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_api_ids
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :text_search 
   # @option opts [String] :by_ip_from_comment 
@@ -85,7 +86,6 @@ describe 'ModerationApi' do
   # @option opts [String] :search_filters 
   # @option opts [String] :after_id 
   # @option opts [Boolean] :demo 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPIGetCommentIdsResponse]
   describe 'get_api_ids test' do
@@ -95,9 +95,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_ban_users_from_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetBannedUsersFromCommentResponse]
   describe 'get_ban_users_from_comment test' do
@@ -107,9 +107,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_comment_ban_status
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetCommentBanStatusResponse]
   describe 'get_comment_ban_status test' do
@@ -119,9 +119,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_comment_children
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPIChildCommentsResponse]
   describe 'get_comment_children test' do
@@ -131,13 +131,13 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_count
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :text_search 
   # @option opts [String] :by_ip_from_comment 
   # @option opts [String] :filter 
   # @option opts [String] :search_filters 
   # @option opts [Boolean] :demo 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPICountCommentsResponse]
   describe 'get_count test' do
@@ -147,8 +147,8 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_counts
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetBannedUsersCountResponse]
   describe 'get_counts test' do
@@ -158,9 +158,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_logs
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPIGetLogsResponse]
   describe 'get_logs test' do
@@ -170,8 +170,8 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_manual_badges
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetTenantManualBadgesResponse]
   describe 'get_manual_badges test' do
@@ -181,10 +181,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_manual_badges_for_user
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :badges_user_id 
   # @option opts [String] :comment_id 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetUserManualBadgesResponse]
   describe 'get_manual_badges_for_user test' do
@@ -194,11 +194,11 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_moderation_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :include_email 
   # @option opts [Boolean] :include_ip 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPICommentResponse]
   describe 'get_moderation_comment test' do
@@ -208,9 +208,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_moderation_comment_text
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetCommentTextResponse]
   describe 'get_moderation_comment_text test' do
@@ -220,12 +220,12 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_pre_ban_summary
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :include_by_user_id_and_email 
   # @option opts [Boolean] :include_by_ip 
   # @option opts [Boolean] :include_by_email_domain 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [PreBanSummary]
   describe 'get_pre_ban_summary test' do
@@ -235,11 +235,11 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_search_comments_summary
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :value 
   # @option opts [String] :filters 
   # @option opts [String] :search_filters 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationCommentSearchResponse]
   describe 'get_search_comments_summary test' do
@@ -249,9 +249,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_search_pages
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :value 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationPageSearchResponse]
   describe 'get_search_pages test' do
@@ -261,9 +261,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_search_sites
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :value 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationSiteSearchResponse]
   describe 'get_search_sites test' do
@@ -273,9 +273,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_search_suggest
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :text_search 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationSuggestResponse]
   describe 'get_search_suggest test' do
@@ -285,9 +285,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_search_users
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :value 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationUserSearchResponse]
   describe 'get_search_users test' do
@@ -297,9 +297,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_trust_factor
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetUserTrustFactorResponse]
   describe 'get_trust_factor test' do
@@ -309,8 +309,8 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_user_ban_preference
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [APIModerateGetUserBanPreferencesResponse]
   describe 'get_user_ban_preference test' do
@@ -320,9 +320,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for get_user_internal_profile
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :comment_id 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [GetUserInternalProfileResponse]
   describe 'get_user_internal_profile test' do
@@ -332,10 +332,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_adjust_comment_votes
+  # @param tenant_id 
   # @param comment_id 
   # @param adjust_comment_votes_params 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [AdjustVotesResponse]
@@ -346,13 +346,13 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_api_export
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :text_search 
   # @option opts [String] :by_ip_from_comment 
   # @option opts [String] :filters 
   # @option opts [String] :search_filters 
   # @option opts [String] :sorts 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationExportResponse]
   describe 'post_api_export test' do
@@ -362,6 +362,7 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_ban_user_from_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :ban_email 
@@ -372,7 +373,6 @@ describe 'ModerationApi' do
   # @option opts [Boolean] :is_shadow_ban 
   # @option opts [String] :update_id 
   # @option opts [String] :ban_reason 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [BanUserFromCommentResult]
   describe 'post_ban_user_from_comment test' do
@@ -382,9 +382,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_ban_user_undo
+  # @param tenant_id 
   # @param ban_user_undo_params 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'post_ban_user_undo test' do
@@ -394,12 +394,12 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_bulk_pre_ban_summary
+  # @param tenant_id 
   # @param bulk_pre_ban_params 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :include_by_user_id_and_email 
   # @option opts [Boolean] :include_by_ip 
   # @option opts [Boolean] :include_by_email_domain 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [BulkPreBanSummary]
   describe 'post_bulk_pre_ban_summary test' do
@@ -409,9 +409,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_comments_by_ids
+  # @param tenant_id 
   # @param comments_by_ids_params 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [ModerationAPIChildCommentsResponse]
   describe 'post_comments_by_ids test' do
@@ -421,9 +421,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_flag_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
@@ -434,12 +434,12 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_remove_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
-  # @return [PostRemoveCommentResponse]
+  # @return [PostRemoveCommentApiResponse]
   describe 'post_remove_comment test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -447,9 +447,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_restore_deleted_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
@@ -460,10 +460,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_set_comment_approval_status
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :approved 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [SetCommentApprovedResponse]
@@ -474,10 +474,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_set_comment_review_status
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :reviewed 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
@@ -488,11 +488,11 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_set_comment_spam_status
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :spam 
   # @option opts [Boolean] :perm_not_spam 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
@@ -503,10 +503,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_set_comment_text
+  # @param tenant_id 
   # @param comment_id 
   # @param set_comment_text_params 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [SetCommentTextResponse]
@@ -517,9 +517,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_un_flag_comment
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
@@ -530,10 +530,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for post_vote
+  # @param tenant_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :direction 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [VoteResponse]
@@ -544,11 +544,11 @@ describe 'ModerationApi' do
   end
 
   # unit tests for put_award_badge
+  # @param tenant_id 
   # @param badge_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :comment_id 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [AwardUserBadgeResponse]
@@ -559,9 +559,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for put_close_thread
+  # @param tenant_id 
   # @param url_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'put_close_thread test' do
@@ -571,11 +571,11 @@ describe 'ModerationApi' do
   end
 
   # unit tests for put_remove_badge
+  # @param tenant_id 
   # @param badge_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :comment_id 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :broadcast_id 
   # @option opts [String] :sso 
   # @return [RemoveUserBadgeResponse]
@@ -586,9 +586,9 @@ describe 'ModerationApi' do
   end
 
   # unit tests for put_reopen_thread
+  # @param tenant_id 
   # @param url_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [APIEmptyResponse]
   describe 'put_reopen_thread test' do
@@ -598,10 +598,10 @@ describe 'ModerationApi' do
   end
 
   # unit tests for set_trust_factor
+  # @param tenant_id 
   # @param [Hash] opts the optional parameters
   # @option opts [String] :user_id 
   # @option opts [String] :trust_factor 
-  # @option opts [String] :tenant_id 
   # @option opts [String] :sso 
   # @return [SetUserTrustFactorResponse]
   describe 'set_trust_factor test' do

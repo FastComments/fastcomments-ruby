@@ -268,7 +268,7 @@ docs/PatchDomainConfigResponse.md
 docs/PatchPageAPIResponse.md
 docs/PatchSSOUserAPIResponse.md
 docs/PendingCommentToSyncOutbound.md
-docs/PostRemoveCommentResponse.md
+docs/PostRemoveCommentApiResponse.md
 docs/PreBanSummary.md
 docs/PubSubComment.md
 docs/PubSubCommentBase.md
@@ -639,7 +639,7 @@ lib/fastcomments-client/models/patch_domain_config_response.rb
 lib/fastcomments-client/models/patch_page_api_response.rb
 lib/fastcomments-client/models/patch_sso_user_api_response.rb
 lib/fastcomments-client/models/pending_comment_to_sync_outbound.rb
-lib/fastcomments-client/models/post_remove_comment_response.rb
+lib/fastcomments-client/models/post_remove_comment_api_response.rb
 lib/fastcomments-client/models/pre_ban_summary.rb
 lib/fastcomments-client/models/pub_sub_comment.rb
 lib/fastcomments-client/models/pub_sub_comment_base.rb
@@ -1003,7 +1003,7 @@ spec/models/patch_domain_config_response_spec.rb
 spec/models/patch_page_api_response_spec.rb
 spec/models/patch_sso_user_api_response_spec.rb
 spec/models/pending_comment_to_sync_outbound_spec.rb
-spec/models/post_remove_comment_response_spec.rb
+spec/models/post_remove_comment_api_response_spec.rb
 spec/models/pre_ban_summary_spec.rb
 spec/models/pub_sub_comment_base_spec.rb
 spec/models/pub_sub_comment_spec.rb
