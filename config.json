@@ -1,6 +1,6 @@
 {
   "gemName": "fastcomments-client",
   "moduleName": "FastCommentsClient",
-  "gemVersion": "2.0.1",
+  "gemVersion": "3.0.0",
   "useSingleRequestParameter": true
 }

@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "fastcomments"
-  spec.version       = "2.0.0"
+  spec.version       = "3.0.0"
   spec.authors       = ["FastComments"]
   spec.email         = ["support@fastcomments.com"]
 

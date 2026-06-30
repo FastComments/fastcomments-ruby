@@ -6,5 +6,5 @@ require_relative 'fastcomments/sso/fastcomments_sso'
 require 'fastcomments-client'
 
 module FastComments
-  VERSION = '2.0.0'
+  VERSION = '3.0.0'
 end
