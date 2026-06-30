@@ -5,10 +5,10 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **status** | [**APIStatus**](APIStatus.md) |  |  |
-| **data** | [**Array&lt;AggregationItem&gt;**](AggregationItem.md) |  |  |
+| **data** | [**Array&lt;AggregationItem&gt;**](AggregationItem.md) |  | [optional] |
 | **stats** | [**AggregationResponseStats**](AggregationResponseStats.md) |  | [optional] |
-| **reason** | **String** |  |  |
-| **code** | **String** |  |  |
+| **reason** | **String** |  | [optional] |
+| **code** | **String** |  | [optional] |
 | **valid_resource_names** | **Array&lt;String&gt;** |  | [optional] |
 
 ## Example

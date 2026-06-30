@@ -63,7 +63,7 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         response = public_api.get_comments_public(
           TENANT_ID,
           'sdk-test-page-secure',
-          { sso: sso_token }
+          sso: sso_token
         )
 
         expect(response).not_to be_nil
@@ -87,7 +87,7 @@ RSpec.describe 'FastComments SSO Integration Tests' do
           'sdk-test-page-secure-comment',
           "test-#{timestamp}",
           comment_data,
-          { sso: sso_token }
+          sso: sso_token
         )
 
         expect(response).not_to be_nil
@@ -110,15 +110,16 @@ RSpec.describe 'FastComments SSO Integration Tests' do
           display_name: mock_secure_user.username
         })
 
-        default_api.add_sso_user(TENANT_ID, user_data)
+        default_api.add_sso_user(
+          TENANT_ID,
+          user_data
+        )
 
         # Then get comments with that user's context
         response = default_api.get_comments(
           TENANT_ID,
-          {
-            url_id: 'sdk-test-page-secure-admin',
-            context_user_id: mock_secure_user.user_id
-          }
+          url_id: 'sdk-test-page-secure-admin',
+          context_user_id: mock_secure_user.user_id
         )
 
         expect(response).not_to be_nil
@@ -133,7 +134,7 @@ RSpec.describe 'FastComments SSO Integration Tests' do
         response = public_api.get_comments_public(
           TENANT_ID,
           'sdk-test-page-simple',
-          { sso: sso_token }
+          sso: sso_token
         )
 
         expect(response).not_to be_nil
@@ -157,7 +158,7 @@ RSpec.describe 'FastComments SSO Integration Tests' do
           'sdk-test-page-simple-comment',
           "test-#{timestamp}",
           comment_data,
-          { sso: sso_token }
+          sso: sso_token
         )
 
         expect(response).not_to be_nil
@@ -173,7 +174,7 @@ RSpec.describe 'FastComments SSO Integration Tests' do
           public_api.get_comments_public(
             'invalid-tenant-123',
             'sdk-test-page-secure',
-            { sso: sso_token }
+            sso: sso_token
           )
         }.to raise_error(FastCommentsClient::ApiError) do |error|
           expect(error.code).to be >= 400
